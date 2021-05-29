@@ -3,18 +3,25 @@ package main
 import "fmt"
 
 func main() {
-	// String
-	var firstName string = "John"
+	// A variable can be declared and used in three different ways.
+
+	/* String */
+
+	// {methord one}
+	var firstName string
+	firstName = "John"
 	fmt.Println(firstName)
-	var b, c int = 1, 2
-	fmt.Println(b, c)
-	// Bool
-	var validName string = true
-	fmt.Println(validName)
-	//
-	var e int
-	fmt.Println(e)
-	//
-	f := "apple"
-	fmt.Println(f)
+	// {methord two}
+	var middleName string = "Michael"
+	fmt.Println(middleName)
+	// {methord three}
+	lastName := "Doe"
+	fmt.Println(lastName)
+	
+	// How many types of variable are there in golang?
+	
+	/* String: word(s) */
+	/* Int: number(s) */
+	/* Bool: true or false */
+	
 }
