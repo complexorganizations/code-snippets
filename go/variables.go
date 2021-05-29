@@ -3,25 +3,23 @@ package main
 import "fmt"
 
 func main() {
-	// A variable can be declared and used in three different ways.
+	var stationName string
+	var nextTrainTime int8
+	var isUptownTrain bool
 
-	/* String */
+	stationName = "Union Square"
+	nextTrainTime = 12
+	isUptownTrain = false
 
-	// {methord one}
-	var firstName string
-	firstName = "John"
-	fmt.Println(firstName)
-	// {methord two}
-	var middleName string = "Michael"
-	fmt.Println(middleName)
-	// {methord three}
-	lastName := "Doe"
-	fmt.Println(lastName)
-	
-	// How many types of variable are there in golang?
-	
-	/* String: word(s) */
-	/* Int: number(s) */
-	/* Bool: true or false */
-	
+	fmt.Println("Current station:", stationName)
+	fmt.Println("Next train:", nextTrainTime, "minutes")
+	fmt.Println("Is uptown:", isUptownTrain)
+
+	stationName = "Grand Central"
+	nextTrainTime = 3
+	isUptownTrain = true
+
+	fmt.Println("Current station:", stationName)
+	fmt.Println("Next train:", nextTrainTime, "minutes")
+	fmt.Println("Is uptown:", isUptownTrain)
 }
