@@ -15,6 +15,6 @@ func main() {
 	case "linux":
 		fmt.Println("This is for linux")
 	default:
-		log.Fatalf("Error: System %s Not Supported.\n", runtime.GOOS)
+		log.Fatalf("Error: System %s is not supported (yet).\n", runtime.GOOS)
 	}
 }
