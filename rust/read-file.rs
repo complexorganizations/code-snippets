@@ -1,8 +1,7 @@
-use std::env;
 use std::fs;
 
 fn main() {
-    // --snip--
+    let filename = "example-file";
     println!("In file {}", filename);
 
     let contents = fs::read_to_string(filename)
