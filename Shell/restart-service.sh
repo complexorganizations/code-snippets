@@ -1,13 +1,13 @@
 #!/bin/bash
 
-  function service-manager() {
+function service-manager() {
     if pgrep systemd-journal; then
-      systemctl disable SERVICE_NAME
-      systemctl stop SERVICE_NAME
+        systemctl disable SERVICE_NAME
+        systemctl stop SERVICE_NAME
     else
-      service SERVICE_NAME disable
-      service SERVICE_NAME stop
+        service SERVICE_NAME disable
+        service SERVICE_NAME stop
     fi
-  }
+}
 
-  service-manager
+service-manager
