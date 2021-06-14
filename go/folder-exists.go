@@ -13,7 +13,7 @@ func main() {
 
 func folderExists(foldername string) bool {
 	info, err := os.Stat(foldername)
-	if os.IsNotExist(err) {
+	if err != nil {
 		return false
 	}
 	return info.IsDir()
