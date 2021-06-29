@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-  // List of random strings.
+	// List of random strings.
 	nameSlice := []string{
 		"Cyrus",
 		"Cyrus",
@@ -26,10 +26,10 @@ func main() {
 func makeUnique(randomStrings []string) []string {
 	flag := make(map[string]bool)
 	var uniqueString []string
-	for i := 0; i < len(randomStrings); i++ {
-		if !flag[randomStrings[i]] {
-			flag[randomStrings[i]] = true
-			uniqueString = append(uniqueString, randomStrings[i])
+	for _, content := range randomStrings {
+		if !flag[content] {
+			flag[content] = true
+			uniqueString = append(uniqueString, content)
 		}
 	}
 	return uniqueString
