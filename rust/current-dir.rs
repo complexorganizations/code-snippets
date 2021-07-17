@@ -1,6 +1,7 @@
-fn main() {
-    // get the current working directory
-    let cwd = Path::cwd();
-    // print the current working directory
-    println!("Current working directory: {}", cwd);
+use std::env;
+
+fn main() -> std::io::Result<()> {
+    let path = env::current_dir()?;
+    println!("The current directory is {}", path.display());
+    Ok(())
 }
