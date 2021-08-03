@@ -4,6 +4,7 @@ Random Note two
 Random note three
 */
 
+/// This is a three line comment for docs.
 void main() {
   print("Hello, World");
 }
