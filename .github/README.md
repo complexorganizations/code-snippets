@@ -7,3 +7,5 @@ What language should I learn?
 - Server: Golang {Windows, MacOS, Linux}
 - Embeedd: Rust {IOT}
 - Web: Dart/Flutter {Any modern browser}
+
+Try as use cross platform language if possible.
