@@ -7,9 +7,15 @@ func vals() (int, int) {
 }
 
 func main() {
+	// Both values as variables
 	three, seven := vals()
 	fmt.Println(three)
 	fmt.Println(seven)
+	// One value at a time.
 	_, seven = vals()
 	fmt.Println(seven)
+	three, _ = vals()
+	fmt.Println(three)
+	// Ge the values directly.
+	fmt.Println(vals())
 }
