@@ -13,6 +13,8 @@ func main() {
 		proxy: "apple",
 		repo:  "github.com",
 	}
+	fmt.Println(data.proxy)
+	fmt.Println(data.repo)
 	fmt.Println(data)
 	// example two
 	type rectangle struct {
