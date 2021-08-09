@@ -13,10 +13,6 @@ func main() {
 
 // Validate the URI
 func validURL(uri string) bool {
-	validUri, err := url.ParseRequestURI(uri)
-	if err != nil {
-		return false
-	}
-	_ = validUri
-	return true
+	_, err := url.ParseRequestURI(uri)
+	return err == nil
 }
