@@ -13,10 +13,6 @@ func main() {
 
 // Validate a website's domain
 func validNameServer(domain string) bool {
-	ns, err := net.LookupNS(domain)
-	if err != nil {
-		return false
-	}
-	_ = ns
-	return true
+	_, err := net.LookupNS(domain)
+	return err == nil
 }
