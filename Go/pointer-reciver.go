@@ -12,9 +12,9 @@ func (p person) print() {
 }
 
 func main() {
-	alex := person{
-		name: "Alex",
+	john := person{
+		name: "John",
 		age:  18,
 	}
-	alex.print()
+	john.print()
 }
