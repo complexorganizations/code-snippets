@@ -2,14 +2,6 @@ package main
 
 import "fmt"
 
-// Prints a greeting message using values received in
-// the channel
-func greet(c chan string) {
-
-	name := <-c // receiving value from channel
-	fmt.Println("Hello", name)
-}
-
 func main() {
 	// Making a channel of value type string
 	c := make(chan string)
@@ -22,4 +14,10 @@ func main() {
 
 	// Closing channel
 	close(c)
+}
+
+// Prints a greeting message using values received in the channel
+func greet(c chan string) {
+	name := <-c                // receiving value from channel
+	fmt.Println("Hello", name) // Printing it.
 }
