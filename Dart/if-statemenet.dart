@@ -14,14 +14,10 @@ void main() {
     print("Verified user");
   }
 
-  if (age > 18) {
+  if (age >= 18) {
     print("Eligible to vote");
-  } else if (age < 18) {
-    print("Not eligible to vote");
-  } else if (age == 30) {
-    print(age);
   } else {
-    print("Invalid age.");
+    print("Age not provided.");
   }
 
   // loop over a array.
@@ -29,10 +25,17 @@ void main() {
     print(name);
   }
 
+  if (year < 2000) {
+    print("Old person");
+  }
+
   // if statement inside of a for block.
   for (int month = 1; month <= 12; month++) {
+    // Print out all the monthes.
+    print(month);
+    // If statemenet inside of a loop.
     if (month == 5) {
-      print(month);
+      print("The month is five.");
     }
   }
 }
