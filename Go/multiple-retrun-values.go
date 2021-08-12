@@ -2,10 +2,6 @@ package main
 
 import "fmt"
 
-func vals() (int, int) {
-	return 3, 7
-}
-
 func main() {
 	// Both values as variables
 	three, seven := vals()
@@ -18,4 +14,8 @@ func main() {
 	fmt.Println(three)
 	// Ge the values directly.
 	fmt.Println(vals())
+}
+
+func vals() (int, int) {
+	return 3, 7
 }
