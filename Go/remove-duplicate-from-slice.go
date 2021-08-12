@@ -33,7 +33,6 @@ func makeUnique(randomStrings []string) []string {
 			uniqueString = append(uniqueString, value)
 		}
 	}
-	// return the array
 	return uniqueString
 }
 
