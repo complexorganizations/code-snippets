@@ -13,9 +13,10 @@ func main() {
 	}
 }
 
+// Check if the array contains the value.
 func arrayContains(cointains string, originalArray []string) bool {
-	for a := 0; a < len(originalArray); a++ {
-		if originalArray[a] == cointains {
+	for _, value := range originalArray {
+		if value == cointains {
 			return true
 		}
 	}
