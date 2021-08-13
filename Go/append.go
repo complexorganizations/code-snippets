@@ -5,6 +5,8 @@ import (
 	"os"
 )
 
+var err error
+
 func main() {
 	writeToFile("test", "content")
 }
@@ -19,7 +21,14 @@ func writeToFile(pathInSystem string, content string) {
 	_, err = filePath.WriteString(content + "\n")
 	if err != nil {
 		log.Println(err)
+		err = filePath.Close()
+		if err != nil {
+			log.Println(err)
+		}
 	}
 	// close the file
-	defer filePath.Close()
+	err = filePath.Close()
+	if err != nil {
+		log.Println(err)
+	}
 }
