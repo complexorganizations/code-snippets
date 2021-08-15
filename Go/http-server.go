@@ -6,11 +6,6 @@ import (
 	"net/http"
 )
 
-// The content to write to the response
-func hello(w http.ResponseWriter, req *http.Request) {
-	fmt.Fprintf(w, "Hello, World!")
-}
-
 func main() {
 	// Route to the hello function
 	http.HandleFunc("/", hello)
@@ -20,4 +15,9 @@ func main() {
 	if err != nil {
 		log.Println(err)
 	}
+}
+
+// The content to write to the response
+func hello(w http.ResponseWriter, req *http.Request) {
+	fmt.Fprintf(w, "Hello, World!")
 }
