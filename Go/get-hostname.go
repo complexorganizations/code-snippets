@@ -2,13 +2,14 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"os"
 )
 
 func main() {
-	hostname, err := os.Hostname()
+	systemHostname, err := os.Hostname()
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
-	fmt.Println(hostname)
+	fmt.Println(systemHostname)
 }
