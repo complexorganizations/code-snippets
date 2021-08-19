@@ -1,7 +1,4 @@
 void main() {
-  var fullName = "John Doe";
-  print(fullName);
-
   int age;
   age = 42;
 
