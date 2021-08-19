@@ -8,6 +8,8 @@ void main() {
   print(tools("This is a random string"));
   print(exampleIFStatement(1));
   print(anotherIfStatement(0));
+  print(returnMultipleValues());
+  print(returnFloat());
 }
 
 // Variable inside a string
@@ -61,4 +63,14 @@ bool anotherIfStatement(int number) {
   } else {
     return false;
   }
+}
+
+// Return multiple values
+List returnMultipleValues() {
+  return [42, "foo", "bar", 1.5, true];
+}
+
+// return a float
+double returnFloat() {
+  return 42.5;
 }
