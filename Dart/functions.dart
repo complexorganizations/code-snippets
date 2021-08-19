@@ -4,6 +4,8 @@ void main() {
   testCondition(true);
   add(2, 3);
   multiply(4, 5);
+  print(test());
+  print(tools("This is a random string"));
 }
 
 // Variable inside a string
@@ -33,4 +35,14 @@ void add(int firstNumber, int secondNumber) {
 // Mulitply two numbers
 void multiply(int firstNumber, int secondNumber) {
   print(firstNumber * secondNumber);
+}
+
+// Return a string
+String test() {
+  return "Hello, World!";
+}
+
+// Return a string
+String tools(String message) {
+  return message;
 }
