@@ -6,6 +6,8 @@ void main() {
   multiply(4, 5);
   print(test());
   print(tools("This is a random string"));
+  print(exampleIFStatement(1));
+  print(anotherIfStatement(0));
 }
 
 // Variable inside a string
@@ -45,4 +47,18 @@ String test() {
 // Return a string
 String tools(String message) {
   return message;
+}
+
+// Return a bool
+bool exampleIFStatement(int number) {
+  return (number == 0);
+}
+
+// if statement for bool
+bool anotherIfStatement(int number) {
+  if (number == 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
