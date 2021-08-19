@@ -1,34 +1,98 @@
 void main() {
-  // Declare all the variables
-  var name = "John Doe";
-  var age = 30;
-  var year = 1977;
-  var is_verified = true;
-  var friends = ["Jane Doe", "John Smith"];
+  var fullName = "John Doe";
+  print(fullName);
 
-  // Print the variables
-  print(name);
+  int age;
+  age = 42;
 
-  // if statment
-  if (is_verified) {
-    print("Verified user");
-  }
-
-  if (age >= 18) {
-    print("Eligible to vote");
+  if (age == 42) {
+    print(age);
   } else {
-    print("Age not provided.");
+    print("age is not ${age}");
   }
 
-  // loop over a array.
-  for (var name in friends) {
-    print(name);
+  if (age > 18) {
+    print("You are old enough to vote!");
+  } else {
+    print("You are not old enough to vote.");
   }
 
-  if (year < 2000) {
-    print("Old person");
+  // if statment inside a function
+  print(exampleIFStatement(0));
+
+  // another if statement inside a function
+  print(anotherIfStatement(1));
+
+  // function to loop over a range of numbers and than print certain numbers.
+  loop();
+
+  // bool to check if the user is verifed.
+  var isVerified = true;
+  if (isVerified) {
+    print("User is verified");
   }
 
+  // Range of numbers
+  checkRange();
+
+  // another methord
+  testFunction();
+}
+
+// Return a bool
+bool exampleIFStatement(int number) {
+  return (number == 0);
+}
+
+// if statement for bool
+bool anotherIfStatement(int number) {
+  if (number == 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// Loop
+void loop() {
+  for (int i = 0; i < 10; i++) {
+    if (i == 5) {
+      print(i);
+    }
+  }
+}
+
+// Loop over a range.
+void checkRange() {
+  var randomList = {
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+    "ten"
+  };
+
+  for (var number in randomList) {
+    if (number == "five") {
+      print(number);
+    }
+  }
+
+  var numberList;
+  numberList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  for (var number in numberList) {
+    if (number == 5) {
+      print(number);
+    }
+  }
+}
+
+void testFunction() {
   // if statement inside of a for block.
   for (int month = 1; month <= 12; month++) {
     // Print out all the monthes.
