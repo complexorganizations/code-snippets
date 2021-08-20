@@ -21,7 +21,10 @@ func main() {
 		"Ringo",
 	}
 	for index, name := range names {
-		fmt.Println(index, name)
+		// index is the fist value and it will give u the number of the item.
+		fmt.Println(index)
+		// name is the actual value of the item.
+		fmt.Println(name)
 	}
 	// loop forever
 	for {
