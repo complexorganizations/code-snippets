@@ -6,9 +6,15 @@ import (
 	"net"
 )
 
-var privateIPBlocks []*net.IPNet
+func main() {
+	check, err := checkIfIPInRange("10.8.0.1")
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(check)
+}
 
-func init() {
+func checkIfIPInRange(ip string) (bool, error) {
 	cidrRange := []string{
 		"10.0.0.0/8",
 		"fd12:3456:789a:1::/64",
@@ -16,21 +22,11 @@ func init() {
 	for _, cidr := range cidrRange {
 		_, ipnet, err := net.ParseCIDR(cidr)
 		if err != nil {
-			log.Fatal(err)
+			return false, err
 		}
-		privateIPBlocks = append(privateIPBlocks, ipnet)
-	}
-}
-
-func main() {
-	fmt.Println(isPrivateIP(net.ParseIP("192.168.1.1")))
-}
-
-func isPrivateIP(ip net.IP) bool {
-	for _, block := range privateIPBlocks {
-		if block.Contains(ip) {
-			return true
+		if ipnet.Contains(net.ParseIP(ip)) {
+			return true, nil
 		}
 	}
-	return false
+	return false, nil
 }
