@@ -18,14 +18,8 @@ func main() {
 func exampleFunction(filePath string) bool {
 	err = os.Remove(filePath)
 	if err != nil {
+		log.Println(err)
 		return false
-		handleErrors(err)
 	}
 	return true
-}
-
-func handleErrors(err error) {
-	if err != nil {
-		log.Println(err)
-	}
 }
