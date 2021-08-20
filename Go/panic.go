@@ -2,11 +2,12 @@ package main
 
 import (
 	"os"
+	"log"
 )
 
 func main() {
 	err := os.Remove("some-file")
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 }
