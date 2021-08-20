@@ -25,6 +25,8 @@ func main() {
 		fmt.Println(index)
 		// name is the actual value of the item.
 		fmt.Println(name)
+		// both
+		fmt.Println(index, name)
 	}
 	// loop forever
 	for {
