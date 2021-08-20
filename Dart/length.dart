@@ -14,7 +14,4 @@ void main() {
   // Get the length of a set
   var set = {1, 2, 3, 4, 5};
   print(set.length);
-
-  // Get the length of a tuple
-  
 }
