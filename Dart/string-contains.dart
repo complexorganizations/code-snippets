@@ -1,5 +1,5 @@
 void main() {
-  var string = "This is a random string";
-  print(string.contains("a")); // true
-  print(string.contains("b")); // false
+  String apple = "This is a random string";
+  print(apple.contains("a")); // true
+  print(apple.contains("b")); // false
 }
