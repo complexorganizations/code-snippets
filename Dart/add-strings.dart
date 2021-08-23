@@ -3,4 +3,7 @@ void main() {
   String world = "World";
   print("${hello} ${world}");
   print(hello + world);
+  print(hello + " " + world);
+  print(hello + " " + world + "!");
+  print(hello + " " + world + "!" + " " + "add more stuff here.");
 }

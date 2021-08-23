@@ -2,6 +2,8 @@ import 'dart:math';
 import 'dart:convert';
 
 void main() {
+  int characterLimit = 100;
+  print(getRandString(characterLimit));
   print(getRandString(100));
 }
 
