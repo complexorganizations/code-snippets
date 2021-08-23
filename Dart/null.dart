@@ -9,4 +9,10 @@ void main() {
   print(stuffHere);
   stuffHere = null;
   print(stuffHere);
+  
+  int? aNullableInt = null;
+  print(aNullableInt);
+  
+  double? randomStuff = null;
+  print(randomStuff);
 }
