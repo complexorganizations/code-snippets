@@ -29,4 +29,7 @@ void main() {
   // a null double value
   double? randomStuff = null;
   print(randomStuff);
+  // a null bool value
+  bool? aNullableBool = null;
+  print(aNullableBool);
 }
