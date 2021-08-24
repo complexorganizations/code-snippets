@@ -8,8 +8,8 @@ import (
 )
 
 var (
-	watchSystemPath string = "test"
-	logSystemPath   string = "logs.log"
+	watchSystemPath = "test"
+	logSystemPath   = "logs.log"
 )
 
 func main() {
