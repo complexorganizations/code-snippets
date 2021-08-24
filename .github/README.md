@@ -9,3 +9,5 @@ What language should I learn?
 - Web: Dart/Flutter {Any modern browser}
 
 Try as use cross platform language if possible.
+
+### Note: I don't care if you give me credit or not; if you truly believe in this project and want to help it succeed, please contribute your code snippets here.
