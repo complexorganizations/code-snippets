@@ -2,11 +2,16 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"os"
 )
 
 func main() {
-	fmt.Println(isDirEmpty("test/"))
+	returnValue, err := isDirEmpty("/")
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(returnValue)
 }
 
 func isDirEmpty(filePath string) (bool, error) {
