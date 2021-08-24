@@ -5,35 +5,30 @@ import (
     "log"
     "net"
     "net/http"
-    "strings"
 )
 
 func main() {
-    http.HandleFunc("/", getUserIP)
+    http.HandleFunc("/", showIP)
     err := http.ListenAndServe(":8080", nil)
     if err != nil {
         log.Fatal(err)
     }
 }
 
+func showIP(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "Your IP is: %s", getUserIP(r))
+}
+
 // Get the IP address of the server's connected user.
-func getUserIP(httpWriter http.ResponseWriter, httpServer *http.Request) {
-    var userIP string
-    if len(httpServer.Header.Get("CF-Connecting-IP")) > 1 {
-        userIP = httpServer.Header.Get("CF-Connecting-IP")
-        fmt.Println(net.ParseIP(userIP))
-    } else if len(httpServer.Header.Get("X-Forwarded-For")) > 1 {
-        userIP = httpServer.Header.Get("X-Forwarded-For")
-        fmt.Println(net.ParseIP(userIP))
-    } else if len(httpServer.Header.Get("X-Real-IP")) > 1 {
-        userIP = httpServer.Header.Get("X-Real-IP")
-        fmt.Println(net.ParseIP(userIP))
-    } else {
-        userIP = httpServer.RemoteAddr
-        if strings.Contains(userIP, ":") {
-            fmt.Println(net.ParseIP(strings.Split(userIP, ":")[0]))
-        } else {
-            fmt.Println(net.ParseIP(userIP))
-        }
-    }
+func getUserIP(httpServer *http.Request) net.IP {
+	if len(httpServer.Header.Get("CF-Connecting-IP")) > 1 {
+		return net.ParseIP(httpServer.Header.Get("CF-Connecting-IP"))
+	} else if len(httpServer.Header.Get("X-Forwarded-For")) > 1 {
+		return net.ParseIP(httpServer.Header.Get("X-Forwarded-For"))
+	} else if len(httpServer.Header.Get("X-Real-IP")) > 1 {
+		return net.ParseIP(httpServer.Header.Get("X-Real-IP"))
+	} else {
+        // The problem is that if that contains port, we need a way to remove it.
+		return net.ParseIP(httpServer.RemoteAddr)
+	}
 }
