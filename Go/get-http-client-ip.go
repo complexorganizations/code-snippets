@@ -28,7 +28,7 @@ func getUserIP(httpServer *http.Request) net.IP {
 	} else if len(httpServer.Header.Get("X-Real-IP")) > 1 {
 		return net.ParseIP(httpServer.Header.Get("X-Real-IP"))
 	} else {
-        // The problem is that if that contains port, we need a way to remove it.
-		return net.ParseIP(httpServer.RemoteAddr)
+		returnIP, _, _ := net.SplitHostPort(httpServer.RemoteAddr)
+		return net.ParseIP(returnIP)
 	}
 }
