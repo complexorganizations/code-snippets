@@ -2,19 +2,19 @@ package main
 
 import "fmt"
 
-type person struct {
+type personalINFO struct {
 	name string
 	age  int
 }
 
-func (p person) print() {
-	fmt.Printf("%s is of %d years \n", p.name, p.age)
+func (content personalINFO) print() {
+	fmt.Printf("%s is of %d years \n", content.name, content.age)
 }
 
 func main() {
-	john := person{
+	localInfo := personalINFO{
 		name: "John",
 		age:  18,
 	}
-	john.print()
+	localInfo.print()
 }
