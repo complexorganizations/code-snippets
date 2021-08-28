@@ -10,7 +10,7 @@ func main() {
 	// Sending values to the channel c
 	startChannel <- "World"
 	// Closing channel
-	close(startChannel)
+	defer close(startChannel)
 }
 
 // Prints a greeting message using values received in the channel
