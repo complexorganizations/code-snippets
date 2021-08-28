@@ -4,17 +4,17 @@ import "fmt"
 
 func main() {
 	// Making a channel of value type string
-	c := make(chan string)
+	startChannel := make(chan string)
 	// Starting a concurrent goroutine
-	go greet(c)
+	go greet(startChannel)
 	// Sending values to the channel c
-	c <- "World"
+	startChannel <- "World"
 	// Closing channel
-	close(c)
+	close(startChannel)
 }
 
 // Prints a greeting message using values received in the channel
-func greet(c chan string) {
-	name := <-c                // receiving value from channel
+func greet(scopeChannel chan string) {
+	name := <-scopeChannel     // receiving value from channel
 	fmt.Println("Hello", name) // Printing it.
 }
