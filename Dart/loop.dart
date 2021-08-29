@@ -11,6 +11,7 @@ void main() {
   while (true) {
     print("test");
   }
+  // ignore: dead_code
   for (;;) {
     print("second test");
   }
