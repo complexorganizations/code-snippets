@@ -7,4 +7,11 @@ void main() {
   for (var hole = 75; hole >= 50; hole--) {
     print(hole);
   }
+  // Loop forever
+  while (true) {
+    print("test");
+  }
+  for (;;) {
+    print("second test");
+  }
 }
