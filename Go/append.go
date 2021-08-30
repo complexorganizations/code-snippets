@@ -21,10 +21,6 @@ func writeToFile(pathInSystem string, content string) {
 	_, err = filePath.WriteString(content + "\n")
 	if err != nil {
 		log.Println(err)
-		err = filePath.Close()
-		if err != nil {
-			log.Println(err)
-		}
 	}
 	// close the file
 	err = filePath.Close()
