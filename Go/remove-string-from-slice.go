@@ -6,6 +6,7 @@ import (
 
 func main() {
 	sampleSlice := []string{"one", "two", "three"}
+	fmt.Println(sampleSlice)
 	newImprovedSlice := removeStringFromSlice(sampleSlice, "two")
 	fmt.Println(newImprovedSlice)
 }
