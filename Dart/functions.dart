@@ -10,6 +10,8 @@ void main() {
   print(anotherIfStatement(0));
   print(returnMultipleValues());
   print(returnFloat());
+  optionalInput();
+  optionalInput("Hello");
 }
 
 // Variable inside a string
@@ -73,4 +75,13 @@ List returnMultipleValues() {
 // return a float
 double returnFloat() {
   return 42.5;
+}
+
+// Optional Input
+void optionalInput([String? message]) {
+  if (message == "Hello") {
+    print("World");
+  } else if (message == null) {
+    print(null);
+  }
 }
