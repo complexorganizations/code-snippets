@@ -6,17 +6,19 @@ import (
 
 func main() {
 	sampleSlice := []string{"one", "two", "three"}
-	sampleSlice = removeStringFromSlice(sampleSlice, "two")
-	fmt.Println(sampleSlice)
+	newImprovedSlice := removeStringFromSlice(sampleSlice, "two")
+	fmt.Println(newImprovedSlice)
 }
 
 func removeStringFromSlice(originalSlice []string, removeString string) []string {
-	// go though the array
-	for i, content := range originalSlice {
-		// if the array matches with the string, you remove it from the array
+	var newSlice []string
+	for _, content := range originalSlice {
 		if content == removeString {
-			return append(originalSlice[:i], originalSlice[i+1:]...)
+			content = ""
+		}
+		if len(content) >= 1 {
+			newSlice = append(newSlice, content)
 		}
 	}
-	return originalSlice
+	return newSlice
 }
