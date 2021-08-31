@@ -24,4 +24,3 @@ void main() {
 int getVariableLength(content) {
   return content.length;
 }
-
