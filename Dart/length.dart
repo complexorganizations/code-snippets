@@ -14,4 +14,14 @@ void main() {
   // Get the length of a set
   var set = {1, 2, 3, 4, 5};
   print(set.length);
+
+  print(getVariableLength("This is the string to get the size of."));
+
+  print(getVariableLength("Hello, World!"));
 }
+
+// Get the length of a variable.
+int getVariableLength(content) {
+  return content.length;
+}
+
