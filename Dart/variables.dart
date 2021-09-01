@@ -51,4 +51,12 @@ void main() {
   // Set the value of the age key
   content["age"] = 31;
   print(content["age"]);
+
+  // Get the runtime type of the content
+  print(getRuntimeType(content));
+}
+
+// Get the runtime type of a variable.
+String getRuntimeType(var value) {
+  return value.runtimeType.toString();
 }
