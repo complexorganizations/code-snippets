@@ -1,23 +1,12 @@
 import "dart:io";
 
-// The path of where the file is.
-var filePath = "file.txt";
-
 void main() {
-  // Read the file
-  File(filePath).readAsString().then((String contents) {
-    print(contents);
-  });
-  // Test if the file has a certain thing.
-  testFunction();
+  print(readFile("file.txt"));
 }
 
-void testFunction() {
-  File(filePath).readAsString().then((String contents) {
-    if (contents == "Hello, world!") {
-      print("Test passed");
-    } else {
-      print("Test failed");
-    }
+// Opens the file and returns the contents as a string
+String? readFile(String path) {
+  File(path).readAsString().then((String contents) {
+    return contents;
   });
 }

@@ -29,6 +29,12 @@ void main() {
     "j"
   ];
   print(randomStuff); // without sorting the list
-  randomStuff.sort();
-  print(randomStuff); // while sorting the list
+  var newList = sortList(randomStuff);
+  print(newList); // while sorting the list
+}
+
+// Takes in a list and returns a sorted list
+List sortList(List arrayContent) {
+  arrayContent.sort();
+  return arrayContent;
 }

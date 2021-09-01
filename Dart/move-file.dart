@@ -5,8 +5,12 @@ void main() {
   var oldFileName = "old-file-name";
   // The path of the new file.
   var newFileName = "new-file-name";
-  // The path of the directory containing the old file.
+  // Moving the file.
+  moveFile(oldFileName, newFileName);
+}
+
+// Change the location of a file.
+void moveFile(String oldFileName, String newFileName) {
   File myFile = File(oldFileName);
-  // The path of the directory containing the new file.
   myFile.rename(newFileName);
 }

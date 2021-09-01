@@ -37,6 +37,11 @@ void main() {
 
   // throw an error
   testStuff();
+
+  // More
+  int apple = 1;
+  int banana = 1;
+  print(apple == banana);
 }
 
 // Return a bool
