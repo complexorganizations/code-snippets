@@ -8,9 +8,7 @@ import (
 
 func main() {
 	if checkIPandPort("tcp", "0.0.0.0", "443") {
-		fmt.Println("Its a valid host and port")
-	} else {
-		log.Println("Error, there was an error")
+		fmt.Println("Send the request successfully.")
 	}
 }
 
