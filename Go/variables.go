@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 func main() {
 	var stationName string
@@ -22,7 +25,22 @@ func main() {
 	fmt.Println("Current station:", stationName)
 	fmt.Println("Next train:", nextTrainTime, "minutes")
 	fmt.Println("Is uptown:", isUptownTrain)
+
+	tst1 := "string"
+	tst2 := 10
+	tst3 := 1.2
+	tst4 := true
+	tst5 := []string{"foo", "bar", "baz"}
+	tst6 := map[string]int{"apple": 23, "tomato": 13}
+
+	fmt.Println(reflect.TypeOf(tst1))
+	fmt.Println(reflect.TypeOf(tst2))
+	fmt.Println(reflect.TypeOf(tst3))
+	fmt.Println(reflect.TypeOf(tst4))
+	fmt.Println(reflect.TypeOf(tst5))
+	fmt.Println(reflect.TypeOf(tst6))
 }
+
 /*
 uint8       the set of all unsigned  8-bit integers (0 to 255)
 uint16      the set of all unsigned 16-bit integers (0 to 65535)
