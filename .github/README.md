@@ -1,13 +1,11 @@
 # code-snippets
-The whole point is to be able to copy and paste code snippets.
+The ability to copy and paste code snippets is the whole idea.
 
 What language should I learn?
-- Mobile: Dart/Flutter {Android, IOS}
-- Desktop: Dart/Flutter {Windows, MacOS, Linux}
-- Server: Golang {Windows, MacOS, Linux}
-- Embeedd: Rust {IOT}
-- Web: Dart/Flutter {Any modern browser}
+- Mobile: Dart
+- Desktop: Dart / Go
+- Server: Go
+- Embeedd: Rust
+- Web: Dart
 
-Try as use cross platform language if possible.
-
-### Note: I don't care if you give me credit or not; if you truly believe in this project and want to help it succeed, please contribute your code snippets here.
+If at all feasible, choose a cross-platform language.
