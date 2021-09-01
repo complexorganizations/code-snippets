@@ -5,7 +5,6 @@ import (
 )
 
 func main() {
-	// defer function will exit at the end
-	defer fmt.Println("Hello, playground")
-	fmt.Println("This is a test")
+	defer fmt.Println("world")
+	fmt.Println("hello")
 }

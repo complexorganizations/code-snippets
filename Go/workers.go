@@ -10,12 +10,12 @@ var wg sync.WaitGroup
 func main() {
 	for loop := 0; loop <= 1000; loop++ {
 		wg.Add(1)
-		go testFunc()
+		go secondFunction()
 	}
 	wg.Wait()
 }
 
-func testFunc() {
+func secondFunction() {
 	fmt.Println("Done")
 	wg.Done()
 }

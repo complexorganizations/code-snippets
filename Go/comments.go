@@ -4,10 +4,11 @@ import (
 	"fmt"
 )
 
-// This is a single remark line.
+// This is a single line comment
 
-/* This is a comment block that can
-stretch onto numerous lines. */
+/* This is a block of comment.
+This can be multi line comment
+*/
 
 func main() {
 	fmt.Println("Hello, playground") // Here's another example

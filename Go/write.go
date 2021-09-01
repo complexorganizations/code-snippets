@@ -5,26 +5,27 @@ import (
 	"os"
 )
 
-var err error
 
 func main() {
-	writeToFile("test", "content")
+	err:= writeToFile("/location/to/save", "The content to write to the file.")
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
-func writeToFile(pathInSystem string, content string) {
-	// open the file and if its not there create one.
+// Append and write to file
+func writeToFile(pathInSystem string, content string) error {
 	filePath, err := os.OpenFile(pathInSystem, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
-		log.Println(err)
+		return err
 	}
-	// write the content to the file
 	_, err = filePath.WriteString(content + "\n")
 	if err != nil {
-		log.Println(err)
+		return err
 	}
-	// close the file
 	err = filePath.Close()
 	if err != nil {
-		log.Println(err)
+		return err
 	}
+	return nil
 }
