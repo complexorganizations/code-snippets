@@ -23,6 +23,12 @@ func main() {
 		log.Println(err)
 	}
 	fmt.Println(userHomeDir)
+	// Check if the folder is empty
+	returnValue, err := isDirEmpty("/")
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(returnValue)
 }
 
 // Check if a folder exists
@@ -50,4 +56,13 @@ func usersHomeDirectory() (string, error) {
 		return "", err
 	}
 	return userHomeDir, nil
+}
+
+// Check if the folder is empty
+func isDirEmpty(filePath string) (bool, error) {
+	files, err := os.ReadDir(filePath)
+	if err != nil {
+		return false, err
+	}
+	return len(files) == 0, nil
 }

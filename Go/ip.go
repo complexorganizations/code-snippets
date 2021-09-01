@@ -23,6 +23,8 @@ func main() {
 	fmt.Println(isMulticast("224.0.0.1"))
 	// Check if an ip is unspecified
 	fmt.Println(isUnspecified("0.0.0.0"))
+	// Check if an ip is loopback
+	fmt.Println(isLoopback("127.0.0.2"))
 }
 
 // Check if the ip is valid
@@ -67,4 +69,10 @@ func isMulticast(ip string) bool {
 func isUnspecified(ip string) bool {
 	ipAddress := net.ParseIP(ip)
 	return ipAddress.IsUnspecified()
+}
+
+// Check if an ip is loopback
+func isLoopback(ip string) bool {
+	ipAddress := net.ParseIP(ip)
+	return ipAddress.IsLoopback()
 }
