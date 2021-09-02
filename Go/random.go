@@ -20,8 +20,7 @@ func randomString(bytesSize int) string {
 	rand.Seed(time.Now().UTC().UnixNano())
 	randomBytes := make([]byte, bytesSize/2)
 	rand.Read(randomBytes)
-	randomString := fmt.Sprintf("%X", randomBytes)
-	return randomString
+	return fmt.Sprintf("%X", randomBytes)
 }
 
 // Get a random string from array
