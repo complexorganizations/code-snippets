@@ -26,6 +26,8 @@ void integerFunction() {
 void booleanFunction() {
   bool a = true;
   printf("%d\n", a);
+  bool b = false;
+  printf("%d\n", b);
 }
 
 // Array
