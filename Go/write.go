@@ -7,7 +7,8 @@ import (
 
 
 func main() {
-	err:= writeToFile("/location/to/save", "The content to write to the file.")
+	// Append and write the content to a file.
+	err := writeToFile("/location/to/save", "The content to write to the file.")
 	if err != nil {
 		log.Fatal(err)
 	}
