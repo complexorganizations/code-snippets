@@ -18,7 +18,7 @@ void main() {
   stuffHere = [1, 2, 3];
   print(stuffHere);
   // a null value to a map
-  stuffHere = {'one': 1, 'two': 2, 'three': 3};
+  stuffHere = {"one": 1, "two": 2, "three": 3};
   print(stuffHere);
   // a null value to a null
   stuffHere = null;

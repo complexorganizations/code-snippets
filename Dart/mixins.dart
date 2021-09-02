@@ -1,34 +1,34 @@
 void main() {
-  Crocodile().hunt('Zebra');
-  Alligator().hunt('Fish');
+  Crocodile().hunt("Zebra");
+  Alligator().hunt("Fish");
   Fish().feed();
 }
 
 mixin Swim {
   void swim() {
-    print('Swimming');
+    print("Swimming");
   }
 }
 
 mixin Bite {
   void bite() {
-    print('Chomp');
+    print("Chomp");
   }
 }
 
 mixin Crawl {
   void crawl() {
-    print('Crawling');
+    print("Crawling");
   }
 }
 
 abstract class Reptile with Swim, Crawl, Bite {
   void hunt(food) {
-    print('${this.runtimeType} -------');
+    print("${this.runtimeType} -------");
     swim();
     crawl();
     bite();
-    print('Eat $food');
+    print("Eat $food");
   }
 }
 
@@ -42,7 +42,7 @@ class Crocodile extends Reptile {
 
 class Fish with Swim, Bite {
   void feed() {
-    print('Fish --------');
+    print("Fish --------");
     swim();
     bite();
   }
