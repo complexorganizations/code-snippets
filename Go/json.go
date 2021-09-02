@@ -35,22 +35,22 @@ func main() {
 		"Phone": "123-456-7890",
 		"Email": "johnDoe@example.com"
 	}`)
-		type JsonStuff struct {
-			Name    string `json:"Name"`
-			Age     string `json:"Age"`
-			Address string `json:"Address"`
-			City    string `json:"City"`
-			State   string `json:"State"`
-			Zip     string `json:"Zip"`
-			Phone   string `json:"Phone"`
-			Email   string `json:"Email"`
-		}
-		var content []JsonStuff
-		err = json.Unmarshal(jsonContent, &content)
-		if err != nil {
-			log.Println(err)
-		}
-		fmt.Println(content)
+	type JsonStuff struct {
+		Name    string `json:"Name"`
+		Age     string `json:"Age"`
+		Address string `json:"Address"`
+		City    string `json:"City"`
+		State   string `json:"State"`
+		Zip     string `json:"Zip"`
+		Phone   string `json:"Phone"`
+		Email   string `json:"Email"`
+	}
+	var content []JsonStuff
+	err = json.Unmarshal(jsonContent, &content)
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(content)
 	// Check if a json file is valid.
 	validCheck, err := validateJsonFromFile("test.json")
 	if err != nil {
