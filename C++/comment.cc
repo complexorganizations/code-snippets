@@ -1,12 +1,13 @@
 #include <iostream>
 
-int main()
-{
-    std::cout << "Hello, World!";
-}
-
-// this is an example of the comment.
-
-/*
-multi line comment
+/* 
+This is a multiline comment.
+One example of a remark.
+Second example of a comment.
 */
+
+// This is a one-line remark.
+
+int main() {
+    printf("Hello, world!");
+}
