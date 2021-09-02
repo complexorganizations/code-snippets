@@ -28,7 +28,8 @@ func randomString(bytesSize int) string {
 // Get a random string with a specified length and characters.
 func randomStringSpecified(bytesSize int) string {
 	rand.Seed(time.Now().UTC().UnixNano())
-	letters := []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
+	// ABCDEFGHIJKLMNOPQRSTUVWXYZ, abcdefghijklmnopqrstuvwxyz, 0123456789
+	letters := []rune("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789")
 	randomString := make([]rune, bytesSize)
 	for i := range randomString {
 		randomString[i] = letters[rand.Intn(len(letters))]
