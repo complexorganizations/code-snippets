@@ -1,9 +1,8 @@
-#include <iostream>
 #include <fstream>
+#include <iostream>
 using namespace std;
 
-int main()
-{
+int main() {
   // Create and open a text file
   ofstream MyFile("filename.txt");
 
