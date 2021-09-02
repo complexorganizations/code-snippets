@@ -1,9 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"math/rand"
 	"time"
-	"fmt"
 )
 
 func main() {
@@ -18,7 +18,7 @@ func main() {
 // Get a random string of length
 func randomString(bytesSize int) string {
 	rand.Seed(time.Now().UTC().UnixNano())
-	randomBytes := make([]byte, bytesSize)
+	randomBytes := make([]byte, bytesSize/2)
 	rand.Read(randomBytes)
 	randomString := fmt.Sprintf("%X", randomBytes)
 	return randomString
@@ -33,5 +33,5 @@ func getRandomStringFromArray(arrayList []string) string {
 // generate a random integer
 func randomInt(min, max int) int {
 	rand.Seed(time.Now().UTC().UnixNano())
-	return rand.Intn(max-min)
+	return rand.Intn(max - min)
 }
