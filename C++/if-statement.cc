@@ -1,15 +1,21 @@
 #include <iostream>
-using namespace std;
 
 int main()
 {
-  if (20 > 18)
+  int a = 1;
+  int b = 1;
+  int c = 2;
+
+  if (a == b)
   {
-    cout << "20 is greater than 18";
+    printf("A is equal to B");
+  }
+  else if (b == c)
+  {
+    printf("B is equal to C");
   }
   else
   {
-    cout << "20 is not greater than 18";
+    printf("A is not equal to B");
   }
-  return 0;
 }
