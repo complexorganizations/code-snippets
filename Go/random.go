@@ -13,7 +13,6 @@ func main() {
 	fmt.Println(getRandomStringFromArray([]string{"a", "b", "c", "d", "e"}))
 	// Get the random integer between 0 and 10
 	fmt.Println(randomInt(0, 10))
-
 }
 
 // Get a random string of length
