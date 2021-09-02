@@ -33,5 +33,5 @@ func getRandomStringFromArray(arrayList []string) string {
 // generate a random integer
 func randomInt(min, max int) int {
 	rand.Seed(time.Now().UTC().UnixNano())
-	return rand.Intn(max - min)
+	return rand.Intn(max-min) + min
 }
