@@ -9,6 +9,8 @@ import (
 func main() {
 	// Get a random string of length 16
 	fmt.Println(randomString(16))
+	// Get a random string with the length and characters you want.
+	fmt.Println(randomStringSpecified(10))
 	// Get a random string from array
 	fmt.Println(getRandomStringFromArray([]string{"a", "b", "c", "d", "e"}))
 	// Get the random integer between 0 and 10
@@ -21,6 +23,17 @@ func randomString(bytesSize int) string {
 	randomBytes := make([]byte, bytesSize/2)
 	rand.Read(randomBytes)
 	return fmt.Sprintf("%X", randomBytes)
+}
+
+// Get a random string with a specified length and characters.
+func randomStringSpecified(bytesSize int) string {
+	rand.Seed(time.Now().UTC().UnixNano())
+	letters := []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
+	randomString := make([]rune, bytesSize)
+	for i := range randomString {
+		randomString[i] = letters[rand.Intn(len(letters))]
+	}
+	return string(randomString)
 }
 
 // Get a random string from array
