@@ -12,7 +12,8 @@ func main() {
 	// Get a random string with the length and characters you want.
 	fmt.Println(randomStringSpecified(10))
 	// Get a random string from array
-	fmt.Println(getRandomStringFromArray([]string{"a", "b", "c", "d", "e"}))
+	arrayList := []string{"a", "b", "c", "d", "e"}
+	fmt.Println(getRandomStringFromArray(arrayList))
 	// Get the random integer between 0 and 10
 	fmt.Println(randomInt(0, 10))
 }
