@@ -5,7 +5,6 @@ import (
 	"os"
 )
 
-
 func main() {
 	// Append and write the content to a file.
 	err := writeToFile("/location/to/save", "The content to write to the file.")

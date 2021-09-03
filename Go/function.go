@@ -5,6 +5,8 @@ import (
 )
 
 func main() {
+	// Pass in multiple arguments
+	fmt.Println(addNumbers(1, 2))
 	// Single return value
 	fmt.Println(addTwoNumber(1))
 	// Multiple return values

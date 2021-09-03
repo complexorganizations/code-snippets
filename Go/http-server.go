@@ -3,8 +3,8 @@ package main
 import (
 	"bytes"
 	"compress/gzip"
-	"io"
 	"fmt"
+	"io"
 	"log"
 	"net"
 	"net/http"

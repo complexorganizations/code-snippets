@@ -1,14 +1,14 @@
 package main
 
 import (
-	"fmt"
-	"os"
-	"crypto/sha512"
 	"bufio"
+	"crypto/sha512"
+	"fmt"
 	"io"
-	"strings"
-	"path/filepath"
 	"log"
+	"os"
+	"path/filepath"
+	"strings"
 )
 
 func main() {
