@@ -14,7 +14,7 @@ class Employee {
   String? name;
   int? age;
   double? salary;
-  
+
   functionInsideClass() {
     print("Function inside class.");
   }

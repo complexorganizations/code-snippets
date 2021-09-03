@@ -1,23 +1,25 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os/exec"
 )
 
 func main() {
-	cmd := "git"
-	err := commandExists(cmd)
+	applicationName := "git"
+	valid, err := commandExists(applicationName)
 	if err != nil {
-		log.Printf("Error: The application %s was not found in the system.\n", cmd)
+		log.Printf("Error: The application %s was not found in the system.\n", applicationName)
 	}
+	fmt.Println(valid)
 }
 
 // Application Check
-func commandExists(cmd string) error {
+func commandExists(cmd string) (bool, error) {
 	cmd, err := exec.LookPath(cmd)
 	if err != nil {
-		return err
+		return false, err
 	}
-	return nil
+	return true, nil
 }

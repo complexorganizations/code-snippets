@@ -1,12 +1,12 @@
 void main() {
   // Global
-   var content = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-   // Get the index of a value in a array.
-   print(checkIndexInArray(content, 5));
-   // Check if the array contains a certain value.
-   print(arrayContains(content, 5));
-   // Add a value to the array.
-   print(addContentToArray(content, 11));
+  var content = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  // Get the index of a value in a array.
+  print(checkIndexInArray(content, 5));
+  // Check if the array contains a certain value.
+  print(arrayContains(content, 5));
+  // Add a value to the array.
+  print(addContentToArray(content, 11));
 }
 
 // Get the index of a value in a list.
