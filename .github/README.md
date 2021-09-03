@@ -1,9 +1,11 @@
 # code-snippets
 The ability to copy and paste code snippets is the whole idea.
 
-What language should I learn?
+# What language should I learn?
+
+### Application Development
 - Mobile: Dart
-- Desktop: Dart / Go
+- Desktop: Dart
 - Server: Go
 - Embeedd: Rust
 - Web: Dart
