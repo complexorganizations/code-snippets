@@ -34,7 +34,7 @@ func hello(w http.ResponseWriter, req *http.Request) {
 	// Get the IP address of the user
 	fmt.Fprintf(w, "Your IP is: %s", getUserIP(req))
 	// Log the request
-	log.Printf("Methord: %s URL: %s IP: %s", req.Method, req.URL, getUserIP(w, req))
+	log.Printf("Methord: %s URL: %s IP: %s", req.Method, req.URL, getUserIP(req))
 }
 
 // Get the IP address of the server's connected user.
