@@ -23,4 +23,7 @@ void main() {
     default:
       print("unknown");
   }
+  print(Platform.operatingSystem);
+  print(Platform.operatingSystemVersion);
+  print(Platform.localHostname);
 }

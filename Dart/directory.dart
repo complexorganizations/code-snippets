@@ -5,6 +5,7 @@ void main() {
   print(checkDirExists("/random/path/dosent/exists/")); // false
 }
 
+// Check if a directory exists
 bool checkDirExists(String path) {
   return FileSystemEntity.typeSync(path) != FileSystemEntityType.notFound;
 }

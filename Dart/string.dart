@@ -40,6 +40,7 @@ int getIndexOfSubstring(String content, String search) {
   return content.indexOf(search);
 }
 
+// Convert an int to a string.
 String convertIntToString(int number) {
   return number.toString();
 }

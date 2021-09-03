@@ -1,15 +1,14 @@
 import "dart:isolate";
 
 void main() {
-  Isolate.spawn(foo, "Hello!!");
-  Isolate.spawn(foo, "Greetings!!");
-  Isolate.spawn(foo, "Welcome!!");
-
-  print("execution from main1");
-  print("execution from main2");
-  print("execution from main3");
+  for (int i = 0; i < 3; i++) {
+    Isolate.spawn(foo, "Hello");
+  }
+  for (int i = 0; i < 3; i++) {
+    print("World");
+  }
 }
 
 void foo(var message) {
-  print("execution from foo ... the message is :${message}");
+  print("${message}");
 }
