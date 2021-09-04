@@ -39,6 +39,8 @@ void main() {
   // Bool
   var isFemale = true;
   print(isFemale);
+  isFemale = false;
+  print(isFemale);
 
   // Maps
   var content = {
