@@ -3,7 +3,7 @@ class Position {
   static int max = 100;
 }
 
-main() {
+void main() {
   print(Position.min);
   print(Position.max);
 }
