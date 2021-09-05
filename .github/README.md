@@ -11,3 +11,9 @@ The ability to copy and paste code snippets is the whole idea.
 - Web: Dart
 
 If at all feasible, choose a cross-platform language.
+
+
+### F&Q
+
+Is everything released under a Creative Commons license?
+- Everything on this repo is open source and licensed under the Apache 2.0 license.
