@@ -1,8 +1,15 @@
 #!/bin/bash
 
-# 
-function write-to-file() {
+# Append and write to file
+function append-and-write() {
     echo "some string here" >>foo.txt
 }
 
-write-to-file
+append-and-write
+
+# Don't append and write to file
+function dont-append-and-write() {
+    echo "some string here" >foo.txt
+}
+
+dont-append-and-write

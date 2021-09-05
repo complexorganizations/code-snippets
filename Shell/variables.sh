@@ -1,13 +1,16 @@
 #!/bin/bash
 
-FIRST_QUESTION = ""
+STRING=""
+BOOL=false
+FLOAT=0.0
+INT=0
 
 function variable-checker() {
-    if [ -n "${FIRST_QUESTION}" ]; then
-        echo ${FIRST_QUESTION}
+    if [ -n "${STRING}" ]; then
+        echo ${STRING}
         echo "There is a var here"
     fi
-    if [ -z "${FIRST_QUESTION}" ]; then
+    if [ -z "${STRING}" ]; then
         echo "There is no var here"
     fi
 }
