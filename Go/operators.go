@@ -4,7 +4,6 @@ import (
 	"fmt"
 )
 
-
 func main() {
 	// operators
 	fmt.Println(1 == 1) // Is equal
