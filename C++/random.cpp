@@ -1,4 +1,4 @@
-# include <iostream>
+#include <iostream>
 
 int main() {
     printf("%d", random(2, 5));

@@ -65,6 +65,8 @@ void main() {
   print(removeContentFromListAtIndex(newList, 5));
   // Remove all values from the list
   print(removeAllContentFromList(newList));
+  // Remove all duplicate values from the list
+  print(removeDuplicatesFromList(newList));
 }
 
 // Get the index of a value in a list.
@@ -166,5 +168,11 @@ List removeContentFromListAtIndex(List arrayContent, index) {
 // Remove all values from the list.
 List removeAllContentFromList(List arrayContent) {
   arrayContent.clear();
+  return arrayContent;
+}
+
+// Remove all duplicates from a list.
+List removeDuplicatesFromList(List arrayContent) {
+  arrayContent.toSet().toList();
   return arrayContent;
 }
