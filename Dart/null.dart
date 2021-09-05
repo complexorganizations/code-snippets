@@ -1,35 +1,37 @@
 void main() {
-  // Make a null value.
-  var stuffHere = null;
-  print(stuffHere);
-  // a null value can be assigned to any type.
-  stuffHere = "stuff goes here";
-  print(stuffHere);
-  // a null value from string to a int
-  stuffHere = 2;
-  print(stuffHere);
-  // a null value to a double
-  stuffHere = 2.5;
-  print(stuffHere);
-  // a null value to a bool
-  stuffHere = true;
-  print(stuffHere);
-  // a null value to a list
-  stuffHere = [1, 2, 3];
-  print(stuffHere);
-  // a null value to a map
-  stuffHere = {"one": 1, "two": 2, "three": 3};
-  print(stuffHere);
-  // a null value to a null
-  stuffHere = null;
-  print(stuffHere);
-  // a null int value
-  int? aNullableInt = null;
-  print(aNullableInt);
-  // a null double value
-  double? randomStuff = null;
-  print(randomStuff);
-  // a null bool value
-  bool? aNullableBool = null;
-  print(aNullableBool);
+  // A string into null.
+  String? name = "John";
+  print(name);
+  name = null;
+  print(name);
+  // A bool into null.
+  bool? isValid = true;
+  print(isValid);
+  isValid = null;
+  print(isValid);
+  // A double into null.
+  double? height = 1.8;
+  print(height);
+  height = null;
+  print(height);
+  // A int into null.
+  int? age = 18;
+  print(age);
+  age = null;
+  print(age);
+  // A list into null.
+  List<String>? names = ["John", "Jane"];
+  print(names);
+  names = null;
+  print(names);
+  // A map into null.
+  Map<String, int>? ages = {"John": 18, "Jane": 19};
+  print(ages);
+  ages = null;
+  print(ages);
+  // A variable into null.
+  var person = null;
+  print(person);
+  person = "John Doe";
+  print(person);
 }
