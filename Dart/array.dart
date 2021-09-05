@@ -39,6 +39,32 @@ void main() {
   print(randomStuff); // without sorting the list
   var newList = sortList(randomStuff);
   print(newList); // while sorting the list
+  // Reverse a list
+  print(reverseList(newList));
+  // Get the length of a list
+  print(getListLength(newList));
+  // Shuffle a list
+  print(shuffleList(newList));
+  // Get the first element of a list
+  print(getFirstElement(newList));
+  // Get the last element of a list
+  print(getLastElement(newList));
+  // Get the middle element of a list
+  print(getMiddleElement(newList));
+  // Get the element at a certain index of a list
+  print(getElementAtIndex(newList, 5));
+  // Get the element after a certain index of a list
+  print(getElementAfterIndex(newList, 5));
+  // Get the element before a certain index of a list
+  print(getElementBeforeIndex(newList, 5));
+  // Check if a list is empty
+  print(isArrayEmpty(newList));
+  // Remove a value from the list
+  print(removeContentFromList(newList, "a"));
+  // Remove a value from the list at a certain index
+  print(removeContentFromListAtIndex(newList, 5));
+  // Remove all values from the list
+  print(removeAllContentFromList(newList));
 }
 
 // Get the index of a value in a list.
@@ -70,5 +96,75 @@ List addContentToArray(array, value) {
 // Takes in a list and returns a sorted list
 List sortList(List arrayContent) {
   arrayContent.sort();
+  return arrayContent;
+}
+
+// Reverse a list and return it.
+List reverseList(List arrayContent) {
+  arrayContent.reversed;
+  return arrayContent;
+}
+
+// Get the length of a list.
+int getListLength(List arrayContent) {
+  return arrayContent.length;
+}
+
+// Suffle a list and return it.
+List shuffleList(List arrayContent) {
+  arrayContent.shuffle();
+  return arrayContent;
+}
+
+// Get the first element of a list.
+dynamic getFirstElement(List arrayContent) {
+  return arrayContent.first;
+}
+
+// Get the last element of a list.
+dynamic getLastElement(List arrayContent) {
+  return arrayContent.last;
+}
+
+// Get the middle element of a list.
+dynamic getMiddleElement(List arrayContent) {
+  return arrayContent[getListLength(arrayContent) ~/ 2];
+}
+
+// Get the element at a certain index of a list.
+dynamic getElementAtIndex(List arrayContent, index) {
+  return arrayContent[index];
+}
+
+// Get the element after a certain index of a list.
+dynamic getElementAfterIndex(List arrayContent, index) {
+  return arrayContent[index + 1];
+}
+
+// Get the element before a certain index of a list.
+dynamic getElementBeforeIndex(List arrayContent, index) {
+  return arrayContent[index - 1];
+}
+
+// Check if the array is empty.
+bool isArrayEmpty(List arrayContent) {
+  return arrayContent.isEmpty;
+}
+
+// Remove a value from the list.
+List removeContentFromList(List arrayContent, value) {
+  arrayContent.remove(value);
+  return arrayContent;
+}
+
+// Remove a value from the list at a certain index.
+List removeContentFromListAtIndex(List arrayContent, index) {
+  arrayContent.removeAt(index);
+  return arrayContent;
+}
+
+// Remove all values from the list.
+List removeAllContentFromList(List arrayContent) {
+  arrayContent.clear();
   return arrayContent;
 }
