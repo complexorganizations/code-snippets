@@ -1,0 +1,93 @@
+function main() {
+    // Create a array of int
+    var array = [1, 2, 3, 4, 5];
+    console.log(array);
+}
+
+main();
+
+// Sort all the data in the array, and return the sorted array
+function sortArray(array) {
+    array.sort();
+    return array;
+}
+
+// Get the first value in the array and return it
+function getFirstValue(array) {
+    return array[0];
+}
+
+// Get the last value in the array and return it.
+function getLastValue(array) {
+    return array[array.length - 1];
+}
+
+// Get the length of the array and return it.
+function getLength(array) {
+    return array.length;
+}
+
+// Randomly pick a value from the array and return it.
+function getRandomValue(array) {
+    return array[Math.floor(Math.random() * array.length)];
+}
+
+// Randomize the order of the values in the array and return the array.
+function randomizeArray(array) {
+    var newArray = [];
+    while (array.length > 0) {
+        var randomIndex = Math.floor(Math.random() * array.length);
+        var randomValue = array.splice(randomIndex, 1);
+        newArray.push(randomValue[0]);
+    }
+    return newArray;
+}
+
+// Add a value to the end of the array and return the array.
+function addToEnd(array, value) {
+    array.push(value);
+    return array;
+}
+
+// Add a value to the start of the array and return the array.
+function addToStart(array, value) {
+    array.unshift(value);
+    return array;
+}
+
+// Remove the first value in the array and return the array.
+function removeFirstValue(array) {
+    array.shift();
+    return array;
+}
+
+// Remove the last value in the array and return the array.
+function removeLastValue(array) {
+    array.pop();
+    return array;
+}
+
+// Remove a value from the array and return the array.
+function removeValue(array, value) {
+    var index = array.indexOf(value);
+    if (index > -1) {
+        array.splice(index, 1);
+    }
+    return array;
+}
+
+// Remove all instances of a value from the array and return the array.
+function removeAllValues(array, value) {
+    var index = array.indexOf(value);
+    while (index > -1) {
+        array.splice(index, 1);
+        index = array.indexOf(value);
+    }
+    return array;
+}
+
+// Remove all the content from the array and return the array.
+function removeAllContent(array) {
+    array.length = 0;
+    return array;
+}
