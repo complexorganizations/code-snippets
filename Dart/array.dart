@@ -1,12 +1,17 @@
 void main() {
-  // Global
-  var content = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  // Create a array of strings
+  List<String> names = ["John", "Bob", "Alice"];
+  print(names);
+  // Create an array without defining the type
+  var arrayList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   // Get the index of a value in a array.
-  print(checkIndexInArray(content, 5));
+  print(checkIndexInArray(arrayList, 5));
   // Check if the array contains a certain value.
-  print(arrayContains(content, 5));
+  print(arrayContains(arrayList, 5));
   // Add a value to the array.
-  print(addContentToArray(content, 11));
+  print(addContentToArray(arrayList, 11));
+  // Remove a value from the list
+  print(removeContentFromArray(arrayList, "a"));
   // Sort a list
   var randomStuff = [
     "k",
@@ -45,6 +50,8 @@ void main() {
   print(getListLength(newList));
   // Shuffle a list
   print(shuffleList(newList));
+  // Change the value of a list at a certain index
+  print(changeContentAtIndex(newList, 5, "a"));
   // Get the first element of a list
   print(getFirstElement(newList));
   // Get the last element of a list
@@ -59,14 +66,24 @@ void main() {
   print(getElementBeforeIndex(newList, 5));
   // Check if a list is empty
   print(isArrayEmpty(newList));
-  // Remove a value from the list
-  print(removeContentFromList(newList, "a"));
   // Remove a value from the list at a certain index
   print(removeContentFromListAtIndex(newList, 5));
-  // Remove all values from the list
-  print(removeAllContentFromList(newList));
   // Remove all duplicate values from the list
   print(removeDuplicatesFromList(newList));
+  // Remove all values from the list
+  print(removeAllContentFromList(newList));
+}
+
+// Add a certain value to the array.
+List addContentToArray(array, value) {
+  array.add(value);
+  return array;
+}
+
+// Remove a value from the array.
+List removeContentFromArray(List arrayContent, value) {
+  arrayContent.remove(value);
+  return arrayContent;
 }
 
 // Get the index of a value in a list.
@@ -89,13 +106,7 @@ bool arrayContains(array, value) {
   return false;
 }
 
-// Add a certain value to the array.
-List addContentToArray(array, value) {
-  array.add(value);
-  return array;
-}
-
-// Takes in a list and returns a sorted list
+// Takes in a array and returns a sorted array
 List sortList(List arrayContent) {
   arrayContent.sort();
   return arrayContent;
@@ -153,12 +164,6 @@ bool isArrayEmpty(List arrayContent) {
   return arrayContent.isEmpty;
 }
 
-// Remove a value from the list.
-List removeContentFromList(List arrayContent, value) {
-  arrayContent.remove(value);
-  return arrayContent;
-}
-
 // Remove a value from the list at a certain index.
 List removeContentFromListAtIndex(List arrayContent, index) {
   arrayContent.removeAt(index);
@@ -174,5 +179,11 @@ List removeAllContentFromList(List arrayContent) {
 // Remove all duplicates from a list.
 List removeDuplicatesFromList(List arrayContent) {
   arrayContent.toSet().toList();
+  return arrayContent;
+}
+
+// Change the value of a certain item in an array at a certain index.
+List changeContentAtIndex(List arrayContent, index, value) {
+  arrayContent[index] = value;
   return arrayContent;
 }
