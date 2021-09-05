@@ -7,7 +7,7 @@ int main() {
     for (const int &n : numbers) {
         printf("%d", n);
     }
-    printf("\nThe numbers are: ");
+    printf("\nThe numbers are:");
 
     for (int i = 0; i < 5; ++i) {
         printf("%d", numbers[i]);
