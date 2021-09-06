@@ -1,12 +1,17 @@
-import "package:http/http.dart" as http;
+import "dart:io";
+import "dart:convert";
 
-void main() async {
-  var request = http.Request("GET", Uri.parse("https://api.ipengine.dev"));
-  request.body = "";
-  http.StreamedResponse response = await request.send();
-  if (response.statusCode == 200) {
-    print(await response.stream.bytesToString());
-  } else {
-    print(response.reasonPhrase);
-  }
+void main() {
+  HttpClient()
+      .getUrl(Uri.parse("https://www.example.com"))
+      .then((request) => request.close())
+      .then((response) => response.transform(Utf8Decoder()).listen(print));
+}
+
+// Send a request to the server and return the response.
+String? sendRequest(String url) {
+  HttpClient client = new HttpClient();
+  client.getUrl(Uri.parse(url))
+      .then((request) => request.close())
+      .then((response) => response.transform(Utf8Decoder()).listen(print));
 }
