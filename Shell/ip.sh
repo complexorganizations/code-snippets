@@ -18,5 +18,5 @@ ipstart=$((${ip} & ${IP_MASK}))
 ipend=$(((${ipstart} | ~${IP_MASK}) & 0x7FFFFFFF))
 
 seq ${ipstart} ${ipend} | while read currentip; do
-    echo ${one}.$((($currentip & 0xFF0000) >> 16)).$((($currentip & 0xFF00) >> 8)).$(($currentip & 0x00FF))
+    echo ${one}.$(((${currentip} & 0xFF0000) >> 16)).$(((${currentip} & 0xFF00) >> 8)).$((${currentip} & 0x00FF))
 done
