@@ -1,8 +1,8 @@
-### Grab the major release of the kernel.
+# Grab the major release of the kernel.
 ```
 < /proc/version awk '{print $3}' | awk -F '-' '{print $1}' | awk -F\. '{print $1}'
 ```
-### Grab the major release of the kernel with the minor version.
+# Grab the major release of the kernel with the minor version.
 ```
 < /proc/version awk '{print $3}' | cut -d'.' -f1-2
 ```
