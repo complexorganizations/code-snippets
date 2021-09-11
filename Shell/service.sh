@@ -33,6 +33,19 @@ function restart-service() {
 
 restart-service
 
+# Reenable a service
+function renable-service() {
+    if pgrep systemd-journal; then
+        systemctl reenable SERVICE_NAME
+        systemctl restart SERVICE_NAME
+    else
+        service SERVICE_NAME reenable
+        service SERVICE_NAME restart
+    fi
+}
+
+renable-service
+
 # Stop a service
 function stop-service() {
     if pgrep systemd-journal; then
