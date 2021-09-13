@@ -67,3 +67,15 @@ function disable-service() {
 }
 
 disable-service
+
+
+function status-service() {
+    if pgrep systemd-journal; then
+        systemctl status SERVICE_NAME
+        systemctl is-active SERVICE_NAME
+    else
+        service SERVICE_NAME status
+    fi
+}
+
+status-service
