@@ -29,3 +29,12 @@ func writeToFile(pathInSystem string, content string) error {
 	}
 	return nil
 }
+
+// Don't append and write to file
+func writeContnetToFile(filepath []byte, content string) error {
+	err := os.WriteFile(content, filepath, 0644)
+	if err != nil {
+		return err
+	}
+	return nil
+}
