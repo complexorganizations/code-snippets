@@ -52,7 +52,7 @@ func fileExists(filename string) bool {
 func fileSize(filepath string) (int64, error) {
 	file, err := os.Stat(filepath)
 	if err != nil {
-		return 0, err
+		return -1, err
 	}
 	return file.Size(), nil
 }
