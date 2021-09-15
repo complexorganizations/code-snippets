@@ -21,7 +21,7 @@ func main() {
 	// Check if a specific IP address is in a range of cidr.
 	cidrRange := []string{
 		"10.0.0.0/8",
-		"fd12:3456:789a:1::/64",
+		"fd00:00:00::0/8",
 	}
 	check, err := isIPinCIDR(cidrRange, "127.0.0.1")
 	if err != nil {
