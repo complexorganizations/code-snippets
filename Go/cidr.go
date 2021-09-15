@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/binary"
 	"fmt"
 	"log"
 	"net"
@@ -27,6 +28,12 @@ func main() {
 		log.Println(err)
 	}
 	fmt.Println(check)
+	// Get a list of all IP addresses in a given subnet.
+	ips, err := cidrToIP("10.0.0.0/24")
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(ips)
 }
 
 // Add a cidr if no cidr is found
@@ -63,4 +70,22 @@ func isIPinCIDR(cidrSlice []string, networkIdentity string) (bool, error) {
 		}
 	}
 	return false, nil
+}
+
+// Get a list of all IP addresses in a given subnet.
+func cidrToIP(cidr string) ([]string, error) {
+	_, ipv4Net, err := net.ParseCIDR(cidr)
+	if err != nil {
+		return nil, err
+	}
+	mask := binary.BigEndian.Uint32(ipv4Net.Mask)
+	start := binary.BigEndian.Uint32(ipv4Net.IP)
+	finish := (start & mask) | (mask ^ 0xffffffff)
+	var ips []string
+	for i := start; i <= finish; i++ {
+		ip := make(net.IP, 4)
+		binary.BigEndian.PutUint32(ip, i)
+		ips = append(ips, ip.String())
+	}
+	return ips, nil
 }
