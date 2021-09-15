@@ -13,7 +13,7 @@ void main() {
   // Remove a value from the list
   print(removeContentFromArray(arrayList, "a"));
   // Sort a list
-  var randomStuff = [
+  List<String> randomStuff = [
     "k",
     "l",
     "m",
