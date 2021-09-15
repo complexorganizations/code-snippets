@@ -46,7 +46,7 @@ func cidrRangeContains(cidrRange string, checkIP string) (bool, error) {
 		return false, err
 	}
 	secondIP := net.ParseIP(checkIP)
-	return ipnet.Contains(secondIP), err
+	return ipnet.Contains(secondIP), nil
 }
 
 // Check if a specific IP address is in a range of cidr.
