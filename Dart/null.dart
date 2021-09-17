@@ -1,35 +1,70 @@
 void main() {
-  // A string into null.
+  // String to null
+  nullString();
+  // Bool to null
+  nullBool();
+  // double to null
+  nullDouble();
+  // int to null
+  nullInt();
+  // List to null
+  nullList();
+  // Map to null
+  nullMap();
+  // variable to null
+  nullVariable();
+}
+
+// A string as nullable.
+void nullString() {
   String? name = "John";
   print(name);
   name = null;
   print(name);
-  // A bool into null.
+}
+
+// A bool as nullable.
+void nullBool() {
   bool? isValid = true;
   print(isValid);
   isValid = null;
   print(isValid);
-  // A double into null.
+}
+
+// A double as nullable.
+void nullDouble() {
   double? height = 1.8;
   print(height);
   height = null;
   print(height);
-  // A int into null.
+}
+
+// A int as nullable.
+void nullInt() {
   int? age = 18;
   print(age);
   age = null;
   print(age);
-  // A list into null.
+}
+
+// A list as nullable.
+void nullList() {
   List<String>? names = ["John", "Jane"];
   print(names);
   names = null;
   print(names);
-  // A map into null.
+}
+
+// A map as nullable.
+void nullMap() {
   Map<String, int>? ages = {"John": 18, "Jane": 19};
   print(ages);
   ages = null;
   print(ages);
-  // A variable into null.
+}
+
+// A variable as nullable.
+void nullVariable() {
   var person = null;
   print(person);
   person = "John Doe";

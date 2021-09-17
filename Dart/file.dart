@@ -9,6 +9,8 @@ void main() {
   moveFile("dart.txt", "dart2.txt");
   // Get the path of the current executable
   print(getCurrentPath());
+  // Check if a file exists
+  print(fileExists("dart.txt"));
 }
 
 // Opens the file and returns the contents as a string
@@ -32,4 +34,10 @@ void moveFile(String oldFileName, String newFileName) {
 // Get the path of the current executable
 String getCurrentPath() {
   return Platform.executable;
+}
+
+// Check if a file exists
+bool fileExists(String path) {
+  File myFile = File(path);
+  return myFile.existsSync();
 }
