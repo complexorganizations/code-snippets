@@ -1,39 +1,34 @@
 void main() {
-  // We will add two numbers.
-  int a = 1;
-  int b = 2;
-  // The result will be stored in `c`.
-  int c = a + b;
-  // Prints `3`.
-  print(c);
+  // Do basic math operations.
+  var a = 1;
+  var b = 2;
+  print(basicMath(a, b, "+"));
+}
 
-  // We can also use the `+` operator.
-  print(5 + 5);
-
-  // We can also use the `-` operator.
-  print(5 - 39);
-
-  // We can also use the `*` operator.
-  print(5 * 343);
-
-  // We can also use the `/` operator.
-  print(5 / 3);
-
-  // We can also use the `%` operator.
-  print(5 % 3);
-
-  // We can also use the `<<` operator.
-  print(5 << 2);
-
-  // We can also use the `>>` operator.
-  print(5 >> 2);
-
-  // We can also use the `&` operator.
-  print(5 & 3);
-
-  // We can also use the `|` operator.
-  print(5 | 3);
-
-  // We can also use the `^` operator.
-  print(5 ^ 3);
+// Do basic math inside a function.
+int basicMath(int a, int b, String operation) {
+  switch (operation) {
+    case "+":
+      return a + b;
+    case "-":
+      return a - b;
+    case "*":
+      return a * b;
+    case "%":
+      return a % b;
+    case "<<":
+      return a << b;
+    case ">>":
+      return a >> b;
+    case "&":
+      return a & b;
+    case "|":
+      return a | b;
+    case "^":
+      return a ^ b;
+    case "~":
+      return ~a;
+    default:
+      return -1;
+  }
 }
