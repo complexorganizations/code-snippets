@@ -2,22 +2,31 @@ package main
 
 import (
 	"fmt"
-"log" 
+	"log"
 	"net/url"
 )
 
 func main() {
+	// Validate the URI
 	if validURL("https://www.example.com") {
 		fmt.Println("works")
 	}
-u, err := url.Parse("https://example.org:8000/path")
-	if err != nil {
-		log.Fatal(err)
-	}
+	// Get the hostname from the URI
+	fmt.Println(getHostnameFromURI("https://www.example.com"))
+	// 
 }
 
 // Validate the URI
 func validURL(uri string) bool {
 	_, err := url.ParseRequestURI(uri)
 	return err == nil
+}
+
+// Get the hostname from the URI
+func getHostnameFromURI(uri string) string {
+	inputUrl, err := url.Parse(uri)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return inputUrl.Hostname()
 }
