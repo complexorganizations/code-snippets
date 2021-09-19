@@ -13,34 +13,7 @@ void main() {
   // Remove a value from the list
   print(removeContentFromArray(arrayList, "a"));
   // Sort a list
-  List<String> randomStuff = [
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z",
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j"
-  ];
+  List<String> randomStuff = ["k", "l", "m", "n", "o", "p"];
   print(randomStuff); // without sorting the list
   var newList = sortList(randomStuff);
   print(newList); // while sorting the list
@@ -51,7 +24,7 @@ void main() {
   // Shuffle a list
   print(shuffleList(newList));
   // Change the value of a list at a certain index
-  print(changeContentAtIndex(newList, 5, "a"));
+  print(changeContentAtIndex(newList, 3, "a"));
   // Get the first element of a list
   print(getFirstElement(newList));
   // Get the last element of a list
@@ -59,15 +32,15 @@ void main() {
   // Get the middle element of a list
   print(getMiddleElement(newList));
   // Get the element at a certain index of a list
-  print(getElementAtIndex(newList, 5));
+  print(getElementAtIndex(newList, 3));
   // Get the element after a certain index of a list
-  print(getElementAfterIndex(newList, 5));
+  print(getElementAfterIndex(newList, 3));
   // Get the element before a certain index of a list
-  print(getElementBeforeIndex(newList, 5));
+  print(getElementBeforeIndex(newList, 3));
   // Check if a list is empty
   print(isArrayEmpty(newList));
   // Remove a value from the list at a certain index
-  print(removeContentFromListAtIndex(newList, 5));
+  print(removeContentFromListAtIndex(newList, 3));
   // Remove all duplicate values from the list
   print(removeDuplicatesFromList(newList));
   // Remove all values from the list
