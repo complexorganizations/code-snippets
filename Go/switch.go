@@ -2,19 +2,16 @@ package main
 
 import (
 	"fmt"
-	"log"
-	"runtime"
 )
 
 func main() {
-	switch runtime.GOOS {
-	case "windows":
-		fmt.Println("This is for windows")
-	case "darwin":
-		fmt.Println("This is for mac")
-	case "linux":
-		fmt.Println("This is for linux")
+	value := "John Doe"
+	switch value {
+	case "John Doe":
+		fmt.Println("Hello John Doe")
+	case "Jane Doe":
+		fmt.Println("Hello Jane Doe")
 	default:
-		log.Fatalf("Error: System %s is not supported (yet).\n", runtime.GOOS)
+		fmt.Println("Hello Unknown")
 	}
 }

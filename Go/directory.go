@@ -44,7 +44,7 @@ func folderExists(foldername string) bool {
 func filesInDirectory(filePath string) (int, error) {
 	files, err := os.ReadDir(filePath)
 	if err != nil {
-		return 0, err
+		return -1, err
 	}
 	return len(files), err
 }

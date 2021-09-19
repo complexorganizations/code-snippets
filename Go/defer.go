@@ -5,6 +5,7 @@ import (
 )
 
 func main() {
-	defer fmt.Println("world")
-	fmt.Println("hello")
+	defer fmt.Printf("World!!!")
+	// This line will run before the defer statement
+	fmt.Printf("Hello, ")
 }
