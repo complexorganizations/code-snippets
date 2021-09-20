@@ -2,6 +2,8 @@ function main() {
     // Create a array of int
     var array = [5, 3, 1, 2, 4]
     console.log(array)
+    // Join the array
+    console.log(joinArray(array, '-'))
     // Sort the array
     console.log(sortArray(array))
     // Get the first value
@@ -28,9 +30,18 @@ function main() {
     console.log(removeAllValues(array, 3))
     // Remove all the content from the array
     console.log(removeAllContent(array))
+    // Reverse the order of the values in the array
+    console.log(reverseArray(array))
+    // Get the index of a value in the array
+    console.log(getIndex(array, 3))
 }
 
 main()
+
+// Join the array.
+function joinArray(array, separator) {
+    return array.join(separator)
+}
 
 // Sort all the data in the array, and return the sorted array
 function sortArray(array) {
@@ -116,4 +127,14 @@ function removeAllValues(array, value) {
 function removeAllContent(array) {
     array.length = 0
     return array
+}
+
+// Reverse the order of the values in the array and return the array.
+function reverseArray(array) {
+    return array.reverse()
+}
+
+// Get the index of a value in the array and return it.
+function getIndex(array, value) {
+    return array.indexOf(value)
 }
