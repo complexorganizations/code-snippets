@@ -1,5 +1,5 @@
 const fs = require("fs")
-const os = require("os");
+const os = require("os")
 
 function main() {
     // Check if a directory exists
@@ -10,6 +10,8 @@ function main() {
     console.log(getCurrentWorkingDirectoryName())
     // Get the path to the current user home directory
     console.log(getUserHomeDirectory())
+    // Get the path to the temporary directory
+    console.log(getTempDirectory())
 }
 
 main()
@@ -36,4 +38,9 @@ function getCurrentWorkingDirectoryName() {
 // Get the current user home directory
 function getUserHomeDirectory() {
     return os.homedir()
+}
+
+// Get the temporary directory
+function getTempDirectory() {
+    return os.tmpdir()
 }
