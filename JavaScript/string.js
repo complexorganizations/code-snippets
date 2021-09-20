@@ -21,6 +21,21 @@ function main() {
     // Convert a string to uppercase
     var uppercase = toUpperCase(content)
     console.log(uppercase)
+    // Trim a string
+    var trimmed = trim(content)
+    console.log(trimmed)
+    // Check if a string includes a substring
+    if (includes(content, "Hello")) {
+        console.log("Includes Hello")
+    } else {
+        console.log("Does not include Hello")
+    }
+    // Check if two strings are equal
+    if (equals(content, "Hello, World!")) {
+        console.log("Equal")
+    } else {
+        console.log("Not Equal")
+    }
 }
 
 main()
@@ -48,4 +63,19 @@ function toLowerCase(str) {
 // Convert a string to uppercase
 function toUpperCase(str) {
     return str.toUpperCase()
+}
+
+// Trim a string
+function trim(str) {
+    return str.trim()
+}
+
+// Check if a string includes a substring
+function includes(str, substr) {
+    return str.includes(substr)
+}
+
+// Check if two strings are equal
+function equals(str1, str2) {
+    return str1 == str2
 }
