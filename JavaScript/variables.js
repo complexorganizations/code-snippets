@@ -1,7 +1,11 @@
 function main() {
-
+    int()
+    string()
+    boolean()
+    float()
 }
 
+main()
 
 // int
 function int() {

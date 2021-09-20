@@ -30,3 +30,32 @@ function main() {
 }
 
 main()
+
+// Get the value of the map.
+function getValue(currentMap, key) {
+    return currentMap.get(key)
+}
+
+// Check if the map contains a key.
+function containsKey(currentMap, key) {
+    return currentMap.has(key)
+}
+
+// Remove a key and value from a map.
+function removeKey(currentMap, key) {
+    // Check if the map contains the key.
+    if (currentMap.has(key)) {
+        // Remove the key and value from the map.
+        currentMap.delete(key)
+    }
+}
+
+// Get the size of the map.
+function getSize(currentMap) {
+    return currentMap.size
+}
+
+// Remove all the key and value from a map.
+function clearMap(currentMap) {
+    currentMap.clear()
+}

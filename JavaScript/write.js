@@ -11,6 +11,5 @@ function writeToFile(fileName, content) {
     if (err) {
       return console.log(err)
     }
-    console.log("The file was saved!")
   })
 }
