@@ -1,28 +1,36 @@
+function main() {
+    switchStatement()
+}
+
+main()
+
 function switchStatement() {
-    var day = new Date().getDay();
+    var date = new Date()
+    var day = date.getDay()
+    console.log(day)
     switch (day) {
         case "Monday":
-            message = day;
-            break;
+            console.log("Today is Monday")
+            break
         case "Tuesday":
-            message = day;
-            break;
+            console.log("Today is Tuesday")
+            break
         case "Wednesday":
-            message = day;
-            break;
+            console.log("Today is Wednesday")
+            break
         case "Thursday":
-            message = day;
-            break;
+            console.log("Today is Thursday")
+            break
         case "Friday":
-            message = day;
-            break;
+            console.log("Today is Friday")
+            break
         case "Saturday":
-            message = day;
-            break;
+            console.log("Today is Saturday")
+            break
         case "Sunday":
-            message = day;
-            break;
+            console.log("Today is Sunday")
+            break
         default:
-            message = day;
+            console.log("Invalid day")
     }
 }

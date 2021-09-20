@@ -1,30 +1,55 @@
 function main() {
     // Loop 10 times
-    for (var i = 0; i < 10; i++) {
-        console.log(i);
-    }
+    loopTenTimes()
     // Loop 100 times
-    for (var i = 0; i < 100; i++) {
-        console.log(i);
-    }
+    loopHundredTimes()
     // Break out of the loop
-    for (var i = 0; i < 10; i++) {
-        if (i > 5) {
-            break;
-        }
-        console.log(i);
-    }
+    breakLoop()
     // Continue to the next iteration
-    for (var i = 0; i < 10; i++) {
-        if (i > 5) {
-            continue;
-        }
-        console.log(i);
-    }
+    continueLoop()
     // Loop Forever
-    for (;;) {
-        console.log("I will loop forever.");
+    loopForever()
+}
+
+main()
+
+// Loop 10 times
+function loopTenTimes() {
+    for (var i = 0; i < 10; i++) {
+        console.log(i)
     }
 }
 
-main();
+// Loop 100 times
+function loopHundredTimes() {
+    for (var i = 0; i < 100; i++) {
+        console.log(i)
+    }
+}
+
+// Break out of the loop
+function breakLoop() {
+    for (var i = 0; i < 10; i++) {
+        if (i === 5) {
+            break
+        }
+        console.log(i)
+    }
+}
+
+// Continue to the next iteration
+function continueLoop() {
+    for (var i = 0; i < 10; i++) {
+        if (i === 5) {
+            continue
+        }
+        console.log(i)
+    }
+}
+
+// Loop Forever
+function loopForever() {
+    for (;;) {
+        console.log("I will loop forever.")
+    }
+}
