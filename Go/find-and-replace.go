@@ -7,9 +7,9 @@ import (
 )
 
 var (
-	oldString string
-	newString string
-	filePath  string
+	oldString = "hello"
+	newString = "Hello"
+	filePath  = "file.txt"
 )
 
 func main() {
