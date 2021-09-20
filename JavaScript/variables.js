@@ -46,3 +46,10 @@ function const() {
 const a = "A"
 console.log(a)
 }
+
+function assign() {
+var a;
+a = 2;
+console.log(a)
+}
+
