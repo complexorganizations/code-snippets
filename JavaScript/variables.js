@@ -3,6 +3,9 @@ function main() {
     string()
     boolean()
     float()
+    letVariable()
+    constantVariable()
+    assign()
 }
 
 main()
@@ -36,20 +39,22 @@ function float() {
     console.log(a + b)
 }
 
-function let() {
-let a = "apple"
-let b = "bees"
-console.log(a, b)
+// Let for function scope
+function letVariable() {
+    let a = "apple"
+    let b = "bees"
+    console.log(a, b)
 }
 
-function const() {
-const a = "A"
-console.log(a)
+// Const for constant
+function constantVariable() {
+    const a = "A"
+    console.log(a)
 }
 
+// Assign variable
 function assign() {
-var a;
-a = 2;
-console.log(a)
+    var a
+    a = 2
+    console.log(a)
 }
-
