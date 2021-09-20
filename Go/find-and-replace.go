@@ -7,18 +7,18 @@ import (
 )
 
 var (
-	oldString = "hello"
-	newString = "Hello"
-	filePath  = "file.txt"
+	oldString     = "hello"
+	newString     = "Hello"
+	localFilePath = "file.txt"
 )
 
 func main() {
-	content, err := readAFile(filePath)
+	content, err := readAFile(localFilePath)
 	if err != nil {
 		log.Fatal(err)
 	}
 	newContents := strings.Replace(string(content), (oldString), (newString), -1)
-	err = writeContnetToFile([]byte(filePath), newContents)
+	err = writeContnetToFile([]byte(localFilePath), newContents)
 	if err != nil {
 		log.Fatal(err)
 	}
