@@ -1,3 +1,5 @@
+const fetch = require("node-fetch");
+
 var raw = ""
 
 var requestOptions = {
