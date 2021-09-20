@@ -35,3 +35,14 @@ function float() {
     var b = 2.2
     console.log(a + b)
 }
+
+function let() {
+let a = "apple"
+let b = "bees"
+console.log(a, b)
+}
+
+function const() {
+const a = "A"
+console.log(a)
+}
