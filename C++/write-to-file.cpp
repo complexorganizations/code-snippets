@@ -3,12 +3,16 @@
 using namespace std;
 
 int main() {
-    // Create and open a text file
-    ofstream MyFile("filename.txt");
+    // Write to a file
+    string filename = "example.txt";
+    string line = "This is the first line.";
+    writeToFile(filename, line);
+}
 
-    // Write to the file
-    MyFile << "Files can be tricky, but it is fun enough!";
 
-    // Close the file
+// Write to a file.
+void writeToFile(string filename, string text) {
+    ofstream MyFile(filename);
+    MyFile << text;
     MyFile.close();
 }
