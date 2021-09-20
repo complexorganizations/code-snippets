@@ -21,3 +21,12 @@ function gkp_html_minyfy_finish($html)
         $html = str_replace('  ', ' ', $html);
     return $html;
 }
+
+/* Remove Query String */
+function _remove_script_version( $src ){
+    $parts = explode( '?ver', $src );
+    return $parts[0];
+}
+
+add_filter( 'script_loader_src', '_remove_script_version', 15, 1 );
+add_filter( 'style_loader_src', '_remove_script_version', 15, 1 );
