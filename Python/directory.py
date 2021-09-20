@@ -9,3 +9,5 @@ main()
 def check_dir(dir_name):
     if os.path.exists(dir_name):
         return True
+    else:
+        return False
