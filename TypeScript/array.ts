@@ -1,40 +1,42 @@
-// Create an array of strings
-function array() {
-    let fruits: string[] = ["Apple", "Orange", "Banana"];
+function main() {
     // Create an array of numbers
-    let numbers: number[] = [1, 2, 3];
-    // Create an array of booleans
-    let truths: boolean[] = [true, false, true];
-    // loop over the array
-    for (let i = 0; i < fruits.length; i++) {
-        console.log(fruits[i]);
+    var numbers = [3, 1, 2, 5, 4];
+    console.log(numbers);
+    // Sort the array
+    sortArray(numbers);
+    console.log(numbers);
+    // Remove the first value of the array
+    removeFirstFromArray(numbers);
+    console.log(numbers);
+    // Remove the last value of the array
+    removeLastFromArray(numbers);
+    console.log(numbers);
+    // Remove a value from the array
+    removeFromArray(numbers, 3);
+    console.log(numbers);
+}
+
+main()
+
+// Sort an array
+function sortArray(array) {
+    array.sort();
+}
+
+// Remove the first value of the array
+function removeFirstFromArray(array) {
+    array.shift();
+}
+
+// Remove the last value of the array
+function removeLastFromArray(array) {
+    array.pop();
+}
+
+// Remove a value from the array
+function removeFromArray(array, value) {
+    var index = array.indexOf(value);
+    if (index > -1) {
+        array.splice(index, 1);
     }
-}
-
-// Remove the first item from the array
-function removeFirst() {
-    let fruits: string[] = ["Apple", "Orange", "Banana"];
-    fruits.shift();
-    console.log(fruits);
-}
-
-// Remove the last item from the array
-function removeLast() {
-    let fruits: string[] = ["Apple", "Orange", "Banana"];
-    fruits.pop();
-    console.log(fruits);
-}
-
-// Add an item to the start of the array
-function addFirst() {
-    let fruits: string[] = ["Apple", "Orange", "Banana"];
-    fruits.unshift("Cherry");
-    console.log(fruits);
-}
-
-// Add an item to the end of the array
-function addLast() {
-    let fruits: string[] = ["Apple", "Orange", "Banana"];
-    fruits.push("Cherry");
-    console.log(fruits);
 }
