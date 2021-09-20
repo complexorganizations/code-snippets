@@ -24,8 +24,12 @@ func main() {
 	fmt.Println(fileSize)
 	// Get the file extension
 	fmt.Println(fileExtension("/random/file/here.json"))
-	// Read a file
-	fmt.Println(readAFile("test.file"))
+	// Read a file and return the contents
+	content, err := readAFile("/random/file/here.json")
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(content)
 	// Hidden files [.files]
 	if hiddenFile(".DS_STORE") {
 		fmt.Println("This is a hidden file")
@@ -62,13 +66,13 @@ func fileExtension(filename string) string {
 	return filepath.Ext(filename)
 }
 
-// Read a file
-func readAFile(path string) []byte {
+// Read a file and return the contents
+func readAFile(path string) ([]byte, error) {
 	content, err := os.ReadFile(path)
 	if err != nil {
-		log.Fatal(err)
+		return nil, err
 	}
-	return content
+	return content, nil
 }
 
 // Hidden files [.files]
