@@ -34,6 +34,10 @@ function main() {
     console.log(reverseArray(array))
     // Get the index of a value in the array
     console.log(getIndex(array, 3))
+    // Remove all duplicates from an array
+    console.log(removeDuplicates(array))
+    // Combine two arrays
+    console.log(combineArrays(array, [6, 7, 8]))
 }
 
 main()
@@ -137,4 +141,20 @@ function reverseArray(array) {
 // Get the index of a value in the array and return it.
 function getIndex(array, value) {
     return array.indexOf(value)
+}
+
+// Remove all duplicates from an array and return the array.
+function removeDuplicates(array) {
+    var newArray = []
+    for (var i = 0; i < array.length; i++) {
+        if (newArray.indexOf(array[i]) === -1) {
+            newArray.push(array[i])
+        }
+    }
+    return newArray
+}
+
+// Combine two arrays and return the array.
+function combineArrays(array1, array2) {
+    return array1.concat(array2)
 }
