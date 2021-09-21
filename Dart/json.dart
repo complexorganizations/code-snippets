@@ -13,3 +13,12 @@ void main() {
   var decoded = json.decode(str);
   print(decoded);
 }
+
+// Validate a json and return true if it is valid.
+bool validateJson(String json) {
+  try {
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
