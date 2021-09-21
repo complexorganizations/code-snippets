@@ -10,6 +10,8 @@ function main() {
     console.log(getFileExtension("file.js"))
     // Check if a file is hidden
     console.log(isHidden("file.js"))
+    // Read the content of the file and return it.
+    console.log(readFile("file.js"))
 }
 
 main()
@@ -36,5 +38,5 @@ function isHidden(fileName) {
 
 // Read the content of the file and return it.
 function readFile(filePath) {
-return fs.readFileSync(filePath, "utf-8")
+    return fs.readFileSync(filePath, "utf-8")
 }
