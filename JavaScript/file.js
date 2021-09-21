@@ -1,4 +1,5 @@
 var path = require("path")
+var fs = require("fs")
 
 function main() {
     // Get the current working file name
@@ -31,4 +32,9 @@ function getFileExtension(fileName) {
 // Check if a file is hidden
 function isHidden(fileName) {
     return fileName.charAt(0) === "."
+}
+
+// Read the content of the file and return it.
+function readFile(filePath) {
+return fs.readFileSync(filePath, "utf-8")
 }
