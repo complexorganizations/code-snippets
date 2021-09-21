@@ -16,36 +16,45 @@ def main():
     # Square of a number
     print(square(2))
 
+
 # Call the main function
 main()
+
 
 # Create a function that takes two arguments and returns their sum
 def add(a, b):
     return a + b
 
+
 # Create a function that takes two arguments and returns their product
 def multiply(a, b):
     return a * b
+
 
 # Create a function that takes two arguments and returns their quotient
 def divide(a, b):
     return a / b
 
+
 # Create a function that takes two arguments and returns their difference
 def subtract(a, b):
     return a - b
+
 
 # Create a function that takes two arguments and returns their remainder
 def modulo(a, b):
     return a % b
 
+
 # Create a function that takes two arguments and returns their quotient
 def quotient(a, b):
     return a // b
 
+
 # Create a function that takes two arguments and returns their quotient
 def power(a, b):
     return a ** b
+
 
 # Create a function that takes two arguments and returns their quotient
 def square(a):
