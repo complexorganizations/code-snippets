@@ -17,6 +17,8 @@ function main() {
     console.log(getFilesInDirectory("/"))
     // Get all the folders in a directory
     console.log(getFoldersInDirectory("/src/"))
+    // Get the permissions of a folder
+    console.log(getFolderPermissions("/Users/"))
 }
 
 main()
@@ -58,4 +60,9 @@ function getFilesInDirectory(directory) {
 // Get all the folders in a directory
 function getFoldersInDirectory(directory) {
     return fs.readdirSync(directory).filter(file => fs.statSync(path.join(directory, file)).isDirectory())
+}
+
+// Get the permissions of a folder
+function getFolderPermissions(directory) {
+    return fs.statSync(directory).mode
 }

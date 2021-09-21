@@ -36,6 +36,12 @@ function main() {
     } else {
         console.log("Not Equal")
     }
+    // Reverse a string
+    var reversed = reverse(content)
+    console.log(reversed)
+    // Randomize a string
+    var randomized = randomize(content)
+    console.log(randomized)
 }
 
 main()
@@ -78,4 +84,20 @@ function includes(str, substr) {
 // Check if two strings are equal
 function equals(str1, str2) {
     return str1 == str2
+}
+
+// Reverse a string
+function reverse(str) {
+    return str.split("").reverse().join("")
+}
+
+// Randomize a string
+function randomize(str) {
+    var chars = str.split("")
+    var random = ""
+    for (var i = 0; i < chars.length; i++) {
+        var index = Math.floor(Math.random() * chars.length)
+        random += chars[index]
+    }
+    return random
 }

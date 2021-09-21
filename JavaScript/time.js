@@ -26,6 +26,9 @@ function main() {
     // Get the current year.
     var year = now.getFullYear()
     console.log(year)
+    // Get the current timezone offset.
+    var offset = now.getTimezoneOffset()
+    console.log(offset)
 }
 
 main()

@@ -1,8 +1,11 @@
 function main() {
     // let the user know we are sleep for 20 seconds.
     console.log("Sleeping for 20 seconds...")
-    // sleep for 20 seconds
-    sleep(20000)
+    // sleep for 100 ms
+    sleep(100).then(() => {
+        // let the user know we are awake.
+        console.log("Awake!")
+    })
     // print "done"
     console.log("done")
 }
@@ -10,11 +13,6 @@ function main() {
 main()
 
 // sleep for certian amount of time
-function sleep(milliseconds) {
-    var start = new Date().getTime();
-    for (var i = 0; i < 1e7; i++) {
-        if ((new Date().getTime() - start) > milliseconds){
-            break;
-        }
-    }
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
