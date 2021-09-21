@@ -1,4 +1,5 @@
 const fs = require("fs")
+const path = require("path")
 const os = require("os")
 
 function main() {
@@ -12,6 +13,10 @@ function main() {
     console.log(getUserHomeDirectory())
     // Get the path to the temporary directory
     console.log(getTempDirectory())
+    // Get all the files in a directory
+    console.log(getFilesInDirectory("/"))
+    // Get all the folders in a directory
+    console.log(getFoldersInDirectory("/src/"))
 }
 
 main()
@@ -43,4 +48,14 @@ function getUserHomeDirectory() {
 // Get the temporary directory
 function getTempDirectory() {
     return os.tmpdir()
+}
+
+// Get all the files in a directory
+function getFilesInDirectory(directory) {
+    return fs.readdirSync(directory)
+}
+
+// Get all the folders in a directory
+function getFoldersInDirectory(directory) {
+    return fs.readdirSync(directory).filter(file => fs.statSync(path.join(directory, file)).isDirectory())
 }
