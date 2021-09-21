@@ -12,6 +12,10 @@ function main() {
     console.log(isHidden("file.js"))
     // Read the content of the file and return it.
     console.log(readFile("file.js"))
+    // Read the content of a file and check if it contains a specific string.
+    console.log(readFileContains("file.js", "javascript"))
+    // Check the permissions of a file
+    console.log(checkPermissions("file.js"))
 }
 
 main()
@@ -39,4 +43,14 @@ function isHidden(fileName) {
 // Read the content of the file and return it.
 function readFile(filePath) {
     return fs.readFileSync(filePath, "utf-8")
+}
+
+// Read the content of a file and check if it contains a specific string.
+function readFileContains(filePath, string) {
+    return readFile(filePath).includes(string)
+}
+
+// Check the permissions of a file
+function checkPermissions(filePath) {
+    return fs.statSync(filePath).mode
 }
