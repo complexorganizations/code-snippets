@@ -1,11 +1,11 @@
 function main() {
-    var str = "Hello, World!"
-    console.log(length(str))
+    var currentString = "Hello, World!"
+    console.log(length(currentString))
 }
 
 main()
 
 // get the length of a string and return it
-function length(str) {
-    return str.length
+function length(content) {
+    return content.length
 }

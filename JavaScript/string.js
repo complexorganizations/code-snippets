@@ -42,6 +42,11 @@ function main() {
     // Randomize a string
     var randomized = randomize(content)
     console.log(randomized)
+    // Escape a string with backslash
+    var currentString = "My Name is \"John\""
+    console.log(currentString)
+    // find and replace
+    console.log(findAndReplace(currentString, "John", "Adam"))
 }
 
 main()
@@ -100,4 +105,9 @@ function randomize(str) {
         random += chars[index]
     }
     return random
+}
+
+// find and replace
+function findAndReplace(oldString, searchString, newString) {
+    return oldString.replace(searchString, newString);
 }
