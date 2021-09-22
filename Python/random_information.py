@@ -42,6 +42,11 @@ def random_dict(length):
     return {random_string(10): random_string(10) for i in range(length)}
 
 
+# Generate a item from a given list.
+def random_item(list):
+    return random.choice(list)
+
+
 def main():
     # Generate a random string of length 10.
     print(random_string(10))
@@ -59,6 +64,8 @@ def main():
     print(random_set(10))
     # Generate a random dictionary of length 10.
     print(random_dict(10))
+    # Generate a random item from a list.
+    print(random_item(["a", "b", "c"]))
 
 
 main()
