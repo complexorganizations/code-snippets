@@ -1,20 +1,6 @@
 import os
 
 
-def main():
-    # Remove a file
-    remove_file("test.txt")
-    # Rename a file
-    rename_file("test.txt", "new_test.txt")
-    # Write to a file
-    write_to_file("test.txt", "Hello World!")
-    # Check if a file exists
-    print(file_exists("test.txt"))
-
-
-main()
-
-
 # Function to remove a file
 def remove_file(file_name):
     os.remove(file_name)
@@ -34,3 +20,17 @@ def write_to_file(file_name, content):
 # Check if a file exists
 def file_exists(file_name):
     return os.path.isfile(file_name)
+
+
+def main():
+    # Remove a file
+    remove_file("test.txt")
+    # Rename a file
+    rename_file("test.txt", "new_test.txt")
+    # Write to a file
+    write_to_file("test.txt", "Hello World!")
+    # Check if a file exists
+    print(file_exists("test.txt"))
+
+
+main()

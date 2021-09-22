@@ -1,61 +1,33 @@
+# Simple function takes no arguments and returns nothing
+def simple_function():
+    print("This is a simple function")
+
+
+# Function with arguments and returns nothing
+def simple_function_with_arguments(arg1, arg2):
+    print(arg1 + arg2)
+
+
+# Function that returns a value and takes no arguments
+def return_value():
+    return "Hello, World!"
+
+
+# Function that takes arguments and returns a value
+def return_value_with_arguments(arg1, arg2):
+    return arg1 + arg2
+
+
 def main():
-    # Sum of two numbers
-    print(add(2, 3))
-    # Product of two numbers
-    print(multiply(2, 3))
-    # Quotient of two numbers
-    print(divide(2, 3))
-    # Difference of two numbers
-    print(subtract(2, 3))
-    # Remainder of two numbers
-    print(modulo(2, 3))
-    # Quotient of two numbers
-    print(quotient(2, 3))
-    # Power of two numbers
-    print(power(2, 3))
-    # Square of a number
-    print(square(2))
+    # Simple function that takes no arguments and returns nothing
+    simple_function()
+    # Function with arguments and returns nothing
+    simple_function_with_arguments("Hello, ", "World!")
+    # Function that returns a value and takes no arguments
+    print(return_value())
+    # Function that takes arguments and returns a value
+    print(return_value_with_arguments("Hello, ", "World!"))
 
 
 # Call the main function
 main()
-
-
-# Create a function that takes two arguments and returns their sum
-def add(a, b):
-    return a + b
-
-
-# Create a function that takes two arguments and returns their product
-def multiply(a, b):
-    return a * b
-
-
-# Create a function that takes two arguments and returns their quotient
-def divide(a, b):
-    return a / b
-
-
-# Create a function that takes two arguments and returns their difference
-def subtract(a, b):
-    return a - b
-
-
-# Create a function that takes two arguments and returns their remainder
-def modulo(a, b):
-    return a % b
-
-
-# Create a function that takes two arguments and returns their quotient
-def quotient(a, b):
-    return a // b
-
-
-# Create a function that takes two arguments and returns their quotient
-def power(a, b):
-    return a ** b
-
-
-# Create a function that takes two arguments and returns their quotient
-def square(a):
-    return a ** 2
