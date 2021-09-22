@@ -3,6 +3,8 @@
 /* This is a comment block that can
 stretch onto numerous lines. */
 
+/// This is a doc comment.
 fn main() {
-    println!("Hello, World!"); // Here's another example
+    //! This is a doc comment that will be in html docs.
+    println!("Hello, World!");
 }
