@@ -1,6 +1,11 @@
 fn main() {
+    // An example of an if statement
     if_statement();
+    // An example of a if statement
+    if_else_statement();
+    // An example of an if else statement
     if_else_if_statement();
+    // An example of an if else if else statement
     if_else_if_else_statement();
 }
 
@@ -9,6 +14,16 @@ fn if_statement() {
     let food = "Apple";
     if food == "Apple" {
         println!("{}", food);
+    }
+}
+
+// Example of a if else statement
+fn if_else_statement() {
+    let gender = "Male";
+    if gender == "Male" {
+        println!("{}", gender);
+    } else {
+        println!("Unknown")
     }
 }
 
