@@ -16,6 +16,8 @@ func main() {
 	fmt.Println(getRandomStringFromArray(arrayList))
 	// Get the random integer between 0 and 10
 	fmt.Println(randomInt(0, 10))
+	// Generate a random bool
+	fmt.Println(randomBool())
 }
 
 // Get a random string of length
@@ -48,4 +50,9 @@ func getRandomStringFromArray(arrayList []string) string {
 func randomInt(min, max int) int {
 	rand.Seed(time.Now().UTC().UnixNano())
 	return rand.Intn(max-min) + min
+}
+
+// Generate a random boolean value
+func randomBool() bool {
+	return rand.Intn(2) == 1
 }
