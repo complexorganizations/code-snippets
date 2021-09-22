@@ -22,6 +22,12 @@ def file_exists(file_name):
     return os.path.isfile(file_name)
 
 
+# Read a file into a string and return it
+def read_file(file_name):
+    with open(file_name, "r") as file:
+        return file.read()
+
+
 def main():
     # Remove a file
     remove_file("test.txt")
@@ -31,6 +37,8 @@ def main():
     write_to_file("test.txt", "Hello World!")
     # Check if a file exists
     print(file_exists("test.txt"))
+    # Read a file
+    print(read_file("test.txt"))
 
 
 main()

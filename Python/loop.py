@@ -52,12 +52,14 @@ def break_out_of_loop():
         if i == 2:
             break
 
+
 # Continue in a loop
 def continue_in_loop():
     for i in range(10):
         if i == 8:
             continue
         print(i)
+
 
 def main():
     # Loop ten times
