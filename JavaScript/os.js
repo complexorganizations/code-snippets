@@ -37,6 +37,10 @@ function main() {
     console.log(getCurrentCPUTimes())
     // Print the current system's cpu usage
     console.log(getCurrentCPUUsage())
+    // Clear the console
+    clearConsole()
+    // Exit the program
+    exit()
 }
 
 main()
@@ -129,4 +133,14 @@ function getCurrentCPUTimes() {
 // Get the current system's cpu usage
 function getCurrentCPUUsage() {
     return os.cpus()[0].times.user
+}
+
+// Clear the console
+function clearConsole() {
+    process.stdout.write("\033c")
+}
+
+// Exit the program
+function exit() {
+    process.exit()
 }
