@@ -19,6 +19,9 @@ function main() {
     console.log(getFoldersInDirectory("/src/"))
     // Get the permissions of a folder
     console.log(getFolderPermissions("/Users/"))
+    // Get the size of a folder
+    console.log(getFolderSize("/Users/"))
+
 }
 
 main()
@@ -65,4 +68,9 @@ function getFoldersInDirectory(directory) {
 // Get the permissions of a folder
 function getFolderPermissions(directory) {
     return fs.statSync(directory).mode
+}
+
+// Get the size of a folder
+function getFolderSize(directory) {
+    return fs.statSync(directory).size
 }

@@ -1,6 +1,16 @@
 function main() {
-    var x = Math.random()
-    var y = Math.random()
+    // Get a random string of length 10
+    console.log(getRandomString(10))
+    // Get a random integer between 0 and 10
+    console.log(getRandomInt(0, 10))
+    // Get a random float between 0 and 10
+    console.log(getRandomFloat(0, 10))
+    // Get a random boolean
+    console.log(getRandomBoolean())
+    // Get a random element from an array
+    console.log(getRandomElement(["a", "b", "c"]))
+    // Get a random element from an map
+    console.log(getRandomElementFromMap({ a: 1, b: 2, c: 3 }))
 }
 
 // Get a random string of length n
@@ -12,6 +22,8 @@ function getRandomString(n) {
     }
     return text
 }
+
+main()
 
 // Get a random integer between min and max
 function getRandomInt(min, max) {
@@ -31,15 +43,6 @@ function getRandomBoolean() {
 // Get a random element from an array
 function getRandomElement(array) {
     return array[Math.floor(Math.random() * array.length)]
-}
-
-// Get a random element from an array, but not the same one twice in a row
-function getRandomElementNotRepeated(array) {
-    var element = getRandomElement(array)
-    while (element == getRandomElement(array)) {
-        element = getRandomElement(array)
-    }
-    return element
 }
 
 // Get a random element from an map
