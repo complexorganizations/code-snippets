@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 func main() {
@@ -34,6 +35,8 @@ func main() {
 	fmt.Println(uniqueNames)
 	// Get the index value of a item in a array
 	fmt.Println(indexValueInArray("April", uniqueNames))
+	// Find and replace inside a string
+	fmt.Println(findAndReplace("Hello World", "World", "Go"))
 }
 
 // Check if a string is empty
@@ -92,4 +95,9 @@ func indexValueInArray(cointains string, originalArray []string) int {
 		}
 	}
 	return 0
+}
+
+// Find and replace inside a string
+func findAndReplace(originalString, findString, replaceString string) string {
+	return strings.Replace(originalString, findString, replaceString, -1)
 }
