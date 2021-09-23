@@ -1,4 +1,21 @@
 # Check if a folder exists
-if [ -d "/" ]; then
-  echo "The folder exists"
-fi
+function directory_exists() {
+  if [ -d "/" ]; then
+    echo "The folder exists"
+  else
+    echo "The folder does not exist"
+  fi
+}
+
+directory_exists
+
+# Check if a directory dosent exist
+function directory_doesnt_exist() {
+  if [ ! -d "/" ]; then
+    echo "The folder does not exist"
+  else
+    echo "The folder exists"
+  fi
+}
+
+directory_doesnt_exist
