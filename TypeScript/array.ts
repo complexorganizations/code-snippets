@@ -28,6 +28,16 @@ function main() {
     console.log(isEmpty(numbers));
     // Get the length of an array
     console.log(getLength(numbers));
+    // Add a value to the end of an array
+    addToEndOfArray(numbers, 6);
+    console.log(numbers);
+    // Add a value to the start of an array
+    addToStartOfArray(numbers, 0);
+    console.log(numbers);
+    // Get the middle value of an array
+    console.log(getMiddleValue(numbers));
+    // Get element at a specific index of an array
+    console.log(getElementAtIndex(numbers, 2));
 }
 
 main()
@@ -104,4 +114,14 @@ function isEmpty(array) {
 // Get the length of an array
 function getLength(array) {
     return array.length;
+}
+
+// Add a value to the end of an array
+function addToEndOfArray(array, value) {
+    array.push(value);
+}
+
+// Add a value to the start of an array
+function addToStartOfArray(array, value) {
+    array.unshift(value);
 }
