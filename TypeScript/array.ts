@@ -18,6 +18,16 @@ function main() {
     console.log(getIndexOfValue(numbers, 4));
     // Remove all the duplicate values from an array
     console.log(removeDuplicates(numbers));
+    // Get the first value in the array
+    console.log(getFirstValue(numbers));
+    // Get the last value in the array
+    console.log(getLastValue(numbers));
+    // Check if the array contains a certain value
+    console.log(containsValue(numbers, 2));
+    // Check if the array is empty
+    console.log(isEmpty(numbers));
+    // Get the length of an array
+    console.log(getLength(numbers));
 }
 
 main()
@@ -59,4 +69,39 @@ function removeDuplicates(array) {
         }
     }
     return uniqueArray;
+}
+
+// Get the first value of an array
+function getFirstValue(array) {
+    return array[0];
+}
+
+// Get the last value of an array
+function getLastValue(array) {
+    return array[array.length - 1];
+}
+
+// Get the middle value of an array
+function getMiddleValue(array) {
+    return array[Math.floor(array.length / 2)];
+}
+
+// Get element at a specific index of an array
+function getElementAtIndex(array, index) {
+    return array[index];
+}
+
+// Check if an array contains a value
+function containsValue(array, value) {
+    return array.indexOf(value) > -1;
+}
+
+// Check if the array is empty
+function isEmpty(array) {
+    return array.length == 0;
+}
+
+// Get the length of an array
+function getLength(array) {
+    return array.length;
 }
