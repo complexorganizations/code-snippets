@@ -7,6 +7,14 @@ function main() {
     createIntegerVariable();
     // Boolean variable
     createBooleanVariable();
+    // Array variable
+    createArrayVariable();
+    // Null variable
+    createNullVariable();
+    // Undefined variable
+    createUndefinedVariable();
+    // Symbol variable
+    createSymbolVariable();
 }
 
 main()
@@ -26,6 +34,7 @@ function createVariable() {
     console.log(y);
 }
 
+
 // Create a map variable
 function createMapVariable() {
     var x = {
@@ -41,10 +50,36 @@ function createIntegerVariable() {
     console.log(x);
 }
 
+
 // Create a boolean variable
 function createBooleanVariable() {
     var x = true;
     console.log(x);
     var y = false;
     console.log(y);
+}
+
+
+// Create an array variable
+function createArrayVariable() {
+    var x = [10, 20, 30];
+    console.log(x);
+}
+
+// Create a null variable
+function createNullVariable() {
+    var x = null;
+    console.log(x);
+}
+
+// Create a undefined variable
+function createUndefinedVariable() {
+    var x;
+    console.log(x);
+}
+
+// Create a symbol variable
+function createSymbolVariable() {
+    var x = Symbol();
+    console.log(x);
 }
