@@ -1,33 +1,50 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-STRING=""
-BOOL=false
-FLOAT=0.0
-INT=0
-
-function variable-checker() {
-    # Check if there is content inside the variable.
-    if [ -n "${STRING}" ]; then
-        echo "There is a var here"
-    fi
-    # Check if there is nothing inside a variable
-    if [ -z "${STRING}" ]; then
-        echo "There is no var here"
-    fi
+# An example of a string variable
+function example_string() {
+    name="example"
+    echo ${name}
 }
 
-variable-checker
+example_string
 
+# An example of an integer variable
+function example_integer() {
+    number=5
+    echo ${number}
+}
 
-# Create an array
-declare -a ARRAY
-ARRAY[0]="Hello"
-ARRAY[1]="World"
-ARRAY[2]="!"
+example_integer
 
-echo ${ARRAY[0]}
-# Print the whole array
-echo ${ARRAY[@]}
+# An example of a float variable
+function example_float() {
+    number=5.5
+    echo ${number}
+}
 
-SECOND_ARRAY=(1 2 3 4 5)
-echo ${SECOND_ARRAY[@]}
+example_float
+
+# An example of a boolean variable
+function example_boolean() {
+    boolean=true
+    echo ${boolean}
+}
+
+example_boolean
+
+# An example of an array variable
+function example_array() {
+    array=("example" "array")
+    echo ${array[0]}
+    echo ${array[1]}
+}
+
+example_array
+
+# An example of a map variable
+function example_map() {
+    map[key]="value"
+    echo ${map[key]}
+}
+
+example_map

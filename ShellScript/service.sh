@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Enable a service
 function enable-service() {
@@ -67,7 +67,6 @@ function disable-service() {
 }
 
 disable-service
-
 
 function status-service() {
     if pgrep systemd-journal; then
