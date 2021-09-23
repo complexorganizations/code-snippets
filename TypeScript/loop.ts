@@ -38,9 +38,9 @@ function loop_through_array() {
 // Loop through an object
 function loop_through_object() {
     const object = {
-        name: 'John',
+        name: "John",
         age: 30,
-        city: 'New York'
+        city: "New York"
     }
     for (let key in object) {
         console.log(object[key])
@@ -51,19 +51,19 @@ function loop_through_object() {
 function loop_through_array_of_objects() {
     const array = [
         {
-            name: 'John',
+            name: "John",
             age: 30,
-            city: 'New York'
+            city: "New York"
         },
         {
-            name: 'Mike',
+            name: "Mike",
             age: 23,
-            city: 'Los Angeles'
+            city: "Los Angeles"
         },
         {
-            name: 'Mary',
+            name: "Mary",
             age: 28,
-            city: 'Miami'
+            city: "Miami"
         }
     ]
     for (let i = 0; i < array.length; i++) {
