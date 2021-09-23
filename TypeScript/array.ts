@@ -14,6 +14,10 @@ function main() {
     // Remove a value from the array
     removeFromArray(numbers, 3);
     console.log(numbers);
+    // Get the index value of a value in an array
+    console.log(getIndexOfValue(numbers, 4));
+    // Remove all the duplicate values from an array
+    console.log(removeDuplicates(numbers));
 }
 
 main()
@@ -39,4 +43,20 @@ function removeFromArray(array, value) {
     if (index > -1) {
         array.splice(index, 1);
     }
+}
+
+// Get the index value of a value in an array
+function getIndexOfValue(array, value) {
+    return array.indexOf(value);
+}
+
+// Remove all the duplicate values from an array
+function removeDuplicates(array) {
+    var uniqueArray = [];
+    for (var i = 0; i < array.length; i++) {
+        if (uniqueArray.indexOf(array[i]) == -1) {
+            uniqueArray.push(array[i]);
+        }
+    }
+    return uniqueArray;
 }
