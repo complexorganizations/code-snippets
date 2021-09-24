@@ -2,7 +2,6 @@ import os
 import platform
 import socket
 import http.client
-import re
 
 
 # Get the current operating system
@@ -62,29 +61,15 @@ def get_response(hostname, path, payload, headers, method, encoding):
 
 
 # Get the current user external ipv4 address and return it
-def get_external_ipv4():
-    hostname = "api.ipengine.dev"
+def get_user_external_ip():
+    hostname = "checkip.amazonaws.com"
     path = "/"
     method = "GET"
     payload = ""
     encoding = "utf-8"
     headers = {}
-    httpResponse = get_response(
-        hostname, path, payload, headers, method, encoding)
-    return re.search("\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}\b", httpResponse)
-
-
-# Get the current user external ipv6 address
-def get_external_ipv6():
-    hostname = "api.ipengine.dev"
-    path = "/"
-    method = "GET"
-    payload = ""
-    encoding = "utf-8"
-    headers = {}
-    httpResponse = get_response(
-        hostname, path, payload, headers, method, encoding)
-    return re.search("\b(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))\b", httpResponse)
+    httpResponse = get_response(hostname, path, payload, headers, method, encoding)
+    return httpResponse
 
 
 def main():
@@ -106,10 +91,8 @@ def main():
     print(get_machine_type())
     # Get the current user ip address and hostname of the system
     print(get_ip_address())
-    # Get the current user external ipv4 address
-    print(get_external_ipv4())
-    # Get the current user external ipv6 address
-    print(get_external_ipv6())
+    # Get the current user external ip address
+    print(get_user_external_ip())
 
 
 main()
