@@ -19,7 +19,7 @@ void if_statement() {
 }
 
 // A simple if statement with an else
-void if_statement_else() {
+void if_else_statement() {
     int a = 1;
     if (a == 1) {
         printf("a is 1\n");
@@ -29,7 +29,7 @@ void if_statement_else() {
 }
 
 // A simple if statement with an else if
-void if_statement_else_if() {
+void if_else_if_statement() {
     int a = 1;
     if (a == 1) {
         printf("a is 1\n");
