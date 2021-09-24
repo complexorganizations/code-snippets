@@ -1,6 +1,9 @@
 def main():
+    # If statement
     if_statement()
+    # If else statement
     if_else_statement()
+    # If else statement with multiple conditions
     if_else_multiple_conditions()
 
 

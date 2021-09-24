@@ -61,6 +61,12 @@ def continue_in_loop():
         print(i)
 
 
+# Loop forever
+def loop_forever():
+    while True:
+        print("Hello")
+
+
 def main():
     # Loop ten times
     loop_ten_times()
@@ -80,6 +86,8 @@ def main():
     break_out_of_loop()
     # Continue in a loop
     continue_in_loop()
+    # Loop forever
+    loop_forever()
 
 
 main()
