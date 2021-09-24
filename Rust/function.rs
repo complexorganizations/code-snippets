@@ -14,6 +14,11 @@ fn main() {
     let (f, g) = (5, 6);
     let (h, j) = swap(f, g);
     println!("{} {}", h, j);
+    // Returns a boolean
+    let k = 10;
+    println!("{}", is_even(k));
+    // Returns a string
+    println!("{}", get_string());
 }
 
 // Function that takes no arguments and returns nothing
@@ -34,4 +39,14 @@ fn add_numbers(x: i32, y: i32) -> i32 {
 // Takes in two arguments and returns two integers
 fn swap(x: i32, y: i32) -> (i32, i32) {
     (y, x)
+}
+
+// Return a boolean value
+fn is_even(x: i32) -> bool {
+    x % 2 == 0
+}
+
+// Return a string
+fn get_string() -> String {
+    String::from("Hello, world!")
 }
