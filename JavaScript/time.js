@@ -17,6 +17,8 @@ function main() {
     console.log(getDayInWeek())
     // Get the current time in day.
     console.log(getDayInMonth())
+    // Sleep for the given time in miliseconds.
+    sleep(10000).then(() => console.log("Slept for 10 second"))
 }
 
 main()
@@ -64,4 +66,9 @@ function getDayInWeek() {
 // Get the current day in the month.
 function getDayInMonth() {
     return new Date().getDate()
+}
+
+// Sleep for the given time in miliseconds.
+function sleep(miliseconds) {
+    return new Promise(resolve => setTimeout(resolve, miliseconds))
 }
