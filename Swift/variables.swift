@@ -1,8 +1,12 @@
-// String
-var name String
-name = "John Doe"
-print(name)
-
+// Bool
+var someBool = true
+print(someBool)
 // Int
-var age = 10
-print(age)
+var someInt = 42
+print(someInt)
+// Double
+var someDouble = 3.14159
+print(someDouble)
+// String
+var someString = "Hello, world!"
+print(someString)
