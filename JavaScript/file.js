@@ -16,6 +16,10 @@ function main() {
     console.log(readFileContains("file.js", "javascript"))
     // Check the permissions of a file
     console.log(checkPermissions("file.js"))
+    // Create a file
+    createFile("file.js")
+    // Remove a file
+    removeFile("file.js")
 }
 
 main()
@@ -53,4 +57,14 @@ function readFileContains(filePath, string) {
 // Check the permissions of a file
 function checkPermissions(filePath) {
     return fs.statSync(filePath).mode
+}
+
+// Create a file
+function createFile(filePath) {
+    fs.writeFileSync(filePath, "")
+}
+
+// Remove a file
+function removeFile(filePath) {
+    fs.unlinkSync(filePath)
 }
