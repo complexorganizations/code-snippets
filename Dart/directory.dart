@@ -2,20 +2,28 @@ import "dart:io";
 
 void main() {
   // Check if the directory exists.
-  print(checkDirExists("/"));
+  print(checkDirectoryExists("/"));
   // Get all the files in the directory.
-  print(getFiles("/"));
+  print(getAllFilesInDirectory("/"));
   // Get all the directories in the directory.
-  print(getDirectories("/"));
+  print(getAllDirectoryInDirectory("/"));
+  // Get all the files and directories in the directory.
+  print(getAllInDirectory("/"));
+  // Create a directory.
+  createDirectory("/src/");
+  // Delete a directory.
+  removeDirectory("/src/");
+  // Rename a directory.
+  renameDirectory("/src/", "/source/");
 }
 
 // Check if a directory exists
-bool checkDirExists(String path) {
+bool checkDirectoryExists(String path) {
   return FileSystemEntity.typeSync(path) != FileSystemEntityType.notFound;
 }
 
 // Get all the files only in a directory
-List<File>? getFiles(String path) {
+List<File>? getAllFilesInDirectory(String path) {
   return Directory(path)
       .listSync(recursive: false, followLinks: false)
       .whereType<File>()
@@ -23,9 +31,31 @@ List<File>? getFiles(String path) {
 }
 
 // Get all the directories only in a directory
-List<Directory>? getDirectories(String path) {
+List<Directory>? getAllDirectoryInDirectory(String path) {
   return Directory(path)
       .listSync(recursive: false, followLinks: false)
       .whereType<Directory>()
       .toList();
+}
+
+// Get all the files and directories in a directory
+List<FileSystemEntity>? getAllInDirectory(String path) {
+  return Directory(path)
+      .listSync(recursive: false, followLinks: false)
+      .toList();
+}
+
+// Create a directory
+void createDirectory(String path) {
+  Directory(path).createSync();
+}
+
+// Remove a directory
+void removeDirectory(String path) {
+  Directory(path).deleteSync(recursive: true);
+}
+
+// Rename a directory
+void renameDirectory(String path, String newPath) {
+  Directory(path).renameSync(newPath);
 }
