@@ -15,4 +15,5 @@ int main() {
         default:
             printf("default");
     }
+    return 0;
 }
