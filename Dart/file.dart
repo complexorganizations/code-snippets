@@ -11,6 +11,10 @@ void main() {
   print(getCurrentPath());
   // Check if a file exists
   print(fileExists("dart.txt"));
+  // Create a file
+  createFile("dart3.txt");
+  // Delete a file
+  removeFile("dart3.txt");
 }
 
 // Opens the file and returns the contents as a string
@@ -40,4 +44,16 @@ String getCurrentPath() {
 bool fileExists(String path) {
   File myFile = File(path);
   return myFile.existsSync();
+}
+
+// Remove a file
+void removeFile(String path) {
+  File myFile = File(path);
+  myFile.deleteSync();
+}
+
+// Create a file.
+void createFile(String path) {
+  File myFile = File(path);
+  myFile.createSync();
 }
