@@ -6,6 +6,38 @@ function main() {
     console.log(joinArray(array, '-'))
     // Sort the array
     console.log(sortArray(array))
+    // Create a new array of objects.
+    var people = [
+        "t",
+        "b",
+        "l",
+        "y",
+        "k",
+        "i",
+        "j",
+        "c",
+        "a",
+        "e",
+        "n",
+        "d",
+        "s",
+        "m",
+        "p",
+        "f",
+        "z",
+        "r",
+        "q",
+        "w",
+        "u",
+        "v",
+        "x",
+        "o",
+        "h",
+        "g"
+    ]
+    console.log(people)
+    sortArray(people)
+    console.log(people)
     // Get the first value
     console.log(getFirstValue(array))
     // Get the last value
