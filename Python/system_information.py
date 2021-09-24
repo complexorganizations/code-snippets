@@ -1,5 +1,6 @@
 import os
 import platform
+import socket
 
 
 # Get the current operating system
@@ -42,6 +43,13 @@ def get_machine_type():
     return platform.machine()
 
 
+# Get the current user ip address and hostname of the system
+def get_ip_address():
+    hostname = socket.gethostname()
+    ip_address = socket.gethostbyname(hostname)
+    return ip_address
+
+
 def main():
     # Get the current operating system
     print(get_os())
@@ -59,6 +67,8 @@ def main():
     print(get_interface())
     # Get the current machine type
     print(get_machine_type())
+    # Get the current user ip address and hostname of the system
+    print(get_ip_address())
 
 
 main()
