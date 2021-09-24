@@ -17,6 +17,22 @@ void main() {
   print(randomStuff); // without sorting the list
   var newList = sortList(randomStuff);
   print(newList); // while sorting the list
+  // create a list of int
+  var list = [3, 1, 2, 4, 5];
+  print(list);
+  // sort the list of int
+  var someList = sortList(list);
+  print(someList);
+  // sort the list of string
+  var randomString = ["e", "d", "a", "c", "f", "b", "g", "h", "i", "j"];
+  print(randomString);
+  var newStringList = sortList(randomString);
+  print(newStringList);
+  // sort the list of double
+  var randomDouble = [1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9, 10.0];
+  print(randomDouble);
+  var newDoubleList = sortList(randomDouble);
+  print(newDoubleList);
   // Reverse a list
   print(reverseList(newList));
   // Get the length of a list
