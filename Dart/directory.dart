@@ -1,9 +1,11 @@
 import "dart:io";
 
 void main() {
-  print(checkDirExists("/")); // true
-  print(checkDirExists("/random/path/dosent/exists/")); // false
+  // Check if the directory exists.
+  print(checkDirExists("/"));
+  // Get all the files in the directory.
   print(getFiles("/"));
+  // Get all the directories in the directory.
   print(getDirectories("/"));
 }
 
