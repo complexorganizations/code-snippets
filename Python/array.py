@@ -83,6 +83,7 @@ def change_element(array, element, value):
     array[array.index(element)] = value
     return array
 
+
 def main():
     array = ["a", "b", "c"]
     # Check if the array is empty
