@@ -41,4 +41,5 @@ def main():
     if first_number is not second_number:
         print("The first number is not the same as the second number")
 
+
 main()
