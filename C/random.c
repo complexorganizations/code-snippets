@@ -11,7 +11,7 @@ int randomNumber() {
     return rand();
 }
 
-// Generate a random string
+// Generate a random string of a given length
 char* randomString(int length) {
     char* string = malloc(length + 1);
     for (int i = 0; i < length; i++) {
@@ -26,7 +26,7 @@ int main() {
     printf("%d", randomNumberInRange(2, 5));
     // Random number
     printf("%d", randomNumber());
-    // Random string
+    // Random string of a given length
     printf("%s", randomString(10));
     return 0;
 }
