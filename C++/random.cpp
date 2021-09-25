@@ -1,10 +1,11 @@
-#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
 
 int main() {
-    printf("%d", random(2, 5));
+    printf("%d", randomNumberInRange(2, 5));
 }
 
 // Generate a random number between x and y
-int random(int x, int y) {
+int randomNumberInRange(int x, int y) {
     return rand() % (y - x + 1) + x;
 }
