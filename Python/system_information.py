@@ -2,6 +2,7 @@ import os
 import platform
 import socket
 import http.client
+import shutil
 
 
 # Get the current operating system
@@ -68,8 +69,15 @@ def get_user_external_ip():
     payload = ""
     encoding = "utf-8"
     headers = {}
-    httpResponse = get_response(hostname, path, payload, headers, method, encoding)
-    return httpResponse
+    httpResponse = get_response(
+        hostname, path, payload, headers, method, encoding)
+    returnContent = httpResponse.split("\n")
+    return returnContent[0]
+
+
+# Check if a specfied application is installed
+def is_application_installed(application):
+    return shutil.which(application) != None
 
 
 def main():
@@ -93,6 +101,8 @@ def main():
     print(get_ip_address())
     # Get the current user external ip address
     print(get_user_external_ip())
+    # Check if a specfied application is installed
+    print(is_application_installed("code"))
 
 
 main()
