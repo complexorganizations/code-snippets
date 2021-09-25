@@ -1,3 +1,6 @@
+import math
+
+
 # Add two numbers and return the result
 def add(a, b):
     return a + b
@@ -30,7 +33,7 @@ def power(a, b):
 
 # Square root of a number and return the result
 def square_root(a):
-    return a ** 0.5
+    return math.sqrt(a)
 
 
 # Calculate the factorial of a number and return the result
@@ -103,6 +106,26 @@ def variance(a):
         return variance
 
 
+# Round the number to the nearest integer
+def round_double(a):
+    return round(a)
+
+
+# Floor the number to the nearest integer
+def floor_double(a):
+    return math.floor(a)
+
+
+# Ceil the number to the nearest integer
+def ceil_double(a):
+    return math.ceil(a)
+
+
+# truncate the number to the nearest integer
+def truncate_double(a):
+    return math.trunc(a)
+
+
 def main():
     # Add two numbers and return the result
     print(add(1, 2))
@@ -130,6 +153,14 @@ def main():
     print(standard_deviation([1, 2, 3, 4, 5]))
     # Calculate the variance of a list of numbers and return the result
     print(variance([1, 2, 3, 4, 5]))
+    # Round the number to the nearest integer
+    print(round_double(3.14))
+    # Floor the number to the nearest integer
+    print(floor_double(3.14))
+    # Ceil the number to the nearest integer
+    print(ceil_double(3.14))
+    # truncate the number to the nearest integer
+    print(truncate_double(3.14))
 
 
 main()
