@@ -6,9 +6,6 @@ int randomNumberInRange(int x, int y) {
     return rand() % (y - x + 1) + x;
 }
 
-// Generate a random string of a given length
-
-
 int main() {
     // Random number between two values
     printf("%d", randomNumberInRange(2, 5));
