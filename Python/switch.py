@@ -8,9 +8,11 @@ def switch_function(argument):
         case 3:
             print("3")
 
+
 # A simple function example
 def simple_function():
     print("This is a simple function")
+
 
 # Another switch function
 def another_switch(argument):
@@ -22,10 +24,12 @@ def another_switch(argument):
         case 3:
             print("3")
 
+
 def main():
     # Example of a switch statment
     switch_function(1)
     # Another switch function
     another_switch(2)
+
 
 main()
