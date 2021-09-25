@@ -12,21 +12,21 @@ int randomNumber() {
 }
 
 // Generate a random string of a given length
-char* randomString(int length) {
+char* randomStringInRange(int length) {
     char* string = malloc(length + 1);
     for (int i = 0; i < length; i++) {
-        string[i] = randomNumberInRange(97, 122);
+        string[i] = randomNumberInRange(0, 1024);
     }
-    string[length] = '\0';
+    string[length] = "\0";
     return string;
 }
 
 int main() {
     // Random number between two values
-    printf("%d", randomNumberInRange(2, 5));
+    printf("%d \n", randomNumberInRange(2, 5));
     // Random number
-    printf("%d", randomNumber());
+    printf("%d \n", randomNumber());
     // Random string of a given length
-    printf("%s", randomString(10));
+    printf("%d \n", randomStringInRange(10));
     return 0;
 }
