@@ -61,7 +61,6 @@ def shuffle_array(array):
     return array
 
 
-
 # Get the length of the array
 def get_array_length(array):
     return len(array)
@@ -73,14 +72,49 @@ def reverse_array(array):
 
 
 # Change the value of a element at the certain index
-def change_element(array, index, element):
+def change_element_at_index(array, index, element):
     array[index] = element
     return array
 
 
 # Change the value of a element in the array to a certain value
-def change_element(array, element, value):
+def change_element_via_value(array, element, value):
     array[array.index(element)] = value
+    return array
+
+
+# Check if the array is sorted
+def is_array_sorted(array):
+    for i in range(len(array) - 1):
+        if array[i] > array[i + 1]:
+            return False
+    return True
+
+
+# Get the first element of the array
+def get_first_element(array):
+    return array[0]
+
+
+# Get the last element of the array
+def get_last_element(array):
+    return array[len(array) - 1]
+
+
+# Get the middle element of the array
+def get_middle_element(array):
+    return array[len(array) // 2]
+
+
+# Add value to the array at a certain index
+def add_value_at_index(array, index, value):
+    array.insert(index, value)
+    return array
+
+
+# Remove value from the array at a certain index
+def remove_value_at_index(array, index):
+    array.pop(index)
     return array
 
 
@@ -111,10 +145,21 @@ def main():
     # Reverse the array
     print(reverse_array(array))
     # Change the value of a element at the certain index
-    print(change_element(array, 1, "e"))
+    print(change_element_at_index(array, 1, "e"))
     # Change the value of a element in the array
-    print(change_element(array, "a", "f"))
-
+    print(change_element_via_value(array, "a", "f"))
+    # Check if the array is sorted
+    print(is_array_sorted(array))
+    # Get the first element of the array
+    print(get_first_element(array))
+    # Get the last element of the array
+    print(get_last_element(array))
+    # Get the middle element of the array
+    print(get_middle_element(array))
+    # Add value to the array at a certain index
+    print(add_value_at_index(array, 1, "g"))
+    # Remove value from the array at a certain index
+    print(remove_value_at_index(array, 1))
 
 
 main()
