@@ -30,6 +30,9 @@ func main() {
 		log.Fatal(err)
 	}
 	fmt.Println(validCheck)
+	// Check if a json is valid.
+	validCheck = validateJson(currentJson)
+	fmt.Println(validCheck)
 }
 
 // Open a file and check if a json is valid.
@@ -39,4 +42,10 @@ func validateJsonFromFile(jsonFile string) (bool, error) {
 		return false, err
 	}
 	return json.Valid(data), nil
+}
+
+
+// Check if a json is valid.
+func validateJson(jsonData []byte) bool {
+	return json.Valid(jsonData)
 }
