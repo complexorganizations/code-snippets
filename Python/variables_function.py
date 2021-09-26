@@ -22,6 +22,21 @@ def int_to_string(input_int):
 def string_to_int(input_string):
     return int(input_string)
 
+# Check if the string is all uppercase
+def is_string_uppercase(content):
+return content.isupper()
+
+# Check if the string is all lowercase
+def is_string_lowercase(some_string):
+return some_string.islower()
+
+# Turn a string all lowercase
+def convert_string_lowercase(content):
+return content.lower()
+
+# Turn a string all uppercase
+def convert_string_uppercase(input_string):
+return input_string.upper()
 
 def main():
     some_input = "John Doe"
