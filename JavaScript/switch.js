@@ -7,7 +7,6 @@ main()
 function switchStatement() {
     var date = new Date()
     var day = date.getDay()
-    console.log(day)
     switch (day) {
         case 0:
             console.log("Sunday")
