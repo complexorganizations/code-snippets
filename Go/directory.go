@@ -66,3 +66,16 @@ func isDirEmpty(filePath string) (bool, error) {
 	}
 	return len(files) == 0, nil
 }
+
+// Get a list of all the files in a folder
+func getFilesInFolder(folderPath string) []string {
+	files := []string{}
+	err := filepath.Walk(folderPath, func(path string, info os.FileInfo, err error) error {
+		files = append(files, path)
+		return nil
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	return files
+}
