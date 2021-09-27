@@ -3,8 +3,11 @@
 
 // Get the length of the array
 int getArrayLength(int array[]) {
-    int arrSize = sizeof(array) / sizeof(array[0]);
-    return arrSize;
+    int i = 0;
+    while (array[i] != 0) {
+        i++;
+    }
+    return i;
 }
 
 // Take in a input as an array and return a random element from the array
