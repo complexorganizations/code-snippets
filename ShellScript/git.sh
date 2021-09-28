@@ -7,3 +7,8 @@ function remove-git-history() {
     git branch -m main
     git push -f origin main
 }
+
+
+function remove-ignore-files() {
+    git clean -xdf
+}
