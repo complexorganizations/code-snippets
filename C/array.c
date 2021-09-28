@@ -1,3 +1,4 @@
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -78,6 +79,39 @@ void clearArray(int array[], int size) {
     }
 }
 
+// Check if the array is empty
+bool isArrayEmpty(int array[], int size) {
+    for (int i = 0; i < size; i++) {
+        if (array[i] != 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// Check if the array contains any duplicate values
+bool containsDuplicates(int array[], int size) {
+    for (int i = 0; i < size; i++) {
+        for (int j = i + 1; j < size; j++) {
+            if (array[i] == array[j]) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+// Remove all duplicate values from the array
+void removeDuplicates(int array[], int size) {
+    for (int i = 0; i < size; i++) {
+        for (int j = i + 1; j < size; j++) {
+            if (array[i] == array[j]) {
+                array[j] = 0;
+            }
+        }
+    }
+}
+
 int main() {
     // Create an array of integers
     int randomArray[5] = {19, 10, 8, 17, 9};
@@ -110,5 +144,13 @@ int main() {
     printf("%d\n", maximumValue);
     // Remove all the values from the array
     clearArray(randomArray, 5);
+    // Check if the array is empty
+    bool emptyArrayCheck = isArrayEmpty(randomArray, 5);
+    printf("%d\n", emptyArrayCheck);
+    // Check if the array contains any duplicate values
+    bool duplicateCheck = containsDuplicates(randomArray, 5);
+    printf("%d\n", duplicateCheck);
+    // Remove all duplicate values from the array
+    removeDuplicates(randomArray, 5);
     return 0;
 }
