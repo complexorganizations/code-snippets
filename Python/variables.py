@@ -70,6 +70,8 @@ def exampleMap():
         print("John does not exist")
 
 # Example of a set
+
+
 def exampleSet():
     grades = {3.9, 3.5, 3.7}
     print(grades)
@@ -87,6 +89,7 @@ def exampleSet():
         print("3.9 exists")
     else:
         print("3.9 does not exist")
+
 
 # Example of a none
 def exampleNone():
@@ -106,6 +109,7 @@ def exampleNone():
         print("grades is None")
     else:
         print("grades is not None")
+
 
 def main():
     # Example of a string

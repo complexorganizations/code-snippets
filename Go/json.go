@@ -44,7 +44,6 @@ func validateJsonFromFile(jsonFile string) (bool, error) {
 	return json.Valid(data), nil
 }
 
-
 // Check if a json is valid.
 func validateJson(jsonData []byte) bool {
 	return json.Valid(jsonData)

@@ -86,7 +86,7 @@ function cubeRoot(number) {
 
 // Return the nth root of a number
 function nthRoot(number, n) {
-    return Math.pow(number, 1/n)
+    return Math.pow(number, 1 / n)
 }
 
 // Return the factorial of a number

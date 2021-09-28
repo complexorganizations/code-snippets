@@ -8,7 +8,6 @@ function remove-git-history() {
     git push -f origin main
 }
 
-
 function remove-ignore-files() {
     git clean -xdf
 }

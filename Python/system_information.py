@@ -1,8 +1,8 @@
+import http.client
 import os
 import platform
-import socket
-import http.client
 import shutil
+import socket
 
 
 # Get the current operating system

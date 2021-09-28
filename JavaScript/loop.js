@@ -30,7 +30,7 @@ function loopHundredTimes() {
 // Break out of the loop
 function breakLoop() {
     for (var i = 0; i < 10; i++) {
-        if (i === 5) {
+        if (i == 5) {
             break
         }
         console.log(i)
@@ -40,7 +40,7 @@ function breakLoop() {
 // Continue to the next iteration
 function continueLoop() {
     for (var i = 0; i < 10; i++) {
-        if (i === 5) {
+        if (i == 5) {
             continue
         }
         console.log(i)
@@ -49,7 +49,7 @@ function continueLoop() {
 
 // Loop Forever
 function loopForever() {
-    for (;;) {
+    for (; ;) {
         console.log("I will loop forever.")
     }
 }

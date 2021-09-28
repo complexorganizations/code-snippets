@@ -70,6 +70,6 @@ def main():
     print(convert_string_uppercase(some_input))
     # Find and replace a string
     print(find_and_replace(some_input, "John", "Jane"))
-    
+
 
 main()

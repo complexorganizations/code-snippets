@@ -41,7 +41,7 @@ function getFileExtension(fileName) {
 
 // Check if a file is hidden
 function isHidden(fileName) {
-    return fileName.charAt(0) === "."
+    return fileName.charAt(0) == "."
 }
 
 // Read the content of the file and return it.

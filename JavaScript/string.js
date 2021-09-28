@@ -109,5 +109,5 @@ function randomize(str) {
 
 // find and replace
 function findAndReplace(oldString, searchString, newString) {
-    return oldString.replace(searchString, newString);
+    return oldString.replace(searchString, newString)
 }

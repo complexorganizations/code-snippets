@@ -70,6 +70,10 @@ function main() {
     console.log(removeDuplicates(array))
     // Combine two arrays
     console.log(combineArrays(array, [6, 7, 8]))
+    // Check if the array is empty
+    console.log(isArrayEmpty(array))
+    // Check if the array is not empty
+    console.log(isNotEmptyArray(array))
 }
 
 main()
@@ -179,7 +183,7 @@ function getIndex(array, value) {
 function removeDuplicates(array) {
     var newArray = []
     for (var i = 0; i < array.length; i++) {
-        if (newArray.indexOf(array[i]) === -1) {
+        if (newArray.indexOf(array[i]) == -1) {
             newArray.push(array[i])
         }
     }
@@ -189,4 +193,14 @@ function removeDuplicates(array) {
 // Combine two arrays and return the array.
 function combineArrays(array1, array2) {
     return array1.concat(array2)
+}
+
+// Check if the array is empty.
+function isArrayEmpty(array) {
+    return array.length == 0
+}
+
+// Check if the array is not empty.
+function isNotEmptyArray(array) {
+    return array.length >= 1
 }
