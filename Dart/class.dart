@@ -1,4 +1,5 @@
 void main() {
+  // Set the content for the class
   var content = new Employee();
   content.name = "John Doe";
   content.age = 30;
@@ -7,7 +8,10 @@ void main() {
   print(content.age);
   print(content.salary);
 
+  // Function inside class
   content.functionInsideClass();
+  content.inputFunctionInsideClass("Jamie");
+  print(content.returnInsideFunction(1, 2));
 }
 
 class Employee {
@@ -15,7 +19,15 @@ class Employee {
   int? age;
   double? salary;
 
-  functionInsideClass() {
+  void functionInsideClass() {
     print("Function inside class.");
+  }
+
+  void inputFunctionInsideClass(String content) {
+    print(content);
+  }
+
+  int returnInsideFunction(int a, int b) {
+    return a + b;
   }
 }
