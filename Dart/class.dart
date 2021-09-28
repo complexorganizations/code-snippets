@@ -4,9 +4,11 @@ void main() {
   content.name = "John Doe";
   content.age = 30;
   content.salary = 45000.50;
+  content.isMarried = false;
   print(content.name);
   print(content.age);
   print(content.salary);
+  print(content.isMarried);
 
   // Function inside class
   content.functionInsideClass();
@@ -18,6 +20,7 @@ class Employee {
   String? name;
   int? age;
   double? salary;
+  bool? isMarried;
 
   void functionInsideClass() {
     print("Function inside class.");
