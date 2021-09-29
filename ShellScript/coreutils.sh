@@ -1,3 +1,8 @@
+#!/usr/bin/env bash
+
+# Grep something inside a file [file.txt="Hello, World!"]
+grep "Hello" file.txt
+
 # Change the word from foo to bar in a file.
 sed -i "s/foo/bar/g" file.txt
 
