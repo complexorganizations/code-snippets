@@ -10,5 +10,13 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: 16.x
-    - name: Run the javascript/array.js
+    - name: Run the JavaScript/array.js
       run: node JavaScript/array.js
+    - name: Run the JavaScript/comments.js
+      run: node JavaScript/comments.js
+    - name: Run the JavaScript/constant.js
+      run: node JavaScript/constant.js
+    - name: Run the JavaScript/directory.js
+      run: node JavaScript/directory.js
+    - name: Run the JavaScript/errors.js
+      run: node JavaScript/errors.js
