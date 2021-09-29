@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Check if a file exists
 function check_file_exist() {
   if [ -f "/etc/some-folder/file" ]; then
