@@ -1,13 +1,23 @@
 #include <stdio.h>
 
-int main() {
-    // Declare a variable of type int named "number"
-    int number;
-    // Ask the user to enter an integer
+// Clear the terminal screen
+void clearTerminal() {
+    printf("\033c");
+}
+
+// Take input from the user
+int getUserInput() {
+    int userInput;
     printf("Enter an integer:");
-    // reads and stores input
-    scanf("%d", &number);
-    // displays output
-    printf("You entered: %d", number);
+    scanf_s("%d", &userInput);
+    return userInput;
+}
+
+int main() {
+    // Clear the terminal
+    clearTerminal();
+    // Take input from the user
+    int userInput = getUserInput();
+    printf(userInput);
     return 0;
 }
