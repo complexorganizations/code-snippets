@@ -11,7 +11,7 @@ check_file_exist
 
 # Get the current file path
 function get_current_file_path() {
-  echo $(realpath "$0")
+  realpath "$0"
 }
 
 get_current_file_path
