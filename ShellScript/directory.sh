@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Check if a folder exists
 function directory_exists() {
   if [ -d "/" ]; then
