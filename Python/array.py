@@ -49,12 +49,6 @@ def get_random_element(array):
     return array[random.randint(0, len(array) - 1)]
 
 
-# Remove all the elements from the array
-def remove_all_elements(array):
-    array.clear()
-    return array
-
-
 # Suffle the array
 def shuffle_array(array):
     random.shuffle(array)
@@ -118,6 +112,12 @@ def remove_value_at_index(array, index):
     return array
 
 
+# Remove all the elements from the array
+def remove_all_elements(array):
+    array.clear()
+    return array
+
+
 def main():
     array = ["a", "b", "c"]
     # Check if the array is empty
@@ -136,8 +136,6 @@ def main():
     print(add_element(array, "d"))
     # Get a random element from the array
     print(get_random_element(array))
-    # Remove all the elements from the array
-    print(remove_all_elements(array))
     # Suffle the array
     print(shuffle_array(array))
     # Get the length of the array
@@ -147,7 +145,7 @@ def main():
     # Change the value of a element at the certain index
     print(change_element_at_index(array, 1, "e"))
     # Change the value of a element in the array
-    print(change_element_via_value(array, "a", "f"))
+    print(change_element_via_value(array, "c", "f"))
     # Check if the array is sorted
     print(is_array_sorted(array))
     # Get the first element of the array
@@ -160,6 +158,8 @@ def main():
     print(add_value_at_index(array, 1, "g"))
     # Remove value from the array at a certain index
     print(remove_value_at_index(array, 1))
+    # Remove all the elements from the array
+    print(remove_all_elements(array))
 
 
 main()
