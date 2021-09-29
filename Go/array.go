@@ -36,6 +36,10 @@ func main() {
 	fmt.Println(removeDuplicateElements(randomString))
 	// Sort the array
 	fmt.Println(sortList(randomString))
+	// Combine two arrays together.
+	fmt.Println(combineArrays(randomString, randomString))
+	// Get the median value of an array.
+	fmt.Println(medianOfArray([]float64{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}))
 }
 
 // Check if the array contains the value.
@@ -100,4 +104,25 @@ func arrayIsntEmpty(array []string) bool {
 func sortList(content []string) []string {
 	sort.Strings(content)
 	return content
+}
+
+// Combine two arrays together.
+func combineArrays(firstArray []string, secondArray []string) []string {
+	var newArray []string
+	for _, value := range firstArray {
+		newArray = append(newArray, value)
+	}
+	for _, value := range secondArray {
+		newArray = append(newArray, value)
+	}
+	return newArray
+}
+
+// Get the median value of an array.
+func medianOfArray(array []float64) float64 {
+	sort.Float64s(array)
+	if len(array)%2 == 0 {
+		return (array[len(array)/2-1] + array[len(array)/2]) / 2
+	}
+	return array[len(array)/2]
 }
