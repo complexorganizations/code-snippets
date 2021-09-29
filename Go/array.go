@@ -27,6 +27,10 @@ func main() {
 	fmt.Println(indexValueInArray("jesus", randomString))
 	// Remove all the empty elements in a array.
 	fmt.Println(removeEmptyElements(randomString))
+	// Check if the array is empty
+	fmt.Println(arrayIsEmpty(randomString))
+	// Check if the array isnt empty
+	fmt.Println(arrayIsntEmpty(randomString))
 }
 
 // Check if the array contains the value.
@@ -58,4 +62,21 @@ func removeEmptyElements(array []string) []string {
 		}
 	}
 	return newArray
+}
+
+
+// Check if the array is empty
+func arrayIsEmpty(array []string) bool {
+	if len(array) == 0 {
+		return true
+	}
+	return false
+}
+
+// Check if the array isnt empty
+func arrayIsntEmpty(array []string) bool {
+	if len(array) == 0 {
+		return false
+	}
+	return true
 }
