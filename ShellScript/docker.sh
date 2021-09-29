@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Check for docker stuff
 function app_inside_docker_container() {
   if [ -f /.dockerenv ]; then
