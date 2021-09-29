@@ -11,4 +11,4 @@ jobs:
       with:
         node-version: 16.x
     - name: Run the javascript/array.js
-      run: node javascript/array.js
+      run: node JavaScript/array.js
