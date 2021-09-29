@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"strings"
 	"log"
 	"net/url"
+	"strings"
 )
 
 func main() {

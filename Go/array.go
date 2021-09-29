@@ -80,7 +80,6 @@ func removeEmptyElements(array []string) []string {
 	return newArray
 }
 
-
 // Check if the array is empty
 func arrayIsEmpty(array []string) bool {
 	if len(array) == 0 {
