@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Remove git history.
 function remove-git-history() {
     git checkout --orphan tmp-main
