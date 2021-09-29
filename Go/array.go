@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"sort"
 )
 
 func main() {
@@ -31,6 +32,10 @@ func main() {
 	fmt.Println(arrayIsEmpty(randomString))
 	// Check if the array isnt empty
 	fmt.Println(arrayIsntEmpty(randomString))
+	// Remove all the duplicate elements in a array.
+	fmt.Println(removeDuplicateElements(randomString))
+	// Sort the array
+	fmt.Println(sortList(randomString))
 }
 
 // Check if the array contains the value.
@@ -41,6 +46,17 @@ func arrayContains(cointains string, originalArray []string) bool {
 		}
 	}
 	return false
+}
+
+// Remove all the duplicate elements in a array.
+func removeDuplicateElements(array []string) []string {
+	var newArray []string
+	for _, value := range array {
+		if !arrayContains(value, newArray) {
+			newArray = append(newArray, value)
+		}
+	}
+	return newArray
 }
 
 // Get the index value of a item in a array
@@ -79,4 +95,10 @@ func arrayIsntEmpty(array []string) bool {
 		return false
 	}
 	return true
+}
+
+// Sort the array
+func sortList(content []string) []string {
+	sort.Strings(content)
+	return content
 }

@@ -115,3 +115,12 @@ func readAndAppend(fileLocation string, arrayName []string) []string {
 	}
 	return arrayName
 }
+
+// get the length of a file
+func fileLength(fileName string) int {
+	content, err := os.ReadFile(fileName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return len(content)
+}

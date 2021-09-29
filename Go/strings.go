@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"strings"
+	"log"
+	"net/url"
 )
 
 func main() {
@@ -37,6 +39,14 @@ func main() {
 	fmt.Println(indexValueInArray("April", uniqueNames))
 	// Find and replace inside a string
 	fmt.Println(findAndReplace("Hello World", "World", "Go"))
+	// Get the length of a string
+	fmt.Println(stringLength("Random String Here."))
+	// Validate the URI
+	if validURL("https://www.example.com") {
+		fmt.Println("works")
+	}
+	// Get the hostname from the URI
+	fmt.Println(getHostnameFromURI("https://www.example.com"))
 }
 
 // Check if a string is empty
@@ -100,4 +110,24 @@ func indexValueInArray(cointains string, originalArray []string) int {
 // Find and replace inside a string
 func findAndReplace(originalString, findString, replaceString string) string {
 	return strings.Replace(originalString, findString, replaceString, -1)
+}
+
+// get the length of a string
+func stringLength(str string) int {
+	return len(str)
+}
+
+// Validate the URI
+func validURL(uri string) bool {
+	_, err := url.ParseRequestURI(uri)
+	return err == nil
+}
+
+// Get the hostname from the URI
+func getHostnameFromURI(uri string) string {
+	inputUrl, err := url.Parse(uri)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return inputUrl.Hostname()
 }
