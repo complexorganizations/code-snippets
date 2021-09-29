@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Create a simple function
 function hello_world() {
   echo "Hello, World"
