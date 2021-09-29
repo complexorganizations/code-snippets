@@ -10,6 +10,7 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: 16.x
+        cache: "npm"
     - name: Run the JavaScript/array.js
       run: node JavaScript/array.js
     - name: Run the JavaScript/comments.js
@@ -20,3 +21,9 @@ jobs:
       run: node JavaScript/directory.js
     - name: Run the JavaScript/errors.js
       run: node JavaScript/errors.js
+    - name: Run the JavaScript/file.js
+      run: node JavaScript/file.js
+    - name: Run the JavaScript/function.js
+      run: node JavaScript/function.js
+    - name: Run the JavaScript/hello-world.js
+      run: node JavaScript/hello-world.js
