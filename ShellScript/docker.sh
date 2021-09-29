@@ -3,7 +3,7 @@
 # Check for docker stuff
 function app_inside_docker_container() {
   if [ -f /.dockerenv ]; then
-    INSIDE_DOCKER_CONTAINER=true
+    echo "INSIDE_DOCKER_CONTAINER"
   else
     echo "Error: Not running in docker."
     exit
@@ -16,7 +16,7 @@ app_inside_docker_container
 # Check and make sure the app isnt running inside docker.
 function app_not_inside_docker_container() {
   if [ ! -f /.dockerenv ]; then
-    INSIDE_DOCKER_CONTAINER=false
+    echo "INSIDE_DOCKER_CONTAINER"
   else
     echo "Error: Running in docker."
     exit
