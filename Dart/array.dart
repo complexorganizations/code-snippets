@@ -55,6 +55,8 @@ void main() {
   print(getElementBeforeIndex(newList, 3));
   // Check if a list is empty
   print(isArrayEmpty(newList));
+  // Check if a list is not empty
+  print(isArrayNotEmpty(newList));
   // Remove a value from the list at a certain index
   print(removeContentFromListAtIndex(newList, 3));
   // Remove all duplicate values from the list
@@ -151,6 +153,11 @@ dynamic getElementBeforeIndex(List arrayContent, index) {
 // Check if the array is empty.
 bool isArrayEmpty(List arrayContent) {
   return arrayContent.isEmpty;
+}
+
+// Check if the array isnt empty.
+bool isArrayNotEmpty(List arrayContent) {
+  return arrayContent.isNotEmpty;
 }
 
 // Remove a value from the list at a certain index.
