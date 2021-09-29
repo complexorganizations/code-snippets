@@ -35,8 +35,8 @@ example_boolean
 # An example of an array variable
 function example_array() {
     array=("example" "array")
-    echo ${array[0]}
-    echo ${array[1]}
+    echo "${array[0]}"
+    echo "${array[1]}"
 }
 
 example_array
@@ -44,6 +44,7 @@ example_array
 # An example of a map variable
 function example_map() {
     map[key]="value"
+    key="aple"
     echo ${map[key]}
 }
 
