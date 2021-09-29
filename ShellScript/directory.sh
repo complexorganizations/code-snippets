@@ -25,7 +25,7 @@ directory_doesnt_exist
 # Get a list of all the folders in a directory
 function list_folders() {
   if [ -d "/" ]; then
-    ls -d */
+    ls -d /
   fi
 }
 
