@@ -117,15 +117,25 @@ def remove_value_at_index(array, index):
     return array
 
 
+# Combine two arrays into one
+def combine_arrays(array1, array2):
+    return array1 + array2
+
+
+# Get all the values from the array after the certain index
+def get_values_after_index(array, index):
+    return array[index:]
+
+
+# Get all the values in the array in the certain index range
+def get_values_in_index_range(array, start_index, end_index):
+    return array[start_index:end_index]
+
+
 # Remove all the elements from the array
 def remove_all_elements(array):
     array.clear()
     return array
-
-
-# Combine two arrays into one
-def combine_arrays(array1, array2):
-    return array1 + array2
 
 
 def main():
@@ -170,10 +180,14 @@ def main():
     print(add_value_at_index(array, 1, "g"))
     # Remove value from the array at a certain index
     print(remove_value_at_index(array, 1))
-    # Remove all the elements from the array
-    print(remove_all_elements(array))
     # Combine two arrays into one
     print(combine_arrays(array, ["h", "i"]))
+    # Get all the values from the array after the certain index
+    print(get_values_after_index(array, 2))
+    # Get all the values in the array in the certain index range
+    print(get_values_in_index_range(array, 1, 3))
+    # Remove all the elements from the array
+    print(remove_all_elements(array))
 
 
 main()
