@@ -9,6 +9,11 @@ def is_array_empty(array):
         return False
 
 
+# Sort an array and return the values
+def sort_array(array):
+    return sorted(array)
+
+
 # Get the length of the array
 def get_array_length(array):
     return len(array)
@@ -117,14 +122,10 @@ def remove_all_elements(array):
     array.clear()
     return array
 
+
 # Combine two arrays into one
 def combine_arrays(array1, array2):
     return array1 + array2
-
-
-# Sort an array and return the values
-def sort_array(array):
-    return array.sort()
 
 
 def main():
