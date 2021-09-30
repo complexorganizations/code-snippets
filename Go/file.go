@@ -41,6 +41,16 @@ func main() {
 	// Read and append the file.
 	var exampleContentSlice []string
 	exampleContentSlice = readAndAppend("apple.txt", exampleContentSlice)
+	// Append and write the content to a file.
+	err = writeToFile("/location/to/save", "The content to write to the file.")
+	if err != nil {
+		log.Fatal(err)
+	}
+	// Don't append and write the content to a file.
+	err = writeContnetToFile("/location/to/save", "The content to write to the file.")
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 // Check if a file exists
@@ -123,4 +133,30 @@ func fileLength(fileName string) int {
 		log.Fatal(err)
 	}
 	return len(content)
+}
+
+// Append and write to file
+func writeToFile(pathInSystem string, content string) error {
+	filePath, err := os.OpenFile(pathInSystem, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	if err != nil {
+		return err
+	}
+	_, err = filePath.WriteString(content + "\n")
+	if err != nil {
+		return err
+	}
+	err = filePath.Close()
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+// Don't append and write to file
+func writeContnetToFile(filepath string, content string) error {
+	err := os.WriteFile(content, []byte(filepath), 0644)
+	if err != nil {
+		return err
+	}
+	return nil
 }
