@@ -1,6 +1,6 @@
+import os
 import tensorflow
 from tensorflow.python.client import device_lib
-import os
 
 
 # Get a list of all local devices available to TensorFlow.
@@ -25,6 +25,31 @@ def set_gpu_status(use_gpu):
     elif use_gpu == False:
         os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
+
+# Get the current tensorflow version.
+def get_tf_version():
+    return tensorflow.version.VERSION
+
+
+# Get the current tensorflow complier version.
+def get_tensoflow_compiler_version():
+    return tensorflow.version.COMPILER_VERSION
+
+
+# Get the current tensoflow git version.
+def get_tensoflow_git_version():
+    return tensorflow.version.GIT_VERSION
+
+
+# Get the current tensorflow default graph min consumer.
+def get_default_graph_min_consumer():
+    return tensorflow.version.GRAPH_DEF_VERSION_MIN_CONSUMER
+
+
+# Get the current tensorflow default graph min producer.
+def get_default_graph_min_producer():
+    return tensorflow.version.GRAPH_DEF_VERSION_MIN_PRODUCER
+
 def main():
     # Get a list of all the devices available to TensorFlow.
     print(get_available_devices())
@@ -34,6 +59,16 @@ def main():
     print(get_available_gpus())
     # Choose to either enable or disable the GPU use.
     set_gpu_status(True)
+    # Get the curret tensorflow version.
+    print(get_tf_version())
+    # Get the current tensorflow api version.
+    print(get_tensoflow_compiler_version())
+    # Get the current tensorflow git version.
+    print(get_tensoflow_git_version())
+    # Get the current tensorflow default graph min consumer.
+    print(get_default_graph_min_consumer())
+    # Get the current tensorflow default graph min producer.
+    print(get_default_graph_min_producer())
 
 
 main()
