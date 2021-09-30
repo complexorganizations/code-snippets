@@ -117,11 +117,22 @@ def remove_all_elements(array):
     array.clear()
     return array
 
+# Combine two arrays into one
+def combine_arrays(array1, array2):
+    return array1 + array2
+
+
+# Sort an array and return the values
+def sort_array(array):
+    return array.sort()
+
 
 def main():
-    array = ["a", "b", "c"]
+    array = ["c", "a", "b"]
     # Check if the array is empty
     print(is_array_empty(array))
+    # Sort an array
+    print(sort_array(array))
     # Get the length of the array
     print(get_array_length(array))
     # Check if the array contains the element
@@ -145,7 +156,7 @@ def main():
     # Change the value of a element at the certain index
     print(change_element_at_index(array, 1, "e"))
     # Change the value of a element in the array
-    print(change_element_via_value(array, "c", "f"))
+    print(change_element_via_value(array, "e", "f"))
     # Check if the array is sorted
     print(is_array_sorted(array))
     # Get the first element of the array
@@ -160,6 +171,8 @@ def main():
     print(remove_value_at_index(array, 1))
     # Remove all the elements from the array
     print(remove_all_elements(array))
+    # Combine two arrays into one
+    print(combine_arrays(array, ["h", "i"]))
 
 
 main()
