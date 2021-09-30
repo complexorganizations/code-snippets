@@ -1,3 +1,8 @@
 import tensorflow
 
-print("Tensorflow version:", tensorflow.version.VERSION)
+
+def main():
+    print("Tensorflow version:", tensorflow.version.VERSION)
+
+
+main()
