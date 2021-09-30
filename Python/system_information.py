@@ -3,6 +3,7 @@ import os
 import platform
 import shutil
 import socket
+import psutil
 
 
 # Get the current operating system
@@ -80,6 +81,26 @@ def is_application_installed(application):
     return shutil.which(application) != None
 
 
+# Get the current user cpu time
+def get_user_cpu_time():
+    return psutil.cpu_times()
+
+
+# Get the current system memory usage
+def get_system_memory():
+    return psutil.virtual_memory()
+
+
+# Get the current system disk info
+def get_system_disk_info():
+    return psutil.disk_partitions()
+
+
+# Get the current system io info
+def get_system_disk_io_counters():
+    return psutil.disk_io_counters()
+
+
 def main():
     # Get the current operating system
     print(get_os())
@@ -103,6 +124,14 @@ def main():
     print(get_user_external_ip())
     # Check if a specfied application is installed
     print(is_application_installed("code"))
+    # Get the current user cpu time
+    print(get_user_cpu_time())
+    # Get the current system memory usage
+    print(get_system_memory())
+    # Get the current system disk info
+    print(get_system_disk_info())
+    #  Get the current system inode info
+    print(get_system_disk_io_counters())
 
 
 main()
