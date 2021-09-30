@@ -51,6 +51,26 @@ def get_default_graph_min_producer():
     return tensorflow.version.GRAPH_DEF_VERSION_MIN_PRODUCER
 
 
+# Check if the gpus are available.
+def check_gpu_status():
+    return tensorflow.test.is_gpu_available()
+
+
+# Check if the cuda is available.
+def check_cuda_status():
+    return tensorflow.test.is_built_with_cuda()
+
+
+# Check if the xla is available.
+def check_xla_status():
+    return tensorflow.test.is_built_with_xla()
+
+
+# Check if the rocm is available.
+def check_rocm_status():
+    return tensorflow.test.is_built_with_rocm()
+
+
 def main():
     # Get a list of all the devices available to TensorFlow.
     print(get_available_devices())
@@ -70,6 +90,14 @@ def main():
     print(get_default_graph_min_consumer())
     # Get the current tensorflow default graph min producer.
     print(get_default_graph_min_producer())
+    # Check if the gpus are available.
+    print(check_gpu_status())
+    # Check if the cuda is available.
+    print(check_cuda_status())
+    # Check if the xla is available.
+    print(check_xla_status())
+    # Check if the rocm is available.
+    print(check_rocm_status())
 
 
 main()
