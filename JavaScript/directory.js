@@ -16,11 +16,11 @@ function main() {
     // Get all the files in a directory
     console.log(getFilesInDirectory("/"))
     // Get all the folders in a directory
-    console.log(getFoldersInDirectory("/src/"))
+    console.log(getFoldersInDirectory("/"))
     // Get the permissions of a folder
-    console.log(getFolderPermissions("/Users/"))
+    console.log(getFolderPermissions("/"))
     // Get the size of a folder
-    console.log(getFolderSize("/Users/"))
+    console.log(getFolderSize("/"))
 
 }
 
