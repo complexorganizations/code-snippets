@@ -50,6 +50,7 @@ def get_default_graph_min_consumer():
 def get_default_graph_min_producer():
     return tensorflow.version.GRAPH_DEF_VERSION_MIN_PRODUCER
 
+
 def main():
     # Get a list of all the devices available to TensorFlow.
     print(get_available_devices())
