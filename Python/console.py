@@ -4,16 +4,15 @@ def clear_console():
 
 
 # Take in input from the user
-def get_input():
-    user_input = input("Enter a number: ")
-    return user_input
+def get_input(ask_string):
+    return input(ask_string)
 
 
 def main():
     # Clear the console
     clear_console()
     # Get input from the user
-    user_input = get_input()
+    user_input = get_input("Enter a number: ")
     print(user_input)
 
 
