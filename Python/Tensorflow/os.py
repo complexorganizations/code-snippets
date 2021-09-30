@@ -13,9 +13,19 @@ def get_available_cpus():
     return tensorflow.config.list_physical_devices("CPU")
 
 
+# Get a number of all available cpus to tensorflow.
+def get_number_of_cpus_to_tensorflow():
+    return len(tensorflow.config.list_physical_devices("CPU"))
+
+
 # Get a list of all the GPUs available to TensorFlow.
 def get_available_gpus():
     return tensorflow.config.list_physical_devices("GPU")
+
+
+# Get a number of all avialable gpus to tensorflow.
+def get_number_of_gpus_to_tensorflow():
+    return len(tensorflow.config.list_physical_devices("GPU"))
 
 
 # Choose to either enable or disable the GPU use.
@@ -76,8 +86,12 @@ def main():
     print(get_available_devices())
     # Get a list of all the CPUs available to TensorFlow.
     print(get_available_cpus())
+    # Get a number of all the CPUs available to tensorflow.
+    print(get_number_of_cpus_to_tensorflow())
     # Get a list of all the GPUs available to TensorFlow.
     print(get_available_gpus())
+    # Get a number of all the GPUs available to tensorflow.
+    print(get_number_of_gpus_to_tensorflow())
     # Choose to either enable or disable the GPU use.
     set_gpu_status(True)
     # Get the curret tensorflow version.
