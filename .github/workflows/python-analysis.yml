@@ -1,4 +1,4 @@
-name: Python application
+name: Python analysis
 on: [push, pull_request]
 jobs:
   build:
