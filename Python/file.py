@@ -29,16 +29,15 @@ def read_file(file_name):
 
 
 def main():
-    # Remove a file
-    remove_file("test.txt")
-    # Rename a file
-    rename_file("test.txt", "new_test.txt")
     # Write to a file
     write_to_file("test.txt", "Hello World!")
     # Check if a file exists
     print(file_exists("test.txt"))
     # Read a file
     print(read_file("test.txt"))
-
+    # Rename a file
+    rename_file("test.txt", "new_test.txt")
+    # Remove a file
+    remove_file("new_test.txt")
 
 main()
