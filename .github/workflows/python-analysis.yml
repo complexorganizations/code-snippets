@@ -2,7 +2,7 @@ name: Python
 on: [push, pull_request]
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Check out code into the directory
       uses: actions/checkout@v2
