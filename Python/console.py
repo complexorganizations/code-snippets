@@ -12,8 +12,8 @@ def main():
     # Clear the console
     clear_console()
     # Get input from the user
-    user_input = get_input("Enter a number: ")
-    print(user_input)
+    #user_input = get_input("Enter a number: ")
+    #print(user_input)
 
 
 main()
