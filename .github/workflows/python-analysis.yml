@@ -12,7 +12,6 @@ jobs:
         python-version: 3.9
     - name: Install dependencies
       run: |
-        pip install random
         pip install hashlib
     - name: Run the Python/array.py
       run: node Python/array.py
