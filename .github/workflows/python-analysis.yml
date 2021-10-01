@@ -10,50 +10,14 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.9
-    - name: Install dependencies
+    - name: Fetch action
+      id: pl
+      uses: Rishabh510/Path-lister-action@master
+      with:
+        path: "Python/"
+        type: ".py"
+    - name: Run the code
       run: |
-        pip install psutil validators
-    - name: Run the Python/array.py
-      run: python Python/array.py
-    - name: Run the Python/comments.py
-      run: python Python/comments.py
-    - name: Run the Python/cryptography.py
-      run: python Python/cryptography.py
-    - name: Run the Python/csv.py
-      run: python Python/csv.py
-    - name: Run the Python/directory.py
-      run: python Python/directory.py
-    - name: Run the Python/file.py
-      run: python Python/file.py
-    - name: Run the Python/function.py
-      run: python Python/function.py
-    - name: Run the Python/hello-world.py
-      run: python Python/hello-world.py
-    - name: Run the Python/if-statement.py
-      run: python Python/if-statement.py
-    - name: Run the Python/json.py
-      run: python Python/json.py
-    - name: Run the Python/loop.py
-      run: python Python/loop.py
-    - name: Run the Python/math.py
-      run: python Python/math.py
-    - name: Run the Python/net.py
-      run: python Python/net.py
-    - name: Run the Python/operators.py
-      run: python Python/operators.py
-    - name: Run the Python/random_information.py
-      run: python Python/random_information.py
-    - name: Run the Python/switch.py
-      run: python Python/switch.py
-    - name: Run the Python/system_information.py
-      run: python Python/system_information.py
-    - name: Run the Python/time.py
-      run: python Python/time.py
-    - name: Run the Python/validators_information.py
-      run: python Python/validators_information.py
-    - name: Run the Python/variables.py
-      run: python Python/variables.py
-    - name: Run the Python/variables_function.py
-      run: python Python/variables_function.py
-    - name: Run the Python/xml.py
-      run: python Python/xml.py
+        for found_files in ${{ steps.pl.outputs.paths }}; do
+          python ${found_files}
+        done
