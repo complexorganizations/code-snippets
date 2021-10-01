@@ -1,0 +1,12 @@
+name: Dart
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out code into the directory
+      uses: actions/checkout@v2
+    - name: Setup Dart
+      uses: dart-lang/setup-dart@v1
+    - name: Run the Dart/hello-world.dart
+      run: dart Dart/hello-world.dart
