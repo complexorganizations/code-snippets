@@ -1,3 +1,4 @@
+"""
 # Example of a switch statment
 def switch_function(argument):
     match argument:
@@ -33,3 +34,4 @@ def main():
 
 
 main()
+"""
