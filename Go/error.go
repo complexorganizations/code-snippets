@@ -7,15 +7,15 @@ import (
 
 func main() {
 	// Handle all the errors in a single place
-	err := os.Remove("example")
+	err := os.Remove("error.go")
 	handleError(err)
 	// Handle one error at a time
-	err = os.Remove("example")
+	err = os.Remove("error.go")
 	if err != nil {
-		panic(err)
+		log.Println(err)
 	}
 	// Exit the program if an error occurs
-	err = os.Remove("example")
+	err = os.Remove("error.go")
 	if err != nil {
 		os.Exit(0)
 	}
