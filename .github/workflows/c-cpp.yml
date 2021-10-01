@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: C/C++
 on: [push, pull_request]
 jobs:
   build:
