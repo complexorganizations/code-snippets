@@ -21,20 +21,26 @@ void integerSwitch() {
 
 // A simple string switch statement
 void stringSwitch() {
-    const name = "John";
-    switch (name) {
-        case 'John':
-            printf("John\n");
-            break;
-        case 'Jane':
-            printf("Jane\n");
-            break;
-        case 'Joe':
-            printf("Joe\n");
-            break;
-        default:
-            printf("default\n");
-    }
+   char grade = 'B';
+   switch(grade) {
+      case 'A' :
+         printf("Excellent!\n");
+         break;
+      case 'B' :
+        printf("Good Job!\n");
+        break;
+      case 'C' :
+         printf("Well done\n");
+         break;
+      case 'D' :
+         printf("You passed\n");
+         break;
+      case 'F' :
+         printf("Better try again\n");
+         break;
+      default :
+         printf("Invalid grade\n");
+   }
 }
 
 int main() {
