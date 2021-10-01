@@ -1,0 +1,10 @@
+name: Swift
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+    - name: Check out code into the directory
+      uses: actions/checkout@v2
+    - name: Run the Swift/hello-world.swift
+      run: swift Swift/hello-world.swift
