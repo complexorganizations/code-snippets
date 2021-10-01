@@ -14,4 +14,4 @@ jobs:
       run: |
         echo "ok"
     - name: Run the Python/array.py
-      run: node Python/array.py
+      run: python Python/array.py
