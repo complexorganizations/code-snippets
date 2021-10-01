@@ -43,19 +43,21 @@ def get_current_directory():
 
 def main():
     # Check if the directory exists
-    print(check_dir(get_current_directory()))
+    print(check_dir("/"))
     # Create a directory
-    create_dir(get_current_directory())
-    # Remove a directory
-    remove_dir(get_current_directory())
+    create_dir("/src/")
     # Change the current working directory
-    change_dir(get_current_directory())
+    change_dir("/src/")
     # Get all the files and folders in a directory
-    print(get_all_folder_files(get_current_directory()))
+    print(get_all_folder_files("/src/"))
     # Get all the folders only in a directory
-    print(get_folders_only(get_current_directory()))
+    print(get_folders_only("/src/"))
     # Get all the files only in a directory
-    print(get_files_only(get_current_directory()))
+    print(get_files_only("/src/"))
+    # Get the current working directory
+    print(get_current_directory())
+    # Remove a directory
+    remove_dir("/src/")
 
 
 main()
