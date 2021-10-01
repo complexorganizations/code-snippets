@@ -9,7 +9,7 @@ void clearTerminal() {
 int getUserInput() {
     int userInput;
     printf("Enter an integer:");
-    scanf_s("%d", &userInput);
+    scanf("%d", &userInput);
     return userInput;
 }
 
