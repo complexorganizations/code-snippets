@@ -10,14 +10,13 @@ jobs:
       uses: actions/setup-go@v2
       with:
         go-version: 1.17
-    - name: Fetch action
-      id: pl
-      uses: Rishabh510/Path-lister-action@master
-      with:
-        path: "Go/"
-        type: ".go"
-    - name: Run the Go/hello-world.go
+    - name: Run the code
       run: |
-        for found_files in ${{ steps.pl.outputs.paths }}; do
-          go run ${found_files}
+        ALL_FILES_IN_DIRECTORY=$(find Go/ -type f -name "*.go")
+        for CURRENT_FILE_IN_DIRECTORY in ${ALL_FILES_IN_DIRECTORY}; do
+          ALL_FILES_LIST[$ADD_CONTENT]=$CURRENT_FILE_IN_DIRECTORY
+          ADD_CONTENT=$(("$ADD_CONTENT" + 1))
+        done
+        for FILE_LIST in "${ALL_FILES_LIST[@]}"; do
+          go run ${FILE_LIST}
         done
