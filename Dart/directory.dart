@@ -11,10 +11,10 @@ void main() {
   print(getAllInDirectory("/"));
   // Create a directory.
   createDirectory("/src/");
-  // Delete a directory.
-  removeDirectory("/src/");
   // Rename a directory.
   renameDirectory("/src/", "/source/");
+  // Delete a directory.
+  removeDirectory("/source/");
 }
 
 // Check if a directory exists
