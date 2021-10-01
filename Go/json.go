@@ -24,14 +24,16 @@ func main() {
 		log.Println(err)
 	}
 	fmt.Println(string(currentJson))
+	// Write data to a file
+	err = writeContnetToFile("test.json", string(currentJson))
+	if err != nil {
+		log.Println(err)
+	}
 	// Check if a json file is valid.
 	validCheck, err := validateJsonFromFile("test.json")
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(validCheck)
-	// Check if a json is valid.
-	validCheck = validateJson(currentJson)
 	fmt.Println(validCheck)
 }
 
@@ -47,4 +49,13 @@ func validateJsonFromFile(jsonFile string) (bool, error) {
 // Check if a json is valid.
 func validateJson(jsonData []byte) bool {
 	return json.Valid(jsonData)
+}
+
+// Don't append and write to file
+func writeContnetToFile(filepath string, content string) error {
+	err := os.WriteFile(content, []byte(filepath), 0644)
+	if err != nil {
+		return err
+	}
+	return nil
 }
