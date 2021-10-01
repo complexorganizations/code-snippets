@@ -10,7 +10,7 @@ fn main() {
    // Check if the file exists
    println!("{}", check_file_exists("foo.txt"));
    // Read a file
-   read_file("bar.txt");
+   println!("{}", read_file("foo.txt"));
    // Move a file
    move_file("foo.txt", "bar.txt");
    // Remove a file
