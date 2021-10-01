@@ -1,6 +1,9 @@
 const os = require("os")
+const process = require("process")
 
 function main() {
+    // Clear the console
+    clearConsole()
     // Print the current OS
     console.log(getCurrentOS())
     // Print the current user
@@ -37,13 +40,18 @@ function main() {
     console.log(getCurrentCPUTimes())
     // Print the current system's cpu usage
     console.log(getCurrentCPUUsage())
-    // Clear the console
-    clearConsole()
+    // Change the current working directory
+    changeDirectory("/")
     // Exit the program
     exit()
 }
 
 main()
+
+// Clear the console
+function clearConsole() {
+    process.stdout.write("\033c")
+}
 
 // Get the current operating system
 function getCurrentOS() {
@@ -135,9 +143,9 @@ function getCurrentCPUUsage() {
     return os.cpus()[0].times.user
 }
 
-// Clear the console
-function clearConsole() {
-    process.stdout.write("\033c")
+// Change the current working directory
+function changeDirectory(path) {
+    process.chdir(path)
 }
 
 // Exit the program
