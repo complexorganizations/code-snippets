@@ -1,5 +1,8 @@
 name: Dart
-on: [push, pull_request]
+on:
+  push:
+    paths:
+      - "**.js"
 jobs:
   build:
     runs-on: ubuntu-latest
