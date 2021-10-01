@@ -1,0 +1,12 @@
+name: C/C++ CI
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out code into the directory
+      uses: actions/checkout@v2
+    - name: Run the C/array.c
+      run: |
+        gcc C/array.c -o C/array
+        C/array
