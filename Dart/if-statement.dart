@@ -35,9 +35,6 @@ void main() {
   // another methord
   testFunction();
 
-  // throw an error
-  testStuff();
-
   // More
   int apple = 1;
   int banana = 1;
@@ -106,14 +103,5 @@ void testFunction() {
     if (month == 5) {
       print("The month is five.");
     }
-  }
-}
-
-void testStuff() {
-  int astronauts = 0;
-  if (astronauts == 20) {
-    print("There are 20 astronauts on the moon.");
-  } else if (astronauts == 0) {
-    throw StateError("No astronauts.");
   }
 }
