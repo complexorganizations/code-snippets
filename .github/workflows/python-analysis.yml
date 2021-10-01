@@ -15,3 +15,13 @@ jobs:
         echo "ok"
     - name: Run the Python/array.py
       run: python Python/array.py
+    - name: Run the Python/comments.py
+      run: python Python/comments.py
+    - name: Run the Python/console.py
+      run: python Python/console.py
+    - name: Run the Python/cryptography.py
+      run: python Python/cryptography.py
+    - name: Run the Python/csv.py
+      run: python Python/csv.py
+    - name: Run the Python/directory.py
+      run: python Python/directory.py
