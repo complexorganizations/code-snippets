@@ -10,14 +10,13 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.9
-    - name: Fetch action
-      id: pl
-      uses: Rishabh510/Path-lister-action@master
-      with:
-        path: "Python/"
-        type: ".py"
     - name: Run the code
       run: |
-        for found_files in ${{ steps.pl.outputs.paths }}; do
-          python ${found_files}
+        ALL_FILES_IN_DIRECTORY=$(find Python/ -type f -name "*.py")
+        for CURRENT_FILE_IN_DIRECTORY in ${ALL_FILES_IN_DIRECTORY}; do
+          ALL_FILES_LIST[$ADD_CONTENT]=$CURRENT_FILE_IN_DIRECTORY
+          ADD_CONTENT=$(("$ADD_CONTENT" + 1))
+        done
+        for FILE_LIST in "${ALL_FILES_LIST[@]}"; do
+          python ${FILE_LIST}
         done
