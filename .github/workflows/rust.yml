@@ -1,0 +1,12 @@
+name: Rust
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out code into the directory
+      uses: actions/checkout@v2
+    - name: Run the Rust/hello-world.rs
+      run: |
+        rustc Rust/hello-world.rs
+        ./Rust/hello-world
