@@ -1,5 +1,8 @@
 name: Python
-on: [push, pull_request]
+on:
+  push:
+    paths:
+      - "**.py"
 jobs:
   build:
     runs-on: ubuntu-latest

@@ -1,5 +1,8 @@
 name: C
-on: [push, pull_request]
+on:
+  push:
+    paths:
+      - "**.c"
 jobs:
   build:
     runs-on: ubuntu-latest
