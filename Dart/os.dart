@@ -31,7 +31,7 @@ void main() {
   // Check if the current application is running on a docker container.
   print(isRunningInDocker());
   // Exit the program.
-  closeApplication(1);
+  closeApplication(0);
 }
 
 // Check if the current application is running inside docker container.
