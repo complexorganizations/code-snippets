@@ -3,7 +3,6 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
-    documents: [ "application.go", "comments.go", "directory.go", "function.go", "http-server.go", "json.go", "net.go", "pointer-reciver.go", "strings.go", "time.go", "workers.go", "array.go", "cryptography.go", "error.go", "hello-world.go", "if-statement.go", "loop.go", "operators.go", "random.go", "struct.go", "variables.go", "channels.go", "defer.go", "file.go", "http-client.go", "ip.go", "memory.go", "os.go", "runtime.go", "switch.go" ]
     steps:
     - name: Check out code into the directory
       uses: actions/checkout@v2
@@ -11,5 +10,14 @@ jobs:
       uses: actions/setup-go@v2
       with:
         go-version: 1.17
-    - name: Run the Go Code
-      run: go run Go/${{ documents }}
+    - name: Fetch action
+      id: pl
+      uses: Rishabh510/Path-lister-action@master
+      with:
+      path: "Go/"
+      type: ".go"
+    - name: Run the Go/hello-world.go
+      run: |
+        for found_files in ${{ steps.pl.outputs.paths }}; do
+          go run Go/found_files
+        done
