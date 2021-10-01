@@ -16,4 +16,7 @@ void main() {
   if (!(fistName == "John" && lastName == "Doe")) {
     print("Hello ${fistName} ${lastName}");
   }
+  if (fistName == "John" && lastName != "Doe") {
+    print("Hello ${fistName} ${lastName}");
+  }
 }
