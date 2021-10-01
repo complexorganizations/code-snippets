@@ -5,16 +5,16 @@ use std::io::Write;
 use std::io::Read;
 
 fn main() {
+   // Create a file
+   create_file("foo.txt");
    // Check if the file exists
-   println!("{}", check_file_exists("file-exists.rs"));
-   // Remove a file
-   remove_file("bar.txt");
-   // Move a file
-   move_file("foo.txt", "bar.txt");
+   println!("{}", check_file_exists("foo.txt"));
    // Read a file
    read_file("bar.txt");
-   // Create a file
-   create_file("bar.txt");
+   // Move a file
+   move_file("foo.txt", "bar.txt");
+   // Remove a file
+   remove_file("bar.txt");
 }
 
 // Check if a file exists and return a boolean
