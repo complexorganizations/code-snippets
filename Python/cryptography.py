@@ -27,11 +27,6 @@ def get_sha_3_512(string):
     return hashlib.sha3_512(string.encode()).hexdigest()
 
 
-# Get the SHA1 of the string
-def get_sha1(string):
-    return hashlib.sha1(string.encode()).hexdigest()
-
-
 # Get the base64 of the string
 def get_base64(string):
     return base64.b64encode(string.encode()).decode()
@@ -55,8 +50,6 @@ def main():
     print(get_sha512(some_random_string))
     # Get the SHA-3-512 of the string
     print(get_sha_3_512(some_random_string))
-    # Get the SHA1 of the string
-    print(get_sha1(some_random_string))
     # Get the base64 of the string
     print(get_base64(some_random_string))
     # Decode the base64 string
