@@ -17,7 +17,7 @@ int main() {
     // Clear the terminal
     clearTerminal();
     // Take input from the user
-    int userInput = getUserInput();
-    printf(userInput);
+    //int userInput = getUserInput();
+    //printf(userInput);
     return 0;
 }
