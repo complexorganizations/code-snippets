@@ -28,8 +28,13 @@ func main() {
 		// both
 		fmt.Println(index, name)
 	}
+	counter := 0
 	// loop forever
 	for {
+		counter = counter + 1
 		fmt.Println("This is a loop and it will go on forever")
+		if counter == 10 {
+			break
+		}
 	}
 }
