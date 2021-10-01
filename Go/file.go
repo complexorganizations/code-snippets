@@ -13,11 +13,11 @@ import (
 
 func main() {
 	// Check if file exists
-	if fileExists("fileName") {
+	if fileExists("file.go") {
 		fmt.Println("There is a file here.")
 	}
 	// Get the size of a file
-	fileSize, err := fileSize("/")
+	fileSize, err := fileSize("file.go")
 	if err != nil {
 		log.Println(err)
 	}
@@ -25,7 +25,7 @@ func main() {
 	// Get the file extension
 	fmt.Println(fileExtension("/random/file/here.json"))
 	// Read a file and return the contents
-	content, err := readAFile("/random/file/here.json")
+	content, err := readAFile("file.go")
 	if err != nil {
 		log.Println(err)
 	}
@@ -35,22 +35,22 @@ func main() {
 		fmt.Println("This is a hidden file")
 	}
 	// Get the sha256 hash of a file
-	fmt.Println(generateSHA512("test.file"))
+	fmt.Println(generateSHA512("file.go"))
 	// Get the path of the current executable
 	fmt.Println(getExecutablePath())
-	// Read and append the file.
-	var exampleContentSlice []string
-	exampleContentSlice = readAndAppend("apple.txt", exampleContentSlice)
 	// Append and write the content to a file.
-	err = writeToFile("/location/to/save", "The content to write to the file.")
+	err = writeToFile("foo.txt", "The content to write to the file.")
 	if err != nil {
 		log.Fatal(err)
 	}
 	// Don't append and write the content to a file.
-	err = writeContnetToFile("/location/to/save", "The content to write to the file.")
+	err = writeContnetToFile("bar.txt", "The content to write to the file.")
 	if err != nil {
 		log.Fatal(err)
 	}
+	// Read and append the file.
+	var exampleContentSlice []string
+	exampleContentSlice = readAndAppend("foo.txt", exampleContentSlice)
 }
 
 // Check if a file exists
