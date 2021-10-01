@@ -11,15 +11,15 @@ function main() {
     // Check if a file is hidden
     console.log(isHidden("file.js"))
     // Read the content of the file and return it.
-    console.log(readFile("file.js"))
+    console.log(readFile("JavaScript/file.js"))
     // Read the content of a file and check if it contains a specific string.
-    console.log(readFileContains("file.js", "javascript"))
+    console.log(readFileContains("JavaScript/errors.js", "javascript"))
     // Check the permissions of a file
     console.log(checkPermissions("file.js"))
     // Create a file
-    createFile("file.js")
+    createFile("o726H2NMjuVwHOPmjEPP.js")
     // Remove a file
-    removeFile("file.js")
+    removeFile("o726H2NMjuVwHOPmjEPP.js")
 }
 
 main()
