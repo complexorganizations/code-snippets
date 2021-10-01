@@ -126,6 +126,11 @@ def truncate_double(a):
     return math.trunc(a)
 
 
+# Get the value of pi
+def get_pi_value():
+    return math.pi
+
+
 def main():
     # Add two numbers and return the result
     print(add(1, 2))
@@ -161,6 +166,8 @@ def main():
     print(ceil_double(3.14))
     # truncate the number to the nearest integer
     print(truncate_double(3.14))
+    # Get the value of pi
+    print(get_pi_value())
 
 
 main()

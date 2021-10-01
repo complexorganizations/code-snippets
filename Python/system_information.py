@@ -3,6 +3,7 @@ import os
 import platform
 import shutil
 import socket
+import sys
 import psutil
 
 
@@ -101,6 +102,11 @@ def get_system_disk_io_counters():
     return psutil.disk_io_counters()
 
 
+# Get all the path in the system
+def get_all_path():
+    return sys.path
+
+
 def main():
     # Get the current operating system
     print(get_os())
@@ -132,6 +138,8 @@ def main():
     print(get_system_disk_info())
     #  Get the current system inode info
     print(get_system_disk_io_counters())
+    # Get all the path in the system
+    print(get_all_path())
 
 
 main()
