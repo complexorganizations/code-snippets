@@ -132,6 +132,12 @@ def get_values_in_index_range(array, start_index, end_index):
     return array[start_index:end_index]
 
 
+# Extend the array with another array
+def extend_array(array, array2):
+    array.extend(array2)
+    return array
+
+
 # Remove all the elements from the array
 def remove_all_elements(array):
     array.clear()
@@ -186,6 +192,8 @@ def main():
     print(get_values_after_index(array, 2))
     # Get all the values in the array in the certain index range
     print(get_values_in_index_range(array, 1, 3))
+    # Extend the array with another array
+    print(extend_array(array, ["j", "k"]))
     # Remove all the elements from the array
     print(remove_all_elements(array))
 
