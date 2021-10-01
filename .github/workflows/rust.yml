@@ -8,5 +8,5 @@ jobs:
       uses: actions/checkout@v2
     - name: Run the Rust/hello-world.rs
       run: |
-        rustc Rust/hello-world.rs
+        rustc Rust/hello-world.rs -o Rust/hello-world
         Rust/hello-world
