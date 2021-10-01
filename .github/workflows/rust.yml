@@ -9,4 +9,4 @@ jobs:
     - name: Run the Rust/hello-world.rs
       run: |
         rustc Rust/hello-world.rs
-        ./Rust/hello-world
+        Rust/hello-world
