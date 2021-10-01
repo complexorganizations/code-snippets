@@ -61,8 +61,9 @@ void breakLoop() {
 void loopForever() {
   int counter = 0;
   while (true) {
+    counter = counter + 1;
     print("test");
-    if (counter == 100) {
+    if (counter == 10) {
       break;
     }
   }
