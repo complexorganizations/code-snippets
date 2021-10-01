@@ -8,5 +8,5 @@ function clear_terminal() {
 # Take in user input and echo it back
 function user_input() {
     read -rp "User provided input:" USER_INPUT
-    echo ${USER_INPUT}
+    echo "${USER_INPUT}"
 }
