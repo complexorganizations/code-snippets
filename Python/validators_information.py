@@ -50,7 +50,7 @@ def main():
     # Check if a mac address is valid
     print(is_valid_mac("00:00:00:00:00:00"))
     # Check if a uuid is valid
-    print(is_valid_uuid("00000000-0000-0000-0000-000000000000"))
+    print(is_valid_uuid("xxxx-xxxx-xxxx-xxxx-xxxx"))
 
 
 main()
