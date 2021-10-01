@@ -6,7 +6,14 @@ jobs:
     steps:
     - name: Check out code into the directory
       uses: actions/checkout@v2
-    - name: Run the Rust/hello-world.rs
+    - name: Run the code
       run: |
-        rustc Rust/hello-world.rs -o Rust/hello-world
-        Rust/hello-world
+        ALL_FILES_IN_DIRECTORY=$(find Python/ -type f -name "*.py")
+        for CURRENT_FILE_IN_DIRECTORY in ${ALL_FILES_IN_DIRECTORY}; do
+          ALL_FILES_LIST[$ADD_CONTENT]=$CURRENT_FILE_IN_DIRECTORY
+          ADD_CONTENT=$(("$ADD_CONTENT" + 1))
+        done
+        for FILE_LIST in "${ALL_FILES_LIST[@]}"; do
+          rustc ${FILE_LIST} -o ${FILE_LIST%.*}
+          ${FILE_LIST%.*}
+        done
