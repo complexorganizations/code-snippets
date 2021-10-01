@@ -25,3 +25,15 @@ jobs:
       run: python Python/csv.py
     - name: Run the Python/directory.py
       run: python Python/directory.py
+    - name: Run the Python/file.py
+      run: python Python/file.py
+    - name: Run the Python/function.py
+      run: python Python/function.py
+    - name: Run the Python/hello-world.py
+      run: python Python/hello-world.py
+    - name: Run the Python/if-statement.py
+      run: python Python/if-statement.py
+    - name: Run the Python/json.py
+      run: python Python/json.py
+    - name: Run the Python/loop.py
+      run: python Python/loop.py
