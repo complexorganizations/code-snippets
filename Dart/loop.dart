@@ -59,7 +59,11 @@ void breakLoop() {
 
 // Loop forever
 void loopForever() {
+  int counter = 0;
   while (true) {
     print("test");
+    if (counter == 100) {
+      break;
+     }
   }
 }
