@@ -2,13 +2,13 @@ import tensorflow
 
 
 # Get the current timestamp using tensorflow
-def get_current_timestamp():
+def get_current_timestamp_from_tensorflow():
     return tensorflow.timestamp()
 
 
 def main():
-    # Get the current time
-    print(get_current_timestamp())
+    # Print the current time using tensorflow
+    print(get_current_timestamp_from_tensorflow())
 
 
 main()
