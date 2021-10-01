@@ -2,7 +2,7 @@ name: Dart
 on:
   push:
     paths:
-      - "**.js"
+      - "**.dart"
 jobs:
   build:
     runs-on: ubuntu-latest
