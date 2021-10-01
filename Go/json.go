@@ -25,12 +25,12 @@ func main() {
 	}
 	fmt.Println(string(currentJson))
 	// Write data to a file
-	err = writeContnetToFile("test.json", string(currentJson))
+	err = writeToFile("foo.json", string(currentJson))
 	if err != nil {
 		log.Println(err)
 	}
 	// Check if a json file is valid.
-	validCheck, err := validateJsonFromFile("test.json")
+	validCheck, err := validateJsonFromFile("foo.json")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -51,9 +51,17 @@ func validateJson(jsonData []byte) bool {
 	return json.Valid(jsonData)
 }
 
-// Don't append and write to file
-func writeContnetToFile(filepath string, content string) error {
-	err := os.WriteFile(content, []byte(filepath), 0644)
+// Append and write to file
+func writeToFile(pathInSystem string, content string) error {
+	filePath, err := os.OpenFile(pathInSystem, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	if err != nil {
+		return err
+	}
+	_, err = filePath.WriteString(content + "\n")
+	if err != nil {
+		return err
+	}
+	err = filePath.Close()
 	if err != nil {
 		return err
 	}
