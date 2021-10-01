@@ -7,6 +7,7 @@ import (
 	"io"
 	"log"
 	"net"
+	"os"
 	"net/http"
 )
 
@@ -16,6 +17,7 @@ func main() {
 	// Route to the gzip function
 	http.HandleFunc("/gzip", gzipHttp)
 	// Listen and serve on port 8080.
+	os.Exit(0)
 	err := http.ListenAndServe(":8080", nil)
 	// Return an error if something went wrong
 	if err != nil {
