@@ -36,21 +36,26 @@ def get_files_only(dir_name):
     return [f for f in os.listdir(dir_name) if os.path.isfile(os.path.join(dir_name, f))]
 
 
+# Get the current working directory
+def get_current_directory():
+    return os.getcwd()
+
+
 def main():
     # Check if the directory exists
-    print(check_dir("/"))
+    print(check_dir(get_current_directory()))
     # Create a directory
-    create_dir("/")
+    create_dir(get_current_directory())
     # Remove a directory
-    remove_dir("/")
+    remove_dir(get_current_directory())
     # Change the current working directory
-    change_dir("/")
+    change_dir(get_current_directory())
     # Get all the files and folders in a directory
-    print(get_all_folder_files("/"))
+    print(get_all_folder_files(get_current_directory()))
     # Get all the folders only in a directory
-    print(get_folders_only("/"))
+    print(get_folders_only(get_current_directory()))
     # Get all the files only in a directory
-    print(get_files_only("/"))
+    print(get_files_only(get_current_directory()))
 
 
 main()
