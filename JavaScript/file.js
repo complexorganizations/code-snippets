@@ -7,19 +7,19 @@ function main() {
     // Get the current path in the system
     console.log(getCurrentPath())
     // Get the file extension of a file and return it
-    console.log(getFileExtension("file.js"))
+    console.log(getFileExtension("JavaScript/file.js"))
     // Check if a file is hidden
-    console.log(isHidden("file.js"))
+    console.log(isHidden("JavaScript/directory.js"))
     // Read the content of the file and return it.
-    console.log(readFile("JavaScript/file.js"))
+    console.log(readFile("JavaScript/function.js"))
     // Read the content of a file and check if it contains a specific string.
     console.log(readFileContains("JavaScript/errors.js", "javascript"))
     // Check the permissions of a file
-    console.log(checkPermissions("file.js"))
+    console.log(checkPermissions("JavaScript/http-client.js"))
     // Create a file
-    createFile("o726H2NMjuVwHOPmjEPP.js")
+    createFile("JavaScript/o726H2NMjuVwHOPmjEPP.js")
     // Remove a file
-    removeFile("o726H2NMjuVwHOPmjEPP.js")
+    removeFile("JavaScript/o726H2NMjuVwHOPmjEPP.js")
 }
 
 main()
