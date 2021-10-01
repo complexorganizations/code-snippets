@@ -1,17 +1,5 @@
 #include <stdio.h>
 
-int main() {
-    // if-statement
-    if_statement();
-    // if-else-statement
-    if_else_statement();
-    // if-else-if-statement
-    if_else_if_statement();
-    // if-else-if-else-statement
-    if_else_if_else_statement();
-    return 0;
-}
-
 // A simple if statement
 void if_statement() {
     int a = 1;
@@ -50,4 +38,16 @@ void if_else_if_else_statement() {
     } else {
         printf("a is not 1 or 2\n");
     }
+}
+
+int main() {
+    // if-statement
+    if_statement();
+    // if-else-statement
+    if_else_statement();
+    // if-else-if-statement
+    if_else_if_statement();
+    // if-else-if-else-statement
+    if_else_if_else_statement();
+    return 0;
 }
