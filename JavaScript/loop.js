@@ -49,7 +49,12 @@ function continueLoop() {
 
 // Loop Forever
 function loopForever() {
+    var loopCounter = 0
     for (; ;) {
         console.log("I will loop forever.")
+        loopCounter = loopCounter + 1
+        if (loopCounter == 50) {
+            break
+        }
     }
 }
