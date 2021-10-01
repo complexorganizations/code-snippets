@@ -21,7 +21,7 @@ void integerSwitch() {
 
 // A simple string switch statement
 void stringSwitch() {
-    char name = "John";
+    const name = "John";
     switch (name) {
         case 'John':
             printf("John\n");
