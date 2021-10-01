@@ -63,8 +63,12 @@ def continue_in_loop():
 
 # Loop forever
 def loop_forever():
+    counter = 0
     while True:
+        counter = counter + 1
         print("Hello")
+        if counter == 10:
+            break
 
 
 def main():
