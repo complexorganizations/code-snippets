@@ -18,8 +18,10 @@ function main() {
     console.log(parseJson(sampleJson))
     // Validate the json and return true or false.
     console.log(validateJson(sampleJson))
+    // Write the json to a file.
+    writeToFile("JavaScript/sample.json", sampleJson)
     // Open a file and check if the json is valid
-    console.log(checkIfFileIsValidJson("node.json"))
+    console.log(checkIfFileIsValidJson("JavaScript/sample.json"))
 }
 
 main()
@@ -43,4 +45,13 @@ function validateJson(json) {
 function checkIfFileIsValidJson(filePath) {
     var json = fs.readFileSync(filePath, "utf8")
     return validateJson(json)
+}
+
+// Write some content to a specific file
+function writeToFile(fileName, content) {
+    fs.writeFile(fileName, content, function (err) {
+        if (err) {
+            return err
+        }
+    })
 }
