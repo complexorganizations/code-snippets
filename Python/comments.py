@@ -5,6 +5,12 @@ def main():
 
 main()
 
+# This
+# is
+# a
+# multiline
+# comment
+
 """
 A multi-line string constant is used to create a "block comment" in Python.
 This is extremely effective!
