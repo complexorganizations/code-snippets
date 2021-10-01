@@ -10,57 +10,13 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: 16.x
-    - name: Run the JavaScript/array.js
-      run: node JavaScript/array.js
-    - name: Run the JavaScript/comments.js
-      run: node JavaScript/comments.js
-    - name: Run the JavaScript/constant.js
-      run: node JavaScript/constant.js
-    - name: Run the JavaScript/directory.js
-      run: node JavaScript/directory.js
-    - name: Run the JavaScript/errors.js
-      run: node JavaScript/errors.js
-    - name: Run the JavaScript/file.js
-      run: node JavaScript/file.js
-    - name: Run the JavaScript/function.js
-      run: node JavaScript/function.js
-    - name: Run the JavaScript/hello-world.js
-      run: node JavaScript/hello-world.js
-    - name: Run the JavaScript/http-client.js
-      run: node JavaScript/http-client.js
-    - name: Run the JavaScript/http-server.js
-      run: node JavaScript/http-server.js
-    - name: Run the JavaScript/if-statement.js
-      run: node JavaScript/if-statement.js
-    - name: Run the JavaScript/json.js
-      run: node JavaScript/json.js
-    - name: Run the JavaScript/length.js
-      run: node JavaScript/length.js
-    - name: Run the JavaScript/loop.js
-      run: node JavaScript/loop.js
-    - name: Run the JavaScript/map.js
-      run: node JavaScript/map.js
-    - name: Run the JavaScript/math.js
-      run: node JavaScript/math.js
-    - name: Run the JavaScript/null.js
-      run: node JavaScript/null.js
-    - name: Run the JavaScript/operators.js
-      run: node JavaScript/operators.js
-    - name: Run the JavaScript/os.js
-      run: node JavaScript/os.js
-    - name: Run the JavaScript/random.js
-      run: node JavaScript/random.js
-    - name: Run the JavaScript/regex.js
-      run: node JavaScript/regex.js
-    - name: Run the JavaScript/runtime.js
-      run: node JavaScript/runtime.js
-    - name: Run the JavaScript/string.js
-      run: node JavaScript/string.js
-    - name: Run the JavaScript/switch.js
-      run: node JavaScript/switch.js
-    - name: Run the JavaScript/time.js
-      run: node JavaScript/time.js
-    - name: Run the JavaScript/variables.js
-      run: node JavaScript/variables.js
-    - name: Run the JavaScript/write.js
-      run: node JavaScript/write.js
+    - name: Run the code
+      run: |
+        ALL_FILES_IN_DIRECTORY=$(find JavaScript/ -type f -name "*.js")
+        for CURRENT_FILE_IN_DIRECTORY in ${ALL_FILES_IN_DIRECTORY}; do
+          ALL_FILES_LIST[$ADD_CONTENT]=$CURRENT_FILE_IN_DIRECTORY
+          ADD_CONTENT=$(("$ADD_CONTENT" + 1))
+        done
+        for FILE_LIST in "${ALL_FILES_LIST[@]}"; do
+          node ${FILE_LIST}
+        done
