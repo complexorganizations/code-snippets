@@ -45,19 +45,18 @@ def main():
     # Check if the directory exists
     print(check_dir("/"))
     # Create a directory
-    create_dir("/src/")
-    # Change the current working directory
-    change_dir("/")
+    create_dir("source/")
     # Get all the files and folders in a directory
-    print(get_all_folder_files("/src/"))
+    print(get_all_folder_files("source/"))
     # Get all the folders only in a directory
-    print(get_folders_only("/src/"))
+    print(get_folders_only("source/"))
     # Get all the files only in a directory
-    print(get_files_only("/src/"))
+    print(get_files_only("source/"))
     # Get the current working directory
     print(get_current_directory())
     # Remove a directory
-    remove_dir("/src/")
-
+    remove_dir("source/")
+    # Change the current working directory
+    change_dir("/")
 
 main()
