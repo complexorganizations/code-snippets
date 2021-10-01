@@ -11,10 +11,10 @@ void main() {
   print(getCurrentPath());
   // Check if a file exists
   print(fileExists("bar.txt"));
-  // Delete a file
-  removeFile("bar.txt");
   // Create a file
   createFile("foo.txt");
+  // Delete a file
+  removeFile("foo.txt");
 }
 
 // Opens the file and returns the contents as a string
