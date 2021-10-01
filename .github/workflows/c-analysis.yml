@@ -6,7 +6,14 @@ jobs:
     steps:
     - name: Check out code into the directory
       uses: actions/checkout@v2
-    - name: Run the C/array.c
+    - name: Run the code
       run: |
-        gcc C/array.c -o C/array
-        C/array
+        ALL_FILES_IN_DIRECTORY=$(find Dart/ -type f -name "*.dart")
+        for CURRENT_FILE_IN_DIRECTORY in ${ALL_FILES_IN_DIRECTORY}; do
+          ALL_FILES_LIST[$ADD_CONTENT]=$CURRENT_FILE_IN_DIRECTORY
+          ADD_CONTENT=$(("$ADD_CONTENT" + 1))
+        done
+        for FILE_LIST in "${ALL_FILES_LIST[@]}"; do
+          gcc ${FILE_LIST} -o ${FILE_LIST%.*}
+          ${FILE_LIST%.*}
+        done
