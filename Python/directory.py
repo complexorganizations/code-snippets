@@ -47,7 +47,7 @@ def main():
     # Create a directory
     create_dir("/src/")
     # Change the current working directory
-    change_dir("/src/")
+    change_dir("/")
     # Get all the files and folders in a directory
     print(get_all_folder_files("/src/"))
     # Get all the folders only in a directory
