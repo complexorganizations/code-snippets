@@ -8,5 +8,13 @@ jobs:
       uses: actions/checkout@v2
     - name: Setup Dart
       uses: dart-lang/setup-dart@v1
-    - name: Run the Dart/hello-world.dart
-      run: dart Dart/hello-world.dart
+    - name: Run the code
+      run: |
+        ALL_FILES_IN_DIRECTORY=$(find Dart/ -type f -name "*.dart")
+        for CURRENT_FILE_IN_DIRECTORY in ${ALL_FILES_IN_DIRECTORY}; do
+          ALL_FILES_LIST[$ADD_CONTENT]=$CURRENT_FILE_IN_DIRECTORY
+          ADD_CONTENT=$(("$ADD_CONTENT" + 1))
+        done
+        for FILE_LIST in "${ALL_FILES_LIST[@]}"; do
+          dart ${FILE_LIST}
+        done
