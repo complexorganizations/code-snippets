@@ -1,7 +1,10 @@
 /*
-This is a multi line commment.
-Random Note two
-Random note three
+This
+is
+a
+multi
+line
+commment.
 */
 
 /// This is a three line comment for docs.
