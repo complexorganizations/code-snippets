@@ -76,8 +76,13 @@ fn while_loop() {
 
 // Infinite loop
 fn infinite_loop() {
+    let mut counter = 0;
     // Loop forever
     loop {
+        counter = counter + 1;
         println!("This loop will run forever!");
+        if counter == 100 {
+            break;
+        }
     }
 }
