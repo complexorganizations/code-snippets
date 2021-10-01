@@ -28,3 +28,41 @@ jobs:
       run: node JavaScript/function.js
     - name: Run the JavaScript/hello-world.js
       run: node JavaScript/hello-world.js
+    - name: Run the JavaScript/http-client.js
+      run: node JavaScript/http-client.js
+    - name: Run the JavaScript/http-server.js
+      run: node JavaScript/http-server.js
+    - name: Run the JavaScript/if-statement.js
+      run: node JavaScript/if-statement.js
+    - name: Run the JavaScript/json.js
+      run: node JavaScript/json.js
+    - name: Run the JavaScript/length.js
+      run: node JavaScript/length.js
+    - name: Run the JavaScript/loop.js
+      run: node JavaScript/loop.js
+    - name: Run the JavaScript/map.js
+      run: node JavaScript/map.js
+    - name: Run the JavaScript/math.js
+      run: node JavaScript/math.js
+    - name: Run the JavaScript/null.js
+      run: node JavaScript/null.js
+    - name: Run the JavaScript/operators.js
+      run: node JavaScript/operators.js
+    - name: Run the JavaScript/os.js
+      run: node JavaScript/os.js
+    - name: Run the JavaScript/random.js
+      run: node JavaScript/random.js
+    - name: Run the JavaScript/regex.js
+      run: node JavaScript/regex.js
+    - name: Run the JavaScript/runtime.js
+      run: node JavaScript/runtime.js
+    - name: Run the JavaScript/string.js
+      run: node JavaScript/string.js
+    - name: Run the JavaScript/switch.js
+      run: node JavaScript/switch.js
+    - name: Run the JavaScript/time.js
+      run: node JavaScript/time.js
+    - name: Run the JavaScript/variables.js
+      run: node JavaScript/variables.js
+    - name: Run the JavaScript/write.js
+      run: node JavaScript/write.js
