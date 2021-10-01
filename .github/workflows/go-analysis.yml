@@ -19,5 +19,5 @@ jobs:
     - name: Run the Go/hello-world.go
       run: |
         for found_files in ${{ steps.pl.outputs.paths }}; do
-          go run Go/found_files
+          go run ${found_files}
         done
