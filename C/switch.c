@@ -1,14 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
-    // A simple switch statement with ints
-    integerSwitch();
-    // A simple switch statement with strings
-    stringSwitch();
-    return 0;
-}
-
 // A simple integer switch statement
 void integerSwitch() {
     int age = 25;
@@ -43,4 +35,12 @@ void stringSwitch() {
         default:
             printf("default");
     }
+}
+
+int main() {
+    // A simple switch statement with ints
+    integerSwitch();
+    // A simple switch statement with strings
+    stringSwitch();
+    return 0;
 }
