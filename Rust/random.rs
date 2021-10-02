@@ -1,4 +1,5 @@
-use rand::Rng;
+use rand::{thread_rng, Rng};
+use rand::distributions::Alphanumeric;
 
 fn main() {
     // Generate a random boolean
@@ -39,13 +40,10 @@ fn random_thirtytwo_bit_integer() -> u32 {
 
 // Generate a random string of a given length
 fn random_string(length: usize) -> String {
-    const CHARSET: &[u8] =
-        b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789)(*&^%$#@!~";
-    let mut rng = rand::thread_rng();
-    (0..length)
-        .map(|_| {
-            let idx = rng.gen_range(0..CHARSET.len());
-            CHARSET[idx] as char
-        })
-        .collect()
+    let rand_string: String = thread_rng()
+        .sample_iter(&Alphanumeric)
+        .take(length)
+        .map(char::from)
+        .collect();
+    rand_string
 }
