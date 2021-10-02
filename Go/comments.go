@@ -6,8 +6,12 @@ import (
 
 // This is a single line comment
 
-/* This is a block of comment.
-This can be multi line comment
+/* This
+is
+a
+block
+of
+comment.
 */
 
 func main() {
