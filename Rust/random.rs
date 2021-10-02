@@ -7,6 +7,7 @@ fn main() {
 
 // Generate a random boolean
 fn random_boolean() -> bool {
-    let mut rng = rand::thread_rng();
-    rng.gen::<bool>()
+    rand::thread_rng().gen::<bool>()
 }
+
+// Generate a random int
