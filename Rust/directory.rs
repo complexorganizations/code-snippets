@@ -7,6 +7,5 @@ fn main() {
 
 // Get the current working directory and return it as a String
 fn get_cwd() -> String {
-    let path = env::current_dir().unwrap();
-    path.display().to_string()
+    env::current_dir().unwrap().display().to_string()
 }

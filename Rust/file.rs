@@ -3,6 +3,7 @@ use std::fs;
 use fs::File;
 use std::io::Write;
 use std::io::Read;
+use std::env;
 
 fn main() {
    // Write some content to a file
@@ -15,6 +16,10 @@ fn main() {
    move_file("foo.txt", "bar.txt");
    // Remove a file
    remove_file("bar.txt");
+   // Get the temporary directory
+   println!("{}", get_temp_dir());
+   // Get the current bin path
+   println!("{}", get_current_bin_path());
 }
 
 // Check if a file exists and return a boolean
@@ -44,4 +49,14 @@ fn read_file(filepath: &str) -> String {
 fn write_content_to_file(filepath: &str, content: &[u8]) {
    let mut file = File::create(filepath).expect("Something went wrong creating the file");
    file.write_all(content).expect("Something went wrong writing to the file");
+}
+
+// Get the temporary directory path
+fn get_temp_dir() -> String {
+   env::temp_dir().display().to_string()
+}
+
+// Get the current binary path
+fn get_current_bin_path() -> String {
+   env::current_exe().unwrap().display().to_string()
 }
