@@ -5,8 +5,8 @@ use std::io::Write;
 use std::io::Read;
 
 fn main() {
-   // Create a file
-   create_file("foo.txt");
+   // Write some content to a file
+   write_content_to_file("foo.txt", b"Hello, World");
    // Check if the file exists
    println!("{}", check_file_exists("foo.txt"));
    // Read a file
@@ -40,8 +40,8 @@ fn read_file(filepath: &str) -> String {
    contents
 }
 
-// Create a file
-fn create_file(filepath: &str) {
+// Write some content to a file
+fn write_content_to_file(filepath: &str, content: &[u8]) {
    let mut file = File::create(filepath).expect("Something went wrong creating the file");
-   file.write_all(b"Hello World!").expect("Something went wrong writing to the file");
+   file.write_all(content).expect("Something went wrong writing to the file");
 }
