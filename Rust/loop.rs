@@ -9,7 +9,6 @@ fn main() {
     while_loop();
     // Infinite loop
     infinite_loop();
-    
 }
 
 fn simple_loop() {

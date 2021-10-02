@@ -18,6 +18,17 @@ def return_value_with_arguments(arg1, arg2):
     return arg1 + arg2
 
 
+# Function inside another function
+def function_inside_function():
+    print("This is the primary function.")
+
+    # This is the secondary function inside the primary function
+    def nested_function():
+        print("This is a nested function.")
+
+    nested_function()
+
+
 def main():
     # Simple function that takes no arguments and returns nothing
     simple_function()
@@ -27,6 +38,8 @@ def main():
     print(return_value())
     # Function that takes arguments and returns a value
     print(return_value_with_arguments("Hello, ", "World!"))
+    # Function inside another function
+    function_inside_function()
 
 
 # Call the main function

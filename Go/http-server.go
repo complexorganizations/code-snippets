@@ -7,8 +7,8 @@ import (
 	"io"
 	"log"
 	"net"
-	"os"
 	"net/http"
+	"os"
 )
 
 func main() {

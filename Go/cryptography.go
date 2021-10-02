@@ -13,7 +13,6 @@ func main() {
 	fmt.Println(getSHA512("Hello World"))
 }
 
-
 // Get the sha256 of a string
 func getSHA256(content string) string {
 	contentSHA256 := sha256.Sum256([]byte(content))

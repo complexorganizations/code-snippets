@@ -3,10 +3,10 @@ package main
 import (
 	"encoding/binary"
 	"fmt"
+	"log"
 	"math/big"
 	"net"
 	"strings"
-	"log"
 )
 
 func main() {
