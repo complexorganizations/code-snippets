@@ -8,10 +8,10 @@ test:
     echo "Test the application."
 
 release:
-    echo "Make sure the application is ready to be released."
+    echo "Make the application ready to be released."
 
 clean:
-    echo "Clean up the application code."
+    echo "Clean up the application."
 
 all:
     echo "Hello World"
