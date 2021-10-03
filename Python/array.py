@@ -142,10 +142,14 @@ def extend_array(array, array2):
 def count_element_appearance(array, element):
     return array.count(element)
 
+
+
 # Copy one array to another
 def copy_array(old_array, new_array):
     new_array = old_array.copy()
     return new_array
+
+
 
 # Remove all the elements from the array
 def remove_all_elements(array):

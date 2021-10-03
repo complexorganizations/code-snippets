@@ -36,7 +36,6 @@ void simple_goto() {
 
 simple_block:
     printf("This is a simple go to block.\n");
-
 }
 
 int main() {

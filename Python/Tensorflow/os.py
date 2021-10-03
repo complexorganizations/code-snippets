@@ -1,4 +1,5 @@
 import os
+
 import tensorflow
 from tensorflow.python.client import device_lib
 
