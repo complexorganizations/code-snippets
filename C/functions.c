@@ -30,6 +30,15 @@ int two_return_two_arguments(int x, int y) {
     return x, y;
 }
 
+// A simple example of goto in C
+void simple_goto() {
+    goto simple_block;
+
+simple_block:
+    printf("This is a simple go to block.\n");
+
+}
+
 int main() {
     // No arguments and no return value
     no_return_no_arguments();
@@ -46,5 +55,7 @@ int main() {
     // Two arguments and two return values
     int first_return_of_two_returns, second_return_of_two_returns = two_return_two_arguments(1, 2);
     printf("%d %d\n", first_return_of_two_returns, second_return_of_two_returns);
+    // Simple goto
+    simple_goto();
     return 0;
 }
