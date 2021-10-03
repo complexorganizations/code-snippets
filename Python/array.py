@@ -67,7 +67,7 @@ def get_array_length(array):
 
 # Reverse the array
 def reverse_array(array):
-    return array[::-1]
+    return array.reverse()
 
 
 # Change the value of a element at the certain index
@@ -138,6 +138,15 @@ def extend_array(array, array2):
     return array
 
 
+# Count how many times the element appears in the array
+def count_element_appearance(array, element):
+    return array.count(element)
+
+# Copy one array to another
+def copy_array(old_array, new_array):
+    new_array = old_array.copy()
+    return new_array
+
 # Remove all the elements from the array
 def remove_all_elements(array):
     array.clear()
@@ -193,7 +202,11 @@ def main():
     # Get all the values in the array in the certain index range
     print(get_values_in_index_range(array, 1, 3))
     # Extend the array with another array
-    print(extend_array(array, ["j", "k"]))
+    print(extend_array(array, ["j", "j", "k"]))
+    # Count how many times the element appears in the array
+    print(count_element_appearance(array, "j"))
+    # Copy one array to another
+    print(copy_array(array, []))
     # Remove all the elements from the array
     print(remove_all_elements(array))
 

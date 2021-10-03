@@ -7,23 +7,23 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Check out code into the directory
-      uses: actions/checkout@v2
-    - name: Set up Python 3.9
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.9
-    - name: Install dependencies
-      run: |
-        pip install psutil validators tensorflow
-    - name: Run the code
-      run: |
-        ALL_FILES_IN_DIRECTORY=$(find Python/ -type f -name "*.py")
-        for CURRENT_FILE_IN_DIRECTORY in ${ALL_FILES_IN_DIRECTORY}; do
-          ALL_FILES_LIST[$ADD_CONTENT]=$CURRENT_FILE_IN_DIRECTORY
-          ADD_CONTENT=$(("$ADD_CONTENT" + 1))
-        done
-        for FILE_LIST in "${ALL_FILES_LIST[@]}"; do
-          echo ${FILE_LIST}
-          python ${FILE_LIST}
-        done
+      - name: Check out code into the directory
+        uses: actions/checkout@v2
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Install dependencies
+        run: |
+          pip install psutil validators tensorflow
+      - name: Run the code
+        run: |
+          ALL_FILES_IN_DIRECTORY=$(find Python/ -type f -name "*.py")
+          for CURRENT_FILE_IN_DIRECTORY in ${ALL_FILES_IN_DIRECTORY}; do
+            ALL_FILES_LIST[${ADD_CONTENT}]=${CURRENT_FILE_IN_DIRECTORY}
+            ADD_CONTENT=$(("${ADD_CONTENT}" + 1))
+          done
+          for FILE_LIST in "${ALL_FILES_LIST[@]}"; do
+            echo ${FILE_LIST}
+            python ${FILE_LIST}
+          done
