@@ -40,7 +40,6 @@ func getSystemHostname() (string, error) {
 	return systemHostname, nil
 }
 
-
 // Set the max ammount of threads for application
 func maxThreads(threads int) {
 	debug.SetMaxThreads(threads)

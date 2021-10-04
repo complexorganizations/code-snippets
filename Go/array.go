@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"sort"
 )
 
@@ -40,6 +41,8 @@ func main() {
 	fmt.Println(combineArrays(randomString, randomString))
 	// Get the median value of an array.
 	fmt.Println(medianOfArray([]float64{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}))
+	// Reverse an array
+	fmt.Println(reverseArray(randomString))
 }
 
 // Check if the array contains the value.
@@ -125,4 +128,22 @@ func medianOfArray(array []float64) float64 {
 		return (array[len(array)/2-1] + array[len(array)/2]) / 2
 	}
 	return array[len(array)/2]
+}
+
+// Reverse an array
+func reverseArray(array []string) []string {
+	var newArray []string
+	for i := len(array) - 1; i >= 0; i-- {
+		newArray = append(newArray, array[i])
+	}
+	return newArray
+}
+
+// Suffle an array
+func shuffleArray(array []string) []string {
+	for i := range array {
+		j := rand.Intn(i + 1)
+		array[i], array[j] = array[j], array[i]
+	}
+	return array
 }
