@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"runtime"
+	"runtime/debug"
 )
 
 func main() {
@@ -15,12 +17,56 @@ func main() {
 		log.Println(err)
 	}
 	fmt.Println(hostname)
+	// Set the max threads for the application
+	maxThreads(10)
+	// Free up system memory
+	freeMemory()
+	// Print the current OS
+	fmt.Println("Current OS:", getCurrentOS())
+	// Print the current architecture
+	fmt.Println("Current Arch:", getCurrentArch())
+	// Print the current version of Go
+	fmt.Println("Current Go Version:", getCurrentGoVersion())
+	// Print the current go root
+	fmt.Println("Current Go Root:", getCurrentGoRoot())
 }
 
+// Get the current system hostname
 func getSystemHostname() (string, error) {
 	systemHostname, err := os.Hostname()
 	if err != nil {
 		return "", err
 	}
 	return systemHostname, nil
+}
+
+
+// Set the max ammount of threads for application
+func maxThreads(threads int) {
+	debug.SetMaxThreads(threads)
+}
+
+// Free up system memory
+func freeMemory() {
+	debug.FreeOSMemory()
+}
+
+// Get the current OS
+func getCurrentOS() string {
+	return runtime.GOOS
+}
+
+// Get the current architecture
+func getCurrentArch() string {
+	return runtime.GOARCH
+}
+
+// Get the current version of Go
+func getCurrentGoVersion() string {
+	return runtime.Version()
+}
+
+// Get the current go root
+func getCurrentGoRoot() string {
+	return runtime.GOROOT()
 }

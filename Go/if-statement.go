@@ -3,29 +3,48 @@ package main
 import "fmt"
 
 func main() {
-	content := "test"
-	// if statement
-	if content == "test" {
-		fmt.Println(true)
+	// Simple if statement
+	simpleIfStatement()
+	// Simple if else statement
+	simpleIfElseStatement()
+	// Simple if else if statement
+	simpleIfElseIfStatement()
+	// Simple if else if else statement
+	simpleIfElseIfElseStatement()
+}
+
+// simple if statement
+func simpleIfStatement() {
+	if 1 == 1 {
+		fmt.Println("1 == 1")
 	}
-	// if / else
-	if content == "test" {
-		fmt.Println(true)
+}
+
+// Simple if else statement
+func simpleIfElseStatement() {
+	if 1 == 1 {
+		fmt.Println("1 == 1")
 	} else {
-		fmt.Println(false)
+		fmt.Println("1 != 1")
 	}
-	// if / else if
-	if content == "test" {
-		fmt.Println(true)
-	} else if content == "not-test" {
-		fmt.Println(false)
+}
+
+// Simple if else if statement
+func simpleIfElseIfStatement() {
+	if 1 == 1 {
+		fmt.Println("1 == 1")
+	} else if 1 == 2 {
+		fmt.Println("1 == 2")
 	}
-	// if / else if / else
-	if content == "test" {
-		fmt.Println(true)
-	} else if content == "not-test" {
-		fmt.Println(true)
+}
+
+// Simple if else if else statement
+func simpleIfElseIfElseStatement() {
+	if 1 == 1 {
+		fmt.Println("1 == 1")
+	} else if 1 == 2 {
+		fmt.Println("1 == 2")
 	} else {
-		fmt.Println(false)
+		fmt.Println("1 != 1 and 1 != 2")
 	}
 }
