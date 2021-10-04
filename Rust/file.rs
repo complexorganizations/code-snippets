@@ -24,7 +24,7 @@ fn main() {
 
 // Check if a file exists and return a boolean
 fn check_file_exists(filename: &str) -> bool {
-   Path::new(filename).exists()
+   return Path::new(filename).exists()
 }
 
 // Removing a file
@@ -42,7 +42,7 @@ fn read_file(filepath: &str) -> String {
    let mut file = File::open(filepath).expect("File not found");
    let mut contents = String::new();
    file.read_to_string(&mut contents).expect("Something went wrong reading the file");
-   contents
+   return contents
 }
 
 // Write some content to a file
@@ -53,10 +53,10 @@ fn write_content_to_file(filepath: &str, content: &[u8]) {
 
 // Get the temporary directory path
 fn get_temp_dir() -> String {
-   env::temp_dir().display().to_string()
+   return env::temp_dir().display().to_string()
 }
 
 // Get the current binary path
 fn get_current_bin_path() -> String {
-   env::current_exe().unwrap().display().to_string()
+   return env::current_exe().unwrap().display().to_string()
 }

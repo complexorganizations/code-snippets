@@ -28,25 +28,25 @@ fn example_function() {
 
 // Takes in a single argument and returns an integer
 fn add_one(x: i32) -> i32 {
-    x + 1
+    return x + 1
 }
 
 // Takes in two arguments and returns one integer
 fn add_numbers(x: i32, y: i32) -> i32 {
-    x + y
+    return x + y
 }
 
 // Takes in two arguments and returns two integers
 fn swap(x: i32, y: i32) -> (i32, i32) {
-    (y, x)
+    return (y, x)
 }
 
 // Return a boolean value
 fn is_even(x: i32) -> bool {
-    x % 2 == 0
+    return x % 2 == 0
 }
 
 // Return a string
 fn get_string() -> String {
-    String::from("Hello, world!")
+    return String::from("Hello, world!")
 }

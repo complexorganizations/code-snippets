@@ -31,6 +31,24 @@ def if_statement_examples():
         print("some_bool is False")
 
 
+# Using statmenet instead of syntax
+def syntax_example():
+    short = False
+    tall = True
+    male = False
+    female = True
+    if short and female:
+        print("Its a short female")
+    elif not(short) and female:
+        "Its a tall female"
+    elif short and not(male):
+        print("Its a tall female")
+    elif not(male) or not(female):
+        print("Its a unknown gender")
+    else:
+        print("Its unknown")
+
+
 def main():
     # If statement
     if_statement()
@@ -40,6 +58,8 @@ def main():
     if_else_multiple_conditions()
     # If statement examples
     if_statement_examples()
+    # Syntax example
+    syntax_example()
 
 
 main()
