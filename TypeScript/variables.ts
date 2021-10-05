@@ -1,60 +1,76 @@
 function main() {
-    int()
-    string()
-    boolean()
-    float()
-    letVariable()
-    constantVariable()
-    assign()
+    // A simple example of a string
+    string_example()
+    // A simple example of a number
+    number_example()
+    // A simple example of a bool
+    boolean_example()
+    // A simple example of a map
+    map_example()
+    // A simple example of a constant
+    constant_example()
+    // A simple example of declaring and assigning a variable
+    declare_and_assign_variable()
+    // A simple example of the let keyword
+    let_example()
 }
 
 main()
 
-// int
-function int() {
-    var a = 1
-    var b = 2
-    console.log(a + b)
+// A simple example of a string
+function string_example() {
+    var first_name = "John"
+    console.log(first_name)
+    var last_name = "Doe"
+    console.log(last_name)
 }
 
-// String
-function string() {
-    var a = "hello"
-    var b = "world"
-    console.log(a + b)
+// A simple example of a number
+function number_example() {
+    var age = 30
+    console.log(age)
+    var height = 1.8
+    console.log(height)
 }
 
-// Boolean
-function boolean() {
-    var a = true
-    console.log(a)
-    var b = false
-    console.log(b)
+// A simple example of a boolean
+function boolean_example() {
+    var is_married = false
+    console.log(is_married)
+    var is_male = true
+    console.log(is_male)
 }
 
-// Float
-function float() {
-    var a = 1.1
-    var b = 2.2
-    console.log(a + b)
+// A simple example of a map
+function map_example() {
+    var generated_map = new Map()
+    generated_map.set("firstName", "John")
+    generated_map.set("lastName", "Doe")
+    console.log(generated_map)
 }
 
-// Let for function scope
-function letVariable() {
-    let a = "apple"
-    let b = "bees"
-    console.log(a, b)
+// A simple example of a constant
+function constant_example() {
+    const PI = 3.14
+    console.log(PI)
+    const WEIGHT = 100.50
+    console.log(WEIGHT)
 }
 
-// Const for constant
-function constantVariable() {
-    const a = "A"
-    console.log(a)
+// A simple example of declaring and assigning a variable
+function declare_and_assign_variable() {
+    var name
+    name = "John"
+    console.log(name)
+    var age
+    age = 30
+    console.log(age)
 }
 
-// Assign variable
-function assign() {
-    var a
-    a = 2
-    console.log(a)
+// A simple example of the let keyword
+function let_example() {
+    let name = "John"
+    console.log(name)
+    let age = 30
+    console.log(age)
 }
