@@ -20,6 +20,10 @@ function main() {
     createFile("JavaScript/o726H2NMjuVwHOPmjEPP.js")
     // Remove a file
     removeFile("JavaScript/o726H2NMjuVwHOPmjEPP.js")
+    // Write to a file
+    writeToFile("write-to-file.txt", "Hello World!")
+    // Append and than write to a file
+    appendAndWriteToFile("write-to-file.txt", "Hello World!")
 }
 
 main()
@@ -67,4 +71,22 @@ function createFile(filePath) {
 // Remove a file
 function removeFile(filePath) {
     fs.unlinkSync(filePath)
+}
+
+// Write some content to a specific file
+function writeToFile(fileName, content) {
+    fs.writeFile(fileName, content, function (err) {
+        if (err) {
+            return err
+        }
+    })
+}
+
+// Append and write to a file
+function appendAndWriteToFile(fileName, content) {
+    fs.appendFile(fileName, content, function (err) {
+        if (err) {
+            return err
+        }
+    })
 }
