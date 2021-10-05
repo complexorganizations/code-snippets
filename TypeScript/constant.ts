@@ -79,4 +79,3 @@ function constantUndefined() {
     const currentUndefined = undefined
     return currentUndefined
 }
-constant
