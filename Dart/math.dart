@@ -1,12 +1,10 @@
 void main() {
   // Do basic math operations.
-  var a = 1;
-  var b = 2;
-  print(basicMath(a, b, "+"));
+  print(basicMath(1, "+", 2));
 }
 
 // Do basic math inside a function.
-int basicMath(int a, int b, String operation) {
+int basicMath(int a, String operation, int b) {
   switch (operation) {
     case "+":
       return a + b;
