@@ -1,18 +1,18 @@
 # Loop ten times
 def loop_ten_times():
     for i in range(10):
-        print(i)
+        print("Loop ten times.")
 
 
 # Loop 100 times
 def loop_hundred_times():
     for i in range(100):
-        print(i)
+        print("Loop one hundred times.")
 
 
 # Loop over a array of numbers
 def loop_over_array_of_numbers():
-    numbers = [2, 1, 4, 5, 7, 6, 8, 9, 10, 0]
+    numbers = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
     for number in numbers:
         print(number)
 
@@ -26,21 +26,21 @@ def loop_over_array_of_strings():
 
 # Loop over the keys in a map
 def loop_over_map_keys():
-    map = {"key1": "value1", "key2": "value2", "key3": "value3"}
-    for key in map:
+    map = {"name": "john", "age": "30", "gender": "male"}
+    for key in map.keys():
         print(key)
 
 
 # Loop over the value in a map
 def loop_over_map_values():
-    map = {"key1": "value1", "key2": "value2", "key3": "value3"}
+    map = {"city": "new york city", "state": "new york", "country": "united states of america"}
     for value in map.values():
         print(value)
 
 
 # Loop over a map
 def loop_over_map():
-    map = {"key1": "value1", "key2": "value2", "key3": "value3"}
+    map = {"ssn": "123-456-789", "card": "1234-5678-9101-1121", "mother": "Jane"}
     for key, value in map.items():
         print(key, value)
 
@@ -71,6 +71,14 @@ def loop_forever():
             break
 
 
+# More example of a while loop
+def while_loop():
+    counter = 0
+    while counter < 10:
+        counter = counter + 1
+        print("World")
+
+
 def main():
     # Loop ten times
     loop_ten_times()
@@ -92,6 +100,8 @@ def main():
     continue_in_loop()
     # Loop forever
     loop_forever()
+    # More example of a while loop
+    while_loop()
 
 
 main()
