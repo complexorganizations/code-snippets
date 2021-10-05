@@ -1,5 +1,3 @@
-"""
-// Update this and fix the code.
 import json
 
 
@@ -17,17 +15,6 @@ def is_json_valid(myjson):
         return False
 
 
-# Open a file and read if the file contains valid json and return a boolean
-def read_json_file(file_name):
-    try:
-        with open(file_name) as f:
-            data = f.read()
-            json_decode(data)
-            return True
-    except ValueError:
-        return False
-
-
 def main():
     # Some random json example
     validJson = '{"name":"John", "age":30, "city":"New York"}'
@@ -40,9 +27,6 @@ def main():
     # Check if the json is valid
     print(is_json_valid(validJson))
     print(is_json_valid(invalidJson))
-    # Check if the json is valid by reading a file
-    print(read_json_file("data.json"))
 
 
 main()
-"""

@@ -1,4 +1,3 @@
-"""
 import xml
 
 
@@ -7,7 +6,7 @@ def is_xml_valid(xml_string):
     try:
         # Parse the xml string
         return True
-    except  # Check if there are any errors.:
+    except xml.parsers.expat.ExpatError:
         return False
 
 
@@ -18,4 +17,3 @@ def main():
 
 
 main()
-"""
