@@ -5,8 +5,6 @@ import random
 def is_array_empty(array):
     if len(array) == 0:
         return True
-    else:
-        return False
 
 
 # Sort an array and return the values
@@ -21,10 +19,7 @@ def get_array_length(array):
 
 # Check if the array contains the element
 def array_contains(array, element):
-    if element in array:
-        return True
-    else:
-        return False
+    return element in array
 
 
 # Get the index of the element
