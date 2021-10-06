@@ -1,9 +1,10 @@
 package main
 
 import (
+	"crypto/md5"
+	"crypto/sha1"
 	"crypto/sha256"
 	"crypto/sha512"
-	"crypto/sha1"
 	"fmt"
 )
 
@@ -14,6 +15,8 @@ func main() {
 	fmt.Println(getSHA512("Hello World"))
 	// Get the sha1 of a string
 	fmt.Println(getSHA1("Hello World"))
+	// Get the md5 of a string
+	fmt.Println(getMD5("Hello World"))
 }
 
 // Get the sha256 of a string
@@ -32,4 +35,10 @@ func getSHA512(content string) string {
 func getSHA1(content string) string {
 	contentSHA1 := sha1.Sum([]byte(content))
 	return fmt.Sprintf("%x", contentSHA1)
+}
+
+// Get the md5 of a string
+func getMD5(content string) string {
+	contentMD5 := md5.Sum([]byte(content))
+	return fmt.Sprintf("%x", contentMD5)
 }
