@@ -1,6 +1,6 @@
 # Code-Snippets
 
-### Application Development
+### Development
 - Web: Typescript
 - Mobile: Dart
 - Desktop: Dart
