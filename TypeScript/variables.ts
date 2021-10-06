@@ -19,33 +19,31 @@ function main() {
     null_example()
     // A simple example of a symbol variable
     symbol_example()
-    // A simple example of a bigint variable
-    bigint_example()
 }
 
 main()
 
 // A simple example of a string
 function string_example() {
-    var first_name = "John"
+    var first_name: string = "John"
     console.log(first_name)
-    var last_name = "Doe"
+    var last_name: string = "Doe"
     console.log(last_name)
 }
 
 // A simple example of a number
 function number_example() {
-    var age = 30
+    var age: number = 30
     console.log(age)
-    var height = 1.8
+    var height: number = 1.8
     console.log(height)
 }
 
 // A simple example of a boolean
 function boolean_example() {
-    var is_married = false
+    var is_married: boolean = false
     console.log(is_married)
-    var is_male = true
+    var is_male: boolean = true
     console.log(is_male)
 }
 
@@ -59,58 +57,50 @@ function map_example() {
 
 // A simple example of a constant
 function constant_example() {
-    const PI = 3.14
+    const PI: number = 3.14
     console.log(PI)
-    const WEIGHT = 100.50
+    const WEIGHT: number = 100.50
     console.log(WEIGHT)
 }
 
 // A simple example of declaring and assigning a variable
 function declare_and_assign_variable() {
-    var name
+    var name: string
     name = "John"
     console.log(name)
-    var age
+    var age: number
     age = 30
     console.log(age)
 }
 
 // A simple example of the let keyword
 function let_example() {
-    let name = "John"
+    let name: string = "John"
     console.log(name)
-    let age = 30
+    let age: number = 30
     console.log(age)
 }
 
 // A simple example of a undefined variable
 function undefined_example() {
-    var name
+    var name: undefined
     console.log(name)
-    var age
+    var age: undefined
     console.log(age)
 }
 
 // A simple example of a null variable
 function null_example() {
-    var name = null
+    var name: null = null
     console.log(name)
-    var age = null
+    var age: null = null
     console.log(age)
 }
 
 // A simple example of a symbol variable
 function symbol_example() {
-    var name = Symbol("John Doe")
+    var name: symbol = Symbol("John Doe")
     console.log(name)
-    var age = Symbol("30")
-    console.log(age)
-}
-
-// A simple example of a bigint variable
-function bigint_example() {
-    var name = BigInt(123456789)
-    console.log(name)
-    var age = BigInt(123456789)
+    var age: symbol = Symbol("30")
     console.log(age)
 }
