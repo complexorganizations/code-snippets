@@ -1,13 +1,6 @@
 function main() {
     // Create a array of int
-    var array = [5, 3, 1, 2, 4]
-    console.log(array)
-    // Join the array
-    console.log(joinArray(array, '-'))
-    // Sort the array
-    console.log(sortArray(array))
-    // Create a new array of objects.
-    var people = [
+    var array: string[] = [
         "t",
         "b",
         "l",
@@ -35,9 +28,10 @@ function main() {
         "h",
         "g"
     ]
-    console.log(people)
-    sortArray(people)
-    console.log(people)
+    // Join the array
+    console.log(joinArray(array, "-"))
+    // Sort the array
+    console.log(sortArray(array))
     // Get the first value
     console.log(getFirstValue(array))
     // Get the last value
@@ -49,69 +43,69 @@ function main() {
     // Randomize the order of the values in the array
     console.log(randomizeArray(array))
     // Add a value to the end of the array
-    console.log(addToEnd(array, 6))
+    console.log(addToEnd(array, "six"))
     // Add a value to the start of the array
-    console.log(addToStart(array, 0))
+    console.log(addToStart(array, "zero"))
     // Remove the first value in the array
     console.log(removeFirstValue(array))
     // Remove the last value in the array
     console.log(removeLastValue(array))
     // Remove a value from the array
-    console.log(removeValue(array, 3))
+    console.log(removeValue(array, "three"))
     // Remove all instances of a value from the array
-    console.log(removeAllValues(array, 3))
-    // Remove all the content from the array
-    console.log(removeAllContent(array))
+    console.log(removeThisValue(array, "three"))
     // Reverse the order of the values in the array
     console.log(reverseArray(array))
     // Get the index of a value in the array
-    console.log(getIndex(array, 3))
+    console.log(getIndex(array, "three"))
     // Remove all duplicates from an array
     console.log(removeDuplicates(array))
     // Combine two arrays
-    console.log(combineArrays(array, [6, 7, 8]))
+    console.log(combineArrays(array, ["six", "seven", "eight"]))
     // Check if the array is empty
     console.log(isArrayEmpty(array))
     // Check if the array is not empty
     console.log(isNotEmptyArray(array))
+    // Remove all the content from the array
+    console.log(removeAllContent(array))
 }
 
 main()
 
 // Join the array.
-function joinArray(array, separator) {
+function joinArray(array: string[], separator: string) {
     return array.join(separator)
 }
 
 // Sort all the data in the array, and return the sorted array
-function sortArray(array) {
+function sortArray(array: string[]) {
     array.sort()
     return array
 }
 
 // Get the first value in the array and return it
-function getFirstValue(array) {
+function getFirstValue(array: string[]) {
     return array[0]
 }
 
 // Get the last value in the array and return it.
-function getLastValue(array) {
+function getLastValue(array: string[]) {
     return array[array.length - 1]
 }
 
 // Get the length of the array and return it.
-function getLength(array) {
+function getLength(array: string[]) {
     return array.length
 }
 
 // Randomly pick a value from the array and return it.
-function getRandomValue(array) {
+function getRandomValue(array: string[]) {
     return array[Math.floor(Math.random() * array.length)]
 }
 
 // Randomize the order of the values in the array and return the array.
-function randomizeArray(array) {
-    var newArray = []
+function randomizeArray(array: string[]) {
+    var newArray: string[] = []
     while (array.length > 0) {
         var randomIndex = Math.floor(Math.random() * array.length)
         var randomValue = array.splice(randomIndex, 1)
@@ -121,31 +115,35 @@ function randomizeArray(array) {
 }
 
 // Add a value to the end of the array and return the array.
-function addToEnd(array, value) {
+function addToEnd(array: string[], value: string) {
     array.push(value)
     return array
 }
 
 // Add a value to the start of the array and return the array.
-function addToStart(array, value) {
+function addToStart(array: string[], value: string) {
     array.unshift(value)
     return array
 }
 
 // Remove the first value in the array and return the array.
-function removeFirstValue(array) {
-    array.shift()
+function removeFirstValue(array: string[]) {
+    for (var i = 0; i < array.length; i++) {
+        if (i == 0) {
+            // Remove the first value
+        }
+    }
     return array
 }
 
 // Remove the last value in the array and return the array.
-function removeLastValue(array) {
+function removeLastValue(array: string[]) {
     array.pop()
     return array
 }
 
 // Remove a value from the array and return the array.
-function removeValue(array, value) {
+function removeValue(array: string[], value: string) {
     var index = array.indexOf(value)
     if (index > -1) {
         array.splice(index, 1)
@@ -154,7 +152,7 @@ function removeValue(array, value) {
 }
 
 // Remove all instances of a value from the array and return the array.
-function removeAllValues(array, value) {
+function removeThisValue(array: string[], value: string) {
     var index = array.indexOf(value)
     while (index > -1) {
         array.splice(index, 1)
@@ -164,24 +162,24 @@ function removeAllValues(array, value) {
 }
 
 // Remove all the content from the array and return the array.
-function removeAllContent(array) {
+function removeAllContent(array: string[]) {
     array.length = 0
     return array
 }
 
 // Reverse the order of the values in the array and return the array.
-function reverseArray(array) {
+function reverseArray(array: string[]) {
     return array.reverse()
 }
 
 // Get the index of a value in the array and return it.
-function getIndex(array, value) {
+function getIndex(array: string[], value: string) {
     return array.indexOf(value)
 }
 
 // Remove all duplicates from an array and return the array.
-function removeDuplicates(array) {
-    var newArray = []
+function removeDuplicates(array: string[]) {
+    var newArray: string[] = []
     for (var i = 0; i < array.length; i++) {
         if (newArray.indexOf(array[i]) == -1) {
             newArray.push(array[i])
@@ -191,16 +189,16 @@ function removeDuplicates(array) {
 }
 
 // Combine two arrays and return the array.
-function combineArrays(array1, array2) {
+function combineArrays(array1: string[], array2: string[]) {
     return array1.concat(array2)
 }
 
 // Check if the array is empty.
-function isArrayEmpty(array) {
+function isArrayEmpty(array: string[]) {
     return array.length == 0
 }
 
 // Check if the array is not empty.
-function isNotEmptyArray(array) {
+function isNotEmptyArray(array: string[]) {
     return array.length >= 1
 }
