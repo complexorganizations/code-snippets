@@ -13,6 +13,14 @@ function main() {
     declare_and_assign_variable()
     // A simple example of the let keyword
     let_example()
+    // A simple example of a undefined variable
+    undefined_example()
+    // A simple example of a null variable
+    null_example()
+    // A simple example of a symbol variable
+    symbol_example()
+    // A simple example of a bigint variable
+    bigint_example()
 }
 
 main()
@@ -72,5 +80,37 @@ function let_example() {
     let name = "John"
     console.log(name)
     let age = 30
+    console.log(age)
+}
+
+// A simple example of a undefined variable
+function undefined_example() {
+    var name
+    console.log(name)
+    var age
+    console.log(age)
+}
+
+// A simple example of a null variable
+function null_example() {
+    var name = null
+    console.log(name)
+    var age = null
+    console.log(age)
+}
+
+// A simple example of a symbol variable
+function symbol_example() {
+    var name = Symbol("John Doe")
+    console.log(name)
+    var age = Symbol("30")
+    console.log(age)
+}
+
+// A simple example of a bigint variable
+function bigint_example() {
+    var name = BigInt(123456789)
+    console.log(name)
+    var age = BigInt(123456789)
     console.log(age)
 }
