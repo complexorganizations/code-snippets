@@ -29,6 +29,8 @@ func main() {
 	fmt.Println("Current Go Version:", getCurrentGoVersion())
 	// Print the current go root
 	fmt.Println("Current Go Root:", getCurrentGoRoot())
+	// Print the current go path
+	fmt.Println("Current Go Path:", getCurrentGoPath())
 }
 
 // Get the current system hostname
@@ -68,4 +70,9 @@ func getCurrentGoVersion() string {
 // Get the current go root
 func getCurrentGoRoot() string {
 	return runtime.GOROOT()
+}
+
+// Get the current go path
+func getCurrentGoPath() string {
+	return os.Getenv("GOPATH")
 }

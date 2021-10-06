@@ -43,6 +43,12 @@ func main() {
 	fmt.Println(medianOfArray([]float64{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}))
 	// Reverse an array
 	fmt.Println(reverseArray(randomString))
+	// Suffle an array
+	fmt.Println(shuffleArray(randomString))
+	// Get the first value in the array
+	fmt.Println(firstValueInArray(randomString))
+	// Get the last value in the array
+	fmt.Println(lastValueInArray(randomString))
 }
 
 // Check if the array contains the value.
@@ -146,4 +152,14 @@ func shuffleArray(array []string) []string {
 		array[i], array[j] = array[j], array[i]
 	}
 	return array
+}
+
+// Get the first value in the array
+func firstValueInArray(array []string) string {
+	return array[0]
+}
+
+// Get the last value in the array
+func lastValueInArray(array []string) string {
+	return array[len(array)-1]
 }

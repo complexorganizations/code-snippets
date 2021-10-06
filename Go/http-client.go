@@ -8,21 +8,20 @@ import (
 )
 
 func main() {
-	// Send the request
-	response, err := http.Get("http://www.google.com")
-	// Log any errors.
+	// Send a request to the server and print the response.
+	fmt.Println(string(getRequestedURL("http://www.example.com")))
+}
+
+// Send a request to the server and return the response.
+func getRequestedURL(url string) []byte {
+	response, err := http.Get(url)
 	if err != nil {
 		log.Println(err)
 	}
-	// Status code for the respose.
-	fmt.Println("Response status:", response.Status)
-	// the body of the resonse
 	body, err := io.ReadAll(response.Body)
 	if err != nil {
 		log.Println(err)
 	}
-	// the body content
-	fmt.Println(body)
-	// close the body.
 	response.Body.Close()
+	return body
 }

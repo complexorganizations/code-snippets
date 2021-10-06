@@ -55,7 +55,7 @@ func isEmpty(content string) bool {
 }
 
 // Check if two strings are equal
-func twoStringEqual(firstString, secondString string) bool {
+func twoStringEqual(firstString string, secondString string) bool {
 	if firstString == secondString {
 		return true
 	}

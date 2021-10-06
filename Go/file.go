@@ -51,6 +51,9 @@ func main() {
 	// Read and append the file.
 	var exampleContentSlice []string
 	exampleContentSlice = readAndAppend("foo.txt", exampleContentSlice)
+	fmt.Println(exampleContentSlice)
+	// Get the length of a file
+	fmt.Println(fileLength("foo.txt"))
 }
 
 // Check if a file exists
@@ -159,4 +162,25 @@ func writeContnetToFile(filepath string, content string) error {
 		return err
 	}
 	return nil
+}
+
+
+// Get the ammount of lines in a file
+func lineCount(fileName string) int {
+	file, err := os.Open(fileName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+
+	scanner := bufio.NewScanner(file)
+	scanner.Split(bufio.ScanLines)
+	count := 0
+	for scanner.Scan() {
+		count++
+	}
+	if err := scanner.Err(); err != nil {
+		log.Fatal(err)
+	}
+	return count
 }

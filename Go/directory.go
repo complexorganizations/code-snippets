@@ -9,27 +9,13 @@ import (
 
 func main() {
 	// Check if the folder exists
-	if folderExists("/") {
-		fmt.Println("The folder exists")
-	}
+	fmt.Println(folderExists("/"))
 	// Get the ammount of files in the folder
-	numberOfFiles, err := filesInDirectory("/")
-	if err != nil {
-		log.Println(err)
-	}
-	fmt.Println(numberOfFiles)
-	// Get the current user home directory
-	userHomeDir, err := usersHomeDirectory()
-	if err != nil {
-		log.Println(err)
-	}
-	fmt.Println(userHomeDir)
+	fmt.Println(filesInDirectory("/"))
+	// Get the current user home directoryo2
+	fmt.Println(usersHomeDirectory())
 	// Check if the folder is empty
-	returnValue, err := isDirEmpty("/")
-	if err != nil {
-		log.Println(err)
-	}
-	fmt.Println(returnValue)
+	fmt.Println(isDirEmpty("/"))
 }
 
 // Check if a folder exists
@@ -42,30 +28,30 @@ func folderExists(foldername string) bool {
 }
 
 // Get the ammount of files in a folder
-func filesInDirectory(filePath string) (int, error) {
+func filesInDirectory(filePath string) int {
 	files, err := os.ReadDir(filePath)
 	if err != nil {
-		return -1, err
+		return -1
 	}
-	return len(files), err
+	return len(files)
 }
 
 // Get the current user home directory
-func usersHomeDirectory() (string, error) {
+func usersHomeDirectory() string {
 	userHomeDir, err := os.UserHomeDir()
 	if err != nil {
-		return "", err
+		log.Println(err)
 	}
-	return userHomeDir, nil
+	return userHomeDir
 }
 
 // Check if the folder is empty
-func isDirEmpty(filePath string) (bool, error) {
+func isDirEmpty(filePath string) bool {
 	files, err := os.ReadDir(filePath)
 	if err != nil {
-		return false, err
+		log.Println(err)
 	}
-	return len(files) == 0, nil
+	return len(files) == 0
 }
 
 // Get a list of all the files in a folder

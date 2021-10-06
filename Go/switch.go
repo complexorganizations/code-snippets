@@ -5,13 +5,18 @@ import (
 )
 
 func main() {
-	value := "John Doe"
-	switch value {
+	// A simple switch statement on a function call.
+	fmt.Println(simpleSwitch("John Doe"))
+}
+
+// A simple switch statement on a function call.
+func simpleSwitch(randomString string) string {
+	switch randomString {
 	case "John Doe":
-		fmt.Println("Hello John Doe")
+		return "Hello John Doe"
 	case "Jane Doe":
-		fmt.Println("Hello Jane Doe")
+		return "Hello Jane Doe"
 	default:
-		fmt.Println("Hello Unknown")
+		return "Hello Unknown"
 	}
 }

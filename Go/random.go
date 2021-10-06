@@ -54,5 +54,6 @@ func randomInt(min, max int) int {
 
 // Generate a random boolean value
 func randomBool() bool {
+	rand.Seed(time.Now().UTC().UnixNano())
 	return rand.Intn(2) == 1
 }
