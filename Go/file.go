@@ -164,7 +164,6 @@ func writeContnetToFile(filepath string, content string) error {
 	return nil
 }
 
-
 // Get the ammount of lines in a file
 func lineCount(fileName string) int {
 	file, err := os.Open(fileName)

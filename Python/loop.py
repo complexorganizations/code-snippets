@@ -33,7 +33,8 @@ def loop_over_map_keys():
 
 # Loop over the value in a map
 def loop_over_map_values():
-    map = {"city": "new york city", "state": "new york", "country": "united states of america"}
+    map = {"city": "new york city", "state": "new york",
+           "country": "united states of america"}
     for value in map.values():
         print(value)
 

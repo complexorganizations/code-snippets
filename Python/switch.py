@@ -9,7 +9,6 @@ def switch_function(argument):
             print("3")
 
 
-
 # Another switch function
 def another_switch(argument):
     match argument:

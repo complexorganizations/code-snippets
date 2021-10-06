@@ -1,7 +1,6 @@
 import json
 
 
-
 # Check if the json is valid and return a boolean
 def is_json_valid(myjson):
     try:

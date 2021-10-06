@@ -43,6 +43,8 @@ def factorial(num):
     else:
         return num * factorial(num - 1)
 
+
+
 # Calculate the average of a list of numbers and return the result
 def average(a):
     return sum(a) / len(a)
