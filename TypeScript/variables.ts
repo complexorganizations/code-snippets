@@ -57,10 +57,10 @@ function map_example() {
 
 // A simple example of a constant
 function constant_example() {
-    const PI: number = 3.14
-    console.log(PI)
-    const WEIGHT: number = 100.50
-    console.log(WEIGHT)
+    const pi: number = 3.14
+    console.log(pi)
+    const weight: number = 100.50
+    console.log(weight)
 }
 
 // A simple example of declaring and assigning a variable
