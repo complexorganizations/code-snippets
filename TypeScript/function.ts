@@ -19,7 +19,7 @@ function functionReturn(content: string) {
     return content
 }
 
-// Create a function that takes two arguments and does some math and than returns 
+// Create a function that takes two arguments and does some math and than returns
 function doSomeMath(firstNumber: number, secondNumber: number) {
-    return firstNumber + secondNumber * secondNumber + firstNumber / secondNumber
+    return firstNumber * secondNumber + secondNumber ^ firstNumber % secondNumber
 }
