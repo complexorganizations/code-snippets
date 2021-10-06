@@ -1,45 +1,66 @@
+# Check if two values are equal
+def check_equality(first_value, second_value):
+    if first_value == second_value:
+        return True
+    else:
+        return False
+
+
+# Check if two values are not equal
+def check_inequality(first_value, second_value):
+    if first_value != second_value:
+        return True
+    else:
+        return False
+
+
+# Check if first value is less than second value
+def check_less_than(first_value, second_value):
+    if first_value < second_value:
+        return True
+    else:
+        return False
+
+
+# Check if the first value is more than the first value
+def check_greater_than(first_value, second_value):
+    if second_value > first_value:
+        return True
+    else:
+        return False
+
+
+# Check if the first value is less than or equal to the second value
+def check_less_than_or_equal_to(first_value, second_value):
+    if first_value <= second_value:
+        return True
+    else:
+        return False
+
+
+# Check if the first value is more than or equal to the first value
+def check_greater_than_or_equal_to(first_value, second_value):
+    if second_value >= first_value:
+        return True
+    else:
+        return False
+
+
 def main():
     first_number = 10
     second_number = 20
     # == Operator compares two values and returns True if they are equal
-    if first_number == second_number:
-        print("The numbers are equal")
+    print(check_equality(first_number, second_number))
     # != Operator compares two values and returns True if they are not equal
-    if first_number != second_number:
-        print("The numbers are not equal")
+    print(check_inequality(first_number, second_number))
     # < Operator compares two values and returns True if the first value is less than the second value
-    if first_number < second_number:
-        print("The first number is less than the second number")
+    print(check_less_than(first_number, second_number))
     # > Operator compares two values and returns True if the first value is greater than the second value
-    if first_number > second_number:
-        print("The first number is greater than the second number")
+    print(check_greater_than(first_number, second_number))
     # <= Operator compares two values and returns True if the first value is less than or equal to the second value
-    if first_number <= second_number:
-        print("The first number is less than or equal to the second number")
+    print(check_less_than_or_equal_to(first_number, second_number))
     # >= Operator compares two values and returns True if the first value is greater than or equal to the second value
-    if first_number >= second_number:
-        print("The first number is greater than or equal to the second number")
-    # and Operator returns True if both values are True
-    if first_number > 10 and second_number > 10:
-        print("Both numbers are greater than 10")
-    # or Operator returns True if either value is True
-    if first_number > 10 or second_number > 10:
-        print("One of the numbers is greater than 10")
-    # not Operator returns True if the value is False
-    if not first_number > 10:
-        print("The first number is not greater than 10")
-    # in Operator returns True if the value is in the list
-    if first_number in [10, 20, 30]:
-        print("The first number is in the list")
-    # not in Operator returns True if the value is not in the list
-    if first_number not in [10, 20, 30]:
-        print("The first number is not in the list")
-    # is Operator returns True if the two variables are the same object
-    if first_number is second_number:
-        print("The first number is the same as the second number")
-    # is not Operator returns True if the two variables are not the same object
-    if first_number is not second_number:
-        print("The first number is not the same as the second number")
+    print(check_greater_than_or_equal_to(first_number, second_number))
 
 
 main()
