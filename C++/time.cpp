@@ -53,7 +53,7 @@ void current_second_only() {
     printf("%d \n", tm->tm_sec);
 }
 
-void main() {
+int main() {
     // Get the current time
     current_time();
     // Get the current date
@@ -66,4 +66,5 @@ void main() {
     current_minute_only();
     // Get the current second only
     current_second_only();
+    return 0;
 }
