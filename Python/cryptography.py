@@ -37,16 +37,6 @@ def decode_base64(string):
     return base64.b64decode(string.encode()).decode()
 
 
-# Get the sha1 of the string
-def get_sha1(string):
-    return hashlib.sha1(string.encode()).hexdigest()
-
-
-# Get the md5 of the string
-def get_md5(string):
-    return hashlib.md5(string.encode()).hexdigest()
-
-
 def main():
     # Some random text to get SHA of
     some_random_string = "Hello, My name is John Doe, I am 30 years old, and i live in NYC."
@@ -64,10 +54,6 @@ def main():
     print(get_base64(some_random_string))
     # Decode the base64 string
     print(decode_base64(get_base64(some_random_string)))
-    # Get the sha1 of the string
-    print(get_sha1(some_random_string))
-    # Get the md5 of the string
-    print(get_md5(some_random_string))
 
 
 main()
