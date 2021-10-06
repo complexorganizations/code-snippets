@@ -4,11 +4,14 @@ The ability to copy and paste code snippets is the whole idea.
 # What language should I learn?
 
 ### Application Development
+- Web: Typescript
 - Mobile: Dart
 - Desktop: Dart
-- Server: Go
-- Embeedd: Rust
-- Web: Dart
+- Microservices: Rust
+- Cloud: Go
+- AI: C++
+- Game: C#
+- IoT: Rust
 
 If at all feasible, choose a cross-platform language.
 
