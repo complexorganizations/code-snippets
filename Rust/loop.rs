@@ -80,7 +80,7 @@ fn infinite_loop() {
     loop {
         counter = counter + 1;
         println!("This loop will run forever!");
-        if counter == 100 {
+        if counter == 10 {
             break;
         }
     }
