@@ -200,5 +200,5 @@ function isArrayEmpty(array: string[]) {
 
 // Check if the array is not empty.
 function isNotEmptyArray(array: string[]) {
-    return array.length >= 1
+    return array.length != 0
 }
