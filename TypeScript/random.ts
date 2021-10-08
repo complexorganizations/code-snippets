@@ -1,4 +1,4 @@
-function main() {
+function main(): void {
     // Get a random string of length 10
     console.log(getRandomString(10))
     // Get a random integer between 0 and 10
@@ -15,9 +15,9 @@ function main() {
 
 // Get a random string of length n
 function getRandomString(provided_length: number): string {
-    var text = ""
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
-    for (var i = 0; i < provided_length; i++) {
+    var text: string = ""
+    var possible: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+    for (var i: number = 0; i < provided_length; i++) {
         text += possible.charAt(Math.floor(Math.random() * possible.length))
     }
     return text
@@ -41,12 +41,12 @@ function getRandomBoolean(): boolean {
 }
 
 // Get a random element from an array
-function getRandomElement(array: String[]) {
+function getRandomElement(array: String[]): String {
     return array[Math.floor(Math.random() * array.length)]
 }
 
 // Get a random element from an map
-function getRandomElementFromMap(user_provided_map: Map<string, string>): string {
-    var keys = Object.keys(user_provided_map)
+function getRandomElementFromMap(user_provided_map: Map<string, string>): any {
+    var keys: string[] = Object.keys(user_provided_map)
     return user_provided_map[keys[Math.floor(Math.random() * keys.length)]]
 }

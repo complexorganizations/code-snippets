@@ -1,7 +1,7 @@
 import fs from "fs"
 
-function main() {
-    var sampleJson = `{
+function main(): void {
+    var sampleJson:string = `{
     "names": [
         {
             "first": "John",
@@ -27,12 +27,12 @@ function main() {
 main()
 
 // Parse the json and return it.
-function parseJson(json: string) {
+function parseJson(json: string): any {
     return JSON.parse(json)
 }
 
 // Validate the json and return true or false.
-function validateJson(json: string) {
+function validateJson(json: string): boolean {
     try {
         JSON.parse(json)
         return true
@@ -42,13 +42,13 @@ function validateJson(json: string) {
 }
 
 // Open a file and check if it is a valid json.
-function checkIfFileIsValidJson(filePath: string) {
-    var json = fs.readFileSync(filePath, "utf8")
+function checkIfFileIsValidJson(filePath: string): boolean {
+    var json:string = fs.readFileSync(filePath, "utf8")
     return validateJson(json)
 }
 
 // Write some content to a specific file
-function writeToFile(fileName: string, content: string) {
+function writeToFile(fileName: string, content: string): void {
     fs.writeFile(fileName, content, function (err) {
         if (err) {
             return err

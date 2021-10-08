@@ -1,5 +1,5 @@
-function main() {
-    var content = "Hello, World!"
+function main(): void {
+    var content: string = "Hello, World!"
     // Check if the string is empty
     if (isEmpty(content)) {
         console.log("Empty")
@@ -13,16 +13,16 @@ function main() {
         console.log("Does not contain Hello")
     }
     // Split a string and return it
-    var splitted = split(content, ",")
+    var splitted:string[] = split(content, ",")
     console.log(splitted)
     // Convert a string to lowercase
-    var lowercase = toLowerCase(content)
+    var lowercase:string = toLowerCase(content)
     console.log(lowercase)
     // Convert a string to uppercase
-    var uppercase = toUpperCase(content)
+    var uppercase:string = toUpperCase(content)
     console.log(uppercase)
     // Trim a string
-    var trimmed = trim(content)
+    var trimmed:string = trim(content)
     console.log(trimmed)
     // Check if a string includes a substring
     if (includes(content, "Hello")) {
@@ -37,13 +37,13 @@ function main() {
         console.log("Not Equal")
     }
     // Reverse a string
-    var reversed = reverse(content)
+    var reversed:string = reverse(content)
     console.log(reversed)
     // Randomize a string
-    var randomized = randomize(content)
+    var randomized: string = randomize(content)
     console.log(randomized)
     // Escape a string with backslash
-    var currentString = "My Name is \"John\""
+    var currentString:string = "My Name is \"John\""
     console.log(currentString)
     // find and replace
     console.log(findAndReplace(currentString, "John", "Adam"))
@@ -52,62 +52,62 @@ function main() {
 main()
 
 // Check if the string is empty
-function isEmpty(str: string) {
+function isEmpty(str: string): boolean {
     return str.length == 0
 }
 
 // Check if a string contains a substring
-function contains(str: string, substr: string) {
+function contains(str: string, substr: string): boolean {
     return str.indexOf(substr) != -1
 }
 
 // Split a string and return it
-function split(str: string, delimiter: string) {
+function split(str: string, delimiter: string): string[] {
     return str.split(delimiter)
 }
 
 // Convert a string to lowercase
-function toLowerCase(str: string) {
+function toLowerCase(str: string): string {
     return str.toLowerCase()
 }
 
 // Convert a string to uppercase
-function toUpperCase(str: string) {
+function toUpperCase(str: string): string {
     return str.toUpperCase()
 }
 
 // Trim a string
-function trim(str: string) {
+function trim(str: string): string {
     return str.trim()
 }
 
 // Check if a string includes a substring
-function includes(str: string, substr: string) {
+function includes(str: string, substr: string): boolean {
     return str.includes(substr)
 }
 
 // Check if two strings are equal
-function equals(str1: string, str2: string) {
+function equals(str1: string, str2: string): boolean {
     return str1 == str2
 }
 
 // Reverse a string
-function reverse(str: string) {
+function reverse(str: string): string {
     return str.split("").reverse().join("")
 }
 
 // Randomize a string
-function randomize(str: string) {
-    var chars = str.split("")
-    var random = ""
-    for (var i = 0; i < chars.length; i++) {
-        var index = Math.floor(Math.random() * chars.length)
+function randomize(str: string): string {
+    var chars: string[] = str.split("")
+    var random: string = ""
+    for (var i: number = 0; i < chars.length; i++) {
+        var index: number = Math.floor(Math.random() * chars.length)
         random += chars[index]
     }
     return random
 }
 
 // find and replace
-function findAndReplace(oldString: string, searchString: string, newString: string) {
+function findAndReplace(oldString: string, searchString: string, newString: string): string {
     return oldString.replace(searchString, newString)
 }

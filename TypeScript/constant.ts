@@ -1,4 +1,4 @@
-function main() {
+function main(): void {
     // Constant string
     console.log(constantString())
     // Constant number
@@ -22,32 +22,32 @@ function main() {
 main()
 
 // Constant string
-function constantString() {
-    const currentString = "Hello"
+function constantString(): string {
+    const currentString: string = "Hello"
     return currentString
 }
 
 // Constant number
-function constantNumber() {
-    const currentNumber = 10
+function constantNumber(): number {
+    const currentNumber: number = 10
     return currentNumber
 }
 
 // Constant boolean
-function constantBoolean() {
-    const currentBoolean = true
+function constantBoolean(): boolean {
+    const currentBoolean: boolean = true
     return currentBoolean
 }
 
 // Constant array
-function constantArray() {
-    const currentArray = [1, 2, 3]
+function constantArray(): number[] {
+    const currentArray: number[] = [1, 2, 3]
     return currentArray
 }
 
 // Constant object
-function constantObject() {
-    const currentObject = {
+function constantObject(): object {
+    const currentObject: object = {
         name: "John",
         age: 30
     }
@@ -55,27 +55,27 @@ function constantObject() {
 }
 
 // Constant function
-function constantFunction() {
-    const currentFunction = function () {
+function constantFunction(): Function {
+    const currentFunction: Function = function (): string {
         return "Hello"
     }
     return currentFunction
 }
 
 // Constant symbol
-function constantSymbol() {
-    const currentSymbol = Symbol("Hello")
+function constantSymbol(): symbol {
+    const currentSymbol: symbol = Symbol("Hello")
     return currentSymbol
 }
 
 // Constant null
-function constantNull() {
-    const currentNull = null
+function constantNull(): null {
+    const currentNull: null = null
     return currentNull
 }
 
 // Constant undefined
-function constantUndefined() {
-    const currentUndefined = undefined
+function constantUndefined(): undefined {
+    const currentUndefined: undefined = undefined
     return currentUndefined
 }

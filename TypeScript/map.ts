@@ -1,6 +1,6 @@
-function main() {
+function main(): void {
     // Create a new map.
-    var newMap = new Map()
+    var newMap: Map<any, any> = new Map()
     // Set some value to the map.
     newMap.set("Name", "John")
     newMap.set("Age", "30")
@@ -14,16 +14,16 @@ function main() {
     // Print the whole map.
     console.log(newMap)
     // Get the value of the map.
-    var name = newMap.get("Name")
+    var name:any = newMap.get("Name")
     console.log(name)
     // Remove the value of the map.
     newMap.delete("Name")
     console.log(name)
     // Get the size of the map.
-    var size = newMap.size
+    var size:number = newMap.size
     console.log(size)
     // Check if the map contains a key.
-    var contains = newMap.has("Name")
+    var contains:boolean = newMap.has("Name")
     console.log(contains)
     // Clear the map.
     newMap.clear()
@@ -32,17 +32,17 @@ function main() {
 main()
 
 // Get the value of the map.
-function getValue(currentMap: Map<string, string>, key: string) {
+function getValue(currentMap: Map<string, string>, key: string): string | undefined {
     return currentMap.get(key)
 }
 
 // Check if the map contains a key.
-function containsKey(currentMap: Map<string, string>, key: string) {
+function containsKey(currentMap: Map<string, string>, key: string): boolean {
     return currentMap.has(key)
 }
 
 // Remove a key and value from a map.
-function removeKey(currentMap: Map<string, string>, key: string) {
+function removeKey(currentMap: Map<string, string>, key: string): void {
     // Check if the map contains the key.
     if (currentMap.has(key)) {
         // Remove the key and value from the map.
@@ -51,11 +51,11 @@ function removeKey(currentMap: Map<string, string>, key: string) {
 }
 
 // Get the size of the map.
-function getSize(currentMap: Map<string, string>) {
+function getSize(currentMap: Map<string, string>): number {
     return currentMap.size
 }
 
 // Remove all the key and value from a map.
-function clearMap(currentMap: Map<string, string>) {
+function clearMap(currentMap: Map<string, string>): void {
     currentMap.clear()
 }

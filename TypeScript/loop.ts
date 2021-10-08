@@ -1,4 +1,4 @@
-function main() {
+function main(): void {
     // Loop 10 times
     loopTenTimes()
     // Loop 100 times
@@ -14,22 +14,22 @@ function main() {
 main()
 
 // Loop 10 times
-function loopTenTimes() {
-    for (var i = 0; i < 10; i++) {
+function loopTenTimes(): void {
+    for (var i: number = 0; i < 10; i++) {
         console.log(i)
     }
 }
 
 // Loop 100 times
-function loopHundredTimes() {
-    for (var i = 0; i < 100; i++) {
+function loopHundredTimes(): void {
+    for (var i: number = 0; i < 100; i++) {
         console.log(i)
     }
 }
 
 // Break out of the loop
-function breakLoop() {
-    for (var i = 0; i < 10; i++) {
+function breakLoop(): void {
+    for (var i: number = 0; i < 10; i++) {
         if (i == 5) {
             break
         }
@@ -38,8 +38,8 @@ function breakLoop() {
 }
 
 // Continue to the next iteration
-function continueLoop() {
-    for (var i = 0; i < 10; i++) {
+function continueLoop(): void {
+    for (var i: number = 0; i < 10; i++) {
         if (i == 5) {
             continue
         }
@@ -48,8 +48,8 @@ function continueLoop() {
 }
 
 // Loop Forever
-function loopForever() {
-    var loopCounter = 0
+function loopForever(): void {
+    var loopCounter:number = 0
     for (; ;) {
         console.log("I will loop forever.")
         loopCounter = loopCounter + 1

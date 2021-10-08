@@ -1,4 +1,4 @@
-function main() {
+function main(): void {
     var first_name = "John"
     var last_name = "Doe"
     // Check if the strings are the same

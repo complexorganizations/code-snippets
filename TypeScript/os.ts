@@ -1,7 +1,7 @@
-import os from "os"
+import os, { CpuInfo } from "os"
 import process from "process"
 
-function main() {
+function main(): void {
     // Clear the console
     clearConsole()
     // Print the current OS
@@ -49,7 +49,7 @@ function main() {
 main()
 
 // Clear the console
-function clearConsole() {
+function clearConsole():void {
     process.stdout.write("\033c")
 }
 
@@ -59,52 +59,52 @@ function getCurrentOS() {
 }
 
 // Get the current user name
-function getCurrentUser() {
+function getCurrentUser(): string {
     return os.userInfo().username
 }
 
 // Get the current user's home directory
-function getCurrentUserHomeDirectory() {
+function getCurrentUserHomeDirectory(): string {
     return os.userInfo().homedir
 }
 
 // Get the current user's uid
-function getCurrentUserUID() {
+function getCurrentUserUID(): number {
     return os.userInfo().uid
 }
 
 // Get the current user's gid
-function getCurrentUserGID() {
+function getCurrentUserGID(): number {
     return os.userInfo().gid
 }
 
 // Get the current system hostname
-function getCurrentHostname() {
+function getCurrentHostname(): string {
     return os.hostname()
 }
 
 // Get the current system's architecture
-function getCurrentArchitecture() {
+function getCurrentArchitecture(): string {
     return os.arch()
 }
 
 // Get the current system uptime
-function getCurrentUptime() {
+function getCurrentUptime(): number  {
     return os.uptime()
 }
 
 // Get the current system load average
-function getCurrentLoadAverage() {
+function getCurrentLoadAverage(): number[] {
     return os.loadavg()
 }
 
 // Get the current system's total memory
-function getCurrentTotalMemory() {
+function getCurrentTotalMemory(): number  {
     return os.totalmem()
 }
 
 // Get the current system's free memory
-function getCurrentFreeMemory() {
+function getCurrentFreeMemory(): number  {
     return os.freemem()
 }
 
@@ -114,22 +114,22 @@ function getCurrentNetworkInterfaces() {
 }
 
 // Get the current system process count
-function getCurrentProcessCount() {
+function getCurrentProcessCount(): number {
     return os.cpus().length
 }
 
 // Get the current system's cpu count
-function getCurrentCPUCount() {
+function getCurrentCPUCount(): CpuInfo[] {
     return os.cpus()
 }
 
 // Get the current system's cpu model
-function getCurrentCPUModel() {
-    return os.cpus()[0].model
+function getCurrentCPUModel(): CpuInfo[]  {
+    return os.cpus()
 }
 
 // Get the current system's cpu speed
-function getCurrentCPUSpeed() {
+function getCurrentCPUSpeed(): number  {
     return os.cpus()[0].speed
 }
 
@@ -139,16 +139,16 @@ function getCurrentCPUTimes() {
 }
 
 // Get the current system's cpu usage
-function getCurrentCPUUsage() {
+function getCurrentCPUUsage(): number  {
     return os.cpus()[0].times.user
 }
 
 // Change the current working directory
-function changeDirectory(path: string) {
+function changeDirectory(path: string): void {
     process.chdir(path)
 }
 
 // Exit the program
-function exit() {
+function exit(): void {
     process.exit()
 }

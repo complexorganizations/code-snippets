@@ -1,6 +1,6 @@
 // Create a if statement that checks if the value of the variable age is less than 18. If it is, print "You are not old enough to view this page" to the console.
-function main() {
-    var age = 15
+function main(): void {
+    var age:number = 15
     if (age < 18) {
         console.log("You are not old enough to view this page")
     } else if (age == 18) {
@@ -19,14 +19,14 @@ function main() {
 main()
 
 // If statement inside a function
-function testIfStatement(content: string) {
+function testIfStatement(content: string): true | undefined {
     if (content == "test") {
         return true
     }
 }
 
 // If else statement inside a function
-function testIfElseStatement(content: string) {
+function testIfElseStatement(content: string): boolean {
     if (content == "test") {
         return true
     } else {
@@ -35,7 +35,7 @@ function testIfElseStatement(content: string) {
 }
 
 // if, else if, else statement
-function testElseIfStatement(content: string) {
+function testElseIfStatement(content: string): boolean {
     if (content == "test") {
         return true
     } else if (content == "test2") {

@@ -1,4 +1,4 @@
-function main() {
+function main(): void {
     // Call the function functionImput with the argument "Hello World"
     functionImput("Hello, World!")
     // Call the function functionReturn with the argument "Hello World"
@@ -10,16 +10,16 @@ function main() {
 main()
 
 // Create a function that takes an argument and prints it.
-function functionImput(content: string) {
+function functionImput(content: string): void {
     console.log(content)
 }
 
 // Create a function that takes an argument and returns it.
-function functionReturn(content: string) {
+function functionReturn(content: string): string {
     return content
 }
 
 // Create a function that takes two arguments and does some math and than returns
-function doSomeMath(firstNumber: number, secondNumber: number) {
+function doSomeMath(firstNumber: number, secondNumber: number): number {
     return firstNumber * secondNumber + secondNumber ^ firstNumber % secondNumber
 }

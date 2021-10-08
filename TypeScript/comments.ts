@@ -1,6 +1,6 @@
 // This is an in-line comment.
 
-function main() {
+function main(): void {
     console.log("Hello, World")
 }
 

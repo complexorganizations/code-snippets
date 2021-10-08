@@ -1,4 +1,4 @@
-function main() {
+function main(): void {
     // Get the current time.
     console.log(getCurrentDate())
     // Get the current time in seconds.
@@ -24,51 +24,51 @@ function main() {
 main()
 
 // Get the current time.
-function getCurrentDate() {
+function getCurrentDate(): Date {
     return new Date()
 }
 
 // Get the current seconds in the minute.
-function getTimeInSeconds() {
+function getTimeInSeconds(): number {
     return new Date().getSeconds()
 }
 
 // Get the current minutes in the hour.
-function getMinutesInHour() {
+function getMinutesInHour(): number {
     return new Date().getMinutes()
 }
 
 // Get the current hour in the day.
-function getHoursInDay() {
+function getHoursInDay(): number {
     return new Date().getHours()
 }
 
 // Get the current miliseconds in the second.
-function getMilisecondsInSecond() {
+function getMilisecondsInSecond(): number {
     return new Date().getMilliseconds()
 }
 
 // Get the current month in the year.
-function getMonthInYear() {
+function getMonthInYear(): number {
     return new Date().getMonth()
 }
 
 // Get the current year.
-function getYear() {
+function getYear(): number {
     return new Date().getFullYear()
 }
 
 // Get the current day in the week.
-function getDayInWeek() {
+function getDayInWeek(): number {
     return new Date().getDay()
 }
 
 // Get the current day in the month.
-function getDayInMonth() {
+function getDayInMonth(): number {
     return new Date().getDate()
 }
 
 // Sleep for the given time in miliseconds.
-function sleep(miliseconds: number) {
+function sleep(miliseconds: number): Promise<void> {
     return new Promise(resolve => setTimeout(resolve, miliseconds))
 }

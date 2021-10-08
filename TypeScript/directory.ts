@@ -2,7 +2,7 @@ import fs from "fs"
 import os from "os"
 import path from "path"
 
-function main() {
+function main(): void {
     // Check if a directory exists
     console.log(directoryExists("/"))
     // Get the path to the current working directory
@@ -27,7 +27,7 @@ function main() {
 main()
 
 // Check if a directory exists and return true or false
-function directoryExists(directory: string) {
+function directoryExists(directory: string): boolean {
     if (fs.existsSync(directory)) {
         return true
     } else {
@@ -36,41 +36,41 @@ function directoryExists(directory: string) {
 }
 
 // Get the current working directory
-function getCurrentWorkingDirectory() {
+function getCurrentWorkingDirectory(): string {
     return process.cwd()
 }
 
 // Get the name of the current working directory
-function getCurrentWorkingDirectoryName() {
+function getCurrentWorkingDirectoryName(): string | undefined{
     return process.cwd().split("\\").pop()
 }
 
 // Get the current user home directory
-function getUserHomeDirectory() {
+function getUserHomeDirectory(): string {
     return os.homedir()
 }
 
 // Get the temporary directory
-function getTempDirectory() {
+function getTempDirectory(): string {
     return os.tmpdir()
 }
 
 // Get all the files in a directory
-function getFilesInDirectory(directory: string) {
+function getFilesInDirectory(directory: string): string[] {
     return fs.readdirSync(directory)
 }
 
 // Get all the folders in a directory
-function getFoldersInDirectory(directory: string) {
+function getFoldersInDirectory(directory: string): string[] {
     return fs.readdirSync(directory).filter(file => fs.statSync(path.join(directory, file)).isDirectory())
 }
 
 // Get the permissions of a folder
-function getFolderPermissions(directory: string) {
+function getFolderPermissions(directory: string): number {
     return fs.statSync(directory).mode
 }
 
 // Get the size of a folder
-function getFolderSize(directory: string) {
+function getFolderSize(directory: string): number {
     return fs.statSync(directory).size
 }

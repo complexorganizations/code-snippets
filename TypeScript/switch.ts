@@ -1,4 +1,4 @@
-function main() {
+function main(): void {
     switchStatement()
     moreSwitchExample()
 }
@@ -6,7 +6,7 @@ function main() {
 main()
 
 // A switch statement is a way to execute different code based on different conditions.
-function switchStatement() {
+function switchStatement(): void {
     var date = new Date()
     var day = date.getDay()
     switch (day) {
@@ -37,7 +37,7 @@ function switchStatement() {
 }
 
 // More examples of switch statements
-function moreSwitchExample() {
+function moreSwitchExample(): void {
     var name: string = "John"
     switch (name) {
         case "John":
