@@ -35,7 +35,7 @@ function getCurrentFileName() {
 
 // Get the current path in the system
 function getCurrentPath() {
-    return process.cwd() + "\\" + getCurrentFileName()
+    return path.dirname(process.argv[1]) + "/" + path.basename(process.argv[1])
 }
 
 // Get the file extension of a file and return it
