@@ -10,14 +10,14 @@ function main() {
     // Get a random element from an array
     console.log(getRandomElement(["a", "b", "c"]))
     // Get a random element from an map
-    console.log(getRandomElementFromMap({ a: 1, b: 2, c: 3 }))
+    console.log(getRandomElementFromMap(new Map([["a", "b"], ["b", "a"], ["c", "b"]])))
 }
 
 // Get a random string of length n
-function getRandomString(n) {
+function getRandomString(provided_length: number): string {
     var text = ""
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
-    for (var i = 0; i < n; i++) {
+    for (var i = 0; i < provided_length; i++) {
         text += possible.charAt(Math.floor(Math.random() * possible.length))
     }
     return text
@@ -26,27 +26,27 @@ function getRandomString(n) {
 main()
 
 // Get a random integer between min and max
-function getRandomInt(min, max) {
+function getRandomInt(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
 // Get a random float between min and max
-function getRandomFloat(min, max) {
+function getRandomFloat(min: number, max: number): number {
     return Math.random() * (max - min) + min
 }
 
 // Get a random boolean
-function getRandomBoolean() {
+function getRandomBoolean(): boolean {
     return Math.random() >= 0.5
 }
 
 // Get a random element from an array
-function getRandomElement(array) {
+function getRandomElement(array: String[]) {
     return array[Math.floor(Math.random() * array.length)]
 }
 
 // Get a random element from an map
-function getRandomElementFromMap(map) {
-    var keys = Object.keys(map)
-    return map[keys[Math.floor(Math.random() * keys.length)]]
+function getRandomElementFromMap(user_provided_map: Map<string, string>): string {
+    var keys = Object.keys(user_provided_map)
+    return user_provided_map[keys[Math.floor(Math.random() * keys.length)]]
 }

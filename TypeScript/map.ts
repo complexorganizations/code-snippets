@@ -32,17 +32,17 @@ function main() {
 main()
 
 // Get the value of the map.
-function getValue(currentMap, key) {
+function getValue(currentMap: Map<string, string>, key: string) {
     return currentMap.get(key)
 }
 
 // Check if the map contains a key.
-function containsKey(currentMap, key) {
+function containsKey(currentMap: Map<string, string>, key: string) {
     return currentMap.has(key)
 }
 
 // Remove a key and value from a map.
-function removeKey(currentMap, key) {
+function removeKey(currentMap: Map<string, string>, key: string) {
     // Check if the map contains the key.
     if (currentMap.has(key)) {
         // Remove the key and value from the map.
@@ -51,11 +51,11 @@ function removeKey(currentMap, key) {
 }
 
 // Get the size of the map.
-function getSize(currentMap) {
+function getSize(currentMap: Map<string, string>) {
     return currentMap.size
 }
 
 // Remove all the key and value from a map.
-function clearMap(currentMap) {
+function clearMap(currentMap: Map<string, string>) {
     currentMap.clear()
 }
