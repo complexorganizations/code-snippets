@@ -52,52 +52,52 @@ function main() {
 main()
 
 // Check if the string is empty
-function isEmpty(str) {
+function isEmpty(str: string) {
     return str.length == 0
 }
 
 // Check if a string contains a substring
-function contains(str, substr) {
+function contains(str: string, substr: string) {
     return str.indexOf(substr) != -1
 }
 
 // Split a string and return it
-function split(str, delimiter) {
+function split(str: string, delimiter: string) {
     return str.split(delimiter)
 }
 
 // Convert a string to lowercase
-function toLowerCase(str) {
+function toLowerCase(str: string) {
     return str.toLowerCase()
 }
 
 // Convert a string to uppercase
-function toUpperCase(str) {
+function toUpperCase(str: string) {
     return str.toUpperCase()
 }
 
 // Trim a string
-function trim(str) {
+function trim(str: string) {
     return str.trim()
 }
 
 // Check if a string includes a substring
-function includes(str, substr) {
+function includes(str: string, substr: string) {
     return str.includes(substr)
 }
 
 // Check if two strings are equal
-function equals(str1, str2) {
+function equals(str1: string, str2: string) {
     return str1 == str2
 }
 
 // Reverse a string
-function reverse(str) {
+function reverse(str: string) {
     return str.split("").reverse().join("")
 }
 
 // Randomize a string
-function randomize(str) {
+function randomize(str: string) {
     var chars = str.split("")
     var random = ""
     for (var i = 0; i < chars.length; i++) {
@@ -108,6 +108,6 @@ function randomize(str) {
 }
 
 // find and replace
-function findAndReplace(oldString, searchString, newString) {
+function findAndReplace(oldString: string, searchString: string, newString: string) {
     return oldString.replace(searchString, newString)
 }

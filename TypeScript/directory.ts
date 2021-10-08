@@ -1,6 +1,6 @@
-const fs = require("fs")
-const path = require("path")
-const os = require("os")
+import fs from "fs"
+import os from "os"
+import path from "path"
 
 function main() {
     // Check if a directory exists
@@ -27,7 +27,7 @@ function main() {
 main()
 
 // Check if a directory exists and return true or false
-function directoryExists(directory) {
+function directoryExists(directory: string) {
     if (fs.existsSync(directory)) {
         return true
     } else {
@@ -56,21 +56,21 @@ function getTempDirectory() {
 }
 
 // Get all the files in a directory
-function getFilesInDirectory(directory) {
+function getFilesInDirectory(directory: string) {
     return fs.readdirSync(directory)
 }
 
 // Get all the folders in a directory
-function getFoldersInDirectory(directory) {
+function getFoldersInDirectory(directory: string) {
     return fs.readdirSync(directory).filter(file => fs.statSync(path.join(directory, file)).isDirectory())
 }
 
 // Get the permissions of a folder
-function getFolderPermissions(directory) {
+function getFolderPermissions(directory: string) {
     return fs.statSync(directory).mode
 }
 
 // Get the size of a folder
-function getFolderSize(directory) {
+function getFolderSize(directory: string) {
     return fs.statSync(directory).size
 }

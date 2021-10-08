@@ -19,14 +19,14 @@ function main() {
 main()
 
 // If statement inside a function
-function testIfStatement(content) {
+function testIfStatement(content: string) {
     if (content == "test") {
         return true
     }
 }
 
 // If else statement inside a function
-function testIfElseStatement(content) {
+function testIfElseStatement(content: string) {
     if (content == "test") {
         return true
     } else {
@@ -35,7 +35,7 @@ function testIfElseStatement(content) {
 }
 
 // if, else if, else statement
-function testElseIfStatement(content) {
+function testElseIfStatement(content: string) {
     if (content == "test") {
         return true
     } else if (content == "test2") {

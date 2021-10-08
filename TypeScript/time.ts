@@ -69,6 +69,6 @@ function getDayInMonth() {
 }
 
 // Sleep for the given time in miliseconds.
-function sleep(miliseconds) {
+function sleep(miliseconds: number) {
     return new Promise(resolve => setTimeout(resolve, miliseconds))
 }

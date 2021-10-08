@@ -1,5 +1,5 @@
-const os = require("os")
-const process = require("process")
+import os from "os"
+import process from "process"
 
 function main() {
     // Clear the console
@@ -144,7 +144,7 @@ function getCurrentCPUUsage() {
 }
 
 // Change the current working directory
-function changeDirectory(path) {
+function changeDirectory(path: string) {
     process.chdir(path)
 }
 

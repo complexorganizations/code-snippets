@@ -117,7 +117,7 @@ function getRandomValue(array: string[]) {
 
 // Randomize the order of the values in the array and return the array.
 function randomizeArray(array: string[]) {
-    return array.sort(function() {
+    return array.sort(function () {
         return 0.5 - Math.random()
     })
 }
