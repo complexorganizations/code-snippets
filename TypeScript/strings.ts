@@ -13,16 +13,16 @@ function main(): void {
         console.log("Does not contain Hello")
     }
     // Split a string and return it
-    var splitted:string[] = split(content, ",")
+    var splitted: string[] = split(content, ",")
     console.log(splitted)
     // Convert a string to lowercase
-    var lowercase:string = toLowerCase(content)
+    var lowercase: string = toLowerCase(content)
     console.log(lowercase)
     // Convert a string to uppercase
-    var uppercase:string = toUpperCase(content)
+    var uppercase: string = toUpperCase(content)
     console.log(uppercase)
     // Trim a string
-    var trimmed:string = trim(content)
+    var trimmed: string = trim(content)
     console.log(trimmed)
     // Check if a string includes a substring
     if (includes(content, "Hello")) {
@@ -37,13 +37,13 @@ function main(): void {
         console.log("Not Equal")
     }
     // Reverse a string
-    var reversed:string = reverse(content)
+    var reversed: string = reverse(content)
     console.log(reversed)
     // Randomize a string
     var randomized: string = randomize(content)
     console.log(randomized)
     // Escape a string with backslash
-    var currentString:string = "My Name is \"John\""
+    var currentString: string = "My Name is \"John\""
     console.log(currentString)
     // find and replace
     console.log(findAndReplace(currentString, "John", "Adam"))

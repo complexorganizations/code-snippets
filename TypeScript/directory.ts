@@ -41,7 +41,7 @@ function getCurrentWorkingDirectory(): string {
 }
 
 // Get the name of the current working directory
-function getCurrentWorkingDirectoryName(): string | undefined{
+function getCurrentWorkingDirectoryName(): string | undefined {
     return process.cwd().split("\\").pop()
 }
 

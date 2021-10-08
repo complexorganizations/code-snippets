@@ -49,7 +49,7 @@ function continueLoop(): void {
 
 // Loop Forever
 function loopForever(): void {
-    var loopCounter:number = 0
+    var loopCounter: number = 0
     for (; ;) {
         console.log("I will loop forever.")
         loopCounter = loopCounter + 1

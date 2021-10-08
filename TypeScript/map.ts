@@ -14,16 +14,16 @@ function main(): void {
     // Print the whole map.
     console.log(newMap)
     // Get the value of the map.
-    var name:any = newMap.get("Name")
+    var name: any = newMap.get("Name")
     console.log(name)
     // Remove the value of the map.
     newMap.delete("Name")
     console.log(name)
     // Get the size of the map.
-    var size:number = newMap.size
+    var size: number = newMap.size
     console.log(size)
     // Check if the map contains a key.
-    var contains:boolean = newMap.has("Name")
+    var contains: boolean = newMap.has("Name")
     console.log(contains)
     // Clear the map.
     newMap.clear()

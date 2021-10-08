@@ -1,7 +1,7 @@
 import fs from "fs"
 
 function main(): void {
-    var sampleJson:string = `{
+    var sampleJson: string = `{
     "names": [
         {
             "first": "John",
@@ -43,7 +43,7 @@ function validateJson(json: string): boolean {
 
 // Open a file and check if it is a valid json.
 function checkIfFileIsValidJson(filePath: string): boolean {
-    var json:string = fs.readFileSync(filePath, "utf8")
+    var json: string = fs.readFileSync(filePath, "utf8")
     return validateJson(json)
 }
 

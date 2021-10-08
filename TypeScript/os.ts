@@ -49,7 +49,7 @@ function main(): void {
 main()
 
 // Clear the console
-function clearConsole():void {
+function clearConsole(): void {
     process.stdout.write("\033c")
 }
 
@@ -89,7 +89,7 @@ function getCurrentArchitecture(): string {
 }
 
 // Get the current system uptime
-function getCurrentUptime(): number  {
+function getCurrentUptime(): number {
     return os.uptime()
 }
 
@@ -99,12 +99,12 @@ function getCurrentLoadAverage(): number[] {
 }
 
 // Get the current system's total memory
-function getCurrentTotalMemory(): number  {
+function getCurrentTotalMemory(): number {
     return os.totalmem()
 }
 
 // Get the current system's free memory
-function getCurrentFreeMemory(): number  {
+function getCurrentFreeMemory(): number {
     return os.freemem()
 }
 
@@ -124,12 +124,12 @@ function getCurrentCPUCount(): CpuInfo[] {
 }
 
 // Get the current system's cpu model
-function getCurrentCPUModel(): CpuInfo[]  {
+function getCurrentCPUModel(): CpuInfo[] {
     return os.cpus()
 }
 
 // Get the current system's cpu speed
-function getCurrentCPUSpeed(): number  {
+function getCurrentCPUSpeed(): number {
     return os.cpus()[0].speed
 }
 
@@ -139,7 +139,7 @@ function getCurrentCPUTimes() {
 }
 
 // Get the current system's cpu usage
-function getCurrentCPUUsage(): number  {
+function getCurrentCPUUsage(): number {
     return os.cpus()[0].times.user
 }
 
