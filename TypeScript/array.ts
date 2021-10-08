@@ -1,6 +1,6 @@
 function main() {
     // Create a array of int
-    var array: string[] = [
+    var user_generated_array: string[] = [
         "t",
         "b",
         "l",
@@ -29,45 +29,39 @@ function main() {
         "g"
     ]
     // Join the array
-    console.log(joinArray(array, "-"))
+    console.log(joinArray(user_generated_array, "-"))
     // Sort the array
-    console.log(sortArray(array))
+    console.log(sortArray(user_generated_array))
     // Get the first value
-    console.log(getFirstValue(array))
+    console.log(getFirstValue(user_generated_array))
     // Get the last value
-    console.log(getLastValue(array))
+    console.log(getLastValue(user_generated_array))
     // Get the length of the array
-    console.log(getLength(array))
+    console.log(getLength(user_generated_array))
     // Randomly pick a value from the array
-    console.log(getRandomValue(array))
+    console.log(getRandomValue(user_generated_array))
     // Randomize the order of the values in the array
-    console.log(randomizeArray(array))
-    // Add a value to the end of the array
-    console.log(addToEnd(array, "six"))
-    // Add a value to the start of the array
-    console.log(addToStart(array, "zero"))
-    // Remove the first value in the array
-    console.log(removeFirstValue(array))
-    // Remove the last value in the array
-    console.log(removeLastValue(array))
+    console.log(randomizeArray(user_generated_array))
+    // Remove the first element in the array.
+    console.log(removeFirstElement(user_generated_array))
+    // Remove the last element in the array
+    console.log(removeLastElement(user_generated_array))
     // Remove a value from the array
-    console.log(removeValue(array, "three"))
-    // Remove all instances of a value from the array
-    console.log(removeThisValue(array, "three"))
+    console.log(removeValue(user_generated_array, "y"))
     // Reverse the order of the values in the array
-    console.log(reverseArray(array))
+    console.log(reverseArray(user_generated_array))
     // Get the index of a value in the array
-    console.log(getIndex(array, "three"))
+    console.log(getIndex(user_generated_array, "x"))
     // Remove all duplicates from an array
-    console.log(removeDuplicates(array))
+    console.log(removeDuplicates(user_generated_array))
     // Combine two arrays
-    console.log(combineArrays(array, ["six", "seven", "eight"]))
+    console.log(combineArrays(user_generated_array, ["six", "seven", "eight"]))
     // Check if the array is empty
-    console.log(isArrayEmpty(array))
+    console.log(isArrayEmpty(user_generated_array))
     // Check if the array is not empty
-    console.log(isNotEmptyArray(array))
+    console.log(isNotEmptyArray(user_generated_array))
     // Remove all the content from the array
-    console.log(removeAllContent(array))
+    console.log(removeAllContent(user_generated_array))
 }
 
 main()
@@ -105,39 +99,19 @@ function getRandomValue(array: string[]) {
 
 // Randomize the order of the values in the array and return the array.
 function randomizeArray(array: string[]) {
-    var newArray: string[] = []
-    while (array.length > 0) {
-        var randomIndex = Math.floor(Math.random() * array.length)
-        var randomValue = array.splice(randomIndex, 1)
-        newArray.push(randomValue[0])
-    }
-    return newArray
+    return array.sort(function() {
+        return 0.5 - Math.random()
+    })
 }
 
-// Add a value to the end of the array and return the array.
-function addToEnd(array: string[], value: string) {
-    array.push(value)
+// Remove the first element in the array and return the array.
+function removeFirstElement(array: string[]) {
+    array.shift()
     return array
 }
 
-// Add a value to the start of the array and return the array.
-function addToStart(array: string[], value: string) {
-    array.unshift(value)
-    return array
-}
-
-// Remove the first value in the array and return the array.
-function removeFirstValue(array: string[]) {
-    for (var i = 0; i < array.length; i++) {
-        if (i == 0) {
-            // Remove the first value
-        }
-    }
-    return array
-}
-
-// Remove the last value in the array and return the array.
-function removeLastValue(array: string[]) {
+// Remove the last element in the array and return the array.
+function removeLastElement(array: string[]) {
     array.pop()
     return array
 }
@@ -147,16 +121,6 @@ function removeValue(array: string[], value: string) {
     var index = array.indexOf(value)
     if (index > -1) {
         array.splice(index, 1)
-    }
-    return array
-}
-
-// Remove all instances of a value from the array and return the array.
-function removeThisValue(array: string[], value: string) {
-    var index = array.indexOf(value)
-    while (index > -1) {
-        array.splice(index, 1)
-        index = array.indexOf(value)
     }
     return array
 }
