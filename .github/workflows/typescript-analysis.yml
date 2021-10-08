@@ -21,6 +21,6 @@ jobs:
             ADD_CONTENT=$(("${ADD_CONTENT}" + 1))
           done
           for FILE_LIST in "${ALL_FILES_LIST[@]}"; do
-            echo ${FILE_LIST}
-            node ${FILE_LIST}
+            tsc ${FILE_LIST}
+            node ${FILE_LIST%.*}.js
           done
