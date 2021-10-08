@@ -30,7 +30,7 @@ main()
 
 // Get the current working file name
 function getCurrentFileName() {
-    return path.basename(__filename)
+    return path.basename(process.argv[1])
 }
 
 // Get the current path in the system
