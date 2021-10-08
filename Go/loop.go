@@ -13,12 +13,12 @@ func main() {
 	loopThoughListOfStrings()
 	// loop though a map of strings
 	loopThoughMapOfStrings()
-	// loop forever
-	loopForever()
 	// break example
 	breakExample()
 	// continue example
 	continueExample()
+	// loop forever
+	loopForever()
 }
 
 // Loop ten times
@@ -61,6 +61,22 @@ func loopThoughMapOfStrings() {
 	}
 }
 
+// An example of a break inside a loop
+func breakExample() {
+	for loop := 0; loop < 10; loop++ {
+		break
+		fmt.Println("This is a loop and it will break on the first loop")
+	}
+}
+
+// An example of a continue inside a loop
+func continueExample() {
+	for loop := 0; loop < 10; loop++ {
+		continue
+		fmt.Println("This is a loop and it will continue inside a loop")
+	}
+}
+
 // Loop forever
 func loopForever() {
 	counter := 0
@@ -69,22 +85,6 @@ func loopForever() {
 		if counter == 10 {
 			break
 		}
-		fmt.Println("This is a loop and it will go on forever")
-	}
-}
-
-// An example of a break inside a loop
-func breakExample() {
-	for loop := 0; loop < 10; loop++ {
-		break
-		fmt.Println("This is a loop and it will go on forever")
-	}
-}
-
-// An example of a continue inside a loop
-func continueExample() {
-	for loop := 0; loop < 10; loop++ {
-		continue
 		fmt.Println("This is a loop and it will go on forever")
 	}
 }
