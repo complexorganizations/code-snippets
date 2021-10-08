@@ -1,10 +1,16 @@
 function main() {
     // A simple example of a string
     string_example()
+    // A simple example of a string array
+    string_array_example()
     // A simple example of a number
     number_example()
+    // A simple example of a number array
+    number_array_example()
     // A simple example of a bool
     boolean_example()
+    // A simple example of a bool array
+    boolean_array_example()
     // A simple example of a map
     map_example()
     // A simple example of a constant
@@ -15,8 +21,12 @@ function main() {
     let_example()
     // A simple example of a undefined variable
     undefined_example()
+    // A simple example of a undefined variable array
+    undefined_array_example()
     // A simple example of a null variable
     null_example()
+    // A simple example of a null variable array
+    null_array_example()
     // A simple example of a symbol variable
     symbol_example()
 }
@@ -31,6 +41,12 @@ function string_example() {
     console.log(last_name)
 }
 
+// A simple example of a string array
+function string_array_example() {
+    var names: string[] = ["John", "Doe"]
+    console.log(names)
+}
+
 // A simple example of a number
 function number_example() {
     var age: number = 30
@@ -39,12 +55,24 @@ function number_example() {
     console.log(height)
 }
 
+// A simple example of a number array
+function number_array_example() {
+    var ages: number[] = [30, 1.8]
+    console.log(ages)
+}
+
 // A simple example of a boolean
 function boolean_example() {
     var is_married: boolean = false
     console.log(is_married)
     var is_male: boolean = true
     console.log(is_male)
+}
+
+// A simple example of a boolean array
+function boolean_array_example() {
+    var is_married: boolean[] = [true, false]
+    console.log(is_married)
 }
 
 // A simple example of a map
@@ -89,12 +117,24 @@ function undefined_example() {
     console.log(age)
 }
 
+// A simple example of a undefined variable array
+function undefined_array_example() {
+    var names: undefined[] = [undefined, undefined]
+    console.log(names)
+}
+
 // A simple example of a null variable
 function null_example() {
     var name: null = null
     console.log(name)
     var age: null = null
     console.log(age)
+}
+
+// A simple example of a null variable array
+function null_array_example() {
+    var names: null[] = [null, null]
+    console.log(names)
 }
 
 // A simple example of a symbol variable
