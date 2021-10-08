@@ -18,7 +18,7 @@ function main(): void {
     // Get the current time in day.
     console.log(getDayInMonth())
     // Sleep for the given time in miliseconds.
-    sleep(10000).then(() => console.log("Slept for 10 second"))
+    sleep(10000).then((): void => console.log("Slept for 10 second"))
 }
 
 main()

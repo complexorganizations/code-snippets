@@ -7,8 +7,8 @@ main()
 
 // A switch statement is a way to execute different code based on different conditions.
 function switchStatement(): void {
-    var date = new Date()
-    var day = date.getDay()
+    var date: Date = new Date()
+    var day: number = date.getDay()
     switch (day) {
         case 0:
             console.log("Sunday")

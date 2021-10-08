@@ -54,7 +54,7 @@ function clearConsole(): void {
 }
 
 // Get the current operating system
-function getCurrentOS() {
+function getCurrentOS(): string {
     return os.platform()
 }
 

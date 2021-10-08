@@ -1,6 +1,6 @@
 function main(): void {
-    var first_name = "John"
-    var last_name = "Doe"
+    var first_name: string = "John"
+    var last_name: string = "Doe"
     // Check if the strings are the same
     console.log(check_two_strings_are_equal(first_name, last_name))
     // Check if the strings are not the same
