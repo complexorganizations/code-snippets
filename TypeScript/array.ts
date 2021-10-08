@@ -5,31 +5,40 @@ function main() {
         "b",
         "l",
         "y",
+        "",
         "k",
         "i",
+        "",
         "j",
         "c",
         "a",
         "e",
+        "",
         "n",
         "d",
         "s",
+        "",
         "m",
         "p",
         "f",
         "z",
         "r",
         "q",
+        "",
         "w",
         "u",
         "v",
+        "",
         "x",
         "o",
+        "",
         "h",
         "g"
     ]
     // Join the array
     console.log(joinArray(user_generated_array, "-"))
+    // Remove all the empty elements
+    console.log(removeEmptyElements(user_generated_array))
     // Sort the array
     console.log(sortArray(user_generated_array))
     // Get the first value
@@ -71,10 +80,19 @@ function joinArray(array: string[], separator: string) {
     return array.join(separator)
 }
 
+// Remove all the empty elements from the array
+function removeEmptyElements(array: string[]) {
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] == "") {
+            array.splice(i, 1)
+        }
+    }
+    return array
+}
+
 // Sort all the data in the array, and return the sorted array
 function sortArray(array: string[]) {
-    array.sort()
-    return array
+    return array.sort()
 }
 
 // Get the first value in the array and return it
@@ -106,14 +124,12 @@ function randomizeArray(array: string[]) {
 
 // Remove the first element in the array and return the array.
 function removeFirstElement(array: string[]) {
-    array.shift()
-    return array
+    return array.shift()
 }
 
 // Remove the last element in the array and return the array.
 function removeLastElement(array: string[]) {
-    array.pop()
-    return array
+    return array.pop()
 }
 
 // Remove a value from the array and return the array.
@@ -122,12 +138,6 @@ function removeValue(array: string[], value: string) {
     if (index > -1) {
         array.splice(index, 1)
     }
-    return array
-}
-
-// Remove all the content from the array and return the array.
-function removeAllContent(array: string[]) {
-    array.length = 0
     return array
 }
 
@@ -165,4 +175,9 @@ function isArrayEmpty(array: string[]) {
 // Check if the array is not empty.
 function isNotEmptyArray(array: string[]) {
     return array.length != 0
+}
+
+// Remove all the content from the array and return the array.
+function removeAllContent(array: string[]) {
+    return array.length = 0
 }
