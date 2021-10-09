@@ -6,24 +6,24 @@ function main(): void {
     console.log(getCurrentFileName())
     // Get the current path in the system
     console.log(getCurrentPath())
+    // Write to a file
+    writeToFile("write-to-file.txt", "Hello World!")
     // Get the file extension of a file and return it
-    console.log(getFileExtension("file.js"))
+    console.log(getFileExtension("write-to-file.txt"))
     // Check if a file is hidden
-    console.log(isHidden("directory.js"))
+    console.log(isHidden("write-to-file.txt"))
     // Read the content of the file and return it.
-    console.log(readFile("function.js"))
+    console.log(readFile("write-to-file.txt"))
     // Read the content of a file and check if it contains a specific string.
-    console.log(readFileContains("errors.js", "javascript"))
+    console.log(readFileContains("write-to-file.txt", "javascript"))
     // Check the permissions of a file
-    console.log(checkPermissions("http-client.js"))
+    console.log(checkPermissions("write-to-file.txt"))
     // Create a file
     createFile("o726H2NMjuVwHOPmjEPP.js")
     // Remove a file
     removeFile("o726H2NMjuVwHOPmjEPP.js")
-    // Write to a file
-    writeToFile("write-to-file.txt", "Hello World!")
     // Append and than write to a file
-    appendAndWriteToFile("write-to-file.txt", "Hello World!")
+    appendAndWriteToFile("remove-me.txt", "Hello World!")
 }
 
 main()
