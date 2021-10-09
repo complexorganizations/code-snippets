@@ -51,7 +51,7 @@ main()
 
 // Clear the console
 function clearConsole(): void {
-    process.stdout.write("\033c")
+    //process.stdout.write("\033c")
 }
 
 // Get the current operating system
