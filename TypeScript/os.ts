@@ -1,4 +1,5 @@
-import { os, CpuInfo } from "os";
+import * as os from "os"
+import { CpuInfo } from "os"
 import * as process from "process"
 
 function main(): void {
