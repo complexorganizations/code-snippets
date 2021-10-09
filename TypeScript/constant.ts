@@ -11,6 +11,8 @@ function main(): void {
     console.log(constantObject())
     // Constant function
     console.log(constantFunction())
+    // Constant symbol
+    console.log(constantSymbol())
     // Constant null
     console.log(constantNull())
     // Constant undefined
@@ -58,6 +60,12 @@ function constantFunction(): Function {
         return "Hello"
     }
     return currentFunction
+}
+
+// Constant symbol
+function constantSymbol(): symbol {
+    const currentSymbol: symbol = Symbol("Hello")
+    return currentSymbol
 }
 
 // Constant null
