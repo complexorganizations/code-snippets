@@ -27,8 +27,6 @@ function main(): void {
     null_example()
     // A simple example of a null variable array
     null_array_example()
-    // A simple example of a symbol variable
-    symbol_example()
 }
 
 main()
@@ -135,12 +133,4 @@ function null_example(): void {
 function null_array_example(): void {
     var names: null[] = [null, null]
     console.log(names)
-}
-
-// A simple example of a symbol variable
-function symbol_example(): void {
-    var name: symbol = Symbol("John Doe")
-    console.log(name)
-    var age: symbol = Symbol("30")
-    console.log(age)
 }
