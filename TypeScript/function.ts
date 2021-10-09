@@ -5,6 +5,8 @@ function main(): void {
     console.log(functionReturn("Hello, World!"))
     // Call the function that does some math and than returns the value.
     console.log(doSomeMath(2, 3))
+    // Call the function functionReturnBoolean
+    console.log(functionReturnBoolean())
 }
 
 main()
@@ -22,4 +24,9 @@ function functionReturn(content: string): string {
 // Create a function that takes two arguments and does some math and than returns
 function doSomeMath(firstNumber: number, secondNumber: number): number {
     return firstNumber * secondNumber + secondNumber ^ firstNumber % secondNumber
+}
+
+// Create a function that takes no arguments and returns a boolean.
+function functionReturnBoolean(): boolean {
+    return true
 }
