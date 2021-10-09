@@ -7,6 +7,8 @@ function main(): void {
     console.log(doSomeMath(2, 3))
     // Call the function functionReturnBoolean
     console.log(functionReturnBoolean())
+    // Call the function functionReturnArray
+    console.log(functionReturnArray())
 }
 
 main()
@@ -29,4 +31,9 @@ function doSomeMath(firstNumber: number, secondNumber: number): number {
 // Create a function that takes no arguments and returns a boolean.
 function functionReturnBoolean(): boolean {
     return true
+}
+
+// Create a function that takes no arguments and returns an array.
+function functionReturnArray(): Array<string> {
+    return ["Hello", "World"]
 }
