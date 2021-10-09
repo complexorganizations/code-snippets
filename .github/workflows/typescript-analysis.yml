@@ -22,6 +22,7 @@ jobs:
           done
           for FILE_LIST in "${ALL_FILES_LIST[@]}"; do
             npm install --global typescript
+            npm i @types/node
             tsc ${FILE_LIST}
             node ${FILE_LIST%.*}.js
           done
