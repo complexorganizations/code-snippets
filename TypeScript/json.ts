@@ -1,4 +1,4 @@
-import * fs from "fs"
+import * as fs from "fs"
 
 function main(): void {
     var sampleJson: string = `{
