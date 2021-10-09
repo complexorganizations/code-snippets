@@ -1,156 +1,148 @@
+"""Import random into the program so that we may utilize it."""
 import random
 
 
-# Check if the array is empty
-def is_array_empty(array):
-    if len(array) == 0:
+def is_array_empty(provided_array):
+    """Ascertain that the array is empty."""
+    if len(provided_array) == 0:
         return True
+    return False
 
 
-# Sort an array and return the values
-def sort_array(array):
-    return sorted(array)
+def sort_array(provided_array):
+    """Sort the elements in an array."""
+    return sorted(provided_array)
 
 
-# Get the length of the array
-def get_array_length(array):
-    return len(array)
+def array_contains(provided_array, provided_element):
+    """Determine whether or not the array includes a specific element."""
+    return provided_element in provided_array
 
 
-# Check if the array contains the element
-def array_contains(array, element):
-    return element in array
+def get_array_index(provided_array, provided_element):
+    """In an array, get the index of an element."""
+    return provided_array.index(provided_element)
 
 
-# Get the index of the element
-def get_array_index(array, element):
-    return array.index(element)
+def remove_duplicates_from_array(provided_array):
+    """Remove all of the array's duplicates."""
+    return list(set(provided_array))
 
 
-# Remove all the duplicates from the array
-def remove_duplicates(array):
-    return list(set(array))
+def remove_element_from_array(provided_array, provided_element):
+    """Element should be removed from the array."""
+    return provided_array.remove(provided_element)
 
 
-# Remove the element from the array
-def remove_element(array, element):
-    array.remove(element)
-    return array
+def add_element_to_array(provided_array, provided_element):
+    """Add a new element to the array."""
+    return provided_array.append(provided_element)
 
 
-# Add an element to the array
-def add_element(array, element):
-    array.append(element)
-    return array
-
-
-# Get a random element from the array
-def get_random_element(array):
+def get_random_element_from_array(array):
+    """Pick an element at random from the array."""
     return array[random.randint(0, len(array) - 1)]
 
 
-# Suffle the array
 def shuffle_array(array):
-    random.shuffle(array)
-    return array
+    """Shuffle an array."""
+    return random.shuffle(array)
 
 
-# Get the length of the array
 def get_array_length(array):
+    """Get the array's length."""
     return len(array)
 
 
-# Reverse the array
 def reverse_array(array):
+    """Reverse the array's order."""
     return array.reverse()
 
 
-# Change the value of a element at the certain index
 def change_element_at_index(array, index, element):
+    """Change an element's value at a certain index."""
     array[index] = element
     return array
 
 
-# Change the value of a element in the array to a certain value
 def change_element_via_value(array, element, value):
+    """Change the value of an array element to a certain value."""
     array[array.index(element)] = value
     return array
 
 
-# Check if the array is sorted
 def is_array_sorted(array):
+    """Check if the array is sorted."""
     for i in range(len(array) - 1):
         if array[i] > array[i + 1]:
             return False
     return True
 
 
-# Get the first element of the array
 def get_first_element(array):
+    """Get the array's first element."""
     return array[0]
 
 
-# Get the last element of the array
 def get_last_element(array):
+    """Get the array's last element."""
     return array[len(array) - 1]
 
 
-# Get the middle element of the array
 def get_middle_element(array):
+    """Get the middle element of the array."""
     return array[len(array) // 2]
 
 
-# Add value to the array at a certain index
 def add_value_at_index(array, index, value):
-    array.insert(index, value)
-    return array
+    """Add value to the array at a certain index."""
+    return array.insert(index, value)
 
 
-# Remove value from the array at a certain index
 def remove_value_at_index(array, index):
-    array.pop(index)
-    return array
+    """Remove value from the array at a certain index."""
+    return array.pop(index)
 
 
-# Combine two arrays into one
 def combine_arrays(array1, array2):
+    """Combine two arrays into one."""
     return array1 + array2
 
 
-# Get all the values from the array after the certain index
 def get_values_after_index(array, index):
+    """After a given index, get all the values from the array."""
     return array[index:]
 
 
-# Get all the values in the array in the certain index range
 def get_values_in_index_range(array, start_index, end_index):
+    """Get all the values in the array that fall inside a specific range."""
     return array[start_index:end_index]
 
 
-# Extend the array with another array
 def extend_array(array, array2):
-    array.extend(array2)
-    return array
+    """Add another array to the array."""
+    return array.extend(array2)
 
 
-# Count how many times the element appears in the array
 def count_element_appearance(array, element):
+    """Count the number of times the element is present in the array."""
     return array.count(element)
 
 
-# Copy one array to another
 def copy_array(old_array, new_array):
+    """Transfer data from one array to another."""
     new_array = old_array.copy()
     return new_array
 
 
-# Remove all the elements from the array
-def remove_all_elements(array):
+def remove_all_elements_from_array(array):
+    """Remove all of the array's elements."""
     array.clear()
     return array
 
 
 def main():
+    """Run the main program."""
     array = ["c", "a", "b"]
     # Check if the array is empty
     print(is_array_empty(array))
@@ -163,13 +155,13 @@ def main():
     # Get the index of the element
     print(get_array_index(array, "b"))
     # Remove all the duplicates from the array
-    print(remove_duplicates(array))
+    print(remove_duplicates_from_array(array))
     # Remove the element from the array
-    print(remove_element(array, "a"))
+    print(remove_element_from_array(array, "a"))
     # Add an element to the array
-    print(add_element(array, "d"))
+    print(add_element_to_array(array, "d"))
     # Get a random element from the array
-    print(get_random_element(array))
+    print(get_random_element_from_array(array))
     # Suffle the array
     print(shuffle_array(array))
     # Get the length of the array
@@ -205,7 +197,7 @@ def main():
     # Copy one array to another
     print(copy_array(array, []))
     # Remove all the elements from the array
-    print(remove_all_elements(array))
+    print(remove_all_elements_from_array(array))
 
 
 main()

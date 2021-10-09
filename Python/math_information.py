@@ -28,7 +28,7 @@ def modulus(a, b):
 
 # Power two numbers and return the result
 def power(a, b):
-    return a ** b
+    return a * a * b
 
 
 # Square root of a number and return the result
@@ -42,7 +42,6 @@ def factorial(num):
         return 1
     else:
         return num * factorial(num - 1)
-
 
 
 # Calculate the average of a list of numbers and return the result
