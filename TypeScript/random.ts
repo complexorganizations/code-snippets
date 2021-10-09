@@ -46,7 +46,7 @@ function getRandomElement(array: String[]): String {
 }
 
 // Get a random element from an map
-function getRandomElementFromMap(user_provided_map: Map<string, string>): any {
-    var keys: string[] = Object.keys(user_provided_map)
-    return user_provided_map[keys[Math.floor(Math.random() * keys.length)]]
+function getRandomElementFromMap(map: Map<String, String>): String {
+    var keys: String[] = Array.from(map.keys())
+    return getRandomElement(keys)
 }
