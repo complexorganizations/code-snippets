@@ -1,32 +1,39 @@
 void main() {
-  // Do basic math operations.
-  print(basicMath(1, "+", 2));
+  // Add two numbers
+  print(simpleMath(1, "+", 4));
+  // Subtract two numbers
+  print(simpleMath(3, "-", 10));
+  // Multiply two numbers
+  print(simpleMath(4, "*", 9));
+  // Divide two numbers
+  print(simpleMath(4, "/", 7));
 }
 
 // Do basic math inside a function.
-int basicMath(int a, String operation, int b) {
+int simpleMath(int firstValue, String operation, int secondValue) {
   switch (operation) {
     case "+":
-      return a + b;
+      return firstValue + secondValue;
     case "-":
-      return a - b;
+      return firstValue - secondValue;
     case "*":
-      return a * b;
+      return firstValue * secondValue;
     case "%":
-      return a % b;
+      return firstValue % secondValue;
     case "<<":
-      return a << b;
+      return firstValue << secondValue;
     case ">>":
-      return a >> b;
+      return firstValue >> secondValue;
     case "&":
-      return a & b;
+      return firstValue & secondValue;
     case "|":
-      return a | b;
+      return firstValue | secondValue;
     case "^":
-      return a ^ b;
+      return firstValue ^ secondValue;
     case "~":
-      return ~a;
+      return ~firstValue;
     default:
       return -1;
   }
 }
+
