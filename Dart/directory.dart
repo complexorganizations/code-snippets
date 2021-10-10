@@ -15,6 +15,10 @@ void main() {
   renameDirectory("random-folder/", "source/");
   // Delete a directory.
   removeDirectory("source/");
+  // current directory.
+  print(getCurrentWorkingDirectory());
+  // Check if the directory is empty.
+  print(isDirectoryEmpty("/"));
 }
 
 // Check if a directory exists
@@ -58,4 +62,14 @@ void removeDirectory(String path) {
 // Rename a directory
 void renameDirectory(String path, String newPath) {
   Directory(path).renameSync(newPath);
+}
+
+// Get the path to the current working directory
+String getCurrentWorkingDirectory() {
+  return Directory.current.path;
+}
+
+// Check if a directory is empty
+bool isDirectoryEmpty(String path) {
+  return Directory(path).listSync().isEmpty;
 }
