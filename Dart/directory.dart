@@ -19,6 +19,8 @@ void main() {
   print(getCurrentWorkingDirectory());
   // Check if the directory is empty.
   print(isDirectoryEmpty("/"));
+  // Check if a directory contains documents.
+  print(directoryContainsDocuments("/"));
 }
 
 // Check if a directory exists
@@ -72,4 +74,9 @@ String getCurrentWorkingDirectory() {
 // Check if a directory is empty
 bool isDirectoryEmpty(String path) {
   return Directory(path).listSync().isEmpty;
+}
+
+// Check if a directory isnt empty
+bool directoryContainsDocuments(String path) {
+  return !Directory(path).listSync().isEmpty;
 }
