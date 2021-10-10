@@ -5,6 +5,8 @@ void main() {
   userInput();
   // User output
   writeToTerminal();
+  // Clear the terminal
+  clearTerminal();
 }
 
 // Take in user input and print it back to the user
@@ -17,4 +19,9 @@ void userInput() {
 // Write some text to the terminal
 void writeToTerminal() {
   stdout.writeln("Hello, World");
+}
+
+// Clear the terminal
+void clearTerminal() {
+  stdout.write("\x1B[2J\x1B[0;0H");
 }
