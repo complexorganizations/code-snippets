@@ -66,7 +66,7 @@ void main() {
 }
 
 // Add a certain value to the array.
-List addContentToArray(array, value) {
+List addContentToArray(List array, value) {
   array.add(value);
   return array;
 }
@@ -78,7 +78,7 @@ List removeContentFromArray(List arrayContent, value) {
 }
 
 // Get the index of a value in a list.
-int? checkIndexInArray(array, value) {
+int? checkIndexInArray(List array, value) {
   for (int i = 0; i < array.length; i++) {
     if (array[i] == value) {
       return i;
@@ -88,7 +88,7 @@ int? checkIndexInArray(array, value) {
 }
 
 // Check if the array contains the value
-bool arrayContains(array, value) {
+bool arrayContains(List array, value) {
   for (var i = 0; i < array.length; i++) {
     if (array[i] == value) {
       return true;
@@ -136,17 +136,17 @@ dynamic getMiddleElement(List arrayContent) {
 }
 
 // Get the element at a certain index of a list.
-dynamic getElementAtIndex(List arrayContent, index) {
+dynamic getElementAtIndex(List arrayContent, int index) {
   return arrayContent[index];
 }
 
 // Get the element after a certain index of a list.
-dynamic getElementAfterIndex(List arrayContent, index) {
+dynamic getElementAfterIndex(List arrayContent, int index) {
   return arrayContent[index + 1];
 }
 
 // Get the element before a certain index of a list.
-dynamic getElementBeforeIndex(List arrayContent, index) {
+dynamic getElementBeforeIndex(List arrayContent, int index) {
   return arrayContent[index - 1];
 }
 
@@ -161,7 +161,7 @@ bool isArrayNotEmpty(List arrayContent) {
 }
 
 // Remove a value from the list at a certain index.
-List removeContentFromListAtIndex(List arrayContent, index) {
+List removeContentFromListAtIndex(List arrayContent, int index) {
   arrayContent.removeAt(index);
   return arrayContent;
 }
@@ -179,7 +179,7 @@ List removeDuplicatesFromList(List arrayContent) {
 }
 
 // Change the value of a certain item in an array at a certain index.
-List changeContentAtIndex(List arrayContent, index, value) {
+List changeContentAtIndex(List arrayContent, int index, value) {
   arrayContent[index] = value;
   return arrayContent;
 }
