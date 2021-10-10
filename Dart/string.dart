@@ -13,6 +13,10 @@ void main() {
   print(getIndexOfSubstring(apple, "is"));
   // Convert a int to a string.
   print(convertIntToString(123));
+  // Convert a string to an int.
+  print(convertStringToInt("123"));
+  // Get the length of a string.
+  print(getStringLength(apple));
 }
 
 // Check if a certain string contains a certain substring.
@@ -43,4 +47,14 @@ int getIndexOfSubstring(String content, String search) {
 // Convert an int to a string.
 String convertIntToString(int number) {
   return number.toString();
+}
+
+// Convert a string to an int.
+int convertStringToInt(String number) {
+  return int.parse(number);
+}
+
+// Get the length of a string.
+int getStringLength(String content) {
+  return content.length;
 }
