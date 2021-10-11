@@ -23,7 +23,7 @@ mixin Crawl {
 }
 
 abstract class Reptile with Swim, Crawl, Bite {
-  void hunt(food) {
+  void hunt(final food) {
     print("${this.runtimeType} -------");
     swim();
     crawl();

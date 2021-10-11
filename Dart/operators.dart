@@ -14,31 +14,31 @@ void main() {
 }
 
 // Check if two statements are true.
-bool checkTwoStatementEqual(String firstStatemenet, String secondStatement) {
+bool checkTwoStatementEqual(final String firstStatemenet, final String secondStatement) {
   return firstStatemenet == secondStatement;
 }
 
 // Check if two statements are not equal
-bool checkTwoStatementNotEqual(String firstStatemenet, String secondStatement) {
+bool checkTwoStatementNotEqual(final String firstStatemenet, final String secondStatement) {
   return firstStatemenet != secondStatement;
 }
 
 // Check if the first value is greater than the second value.
-bool checkFirstGreaterThanSecond(int firstValue, int secondValue) {
+bool checkFirstGreaterThanSecond(final int firstValue, final int secondValue) {
   return firstValue > secondValue;
 }
 
 // Check if the first value is less than the second value.
-bool checkFirstLessThanSecond(int firstValue, int secondValue) {
+bool checkFirstLessThanSecond(final int firstValue, final int secondValue) {
   return firstValue < secondValue;
 }
 
 // Check if the first value is greater than or equal to the second value.
-bool checkFirstGreaterThanOrEqualToSecond(int firstValue, int secondValue) {
+bool checkFirstGreaterThanOrEqualToSecond(final int firstValue, final int secondValue) {
   return firstValue >= secondValue;
 }
 
 // Check if the first value is less than or equal to the second value.
-bool checkFirstLessThanOrEqualToSecond(int firstValue, int secondValue) {
+bool checkFirstLessThanOrEqualToSecond(final int firstValue, final int secondValue) {
   return firstValue <= secondValue;
 }

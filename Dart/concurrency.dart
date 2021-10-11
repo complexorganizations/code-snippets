@@ -9,6 +9,6 @@ void main() {
   }
 }
 
-void foo(var message) {
+void foo(final message) {
   print(message);
 }

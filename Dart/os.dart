@@ -36,7 +36,7 @@ void main() {
 
 // Check if the current application is running inside docker container.
 bool isRunningInDocker() {
-  File myFile = File("/.dockerenv");
+  final File myFile = File("/.dockerenv");
   if (myFile.existsSync()) {
     return true;
   } else {
@@ -45,6 +45,6 @@ bool isRunningInDocker() {
 }
 
 // Simple exit function
-void closeApplication(int code) {
+void closeApplication(final int code) {
   exit(code);
 }

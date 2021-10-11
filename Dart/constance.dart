@@ -5,16 +5,16 @@ void main() {
 
 void finalVariable() {
   // Have a constant variable of int type
-  final int a = 1;
+  const int a = 1;
   print(a);
   // Have a constant variable of double type
-  final double b = 1.1;
+  const double b = 1.1;
   print(b);
   // Have a constant variable of String type
   final String c = "Hello";
   print(c);
   // Have a constant variable of bool type
-  final bool d = true;
+  const bool d = true;
   print(d);
   // Have a constant variable of List type
   final List<int> e = [1, 2, 3];

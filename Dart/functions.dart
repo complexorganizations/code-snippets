@@ -15,17 +15,17 @@ void main() {
 }
 
 // Variable inside a string
-void foo(int randomNumber) {
+void foo(final int randomNumber) {
   print("The random number is ${randomNumber}");
 }
 
 // Passing a variable to a function
-void bar(String randomString) {
+void bar(final String randomString) {
   print(randomString);
 }
 
 // if condition test
-void testCondition(bool condition) {
+void testCondition(final bool condition) {
   if (condition) {
     print("This is true");
   } else {
@@ -34,12 +34,12 @@ void testCondition(bool condition) {
 }
 
 // Add two numbers
-void add(int firstNumber, int secondNumber) {
+void add(final int firstNumber, final int secondNumber) {
   print(firstNumber + secondNumber);
 }
 
 // Mulitply two numbers
-void multiply(int firstNumber, int secondNumber) {
+void multiply(final int firstNumber, final int secondNumber) {
   print(firstNumber * secondNumber);
 }
 
@@ -49,17 +49,17 @@ String test() {
 }
 
 // Return a string
-String tools(String message) {
+String tools(final String message) {
   return message;
 }
 
 // Return a bool
-bool exampleIFStatement(int number) {
+bool exampleIFStatement(final int number) {
   return (number == 0);
 }
 
 // if statement for bool
-bool anotherIfStatement(int number) {
+bool anotherIfStatement(final int number) {
   if (number == 0) {
     return true;
   } else {
@@ -78,7 +78,7 @@ double returnFloat() {
 }
 
 // Optional Input
-void optionalInput([String? message]) {
+void optionalInput([final String? message]) {
   if (message == "Hello") {
     print("World");
   } else if (message == null) {

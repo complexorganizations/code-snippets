@@ -4,7 +4,7 @@ void main() {
   moreExample();
 }
 
-void simpleSwitch(String operator) {
+void simpleSwitch(final String operator) {
   switch (operator) {
     case "+":
       print("+");
@@ -24,7 +24,7 @@ void simpleSwitch(String operator) {
 }
 
 void moreExample() {
-  var restValue = 1;
+  const int restValue = 1;
   switch (restValue) {
     case 1:
       print(1);

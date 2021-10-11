@@ -24,12 +24,12 @@ void main() {
 }
 
 // Check if a directory exists
-bool checkDirectoryExists(String path) {
+bool checkDirectoryExists(final String path) {
   return FileSystemEntity.typeSync(path) != FileSystemEntityType.notFound;
 }
 
 // Get all the files only in a directory
-List<File>? getAllFilesInDirectory(String path) {
+List<File>? getAllFilesInDirectory(final String path) {
   return Directory(path)
       .listSync(recursive: false, followLinks: false)
       .whereType<File>()
@@ -37,7 +37,7 @@ List<File>? getAllFilesInDirectory(String path) {
 }
 
 // Get all the directories only in a directory
-List<Directory>? getAllDirectoryInDirectory(String path) {
+List<Directory>? getAllDirectoryInDirectory(final String path) {
   return Directory(path)
       .listSync(recursive: false, followLinks: false)
       .whereType<Directory>()
@@ -45,24 +45,24 @@ List<Directory>? getAllDirectoryInDirectory(String path) {
 }
 
 // Get all the files and directories in a directory
-List<FileSystemEntity>? getAllInDirectory(String path) {
+List<FileSystemEntity>? getAllInDirectory(final String path) {
   return Directory(path)
       .listSync(recursive: false, followLinks: false)
       .toList();
 }
 
 // Create a directory
-void createDirectory(String path) {
+void createDirectory(final String path) {
   Directory(path).createSync();
 }
 
 // Remove a directory
-void removeDirectory(String path) {
+void removeDirectory(final String path) {
   Directory(path).deleteSync(recursive: true);
 }
 
 // Rename a directory
-void renameDirectory(String path, String newPath) {
+void renameDirectory(final String path, final String newPath) {
   Directory(path).renameSync(newPath);
 }
 
@@ -72,11 +72,11 @@ String getCurrentWorkingDirectory() {
 }
 
 // Check if a directory is empty
-bool isDirectoryEmpty(String path) {
+bool isDirectoryEmpty(final String path) {
   return Directory(path).listSync().isEmpty;
 }
 
 // Check if a directory isnt empty
-bool directoryContainsDocuments(String path) {
+bool directoryContainsDocuments(final String path) {
   return !Directory(path).listSync().isEmpty;
 }

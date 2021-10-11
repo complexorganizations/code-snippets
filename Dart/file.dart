@@ -18,20 +18,20 @@ void main() {
 }
 
 // Opens the file and returns the contents as a string
-String? readFile(String path) {
-  File(path).readAsString().then((String contents) {
+String? readFile(final String path) {
+  File(path).readAsString().then((final String contents) {
     return contents;
   });
 }
 
 // Write a string to a file
-void writeToFile(String fileName, String content) {
+void writeToFile(final String fileName, final String content) {
   File(fileName).writeAsString(content);
 }
 
 // Change the location of a file.
-void moveFile(String oldFileName, String newFileName) {
-  File myFile = File(oldFileName);
+void moveFile(final String oldFileName, final String newFileName) {
+  final File myFile = File(oldFileName);
   myFile.rename(newFileName);
 }
 
@@ -41,19 +41,19 @@ String getCurrentPath() {
 }
 
 // Check if a file exists
-bool fileExists(String path) {
-  File myFile = File(path);
+bool fileExists(final String path) {
+  final File myFile = File(path);
   return myFile.existsSync();
 }
 
 // Remove a file
-void removeFile(String path) {
-  File myFile = File(path);
+void removeFile(final String path) {
+  final File myFile = File(path);
   myFile.deleteSync();
 }
 
 // Create a file.
-void createFile(String path) {
-  File myFile = File(path);
+void createFile(final String path) {
+  final File myFile = File(path);
   myFile.createSync();
 }

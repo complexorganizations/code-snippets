@@ -65,7 +65,7 @@ linter:
     empty_catches: true
     empty_constructor_bodies: true
     empty_statements: true
-    eol_at_end_of_file: true
+    eol_at_end_of_file: false
     exhaustive_cases: true
     file_names: true
     flutter_style_todos: true
@@ -159,7 +159,7 @@ linter:
     unnecessary_brace_in_string_interps: true
     unnecessary_const: true
     unnecessary_constructor_name: true
-    unnecessary_final: true
+    unnecessary_final: false
     unnecessary_getters_setters: true
     unnecessary_lambdas: true
     unnecessary_new: true

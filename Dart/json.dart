@@ -2,20 +2,20 @@ import "dart:convert";
 
 void main() {
   // Encode the json
-  var resBody = {};
+  final resBody = {};
   resBody["email"] = "example@example.com";
   resBody["password"] = "example.com";
-  var user = {};
+  final user = {};
   user["user"] = resBody;
-  String str = json.encode(user);
+  final String str = json.encode(user);
   print(str);
   // Decode the json.
-  var decoded = json.decode(str);
+  final decoded = json.decode(str);
   print(decoded);
 }
 
 // Validate a json and return true if it is valid.
-bool validateJson(String json) {
+bool validateJson(final String json) {
   try {
     return true;
   } catch (e) {

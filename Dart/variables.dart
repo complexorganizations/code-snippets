@@ -1,7 +1,7 @@
 // Ways to declare a variable in dart.
 void main() {
   // 1. var <Name>;
-  var fullName = "John Doe";
+  const fullName = "John Doe";
   print(fullName);
   // 2. var <Name> = <Value>;
   var age;
@@ -12,11 +12,11 @@ void main() {
   dob = 2000;
   print(dob);
   // 4. <Type> <Name> = <Value>;
-  String gender = "Male";
+  final String gender = "Male";
   print(gender);
 
   // More examples
-  var girlName = "Jane Doe";
+  final girlName = "Jane Doe";
   print(girlName);
 
   var dobYearForGirl;
@@ -29,7 +29,7 @@ void main() {
   print(monthes);
 
   // Slice
-  var list = ["Apple", "Banana", "Orange", "Strawberry", "Mango", "Pineapple"];
+  final list = ["Apple", "Banana", "Orange", "Strawberry", "Mango", "Pineapple"];
   print(list);
   // From the slice get the first element
   print(list[0]);
@@ -43,7 +43,7 @@ void main() {
   print(isFemale);
 
   // Maps
-  var content = {
+  final content = {
     "name": "John Doe",
     "age": 30,
   };
@@ -59,6 +59,6 @@ void main() {
 }
 
 // Get the runtime type of a variable.
-String getRuntimeType(var value) {
+String getRuntimeType(final value) {
   return value.runtimeType.toString();
 }

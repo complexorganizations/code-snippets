@@ -10,7 +10,7 @@ void main() {
 }
 
 // Do basic math inside a function.
-int simpleMath(int firstValue, String operation, int secondValue) {
+int simpleMath(final int firstValue, final String operation, final int secondValue) {
   switch (operation) {
     case "+":
       return firstValue + secondValue;
@@ -36,4 +36,3 @@ int simpleMath(int firstValue, String operation, int secondValue) {
       return -1;
   }
 }
-

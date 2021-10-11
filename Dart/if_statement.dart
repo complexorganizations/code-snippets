@@ -42,12 +42,12 @@ void main() {
 }
 
 // Return a bool
-bool exampleIFStatement(int number) {
+bool exampleIFStatement(final int number) {
   return (number == 0);
 }
 
 // if statement for bool
-bool anotherIfStatement(int number) {
+bool anotherIfStatement(final int number) {
   if (number == 0) {
     return true;
   } else {

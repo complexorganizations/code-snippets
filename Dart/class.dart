@@ -1,6 +1,6 @@
 void main() {
   // Set the content for the class
-  var content = new Employee();
+  final content = new Employee();
   content.name = "John Doe";
   content.age = 30;
   content.salary = 45000.50;
@@ -26,11 +26,11 @@ class Employee {
     print("Function inside class.");
   }
 
-  void inputFunctionInsideClass(String content) {
+  void inputFunctionInsideClass(final String content) {
     print(content);
   }
 
-  int returnInsideFunction(int a, int b) {
+  int returnInsideFunction(final int a, final int b) {
     return a + b;
   }
 }
