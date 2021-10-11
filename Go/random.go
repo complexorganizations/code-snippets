@@ -1,7 +1,10 @@
 package main
 
 import (
+	secureRandom "crypto/rand"
 	"fmt"
+	"log"
+	"math/big"
 	"math/rand"
 	"time"
 )
@@ -20,6 +23,8 @@ func main() {
 	fmt.Println(randomBool())
 	// Generate a random byte array of given length
 	fmt.Println(randomByteArray(10))
+	// Generate a secure random int between 0 and 100
+	fmt.Println(secureRandomInt(100))
 }
 
 // Get a random string of length
@@ -66,4 +71,13 @@ func randomByteArray(length int) []byte {
 	randomBytes := make([]byte, length)
 	rand.Read(randomBytes)
 	return randomBytes
+}
+
+// Securely generate a random int
+func secureRandomInt(max int64) int64 {
+	randomValue, err := secureRandom.Int(secureRandom.Reader, big.NewInt(max))
+	if err != nil {
+		log.Fatalln(err)
+	}
+	return randomValue.Int64()
 }
