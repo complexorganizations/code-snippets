@@ -163,3 +163,9 @@ func firstValueInArray(array []string) string {
 func lastValueInArray(array []string) string {
 	return array[len(array)-1]
 }
+
+// Get a random element from a slice
+func randomElement(slice []string) string {
+	rand.Seed(time.Now().UTC().UnixNano())
+	return slice[rand.Intn(len(slice))]
+}
