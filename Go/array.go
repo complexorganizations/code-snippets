@@ -4,17 +4,18 @@ import (
 	"fmt"
 	"math/rand"
 	"sort"
+	"time"
 )
 
 func main() {
 	// Create an array of strings.
-	randomString := []string{"apple", "jesus", "map", "china", "ass", "bees", "", ""}
+	randomSlice := []string{"apple", "jesus", "map", "china", "ass", "bees", "", ""}
 	// Check if the array contains the value.
-	if arrayContains("apple", randomString) {
+	if arrayContains("apple", randomSlice) {
 		fmt.Println(true)
 	}
 	//
-	for number, list := range randomString {
+	for number, list := range randomSlice {
 		// Number
 		if number == 25 {
 			fmt.Println("The content of number 25 is", list)
@@ -24,31 +25,33 @@ func main() {
 			fmt.Println("The letter is", list)
 		}
 	}
-	fmt.Println(randomString)
+	fmt.Println(randomSlice)
 	// Get the index value of a item in a array
-	fmt.Println(indexValueInArray("jesus", randomString))
+	fmt.Println(indexValueInArray("jesus", randomSlice))
 	// Remove all the empty elements in a array.
-	fmt.Println(removeEmptyElements(randomString))
+	fmt.Println(removeEmptyElements(randomSlice))
 	// Check if the array is empty
-	fmt.Println(arrayIsEmpty(randomString))
+	fmt.Println(arrayIsEmpty(randomSlice))
 	// Check if the array isnt empty
-	fmt.Println(arrayIsntEmpty(randomString))
+	fmt.Println(arrayIsntEmpty(randomSlice))
 	// Remove all the duplicate elements in a array.
-	fmt.Println(removeDuplicateElements(randomString))
+	fmt.Println(removeDuplicateElements(randomSlice))
 	// Sort the array
-	fmt.Println(sortList(randomString))
+	fmt.Println(sortList(randomSlice))
 	// Combine two arrays together.
-	fmt.Println(combineArrays(randomString, randomString))
+	fmt.Println(combineArrays(randomSlice, randomSlice))
 	// Get the median value of an array.
 	fmt.Println(medianOfArray([]float64{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}))
 	// Reverse an array
-	fmt.Println(reverseArray(randomString))
+	fmt.Println(reverseArray(randomSlice))
 	// Suffle an array
-	fmt.Println(shuffleArray(randomString))
+	fmt.Println(shuffleArray(randomSlice))
 	// Get the first value in the array
-	fmt.Println(firstValueInArray(randomString))
+	fmt.Println(firstValueInArray(randomSlice))
 	// Get the last value in the array
-	fmt.Println(lastValueInArray(randomString))
+	fmt.Println(lastValueInArray(randomSlice))
+	// Get a random element from a slice
+	fmt.Println(randomElement(randomSlice))
 }
 
 // Check if the array contains the value.
