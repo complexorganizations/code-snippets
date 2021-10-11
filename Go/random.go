@@ -18,6 +18,8 @@ func main() {
 	fmt.Println(randomInt(0, 10))
 	// Generate a random bool
 	fmt.Println(randomBool())
+	// Generate a random byte array of given length
+	fmt.Println(randomByteArray(10))
 }
 
 // Get a random string of length
@@ -31,8 +33,8 @@ func randomString(bytesSize int) string {
 // Get a random string with a specified length and characters.
 func randomStringSpecified(bytesSize int) string {
 	rand.Seed(time.Now().UTC().UnixNano())
-	// ABCDEFGHIJKLMNOPQRSTUVWXYZ, abcdefghijklmnopqrstuvwxyz, 0123456789
-	letters := []rune("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789")
+	// ABCDEFGHIJKLMNOPQRSTUVWXYZ, abcdefghijklmnopqrstuvwxyz, 0123456789 ~!@#$%^&*()-_+={}][|\`,./?;:'"<>
+	letters := []rune("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~!@#$%^&*()-_+={}][|\\`,./?;:'\"<>")
 	randomString := make([]rune, bytesSize)
 	for i := range randomString {
 		randomString[i] = letters[rand.Intn(len(letters))]
@@ -56,4 +58,12 @@ func randomInt(min, max int) int {
 func randomBool() bool {
 	rand.Seed(time.Now().UTC().UnixNano())
 	return rand.Intn(2) == 1
+}
+
+// Get a random byte array of given length
+func randomByteArray(length int) []byte {
+	rand.Seed(time.Now().UTC().UnixNano())
+	randomBytes := make([]byte, length)
+	rand.Read(randomBytes)
+	return randomBytes
 }
