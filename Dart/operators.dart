@@ -1,44 +1,44 @@
 void main() {
   // Check two statements are equal.
-  print(checkTwoStatementEqual("Apple", "Apple"));
+  print(twoStatementEqual("Apple", "Apple"));
   // Check two statements are not equal.
-  print(checkTwoStatementNotEqual("Apple", "Banana"));
+  print(twoStatementNotEqual("Apple", "Banana"));
   // Check if the first value is greater than the second value.
-  print(checkFirstGreaterThanSecond(10, 5));
+  print(firstGreaterThanSecond(10, 5));
   // Check if the first value is less than the second value.
-  print(checkFirstLessThanSecond(5, 10));
+  print(firstLessThanSecond(5, 10));
   // Check if the first value is greater than or equal to the second value.
-  print(checkFirstGreaterThanOrEqualToSecond(10, 5));
+  print(firstGreaterThanOrEqualToSecond(10, 5));
   // Check if the first value is less than or equal to the second value.
-  print(checkFirstLessThanOrEqualToSecond(5, 10));
+  print(firstLessThanOrEqualToSecond(5, 10));
 }
 
 // Check if two statements are true.
-bool checkTwoStatementEqual(final String firstStatemenet, final String secondStatement) {
-  return firstStatemenet == secondStatement;
+bool twoStatementEqual(final String primary, final String secondary) {
+  return primary == secondary;
 }
 
 // Check if two statements are not equal
-bool checkTwoStatementNotEqual(final String firstStatemenet, final String secondStatement) {
-  return firstStatemenet != secondStatement;
+bool twoStatementNotEqual(final String primary, final String secondary) {
+  return primary != secondary;
 }
 
 // Check if the first value is greater than the second value.
-bool checkFirstGreaterThanSecond(final int firstValue, final int secondValue) {
-  return firstValue > secondValue;
+bool firstGreaterThanSecond(final int primary, final int secondary) {
+  return primary > secondary;
 }
 
 // Check if the first value is less than the second value.
-bool checkFirstLessThanSecond(final int firstValue, final int secondValue) {
-  return firstValue < secondValue;
+bool firstLessThanSecond(final int primary, final int secondary) {
+  return primary < secondary;
 }
 
 // Check if the first value is greater than or equal to the second value.
-bool checkFirstGreaterThanOrEqualToSecond(final int firstValue, final int secondValue) {
-  return firstValue >= secondValue;
+bool firstGreaterThanOrEqualToSecond(final int primary, final int secondary) {
+  return primary >= secondary;
 }
 
 // Check if the first value is less than or equal to the second value.
-bool checkFirstLessThanOrEqualToSecond(final int firstValue, final int secondValue) {
-  return firstValue <= secondValue;
+bool firstLessThanOrEqualToSecond(final int primary, final int secondary) {
+  return primary <= secondary;
 }

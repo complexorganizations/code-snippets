@@ -91,7 +91,7 @@ linter:
     noop_primitive_operations: true
     null_check_on_nullable_type_parameter: true
     null_closures: true
-    omit_local_variable_types: true
+    omit_local_variable_types: false
     one_member_abstracts: true
     only_throw_errors: true
     overridden_fields: true

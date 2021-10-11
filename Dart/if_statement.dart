@@ -43,7 +43,7 @@ void main() {
 
 // Return a bool
 bool exampleIFStatement(final int number) {
-  return (number == 0);
+  return number == 0;
 }
 
 // if statement for bool

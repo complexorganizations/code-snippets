@@ -10,28 +10,28 @@ void main() {
 }
 
 // Do basic math inside a function.
-int simpleMath(final int firstValue, final String operation, final int secondValue) {
+int simpleMath(final int primary, final String operation, final int secondary) {
   switch (operation) {
     case "+":
-      return firstValue + secondValue;
+      return primary + secondary;
     case "-":
-      return firstValue - secondValue;
+      return primary - secondary;
     case "*":
-      return firstValue * secondValue;
+      return primary * secondary;
     case "%":
-      return firstValue % secondValue;
+      return primary % secondary;
     case "<<":
-      return firstValue << secondValue;
+      return primary << secondary;
     case ">>":
-      return firstValue >> secondValue;
+      return primary >> secondary;
     case "&":
-      return firstValue & secondValue;
+      return primary & secondary;
     case "|":
-      return firstValue | secondValue;
+      return primary | secondary;
     case "^":
-      return firstValue ^ secondValue;
+      return primary ^ secondary;
     case "~":
-      return ~firstValue;
+      return ~primary;
     default:
       return -1;
   }

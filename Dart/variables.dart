@@ -1,10 +1,10 @@
 // Ways to declare a variable in dart.
 void main() {
   // 1. var <Name>;
-  const fullName = "John Doe";
+  const String fullName = "John Doe";
   print(fullName);
   // 2. var <Name> = <Value>;
-  var age;
+  int age;
   age = 30;
   print(age);
   // 3. <Type> <Name>;
@@ -16,10 +16,10 @@ void main() {
   print(gender);
 
   // More examples
-  const girlName = "Jane Doe";
+  const String girlName = "Jane Doe";
   print(girlName);
 
-  var dobYearForGirl;
+  double dobYearForGirl;
   dobYearForGirl = 2000.12;
   print(dobYearForGirl);
 
@@ -29,7 +29,7 @@ void main() {
   print(monthes);
 
   // Slice
-  final list = ["Apple", "Banana", "Orange", "Strawberry", "Mango", "Pineapple"];
+  final List list = ["Apple", "Banana", "Orange", "Strawberry", "Mango"];
   print(list);
   // From the slice get the first element
   print(list[0]);
@@ -37,7 +37,7 @@ void main() {
   print(list[1]);
 
   // Bool
-  var isFemale = true;
+  bool isFemale = true;
   print(isFemale);
   isFemale = false;
   print(isFemale);

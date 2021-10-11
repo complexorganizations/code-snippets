@@ -78,5 +78,5 @@ bool isDirectoryEmpty(final String path) {
 
 // Check if a directory isnt empty
 bool directoryContainsDocuments(final String path) {
-  return !Directory(path).listSync().isEmpty;
+  return Directory(path).listSync().isNotEmpty;
 }

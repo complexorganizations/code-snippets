@@ -3,7 +3,7 @@ void main() {
   final List<String> names = ["John", "Bob", "Alice"];
   print(names);
   // Create an array without defining the type
-  final arrayList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  final List<int> arrayList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   // Get the index of a value in a array.
   print(checkIndexInArray(arrayList, 5));
   // Check if the array contains a certain value.
@@ -179,7 +179,7 @@ List removeDuplicatesFromList(final List arrayContent) {
 }
 
 // Change the value of a certain item in an array at a certain index.
-List changeContentAtIndex(final List arrayContent, final int index, final value) {
-  arrayContent[index] = value;
-  return arrayContent;
+List changeContentAtIndex(final List userArray, final int index, final value) {
+  userArray[index] = value;
+  return userArray;
 }
