@@ -24,7 +24,7 @@ void main() {
   loop();
 
   // bool to check if the user is verifed.
-  var isVerified = true;
+  const isVerified = true;
   if (isVerified) {
     print("User is verified");
   }
@@ -36,8 +36,8 @@ void main() {
   testFunction();
 
   // More
-  int apple = 1;
-  int banana = 1;
+  const int apple = 1;
+  const int banana = 1;
   print(apple == banana);
 }
 
@@ -66,7 +66,7 @@ void loop() {
 
 // Loop over a range.
 void checkRange() {
-  var randomList = {
+  final randomList = {
     "one",
     "two",
     "three",
@@ -79,7 +79,7 @@ void checkRange() {
     "ten"
   };
 
-  for (var number in randomList) {
+  for (final number in randomList) {
     if (number == "five") {
       print(number);
     }
@@ -87,7 +87,7 @@ void checkRange() {
 
   var numberList;
   numberList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  for (var number in numberList) {
+  for (final number in numberList) {
     if (number == 5) {
       print(number);
     }

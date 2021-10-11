@@ -1,7 +1,7 @@
 import "dart:async";
 
 void main() async {
-  final x = await four();
+  final int x = await four();
   print(x);
 }
 

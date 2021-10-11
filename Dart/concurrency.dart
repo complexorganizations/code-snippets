@@ -10,5 +10,6 @@ void main() {
 }
 
 void foo(final message) {
+  // Spawns a new isolate and prints the message.
   print(message);
 }

@@ -12,11 +12,11 @@ void main() {
   dob = 2000;
   print(dob);
   // 4. <Type> <Name> = <Value>;
-  final String gender = "Male";
+  const String gender = "Male";
   print(gender);
 
   // More examples
-  final girlName = "Jane Doe";
+  const girlName = "Jane Doe";
   print(girlName);
 
   var dobYearForGirl;

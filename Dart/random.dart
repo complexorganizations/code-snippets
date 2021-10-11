@@ -3,7 +3,7 @@ import "dart:math";
 
 void main() {
   // Random string of a given length
-  final int characterLimit = 100;
+  const int characterLimit = 100;
   print(getRandString(characterLimit));
   print(getRandString(100));
   // Random number between two numbers

@@ -1,6 +1,6 @@
 void main() {
   // Set the content for the class
-  final content = new Employee();
+  final Employee content = Employee();
   content.name = "John Doe";
   content.age = 30;
   content.salary = 45000.50;
