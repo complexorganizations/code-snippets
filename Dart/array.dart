@@ -89,7 +89,7 @@ int? checkIndexInArray(final List array, final value) {
 
 // Check if the array contains the value
 bool arrayContains(final List array, final value) {
-  for (var i = 0; i < array.length; i++) {
+  for (int i = 0; i < array.length; i++) {
     if (array[i] == value) {
       return true;
     }
