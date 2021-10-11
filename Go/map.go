@@ -9,6 +9,8 @@ func main() {
 	userMap := make(map[string]int)
 	// Add key/value pairs to the map.
 	addToMap(userMap, "One", 1)
+	addToMap(userMap, "Two", 2)
+	addToMap(userMap, "Three", 3)
 	// Get the value for a key in the map.
 	fmt.Println(getFromMap(userMap, "One"))
 	// Get the key for a value in the map.
