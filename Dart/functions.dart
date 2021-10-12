@@ -68,8 +68,8 @@ bool anotherIfStatement(final int number) {
 }
 
 // Return multiple values
-List returnMultipleValues() {
-  return [42, "foo", "bar", 1.5, true];
+List<dynamic> returnMultipleValues() {
+  return <dynamic>[42, "foo", "bar", 1.5, true];
 }
 
 // return a float

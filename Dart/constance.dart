@@ -11,19 +11,19 @@ void finalVariable() {
   const double b = 1.1;
   print(b);
   // Have a constant variable of String type
-  final String c = "Hello";
+  const String c = "Hello";
   print(c);
   // Have a constant variable of bool type
   const bool d = true;
   print(d);
   // Have a constant variable of List type
-  final List<int> e = [1, 2, 3];
+  final List<int> e = <int>[1, 2, 3];
   print(e);
   // Have a constant variable of Map type
-  final Map<String, int> f = {"a": 1, "b": 2, "c": 3};
+  final Map<String, int> f = <String, int>{"a": 1, "b": 2, "c": 3};
   print(f);
   // Have a constant variable of Set type
-  final Set<int> g = {1, 2, 3};
+  final Set<int> g = <int>{1, 2, 3};
   print(g);
 }
 
@@ -41,13 +41,13 @@ void constVariable() {
   const bool isTrue = true;
   print(isTrue);
   // Have a constant variable of list type
-  const List<int> list = [1, 2, 3];
+  const List<int> list = <int>[1, 2, 3];
   print(list);
   // Have a constant variable of map type
-  const Map<String, int> map = {"one": 1, "two": 2};
+  const Map<String, int> map = <String, int>{"one": 1, "two": 2};
   print(map);
   // Have a constant variable of set type
-  const Set<int> set = {1, 2, 3};
+  const Set<int> set = <int>{1, 2, 3};
   print(set);
 }
 

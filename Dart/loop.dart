@@ -15,14 +15,14 @@ void main() {
 
 // Loop from 0 to 100
 void zeroToHundred() {
-  for (var loop = 0; loop <= 100; loop++) {
+  for (int loop = 0; loop <= 100; loop++) {
     print(loop);
   }
 }
 
 // Loop from 100 to 0
 void hundredToZero() {
-  for (var hole = 100; hole >= 0; hole--) {
+  for (int hole = 100; hole >= 0; hole--) {
     print(hole);
   }
 }
@@ -40,8 +40,8 @@ void continueLoop() {
 
 // Loop though a list
 void loopFromList() {
-  final someList = [1, 2, 3];
-  for (var i = 0; i < someList.length; i++) {
+  final List<int> someList = <int> [1, 2, 3];
+  for (int i = 0; i < someList.length; i++) {
     print(someList[i]);
   }
 }

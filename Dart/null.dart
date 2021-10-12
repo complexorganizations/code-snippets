@@ -49,7 +49,7 @@ void nullInt() {
 
 // A list as nullable.
 void nullList() {
-  List<String>? names = ["John", "Jane"];
+  List<String>? names = <String>["John", "Jane"];
   print(names);
   names = null;
   print(names);
@@ -57,7 +57,7 @@ void nullList() {
 
 // A map as nullable.
 void nullMap() {
-  Map<String, int>? ages = {"John": 18, "Jane": 19};
+  Map<String, int>? ages = <String, int>{"John": 18, "Jane": 19};
   print(ages);
   ages = null;
   print(ages);

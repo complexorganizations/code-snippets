@@ -29,7 +29,13 @@ void main() {
   print(monthes);
 
   // Slice
-  final List list = ["Apple", "Banana", "Orange", "Strawberry", "Mango"];
+  final List<String> list = <String>[
+    "Apple",
+    "Banana",
+    "Orange",
+    "Strawberry",
+    "Mango"
+  ];
   print(list);
   // From the slice get the first element
   print(list[0]);

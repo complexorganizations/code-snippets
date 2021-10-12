@@ -1,37 +1,59 @@
 void main() {
   // Create a array of strings
-  final List<String> names = ["John", "Bob", "Alice"];
+  final List<String> names = <String>["John", "Bob", "Alice"];
   print(names);
   // Create an array without defining the type
-  final List<int> arrayList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  final List<int> arrayList = <int>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   // Get the index of a value in a array.
-  print(checkIndexInArray(arrayList, 5));
+  print(getIndexInArray(arrayList, 5));
   // Check if the array contains a certain value.
   print(arrayContains(arrayList, 5));
   // Add a value to the array.
-  print(addContentToArray(arrayList, 11));
+  print(addToArray(arrayList, 11));
   // Remove a value from the list
-  print(removeContentFromArray(arrayList, "a"));
+  print(removeFromArray(arrayList, "a"));
   // Sort a list
-  final List<String> randomStuff = ["k", "l", "m", "n", "o", "p"];
+  final List<String> randomStuff = <String>["k", "l", "m", "n", "o", "p"];
   print(randomStuff); // without sorting the list
-  final newList = sortList(randomStuff);
+  final List<dynamic> newList = sortList(randomStuff);
   print(newList); // while sorting the list
   // create a list of int
-  final list = [3, 1, 2, 4, 5];
+  final List<int> list = <int>[3, 1, 2, 4, 5];
   print(list);
   // sort the list of int
-  final someList = sortList(list);
+  final List<dynamic> someList = sortList(list);
   print(someList);
   // sort the list of string
-  final randomString = ["e", "d", "a", "c", "f", "b", "g", "h", "i", "j"];
+  final List<String> randomString = <String>[
+    "e",
+    "d",
+    "a",
+    "c",
+    "f",
+    "b",
+    "g",
+    "h",
+    "i",
+    "j"
+  ];
   print(randomString);
-  final newStringList = sortList(randomString);
+  final List<dynamic> newStringList = sortList(randomString);
   print(newStringList);
   // sort the list of double
-  final randomDouble = [1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9, 10.0];
+  final List<double> randomDouble = <double>[
+    1.1,
+    2.2,
+    3.3,
+    4.4,
+    5.5,
+    6.6,
+    7.7,
+    8.8,
+    9.9,
+    10.0
+  ];
   print(randomDouble);
-  final newDoubleList = sortList(randomDouble);
+  final List<dynamic> newDoubleList = sortList(randomDouble);
   print(newDoubleList);
   // Reverse a list
   print(reverseList(newList));
@@ -40,7 +62,7 @@ void main() {
   // Shuffle a list
   print(shuffleList(newList));
   // Change the value of a list at a certain index
-  print(changeContentAtIndex(newList, 3, "a"));
+  print(changeAtIndex(newList, 3, "a"));
   // Get the first element of a list
   print(getFirstElement(newList));
   // Get the last element of a list
@@ -50,15 +72,15 @@ void main() {
   // Get the element at a certain index of a list
   print(getElementAtIndex(newList, 3));
   // Get the element after a certain index of a list
-  print(getElementAfterIndex(newList, 3));
+  print(elementAfterIndex(newList, 3));
   // Get the element before a certain index of a list
-  print(getElementBeforeIndex(newList, 3));
+  print(elementBeforeIndex(newList, 3));
   // Check if a list is empty
   print(isArrayEmpty(newList));
   // Check if a list is not empty
   print(isArrayNotEmpty(newList));
   // Remove a value from the list at a certain index
-  print(removeContentFromListAtIndex(newList, 3));
+  print(removeAtIndex(newList, 3));
   // Remove all duplicate values from the list
   print(removeDuplicatesFromList(newList));
   // Remove all values from the list
@@ -66,19 +88,19 @@ void main() {
 }
 
 // Add a certain value to the array.
-List addContentToArray(final List array, final value) {
+List<dynamic> addToArray(final List<dynamic> array, final dynamic value) {
   array.add(value);
   return array;
 }
 
 // Remove a value from the array.
-List removeContentFromArray(final List arrayContent, final value) {
-  arrayContent.remove(value);
-  return arrayContent;
+List<dynamic> removeFromArray(final List<dynamic> array, final dynamic value) {
+  array.remove(value);
+  return array;
 }
 
 // Get the index of a value in a list.
-int? checkIndexInArray(final List array, final value) {
+int? getIndexInArray(final List<dynamic> array, final dynamic value) {
   for (int i = 0; i < array.length; i++) {
     if (array[i] == value) {
       return i;
@@ -88,7 +110,7 @@ int? checkIndexInArray(final List array, final value) {
 }
 
 // Check if the array contains the value
-bool arrayContains(final List array, final value) {
+bool arrayContains(final List<dynamic> array, final dynamic value) {
   for (int i = 0; i < array.length; i++) {
     if (array[i] == value) {
       return true;
@@ -98,88 +120,92 @@ bool arrayContains(final List array, final value) {
 }
 
 // Takes in a array and returns a sorted array
-List sortList(final List arrayContent) {
+List<dynamic> sortList(final List<dynamic> arrayContent) {
   arrayContent.sort();
   return arrayContent;
 }
 
 // Reverse a list and return it.
-List reverseList(final List arrayContent) {
+List<dynamic> reverseList(final List<dynamic> arrayContent) {
   arrayContent.reversed;
   return arrayContent;
 }
 
 // Get the length of a list.
-int getListLength(final List arrayContent) {
+int getListLength(final List<dynamic> arrayContent) {
   return arrayContent.length;
 }
 
 // Suffle a list and return it.
-List shuffleList(final List arrayContent) {
+List<dynamic> shuffleList(final List<dynamic> arrayContent) {
   arrayContent.shuffle();
   return arrayContent;
 }
 
 // Get the first element of a list.
-dynamic getFirstElement(final List arrayContent) {
+dynamic getFirstElement(final List<dynamic> arrayContent) {
   return arrayContent.first;
 }
 
 // Get the last element of a list.
-dynamic getLastElement(final List arrayContent) {
+dynamic getLastElement(final List<dynamic> arrayContent) {
   return arrayContent.last;
 }
 
 // Get the middle element of a list.
-dynamic getMiddleElement(final List arrayContent) {
+dynamic getMiddleElement(final List<dynamic> arrayContent) {
   return arrayContent[getListLength(arrayContent) ~/ 2];
 }
 
 // Get the element at a certain index of a list.
-dynamic getElementAtIndex(final List arrayContent, final int index) {
+dynamic getElementAtIndex(final List<dynamic> arrayContent, final int index) {
   return arrayContent[index];
 }
 
 // Get the element after a certain index of a list.
-dynamic getElementAfterIndex(final List arrayContent, final int index) {
+dynamic elementAfterIndex(final List<dynamic> arrayContent, final int index) {
   return arrayContent[index + 1];
 }
 
 // Get the element before a certain index of a list.
-dynamic getElementBeforeIndex(final List arrayContent, final int index) {
+dynamic elementBeforeIndex(final List<dynamic> arrayContent, final int index) {
   return arrayContent[index - 1];
 }
 
 // Check if the array is empty.
-bool isArrayEmpty(final List arrayContent) {
+bool isArrayEmpty(final List<dynamic> arrayContent) {
   return arrayContent.isEmpty;
 }
 
 // Check if the array isnt empty.
-bool isArrayNotEmpty(final List arrayContent) {
+bool isArrayNotEmpty(final List<dynamic> arrayContent) {
   return arrayContent.isNotEmpty;
 }
 
 // Remove a value from the list at a certain index.
-List removeContentFromListAtIndex(final List arrayContent, final int index) {
+List<dynamic> removeAtIndex(final List<dynamic> arrayContent, final int index) {
   arrayContent.removeAt(index);
   return arrayContent;
 }
 
 // Remove all values from the list.
-List removeAllContentFromList(final List arrayContent) {
+List<dynamic> removeAllContentFromList(final List<dynamic> arrayContent) {
   arrayContent.clear();
   return arrayContent;
 }
 
 // Remove all duplicates from a list.
-List removeDuplicatesFromList(final List arrayContent) {
+List<dynamic> removeDuplicatesFromList(final List<dynamic> arrayContent) {
   arrayContent.toSet().toList();
   return arrayContent;
 }
 
 // Change the value of a certain item in an array at a certain index.
-List changeContentAtIndex(final List userArray, final int index, final value) {
-  userArray[index] = value;
-  return userArray;
+List<dynamic> changeAtIndex(
+  final List<dynamic> arry,
+  final int index,
+  final dynamic value,
+) {
+  arry[index] = value;
+  return arry;
 }

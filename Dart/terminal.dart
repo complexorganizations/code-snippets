@@ -12,7 +12,7 @@ void main() {
 // Take in user input and print it back to the user
 void userInput() {
   print("Enter your name");
-  final name = stdin.readLineSync();
+  final String? name = stdin.readLineSync();
   print("Hello, ${name}");
 }
 

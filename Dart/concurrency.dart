@@ -9,7 +9,7 @@ void main() {
   }
 }
 
-void foo(final message) {
+void foo(final String message) {
   // Spawns a new isolate and prints the message.
   print(message);
 }
