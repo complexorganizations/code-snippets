@@ -41,6 +41,10 @@ func main() {
 	removeAllFromMap(userMap)
 	// Remove all the keys from the map.
 	removeAllKeysFromMap(userMap)
+	// Get the ammount of keys in the map.
+	fmt.Println(getMapKeysSize(userMap))
+	// Get the ammount of values in the map.
+	fmt.Println(getMapValuesSize(userMap))
 }
 
 // Add a key/value pair to the map.
@@ -156,4 +160,24 @@ func removeAllKeysFromMap(userMap map[string]int) {
 	for keyInMap := range userMap {
 		delete(userMap, keyInMap)
 	}
+}
+
+// Get the ammount of keys in the map.
+func getMapKeysSize(userMap map[string]int) int {
+	counter := 0
+	for keyInMap, _ := range userMap {
+		counter = counter + 1
+		_ = keyInMap
+	}
+	return counter
+}
+
+// Get the ammount of values in the map.
+func getMapValuesSize(userMap map[string]int) int {
+	counter := 0
+	for _, valueInMap := range userMap {
+		counter = counter + 1
+		_ = valueInMap
+	}
+	return counter
 }
