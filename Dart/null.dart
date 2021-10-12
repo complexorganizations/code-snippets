@@ -65,7 +65,7 @@ void nullMap() {
 
 // A variable as nullable.
 void nullVariable() {
-  var person = null;
+  String? person;
   print(person);
   person = "John Doe";
   print(person);

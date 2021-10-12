@@ -19,9 +19,11 @@ void main() {
 
 // Opens the file and returns the contents as a string
 String? readFile(final String path) {
-  File(path).readAsString().then((final String contents) {
-    return contents;
-  });
+  final File file = File(path);
+  if (!file.existsSync()) {
+    return null;
+  }
+  return file.readAsStringSync();
 }
 
 // Write a string to a file
@@ -31,8 +33,7 @@ void writeToFile(final String fileName, final String content) {
 
 // Change the location of a file.
 void moveFile(final String oldFileName, final String newFileName) {
-  final File myFile = File(oldFileName);
-  myFile.rename(newFileName);
+  File(oldFileName).rename(newFileName);
 }
 
 // Get the path of the current executable
@@ -48,12 +49,10 @@ bool fileExists(final String path) {
 
 // Remove a file
 void removeFile(final String path) {
-  final File myFile = File(path);
-  myFile.deleteSync();
+  File(path).deleteSync();
 }
 
 // Create a file.
 void createFile(final String path) {
-  final File myFile = File(path);
-  myFile.createSync();
+  File(path).createSync();
 }

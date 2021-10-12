@@ -49,7 +49,7 @@ void main() {
   print(isFemale);
 
   // Maps
-  final content = {
+  final Map<dynamic, dynamic> content = <dynamic, dynamic>{
     "name": "John Doe",
     "age": 30,
   };
@@ -65,6 +65,6 @@ void main() {
 }
 
 // Get the runtime type of a variable.
-String getRuntimeType(final value) {
+String getRuntimeType(final dynamic value) {
   return value.runtimeType.toString();
 }

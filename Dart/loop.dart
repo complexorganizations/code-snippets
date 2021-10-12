@@ -40,7 +40,7 @@ void continueLoop() {
 
 // Loop though a list
 void loopFromList() {
-  final List<int> someList = <int> [1, 2, 3];
+  final List<int> someList = <int>[1, 2, 3];
   for (int i = 0; i < someList.length; i++) {
     print(someList[i]);
   }

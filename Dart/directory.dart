@@ -31,7 +31,7 @@ bool checkDirectoryExists(final String path) {
 // Get all the files only in a directory
 List<File>? getAllFilesInDirectory(final String path) {
   return Directory(path)
-      .listSync(recursive: false, followLinks: false)
+      .listSync(followLinks: false)
       .whereType<File>()
       .toList();
 }
@@ -39,16 +39,14 @@ List<File>? getAllFilesInDirectory(final String path) {
 // Get all the directories only in a directory
 List<Directory>? getAllDirectoryInDirectory(final String path) {
   return Directory(path)
-      .listSync(recursive: false, followLinks: false)
+      .listSync(followLinks: false)
       .whereType<Directory>()
       .toList();
 }
 
 // Get all the files and directories in a directory
 List<FileSystemEntity>? getAllInDirectory(final String path) {
-  return Directory(path)
-      .listSync(recursive: false, followLinks: false)
-      .toList();
+  return Directory(path).listSync(followLinks: false).toList();
 }
 
 // Create a directory

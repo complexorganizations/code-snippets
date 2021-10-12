@@ -6,5 +6,8 @@ void main() {
   HttpClient()
       .getUrl(Uri.parse("https://www.example.com"))
       .then((final request) => request.close())
-      .then((final response) => response.transform(const Utf8Decoder()).listen(print));
+      .then(
+        (final response) =>
+            response.transform(const Utf8Decoder()).listen(print),
+      );
 }
