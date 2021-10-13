@@ -1,20 +1,20 @@
 import "dart:io";
 
 void main() {
+  // Create a file
+  createFile("bar.txt");
   // Create and write to a file
   writeToFile("foo.txt", "Random string we will write.");
-  // Open and read a file
-  print(readFile("foo.txt"));
-  // Move a file
-  moveFile("foo.txt", "bar.txt");
   // Get the path of the current executable
   print(getCurrentPath());
+  // Move a file
+  moveFile("bar.txt", "random.txt");
   // Check if a file exists
-  print(fileExists("bar.txt"));
-  // Create a file
-  createFile("foo.txt");
+  print(fileExists("random.txt"));
+  // Open and read a file
+  print(readFile("foo.txt"));
   // Delete a file
-  removeFile("foo.txt");
+  removeFile("random.txt");
 }
 
 // Opens the file and returns the contents as a string
