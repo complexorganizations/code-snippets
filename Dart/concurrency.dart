@@ -9,7 +9,7 @@ void main() {
   }
 }
 
+// Spawns a new isolate and prints the message.
 void foo(final String message) {
-  // Spawns a new isolate and prints the message.
   print(message);
 }
