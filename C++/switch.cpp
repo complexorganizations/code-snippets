@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <string.h>
+#include <cstring>
+#include <iostream>
 
 // A simple integer switch statement
 void integerSwitch() {

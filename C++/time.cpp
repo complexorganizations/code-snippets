@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <time.h>
+#include <ctime>
+#include <iostream>
 
 // Get the current time
 void current_time() {

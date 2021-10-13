@@ -1,7 +1,7 @@
-#include <stdbool.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include <cstdbool>
+#include <cstdlib>
+#include <ctime>
+#include <iostream>
 
 // Generate a random number between x and y
 int randomNumberInRange(int x, int y) {

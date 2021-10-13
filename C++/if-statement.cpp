@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <iostream>
 
 // A simple if statement
 void if_statement() {

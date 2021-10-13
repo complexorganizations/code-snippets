@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <iostream>
 
 // A simple loop that will not break.
 void simple_loop() {

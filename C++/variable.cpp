@@ -1,5 +1,5 @@
-#include <stdbool.h>
-#include <stdio.h>
+#include <cstdbool>
+#include <iostream>
 
 // Int
 void int_variable() {

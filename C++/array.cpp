@@ -1,6 +1,6 @@
-#include <stdbool.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdbool>
+#include <cstdlib>
+#include <iostream>
 
 // Get the length of the array
 int getArrayLength(int array[]) {
@@ -36,7 +36,7 @@ int elementAtIndex(int array[], int size, int index) {
 int sumOfArrayElements(int array[], int size) {
     int sum = 0;
     for (int i = 0; i < size; i++) {
-        sum += array[i];
+        sum = sum + array[i];
     }
     return sum;
 }
@@ -45,7 +45,7 @@ int sumOfArrayElements(int array[], int size) {
 float averageOfArrayElements(int array[], int size) {
     float sum = 0;
     for (int i = 0; i < size; i++) {
-        sum += array[i];
+        sum = sum + array[i];
     }
     return sum / size;
 }

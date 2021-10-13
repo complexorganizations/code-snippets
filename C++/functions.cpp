@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <iostream>
 
 // Simple function takes no arguments and returns nothing
 void no_return_no_arguments() {

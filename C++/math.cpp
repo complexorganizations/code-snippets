@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <iostream>
 
 // Take in two numbers and return the sum
 int add_numbers(int a, int b) {

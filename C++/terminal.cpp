@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <iostream>
 
 // Clear the terminal screen
 void clearTerminal() {

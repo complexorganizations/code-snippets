@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <iostream>
 
 /*
 This is a multiline comment.
