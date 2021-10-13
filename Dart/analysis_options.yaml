@@ -13,7 +13,7 @@ linter:
     avoid_catching_errors: true
     avoid_classes_with_only_static_members: true
     avoid_double_and_int_checks: true
-    avoid_dynamic_calls: true
+    avoid_dynamic_calls: false
     avoid_empty_else: true
     avoid_equals_and_hash_code_on_mutable_classes: true
     avoid_escaping_inner_quotes: true

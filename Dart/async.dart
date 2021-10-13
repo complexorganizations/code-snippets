@@ -1,6 +1,6 @@
 import "dart:async";
 
-void main() async {
+Future<void> main() async {
   final int x = await four();
   print(x);
 }
