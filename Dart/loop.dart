@@ -60,7 +60,7 @@ void breakLoop() {
 // Loop forever
 void loopForever() {
   int counter = 0;
-  while (true) {
+  for (;;) {
     counter = counter + 1;
     print("test");
     if (counter == 10) {
