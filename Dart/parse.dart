@@ -8,11 +8,11 @@ void main() {
 }
 
 // Parse a int and return it
-int parseInt(final String s) {
-  return int.parse(s);
+int parseInt(final dynamic content) {
+  return int.parse(content);
 }
 
 // Parse a double and return it
-double parseDouble(final String s) {
-  return double.parse(s);
+double parseDouble(final dynamic content) {
+  return double.parse(content);
 }
