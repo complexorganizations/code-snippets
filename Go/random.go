@@ -23,6 +23,8 @@ func main() {
 	fmt.Println(secureRandomInt(100))
 	// Generate a random int between two numbers
 	fmt.Println(randomIntBetween(1, 10))
+	// Generate a random uuid
+	fmt.Println(randomUUID())
 }
 
 // Get a random string of length
@@ -71,5 +73,15 @@ func secureRandomInt(max int64) int64 {
 
 // Generate a random int between two numbers
 func randomIntBetween(min int, max int) int64 {
-	return secureRandomInt(int64(max - min)) + int64(min)
+	return secureRandomInt(int64(max-min)) + int64(min)
+}
+
+// Generate a random uuid string
+func randomUUID() string {
+	return fmt.Sprintf("%X-%X-%X-%X-%X",
+		randomByteArray(4),
+		randomByteArray(2),
+		randomByteArray(2),
+		randomByteArray(2),
+		randomByteArray(6))
 }
