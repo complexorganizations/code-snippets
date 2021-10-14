@@ -71,5 +71,5 @@ func secureRandomInt(max int64) int64 {
 
 // Generate a random int between two numbers
 func randomIntBetween(min int, max int) int64 {
-	return secureRandomInt(int64(max - min))
+	return secureRandomInt(int64(max - min)) + int64(min)
 }
