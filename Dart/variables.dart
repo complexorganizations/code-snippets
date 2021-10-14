@@ -69,9 +69,9 @@ void simpleListExample() {
 
 // A simple example of a map
 void simpleMapExample() {
-  final Map<String, String> content = <String, String>{
+  final Map<dynamic, dynamic> content = <dynamic, dynamic>{
     "name": "John Doe",
-    "age": "30",
+    "age": 30,
   };
   print(content);
   print(content["name"]);
