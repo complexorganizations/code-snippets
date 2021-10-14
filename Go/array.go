@@ -17,11 +17,11 @@ func main() {
 	//
 	for number, list := range randomSlice {
 		// Number
-		if number == 25 {
-			fmt.Println("The content of number 25 is", list)
+		if number == 2 {
+			fmt.Println("The content of number 2 is", list)
 		}
 		// Item
-		if list == "P" {
+		if list == "jesus" {
 			fmt.Println("The letter is", list)
 		}
 	}
