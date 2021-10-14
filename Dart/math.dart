@@ -17,6 +17,8 @@ void main() {
   print(getSquareRoot(4));
   // Get the power of a number.
   print(getPower(2.0, 3.0));
+  // Get the value of pi
+  print(getPi());
 }
 
 // Do basic math inside a function.
@@ -55,4 +57,9 @@ double getSquareRoot(final double number) {
 // Get the power of a number.
 num getPower(final double number, final double power) {
   return pow(number, power);
+}
+
+// Get the value of pi.
+double getPi() {
+  return pi;
 }
