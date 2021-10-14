@@ -5,9 +5,9 @@ void main() {
   // Send a request to the http server and return the response.
   HttpClient()
       .getUrl(Uri.parse("https://www.example.com"))
-      .then((final request) => request.close())
+      .then((final dynamic request) => request.close())
       .then(
-        (final response) =>
+        (final dynamic response) =>
             response.transform(const Utf8Decoder()).listen(print),
       );
 }
