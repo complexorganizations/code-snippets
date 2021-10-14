@@ -1,7 +1,7 @@
 void main() {
   foo(1);
   bar("This is a random string that we will print.");
-  testCondition(true);
+  testCondition("Valid");
   add(2, 3);
   multiply(4, 5);
   print(test());
@@ -25,8 +25,8 @@ void bar(final String randomString) {
 }
 
 // if condition test
-void testCondition(final bool condition) {
-  if (condition) {
+void testCondition(final String condition) {
+  if (condition == "Valid") {
     print("This is true");
   } else {
     print("This is false");
