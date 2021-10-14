@@ -11,6 +11,8 @@ void main() {
   breakLoop();
   // Loop forever
   loopForever();
+  // Loop while
+  whileLoop();
 }
 
 // Loop from 0 to 100
@@ -66,5 +68,14 @@ void loopForever() {
     if (counter == 10) {
       break;
     }
+  }
+}
+
+// A simple example of a while loop.
+void whileLoop() {
+  int i = 0;
+  while (i < 5) {
+    print(i);
+    i = i + 1;
   }
 }
