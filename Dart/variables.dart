@@ -1,34 +1,60 @@
 // Ways to declare a variable in dart.
 void main() {
-  // 1. var <Name>;
-  const String fullName = "John Doe";
-  print(fullName);
-  // 2. var <Name> = <Value>;
-  int age;
-  age = 30;
+  // Example of a string variable.
+  simpleStringExample();
+  // Example of a int variable.
+  simpleIntExample();
+  // Example of a double variable.
+  simpleDoubleExample();
+  // Example of a bool variable.
+  simpleBoolExample();
+  // Example of a list variable.
+  simpleListExample();
+  // Example of a map variable.
+  simpleMapExample();
+  // Get the runtime type of the content
+  print(getRuntimeType("Hello, World!"));
+  print(getRuntimeType(1));
+  print(getRuntimeType(1.0));
+  print(getRuntimeType(true));
+  print(getRuntimeType(<String>["Hello", "World"]));
+  print(getRuntimeType(<String, String>{"Hello": "World"}));
+}
+
+// A simple example of a string
+void simpleStringExample() {
+  const String firstName = "John Doe";
+  print(firstName);
+  const String lastName = "Doe";
+  print(lastName);
+}
+
+// A simple example of a int
+void simpleIntExample() {
+  const int age = 30;
   print(age);
-  // 3. <Type> <Name>;
-  int dob;
-  dob = 2000;
+  const int dob = 2000;
   print(dob);
-  // 4. <Type> <Name> = <Value>;
-  const String gender = "Male";
-  print(gender);
+}
 
-  // More examples
-  const String girlName = "Jane Doe";
-  print(girlName);
+// A simple example of a double
+void simpleDoubleExample() {
+  const double height = 1.80;
+  print(height);
+  const double weight = 80.0;
+  print(weight);
+}
 
-  double dobYearForGirl;
-  dobYearForGirl = 2000.12;
-  print(dobYearForGirl);
+// A simple example of a bool
+void simpleBoolExample() {
+  const bool isFemale = true;
+  print(isFemale);
+  const bool isMale = false;
+  print(isMale);
+}
 
-  // float values
-  double monthes;
-  monthes = 12.43;
-  print(monthes);
-
-  // Slice
+// A simple example of a list or array
+void simpleListExample() {
   final List<String> list = <String>[
     "Apple",
     "Banana",
@@ -37,31 +63,19 @@ void main() {
     "Mango"
   ];
   print(list);
-  // From the slice get the first element
   print(list[0]);
-  // Get the second element from the slice
   print(list[1]);
+}
 
-  // Bool
-  bool isFemale = true;
-  print(isFemale);
-  isFemale = false;
-  print(isFemale);
-
-  // Maps
-  final Map<dynamic, dynamic> content = <dynamic, dynamic>{
+// A simple example of a map
+void simpleMapExample() {
+  final Map<String, String> content = <String, String>{
     "name": "John Doe",
-    "age": 30,
+    "age": "30",
   };
-  // Get the value of the age key
   print(content);
+  print(content["name"]);
   print(content["age"]);
-  // Set the value of the age key
-  content["age"] = 31;
-  print(content["age"]);
-
-  // Get the runtime type of the content
-  print(getRuntimeType(content));
 }
 
 // Get the runtime type of a variable.
