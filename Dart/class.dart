@@ -1,17 +1,15 @@
 void main() {
   // Set the content for the class
-  final Employee content = Employee();
-  content.name = "John Doe";
-  content.age = 30;
-  content.salary = 45000.50;
-  content.isMarried = false;
+  final Employee content = Employee()
+    ..name = "John Doe"
+    ..age = 30
+    ..salary = 45000.50
+    ..isMarried = false
+    ..functionInsideClass();
   print(content.name);
   print(content.age);
   print(content.salary);
   print(content.isMarried);
-
-  // Function inside class
-  content.functionInsideClass();
   content.inputFunctionInsideClass("Jamie");
   print(content.returnInsideFunction(1, 2));
 }
