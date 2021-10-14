@@ -48,3 +48,18 @@ bool isRunningInDocker() {
 void closeApplication(final int code) {
   exit(code);
 }
+
+// Current operating system
+String getOperatingSystemName() {
+  return Platform.operatingSystem;
+}
+
+// Current operating system version
+String getOperatingSystemVersion() {
+  return Platform.operatingSystemVersion;
+}
+
+// Current hostname
+String getHostname() {
+  return Platform.localHostname;
+}
