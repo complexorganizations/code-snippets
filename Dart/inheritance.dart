@@ -1,8 +1,8 @@
 void main() {
   // Creating object of the child class
-  final Parrot p = Parrot();
-  p.speak();
-  p.fly();
+  final Parrot _ = Parrot()
+    ..speak()
+    ..fly();
 }
 
 class Bird {
