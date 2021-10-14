@@ -1,5 +1,7 @@
 # Code-Snippets
 
+### Please file an issue if a function you'd like to see isn't available.
+
 ### Development
 - Web: Typescript
 - Mobile: Dart
