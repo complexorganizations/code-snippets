@@ -11,7 +11,7 @@ fn main() {
     // Get all the folders in the current working directory
     println!("{:?}", get_folders_in_current_path());
     // Get all the folders in the given directory
-    println!("{:?}", get_folders_from_path("/"));
+    println!("{:?}", get_folders_from_path("new_dir/"));
     // Delete a directory
     remove_directory("new_dir/");
 }
