@@ -1,4 +1,4 @@
-#![warn(clippy::needless_return)]
+#![allow(clippy::needless_return)]
 use std::env;
 
 fn main() {
