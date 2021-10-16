@@ -32,7 +32,7 @@ jobs:
             mv ../${FILE_LIST} src/main.rs
             cargo run --quiet
             cargo clippy
-            cargo miri run
+            cargo miri run --quiet
             cargo clean
             rm src/main.rs
           done
