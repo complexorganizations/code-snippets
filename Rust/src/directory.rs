@@ -1,7 +1,7 @@
 use std::env;
 
 fn main() {
-    // Get the current working directory
+    // Get the current working directory.
     println!("Current directory: {}", get_cwd());
     // Change the current working directory
     change_cwd("src/");
