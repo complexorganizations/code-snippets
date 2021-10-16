@@ -1,5 +1,5 @@
-#![allow(clippy::needless_return)]
-#![allow(clippy::assign_op_pattern)]
+#[allow(clippy::needless_return)]
+#[allow(clippy::assign_op_pattern)]
 
 fn main() {
     // Add two numbers
