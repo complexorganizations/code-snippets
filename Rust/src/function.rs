@@ -1,5 +1,5 @@
 fn main() {
-    // Example function
+    // Example function.
     example_function();
     // Takes in a single argument and returns an integer
     let a = 1;
