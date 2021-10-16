@@ -4,15 +4,15 @@ fn main() {
     // Get the current working directory
     println!("Current directory: {}", get_cwd());
     // Change the current working directory
-    change_cwd("/");
+    change_cwd("src/");
     // Get all the folders in the current working directory
     println!("Folders in current directory: {:?}", get_folders_in_current_path());
     // Get all the folders in the given directory
-    println!("Folders in /playground/ {:?}", get_folders_from_path("/playground/"));
+    println!("Folders in / {:?}", get_folders_from_path("/"));
     // Create a new directory
-    create_directory("/playground/new_dir");
+    create_directory("new_dir/");
     // Delete a directory
-    remove_directory("/playground/new_dir");
+    remove_directory("new_dir/");
 }
 
 // Get the current working directory and return it as a String
