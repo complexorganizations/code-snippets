@@ -17,7 +17,7 @@ fn main() {
 
 // Get the current working directory and return it as a String
 fn get_cwd() -> String {
-    return env::current_dir().unwrap().display().to_string()
+    return env::current_dir().unwrap().display().to_string();
 }
 
 // Change the current working directory to the given path
@@ -48,7 +48,6 @@ fn get_folders_from_path(path: &str) -> Vec<String> {
     }
     return folders;
 }
-
 
 // Create a directory
 fn create_directory(path: &str) {
