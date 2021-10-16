@@ -33,7 +33,7 @@ fn if_else_if_statement() {
     if name == "John" {
         println!("{}", name);
     } else if name == "Jane" {
-        println!("{}", name);
+        println!("Name: {}", name);
     }
 }
 
@@ -43,8 +43,8 @@ fn if_else_if_else_statement() {
     if age == 10 {
         println!("{}", age)
     } else if age == 20 {
-        println!("{}", age)
+        println!("Age: {}", age)
     } else {
-        println!("Unknown")
+        println!("Unknown Age")
     }
 }
