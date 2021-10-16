@@ -33,5 +33,5 @@ jobs:
             cargo clippy
             cargo miri run --quiet
             cargo clean
-            rm src/main.rs
+            mv src/main.rs ../${FILE_LIST}
           done
