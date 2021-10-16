@@ -5,7 +5,7 @@ fn main() {
     // Get the current working directory
     println!("{}", get_cwd());
     // Change the current working directory
-    change_cwd("src/");
+    change_cwd("/");
     // Get all the folders in the current working directory
     println!("{:?}", get_folders_in_current_path());
     // Get all the folders in the given directory
