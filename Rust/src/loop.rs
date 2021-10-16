@@ -41,7 +41,6 @@ fn continue_loop() {
     println!("The counter is now: {}", counter);
 }
 
-
 // Break inside a loop
 fn break_loop() {
     // Set the value of the counter to 0
