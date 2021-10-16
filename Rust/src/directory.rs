@@ -4,14 +4,14 @@ use std::env;
 fn main() {
     // Get the current working directory
     println!("{}", get_cwd());
+    // Create a new directory
+    create_directory("new_dir/");
     // Change the current working directory
-    change_cwd("/");
+    change_cwd("new_dir/");
     // Get all the folders in the current working directory
     println!("{:?}", get_folders_in_current_path());
     // Get all the folders in the given directory
     println!("{:?}", get_folders_from_path("/"));
-    // Create a new directory
-    create_directory("new_dir/");
     // Delete a directory
     remove_directory("new_dir/");
 }
