@@ -22,5 +22,5 @@ jobs:
             mv ../${FILE_LIST} src/main.rs
             cargo run
             rm src/main.rs
-            rm target/debug/code_snippets
+            rm -rf target/
           done
