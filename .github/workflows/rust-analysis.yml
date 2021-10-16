@@ -22,5 +22,5 @@ jobs:
             mv ../${FILE_LIST} ../Rust/src/main.rs
             cargo run
             rm -f ../Rust/src/main.rs
-            rm -rf ../Rust/target
+            rm -f ../Rust/target/debug/code-snippets
           done
