@@ -1,3 +1,4 @@
+#![allow(clippy::needless_return)]
 use rand::distributions::Alphanumeric;
 use rand::{thread_rng, Rng};
 
