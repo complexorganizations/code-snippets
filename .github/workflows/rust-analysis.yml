@@ -9,6 +9,12 @@ jobs:
     steps:
       - name: Check out code into the directory
         uses: actions/checkout@v2
+      - name: Install dependencies
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: nightly
+          override: true
+          components: rand
       - name: Run the code
         run: |
           ALL_FILES_IN_DIRECTORY=$(find Rust/ -type f -name "*.rs")
