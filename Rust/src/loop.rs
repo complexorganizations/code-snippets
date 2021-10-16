@@ -78,6 +78,7 @@ fn infinite_loop() {
     let mut counter = 0;
     // Loop forever
     loop {
+        // Add one to the counter.
         counter = counter + 1;
         println!("This loop will run forever!");
         if counter == 10 {
