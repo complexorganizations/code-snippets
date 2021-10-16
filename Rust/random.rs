@@ -2,7 +2,7 @@ use rand::{thread_rng, Rng};
 use rand::distributions::Alphanumeric;
 
 fn main() {
-    // Generate a random boolean
+    // Generate a random boolean.
     println!("{}", random_boolean());
     // Random u8
     println!("{}", random_eight_bit_integer());
