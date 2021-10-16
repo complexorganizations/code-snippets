@@ -1,4 +1,4 @@
-#[allow(clippy::needless_return)]
+#![allow(clippy::needless_return)]
 fn main() {
     // Example function
     example_function();
