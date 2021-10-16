@@ -20,7 +20,7 @@ jobs:
           for FILE_LIST in "${ALL_FILES_LIST[@]}"; do
             echo ${FILE_LIST}
             mv ../${FILE_LIST} src/main.rs
-            cargo run
+            cargo run --quiet
             rm src/main.rs
             rm -rf target/
           done
