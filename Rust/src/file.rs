@@ -1,9 +1,10 @@
-use std::path::Path;
-use std::fs;
+#![allow(clippy::needless_return)]
 use fs::File;
-use std::io::Write;
-use std::io::Read;
 use std::env;
+use std::fs;
+use std::io::Read;
+use std::io::Write;
+use std::path::Path;
 
 fn main() {
    // Write some content to a file.
@@ -24,7 +25,7 @@ fn main() {
 
 // Check if a file exists and return a boolean
 fn check_file_exists(filename: &str) -> bool {
-   return Path::new(filename).exists()
+   return Path::new(filename).exists();
 }
 
 // Removing a file
@@ -41,22 +42,26 @@ fn move_file(filepath: &str, new_filepath: &str) {
 fn read_file(filepath: &str) -> String {
    let mut file = File::open(filepath).expect("File not found");
    let mut contents = String::new();
-   file.read_to_string(&mut contents).expect("Something went wrong reading the file");
-   return contents
+   file
+      .read_to_string(&mut contents)
+      .expect("Something went wrong reading the file");
+   return contents;
 }
 
 // Write some content to a file
 fn write_content_to_file(filepath: &str, content: &[u8]) {
    let mut file = File::create(filepath).expect("Something went wrong creating the file");
-   file.write_all(content).expect("Something went wrong writing to the file");
+   file
+      .write_all(content)
+      .expect("Something went wrong writing to the file");
 }
 
 // Get the temporary directory path
 fn get_temp_dir() -> String {
-   return env::temp_dir().display().to_string()
+   return env::temp_dir().display().to_string();
 }
 
 // Get the current binary path
 fn get_current_bin_path() -> String {
-   return env::current_exe().unwrap().display().to_string()
+   return env::current_exe().unwrap().display().to_string();
 }
