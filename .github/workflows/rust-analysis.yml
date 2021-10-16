@@ -30,7 +30,7 @@ jobs:
             echo ${FILE_LIST}
             mv ../${FILE_LIST} src/main.rs
             cargo run --quiet
-            cargo clippy
+            cargo clippy --quiet
             cargo miri run --quiet
             cargo clean
             mv src/main.rs ../${FILE_LIST}
