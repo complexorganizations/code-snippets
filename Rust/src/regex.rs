@@ -12,3 +12,6 @@ fn main() {
                  caps.get(3).unwrap().as_str());
     }
 }
+
+
+// Turn this into a function
