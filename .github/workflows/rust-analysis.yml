@@ -9,10 +9,6 @@ jobs:
     steps:
       - name: Check out code into the directory
         uses: actions/checkout@v2
-      - name: Install dependencies
-        run: |
-          cd Rust/src/
-          cargo build
       - name: Run the code
         run: |
           ALL_FILES_IN_DIRECTORY=$(find Rust/ -type f -name "*.rs")
@@ -22,6 +18,5 @@ jobs:
           done
           for FILE_LIST in "${ALL_FILES_LIST[@]}"; do
             echo ${FILE_LIST}
-            rustc ${FILE_LIST} -o ${FILE_LIST%.*}
-            ${FILE_LIST%.*}
+            cargo run ${FILE_LIST}
           done
