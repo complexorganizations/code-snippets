@@ -11,20 +11,20 @@ fn main() {
 
 // Add two numbers and than return the sum.
 fn add_two_numbers(primary: i32, secondary: i32) -> i32 {
-    primary + secondary
+    return primary + secondary;
 }
 
 // Subtract two numbers and than return the difference.
 fn subtract_two_numbers(primary: i32, secondary: i32) -> i32 {
-    primary - secondary
+    return primary - secondary;
 }
 
 // Multiply two numbers and than return the product.
 fn multiply_two_numbers(primary: i32, secondary: i32) -> i32 {
-    primary * secondary
+    return primary * secondary;
 }
 
 // Divide two numbers and than return the quotient.
 fn divide_two_numbers(primary: i32, secondary: i32) -> f64 {
-    primary as f64 / secondary as f64
+    return primary as f64 / secondary as f64;
 }
