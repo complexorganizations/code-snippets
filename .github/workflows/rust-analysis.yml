@@ -17,8 +17,7 @@ jobs:
           rustup update
       - name: Install dependencies
         run: |
-          rustup component add clippy
-          rustup component add miri
+          rustup component add clippy miri
       - name: Run the code
         run: |
           ALL_FILES_IN_DIRECTORY=$(find Rust/ -type f -name "*.rs")
