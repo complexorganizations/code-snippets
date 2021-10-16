@@ -29,9 +29,9 @@ jobs:
           for FILE_LIST in "${ALL_FILES_LIST[@]}"; do
             echo ${FILE_LIST}
             mv ../${FILE_LIST} src/main.rs
-            cargo run --quiet
-            cargo clippy --quiet
-            cargo miri run --quiet
+            cargo run --quiet --all-features
+            cargo clippy --quiet --all-features
+            cargo miri run --quiet --all-features
             cargo clean
             mv src/main.rs ../${FILE_LIST}
           done
