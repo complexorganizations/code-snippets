@@ -1,3 +1,6 @@
+#![allow(clippy::needless_return)]
+#![allow(clippy::assign_op_pattern)]
+
 fn main() {
     // Add two numbers
     println!("1 + 2 = {}", add_two_numbers(1, 2));
