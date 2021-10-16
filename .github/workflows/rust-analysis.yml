@@ -19,8 +19,8 @@ jobs:
           cd Rust/
           for FILE_LIST in "${ALL_FILES_LIST[@]}"; do
             echo ${FILE_LIST}
-            mv ../${FILE_LIST} ../Rust/src/main.rs
+            mv ../${FILE_LIST} src/main.rs
             cargo run
-            rm -f ../Rust/src/main.rs
-            rm -f ../Rust/target/debug/code_snippets
+            rm src/main.rs
+            rm target/debug/code_snippets
           done
