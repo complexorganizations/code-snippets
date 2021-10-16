@@ -6,7 +6,7 @@ use std::io::Read;
 use std::env;
 
 fn main() {
-   // Write some content to a file
+   // Write some content to a file.
    write_content_to_file("foo.txt", b"Hello, World");
    // Check if the file exists
    println!("{}", check_file_exists("foo.txt"));
