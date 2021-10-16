@@ -1,4 +1,4 @@
-#![allow(clippy::needless_return)]
+#[allow(clippy::needless_return)]
 fn main() {
     let random_list_of_elements = ["one", "two", "three", "four", "five"];
     // Get the length of the array
