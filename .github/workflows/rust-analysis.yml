@@ -9,6 +9,9 @@ jobs:
     steps:
       - name: Check out code into the directory
         uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          cargo build
       - name: Run the code
         run: |
           ALL_FILES_IN_DIRECTORY=$(find Rust/ -type f -name "*.rs")
