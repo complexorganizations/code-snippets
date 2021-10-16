@@ -9,6 +9,16 @@ jobs:
     steps:
       - name: Check out code into the directory
         uses: actions/checkout@v2
+      - name: Install rust nightly
+        run: |
+          rustup toolchain install nightly
+          rustup run nightly rustc --version
+          rustup default nightly
+          rustup update
+      - name: Install dependencies
+        run: |
+          rustup component add clippy
+          rustup component add miri
       - name: Run the code
         run: |
           ALL_FILES_IN_DIRECTORY=$(find Rust/ -type f -name "*.rs")
@@ -21,6 +31,8 @@ jobs:
             echo ${FILE_LIST}
             mv ../${FILE_LIST} src/main.rs
             cargo run --quiet
+            cargo clippy
+            cargo miri run
+            cargo clean
             rm src/main.rs
-            rm -rf target/
           done
