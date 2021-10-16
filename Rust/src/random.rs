@@ -1,5 +1,5 @@
-use rand::{thread_rng, Rng};
 use rand::distributions::Alphanumeric;
+use rand::{thread_rng, Rng};
 
 fn main() {
     // Generate a random boolean
@@ -16,22 +16,22 @@ fn main() {
 
 // Generate a random boolean
 fn random_boolean() -> bool {
-    return rand::thread_rng().gen::<bool>()
+    return rand::thread_rng().gen::<bool>();
 }
 
 // Generate a random 8 bit integer
 fn random_eight_bit_integer() -> u8 {
-    return rand::thread_rng().gen::<u8>()
+    return rand::thread_rng().gen::<u8>();
 }
 
 // Generate a random 16 bit integer
 fn random_sixteen_bit_integer() -> u16 {
-    return rand::thread_rng().gen::<u16>()
+    return rand::thread_rng().gen::<u16>();
 }
 
 // Generate a random 32 bit integer
 fn random_thirtytwo_bit_integer() -> u32 {
-    return rand::thread_rng().gen::<u32>()
+    return rand::thread_rng().gen::<u32>();
 }
 
 // Generate a random 32 bit integer
@@ -45,5 +45,5 @@ fn random_string(length: usize) -> String {
         .take(length)
         .map(char::from)
         .collect();
-    return rand_string
+    return rand_string;
 }
