@@ -120,6 +120,32 @@ int getRandomElementFromArray(int array[]) {
     return elementAtIndexInArray(array, rand() % getArrayLength(array));
 }
 
+// Get the largest value in the array.
+int getLargestValueInArray(int array[]) {
+    int counter = 0;
+    int largestValue = array[0];
+    while (array[counter] != 0) {
+        if (array[counter] > largestValue) {
+            largestValue = array[counter];
+        }
+        counter = counter + 1;
+    }
+    return largestValue;
+}
+
+// Get the smallest value in the array
+int getSmallestValueInArray(int array[]) {
+    int counter = 0;
+    int smallestValue = array[0];
+    while (array[counter] != 0) {
+        if (array[counter] < smallestValue) {
+            smallestValue = array[counter];
+        }
+        counter = counter + 1;
+    }
+    return smallestValue;
+}
+
 // Remove all the values from an array.
 void removeAllValuesFromArray(int array[]) {
     int counter = 0;
@@ -157,6 +183,10 @@ int main() {
     printAllElmentsInArray(userGenArray);
     // Get an random element from the array
     printf("\nRandom Element: %d\n", getRandomElementFromArray(userGenArray));
+    // Get the largest value in the array.
+    printf("Largest Value: %d\n", getLargestValueInArray(userGenArray));
+    // Get the smallest value in the array
+    printf("Smallest Value: %d\n", getSmallestValueInArray(userGenArray));
     // Remove all the values from an array.
     removeAllValuesFromArray(userGenArray);
     // Return 0 to the operating system.
