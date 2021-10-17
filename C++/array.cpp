@@ -1,8 +1,6 @@
-#include <cstdbool>
-#include <cstdlib>
 #include <iostream>
 
-// Get the length of the array
+// Get the length of an array.
 int getArrayLength(int array[]) {
     int counter = 0;
     while (array[counter] != 0) {
@@ -11,163 +9,95 @@ int getArrayLength(int array[]) {
     return counter;
 }
 
-// Take in a input as an array and return a random element from the array
-int randomElement(int array[], int size) {
-    int randomIndex = rand() % size;
-    return array[randomIndex];
-}
-
 // Get the first element of the array
-int firstElement(int array[], int size) {
+int firstElementInArray(int array[]) {
     return array[0];
 }
 
 // Get the last element of the array
-int lastElement(int array[], int size) {
-    return array[size - 1];
+int getLastElementInArray(int array[]) {
+    return array[getArrayLength(array) - 1];
 }
 
-// Get the value at the specified index
-int elementAtIndex(int array[], int size, int index) {
+// Get the certain element at a certain index in an array
+int elementAtIndexInArray(int array[], int index) {
     return array[index];
 }
 
-// Get the sum of all elements in the array
-int sumOfArrayElements(int array[], int size) {
-    int sum = 0;
-    for (int i = 0; i < size; i++) {
-        sum = sum + array[i];
-    }
-    return sum;
-}
-
-// Get the average of all elements in the array
-float averageOfArrayElements(int array[], int size) {
-    float sum = 0;
-    for (int i = 0; i < size; i++) {
-        sum = sum + array[i];
-    }
-    return sum / size;
-}
-
-// Get the minimum value in the array
-int minimumValueInArray(int array[], int size) {
-    int min = array[0];
-    for (int i = 0; i < size; i++) {
-        if (array[i] < min) {
-            min = array[i];
-        }
-    }
-    return min;
-}
-
-// Get the maximum value in the array
-int maximumValueInArray(int array[], int size) {
-    int max = array[0];
-    for (int i = 0; i < size; i++) {
-        if (array[i] > max) {
-            max = array[i];
-        }
-    }
-    return max;
-}
-
-// Remove all elements from the array
-void clearArray(int array[], int size) {
-    for (int i = 0; i < size; i++) {
-        array[i] = 0;
+// Check if the array is empty and return a bool
+bool isArrayEmpty(int array[]) {
+    if (getArrayLength(array) == 0) {
+        return true;
+    } else {
+        return false;
     }
 }
 
-// Check if the array is empty
-bool isArrayEmpty(int array[], int size) {
-    for (int i = 0; i < size; i++) {
-        if (array[i] != 0) {
-            return false;
-        }
+// Check if the array isnt empty and return a bool
+bool isArrayNotEmpty(int array[]) {
+    if (getArrayLength(array) != 0) {
+        return true;
+    } else {
+        return false;
     }
-    return true;
 }
 
-// Check if the array contains any duplicate values
-bool containsDuplicates(int array[], int size) {
-    for (int i = 0; i < size; i++) {
-        for (int j = i + 1; j < size; j++) {
-            if (array[i] == array[j]) {
+// Check if the array contains any duplicates values.
+bool arrayContainsDuplicates(int array[]) {
+    int counter = 0;
+    while (array[counter] != 0) {
+        int counter2 = counter + 1;
+        while (array[counter2] != 0) {
+            if (array[counter] == array[counter2]) {
                 return true;
             }
+            counter2 = counter2 + 1;
         }
+        counter = counter + 1;
     }
     return false;
 }
 
-// Remove all duplicate values from the array
-void removeDuplicates(int array[], int size) {
-    for (int i = 0; i < size; i++) {
-        for (int j = i + 1; j < size; j++) {
-            if (array[i] == array[j]) {
-                array[j] = 0;
-            }
-        }
+// Print all the values in an array.
+void printAllElmentsInArray(int array[]) {
+    int counter = 0;
+    while (array[counter] != 0) {
+        printf("%d ", array[counter]);
+        counter = counter + 1;
     }
 }
 
-// Reverse an array
-void reverseArray(int array[], int size) {
-    int temp;
-    for (int i = 0; i < size / 2; i++) {
-        temp = array[i];
-        array[i] = array[size - i - 1];
-        array[size - i - 1] = temp;
+// Remove all the values from an array.
+void removeAllValuesFromArray(int array[]) {
+    int counter = 0;
+    while (array[counter] != 0) {
+        array[counter] = 0;
+        counter = counter + 1;
     }
 }
 
-// Sort an array
-void sortArray(int array[], int size) {
-    int temp;
-    for (int i = 0; i < size; i++) {
-        for (int j = i + 1; j < size; j++) {
-            if (array[i] > array[j]) {
-                temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
-            }
-        }
-    }
-}
-
+// The main function
 int main() {
-    // Create an array of integers
-    int randomArray[5] = {19, 10, 8, 17, 9};
-    // Get the length of the array
-    printf("%d\n", getArrayLength(randomArray));
-    // Get a random value from the array
-    printf("%d\n", randomElement(randomArray, 5));
+    // Create an array.
+    int userGenArray[] = {9, 5, 3, 4, 10, 8, 1, 6, 2, 7, 7};
+    // Get the length of the array.
+    printf("Array Length: %d\n", getArrayLength(userGenArray));
     // Get the first element of the array
-    printf("%d\n", firstElement(randomArray, 5));
+    printf("First Element: %d\n", firstElementInArray(userGenArray));
     // Get the last element of the array
-    printf("%d\n", lastElement(randomArray, 5));
-    // Get cetain element of the array
-    printf("%d\n", elementAtIndex(randomArray, 5, 2));
-    // Get the sum of all elements in the array
-    printf("%d\n", sumOfArrayElements(randomArray, 5));
-    // Get the average of all elements in the array
-    printf("%f\n", averageOfArrayElements(randomArray, 5));
-    // Get the minimum value in the array
-    printf("%d\n", minimumValueInArray(randomArray, 5));
-    // Get the maximum value in the array
-    printf("%d\n", maximumValueInArray(randomArray, 5));
-    // Check if the array is empty
-    printf("%d\n", isArrayEmpty(randomArray, 5));
-    // Check if the array contains any duplicate values
-    printf("%d\n", containsDuplicates(randomArray, 5));
-    // Remove all duplicate values from the array
-    removeDuplicates(randomArray, 5);
-    // Reverse an array
-    reverseArray(randomArray, 5);
-    // Sort an array
-    sortArray(randomArray, 5);
-    // Remove all the values from the array
-    clearArray(randomArray, 5);
+    printf("Last Element: %d\n", getLastElementInArray(userGenArray));
+    // Get the certain element at a certain index in an array
+    printf("Element at index 3: %d\n", elementAtIndexInArray(userGenArray, 3));
+    // Check if the array is empty and return a bool
+    printf("Is the array empty? %d\n", isArrayEmpty(userGenArray));
+    // Check if the array isnt empty and return a bool
+    printf("Is the array not empty? %d\n", isArrayNotEmpty(userGenArray));
+    // Check if the array contains any duplicates values.
+    printf("Does the array contain duplicates? %d\n", arrayContainsDuplicates(userGenArray));
+    // Print all the values in an array.
+    printAllElmentsInArray(userGenArray);
+    // Remove all the values from an array.
+    removeAllValuesFromArray(userGenArray);
+    // Return 0 to the operating system.
     return 0;
 }
