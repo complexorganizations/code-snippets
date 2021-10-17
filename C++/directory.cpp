@@ -8,7 +8,7 @@ std::string get_current_directory() {
     if (_getcwd(buffer, FILENAME_MAX)) {
         return std::string(buffer);
     } else {
-        return "";
+        return "Unknown";
     }
 }
 
