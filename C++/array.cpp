@@ -4,11 +4,11 @@
 
 // Get the length of the array
 int getArrayLength(int array[]) {
-    int i = 0;
-    while (array[i] != 0) {
-        i++;
+    int counter = 0;
+    while (array[counter] != 0) {
+        counter = counter + 1;
     }
-    return i;
+    return counter;
 }
 
 // Take in a input as an array and return a random element from the array
@@ -112,45 +112,62 @@ void removeDuplicates(int array[], int size) {
     }
 }
 
+// Reverse an array
+void reverseArray(int array[], int size) {
+    int temp;
+    for (int i = 0; i < size / 2; i++) {
+        temp = array[i];
+        array[i] = array[size - i - 1];
+        array[size - i - 1] = temp;
+    }
+}
+
+// Sort an array
+void sortArray(int array[], int size) {
+    int temp;
+    for (int i = 0; i < size; i++) {
+        for (int j = i + 1; j < size; j++) {
+            if (array[i] > array[j]) {
+                temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+    }
+}
+
 int main() {
     // Create an array of integers
     int randomArray[5] = {19, 10, 8, 17, 9};
     // Get the length of the array
-    int lengthOfArray = getArrayLength(randomArray);
-    printf("%d\n", lengthOfArray);
+    printf("%d\n", getArrayLength(randomArray));
     // Get a random value from the array
-    int randomItem = randomElement(randomArray, 5);
-    printf("%d\n", randomItem);
+    printf("%d\n", randomElement(randomArray, 5));
     // Get the first element of the array
-    int firstValue = firstElement(randomArray, 5);
-    printf("%d\n", firstValue);
+    printf("%d\n", firstElement(randomArray, 5));
     // Get the last element of the array
-    int lastValue = lastElement(randomArray, 5);
-    printf("%d\n", lastValue);
+    printf("%d\n", lastElement(randomArray, 5));
     // Get cetain element of the array
-    int valueAtIndex = elementAtIndex(randomArray, 5, 2);
-    printf("%d\n", valueAtIndex);
+    printf("%d\n", elementAtIndex(randomArray, 5, 2));
     // Get the sum of all elements in the array
-    int sumOfArray = sumOfArrayElements(randomArray, 5);
-    printf("%d\n", sumOfArray);
+    printf("%d\n", sumOfArrayElements(randomArray, 5));
     // Get the average of all elements in the array
-    float averageOfArray = averageOfArrayElements(randomArray, 5);
-    printf("%f\n", averageOfArray);
+    printf("%f\n", averageOfArrayElements(randomArray, 5));
     // Get the minimum value in the array
-    int minimumValue = minimumValueInArray(randomArray, 5);
-    printf("%d\n", minimumValue);
+    printf("%d\n", minimumValueInArray(randomArray, 5));
     // Get the maximum value in the array
-    int maximumValue = maximumValueInArray(randomArray, 5);
-    printf("%d\n", maximumValue);
-    // Remove all the values from the array
-    clearArray(randomArray, 5);
+    printf("%d\n", maximumValueInArray(randomArray, 5));
     // Check if the array is empty
-    bool emptyArrayCheck = isArrayEmpty(randomArray, 5);
-    printf("%d\n", emptyArrayCheck);
+    printf("%d\n", isArrayEmpty(randomArray, 5));
     // Check if the array contains any duplicate values
-    bool duplicateCheck = containsDuplicates(randomArray, 5);
-    printf("%d\n", duplicateCheck);
+    printf("%d\n", containsDuplicates(randomArray, 5));
     // Remove all duplicate values from the array
     removeDuplicates(randomArray, 5);
+    // Reverse an array
+    reverseArray(randomArray, 5);
+    // Sort an array
+    sortArray(randomArray, 5);
+    // Remove all the values from the array
+    clearArray(randomArray, 5);
     return 0;
 }
