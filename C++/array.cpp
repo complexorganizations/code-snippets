@@ -58,6 +58,21 @@ bool arrayContainsDuplicates(int array[]) {
     return false;
 }
 
+// Remove all the duplicates values from an array
+void removeDuplicatesFromArray(int array[]) {
+    int counter = 0;
+    while (array[counter] != 0) {
+        int counter2 = counter + 1;
+        while (array[counter2] != 0) {
+            if (array[counter] == array[counter2]) {
+                array[counter2] = 0;
+            }
+            counter2 = counter2 + 1;
+        }
+        counter = counter + 1;
+    }
+}
+
 // Print all the values in an array.
 void printAllElmentsInArray(int array[]) {
     int counter = 0;
@@ -94,6 +109,8 @@ int main() {
     printf("Is the array not empty? %d\n", isArrayNotEmpty(userGenArray));
     // Check if the array contains any duplicates values.
     printf("Does the array contain duplicates? %d\n", arrayContainsDuplicates(userGenArray));
+    // Remove all the duplicates values from an array
+    removeDuplicatesFromArray(userGenArray);
     // Print all the values in an array.
     printAllElmentsInArray(userGenArray);
     // Remove all the values from an array.
