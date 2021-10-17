@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include "direct.h"
 
 // Get the current working directory.
