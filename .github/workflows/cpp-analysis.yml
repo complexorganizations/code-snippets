@@ -18,6 +18,6 @@ jobs:
           done
           for FILE_LIST in "${ALL_FILES_LIST[@]}"; do
             echo ${FILE_LIST}
-            clang++ ${FILE_LIST} -o ${FILE_LIST%.*}
+            clang++ -std=c++2a ${FILE_LIST} -o ${FILE_LIST%.*}
             ${FILE_LIST%.*}
           done
