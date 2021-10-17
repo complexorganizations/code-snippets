@@ -73,6 +73,39 @@ void removeDuplicatesFromArray(int array[]) {
     }
 }
 
+// Check if the array is sorted.
+bool isArraySorted(int array[]) {
+    int counter = 0;
+    while (array[counter] != 0) {
+        int counter2 = counter + 1;
+        while (array[counter2] != 0) {
+            if (array[counter] > array[counter2]) {
+                return false;
+            }
+            counter2 = counter2 + 1;
+        }
+        counter = counter + 1;
+    }
+    return true;
+}
+
+// Sort an array in ascending order.
+void sortArrayInAscendingOrder(int array[]) {
+    int counter = 0;
+    while (array[counter] != 0) {
+        int counter2 = counter + 1;
+        while (array[counter2] != 0) {
+            if (array[counter] > array[counter2]) {
+                int temp = array[counter];
+                array[counter] = array[counter2];
+                array[counter2] = temp;
+            }
+            counter2 = counter2 + 1;
+        }
+        counter = counter + 1;
+    }
+}
+
 // Print all the values in an array.
 void printAllElmentsInArray(int array[]) {
     int counter = 0;
@@ -111,6 +144,10 @@ int main() {
     printf("Does the array contain duplicates? %d\n", arrayContainsDuplicates(userGenArray));
     // Remove all the duplicates values from an array
     removeDuplicatesFromArray(userGenArray);
+    // Check if the array is sorted.
+    printf("Is the array sorted? %d\n", isArraySorted(userGenArray));
+    // Sort an array in ascending order.
+    sortArrayInAscendingOrder(userGenArray);
     // Print all the values in an array.
     printAllElmentsInArray(userGenArray);
     // Remove all the values from an array.
