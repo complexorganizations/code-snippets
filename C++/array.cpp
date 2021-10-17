@@ -115,6 +115,11 @@ void printAllElmentsInArray(int array[]) {
     }
 }
 
+// Get an random element from the array
+int getRandomElementFromArray(int array[]) {
+    return elementAtIndexInArray(array, rand() % getArrayLength(array));
+}
+
 // Remove all the values from an array.
 void removeAllValuesFromArray(int array[]) {
     int counter = 0;
@@ -150,6 +155,8 @@ int main() {
     sortArrayInAscendingOrder(userGenArray);
     // Print all the values in an array.
     printAllElmentsInArray(userGenArray);
+    // Get an random element from the array
+    printf("\nRandom Element: %d\n", getRandomElementFromArray(userGenArray));
     // Remove all the values from an array.
     removeAllValuesFromArray(userGenArray);
     // Return 0 to the operating system.
