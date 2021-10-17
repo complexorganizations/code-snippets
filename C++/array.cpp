@@ -146,6 +146,28 @@ int getSmallestValueInArray(int array[]) {
     return smallestValue;
 }
 
+// Get the average value of all the elements in an array.
+float getAverageValueOfArray(int array[]) {
+    int counter = 0;
+    int sum = 0;
+    while (array[counter] != 0) {
+        sum = sum + array[counter];
+        counter = counter + 1;
+    }
+    return (float) sum / counter;
+}
+
+// Get the sum of all the elements in an array.
+int getSumOfAllElementsInArray(int array[]) {
+    int counter = 0;
+    int sum = 0;
+    while (array[counter] != 0) {
+        sum = sum + array[counter];
+        counter = counter + 1;
+    }
+    return sum;
+}
+
 // Remove all the values from an array.
 void removeAllValuesFromArray(int array[]) {
     int counter = 0;
@@ -187,6 +209,10 @@ int main() {
     printf("Largest Value: %d\n", getLargestValueInArray(userGenArray));
     // Get the smallest value in the array
     printf("Smallest Value: %d\n", getSmallestValueInArray(userGenArray));
+    // Get the average value of all the elements in an array.
+    printf("Average Value: %f\n", getAverageValueOfArray(userGenArray));
+    // Get the sum of all the elements in an array.
+    printf("Sum of all the elements: %d\n", getSumOfAllElementsInArray(userGenArray));
     // Remove all the values from an array.
     removeAllValuesFromArray(userGenArray);
     // Return 0 to the operating system.
