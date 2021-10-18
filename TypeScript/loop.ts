@@ -9,6 +9,12 @@ function main(): void {
     continueLoop()
     // Loop Forever
     loopForever()
+    // Loop over a string
+    loopOverString()
+    // Loop over a map
+    loopOverMap()
+    // Loop over a array
+    loopOverArray()
 }
 
 main()
@@ -56,5 +62,32 @@ function loopForever(): void {
         if (loopCounter == 50) {
             break
         }
+    }
+}
+
+// Loop over a string
+function loopOverString(): void {
+    var str: string = "Hello World"
+    for (var i: number = 0; i < str.length; i++) {
+        console.log(str[i])
+    }
+}
+
+// Loop over a map
+function loopOverMap(): void {
+    var map: Map<string, number> = new Map<string, number>()
+    map.set("one", 1)
+    map.set("two", 2)
+    map.set("three", 3)
+    for (var [key, value] of map) {
+        console.log(key + ": " + value)
+    }
+}
+
+// Loop over a array
+function loopOverArray(): void {
+    var arr: number[] = [1, 2, 3]
+    for (var i: number = 0; i < arr.length; i++) {
+        console.log(arr[i])
     }
 }
