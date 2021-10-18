@@ -86,6 +86,11 @@ function map_example(): void {
 }
 
 // A simple example of a constant
+// Constants are immutable
+// Constants cannot be reassigned
+// Constants cannot be redeclared
+// Constants cannot be declared using the var keyword
+// Constants cannot be declared using the let keyword
 function constant_example(): void {
     const pi: number = 3.14
     console.log(pi)
