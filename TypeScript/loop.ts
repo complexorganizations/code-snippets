@@ -75,12 +75,12 @@ function loopOverString(): void {
 
 // Loop over a map
 function loopOverMap(): void {
-    var map: Map<string, number> = new Map<string, number>()
+    var map: Map<any, any> = new Map()
     map.set("one", 1)
     map.set("two", 2)
     map.set("three", 3)
-    for (var [key, value] of map) {
-        console.log(key + ": " + value)
+    for (var i: number = 0; i < map.size; i++) {
+        console.log(map.get(i))
     }
 }
 
