@@ -15,7 +15,7 @@ jobs:
           node-version: 16.x
       - name: Install dependencies
         run: |
-          npm install --global typescript
+          npm install --global typescript ts-node
           npm i @types/node
       - name: Run the code
         run: |
@@ -25,6 +25,5 @@ jobs:
             ADD_CONTENT=$(("${ADD_CONTENT}" + 1))
           done
           for FILE_LIST in "${ALL_FILES_LIST[@]}"; do
-            tsc ${FILE_LIST}
-            node ${FILE_LIST%.*}.js
+            ts-node ${FILE_LIST}
           done
