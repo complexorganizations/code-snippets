@@ -49,7 +49,7 @@ function checkIfFileIsValidJson(filePath: string): boolean {
 
 // Write some content to a specific file
 function writeToFile(fileName: string, content: string): void {
-    fs.writeFile(fileName, content, function (err) {
+    fs.writeFile(fileName, content, function (err: any): any {
         if (err) {
             return err
         }

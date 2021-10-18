@@ -83,7 +83,7 @@ function joinArray(array: string[], separator: string): string {
 // Remove all the empty elements from the array
 function removeEmptyElements(array: string[]): string[] {
     for (var i: number = 0; i < array.length; i++) {
-        if (array[i] == "") {
+        if (array[i].length == 0) {
             array.splice(i, 1)
         }
     }
