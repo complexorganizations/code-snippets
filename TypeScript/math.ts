@@ -1,82 +1,82 @@
 function main(): void {
     // Add two numbers and return the result
-    console.log(add(1, 2))
+    console.log(addTwoNumbers(1, 2))
     // Subtract two numbers and return the result
-    console.log(subtract(1, 2))
+    console.log(subtractTwoNumbers(1, 2))
     // Multiply two numbers and return the result
-    console.log(multiply(1, 2))
+    console.log(multiplyTwoNumbers(1, 2))
     // Divide two numbers and return the result
-    console.log(divide(1, 2))
+    console.log(divideTwoNumbers(1, 2))
     // Modulo two numbers and return the result
-    console.log(modulo(1, 2))
+    console.log(moduloTwoNumbers(1, 2))
     // Return the square root of a number
-    console.log(squareRoot(1))
+    console.log(squareRootOfNumber(1))
     // Return the cube root of a number
-    console.log(cubeRoot(1))
+    console.log(cubeRootOfNumber(64))
     // Return the nth root of a number
-    console.log(nthRoot(1, 2))
+    console.log(nthRootOfTwoNumbers(1, 2))
     // Return the factorial of a number
-    console.log(factorial(1))
+    console.log(factorialOfNumber(32))
     // Return the absolute value of a number
-    console.log(absoluteValue(1))
+    console.log(absoluteValueOfNumber(16))
     // Return the sine of an angle
-    console.log(sine(1))
+    console.log(sineOfNumber(1))
     // Return the cosine of an angle
-    console.log(cosine(1))
+    console.log(cosineOfNumber(1))
     // Return the tangent of an angle
-    console.log(tangent(1))
+    console.log(tangentOfNumber(1))
     // Return the arcsine of a number
-    console.log(arcsine(1))
+    console.log(arcsineOfNumber(1))
     // Return the arccosine of a number
-    console.log(arccosine(1))
+    console.log(arccosineOfNumber(1))
     // Return the arctangent of a number
-    console.log(arctangent(1))
+    console.log(arctangentOfNumber(1))
 }
 
 main()
 
 // Add two numbers and return the result
-function add(firstNumber: number, secondNumber: number): number {
+function addTwoNumbers(firstNumber: number, secondNumber: number): number {
     return firstNumber + secondNumber
 }
 
 // Subtract two numbers and return the result
-function subtract(firstNumber: number, secondNumber: number): number {
+function subtractTwoNumbers(firstNumber: number, secondNumber: number): number {
     return firstNumber - secondNumber
 }
 
 // Multiply two numbers and return the result
-function multiply(firstNumber: number, secondNumber: number): number {
+function multiplyTwoNumbers(firstNumber: number, secondNumber: number): number {
     return firstNumber * secondNumber
 }
 
 // Divide two numbers and return the result
-function divide(firstNumber: number, secondNumber: number): number {
+function divideTwoNumbers(firstNumber: number, secondNumber: number): number {
     return firstNumber / secondNumber
 }
 
 // Modulo two numbers and return the result
-function modulo(firstNumber: number, secondNumber: number): number {
+function moduloTwoNumbers(firstNumber: number, secondNumber: number): number {
     return firstNumber % secondNumber
 }
 
 // Return the square root of a number
-function squareRoot(firstValue: number): number {
+function squareRootOfNumber(firstValue: number): number {
     return Math.sqrt(firstValue)
 }
 
 // Return the cube root of a number
-function cubeRoot(firstValue: number): number {
+function cubeRootOfNumber(firstValue: number): number {
     return Math.cbrt(firstValue)
 }
 
 // Return the nth root of a number
-function nthRoot(firstValue: number, n: number): number {
+function nthRootOfTwoNumbers(firstValue: number, n: number): number {
     return Math.pow(firstValue, 1 / n)
 }
 
 // Return the factorial of a number
-function factorial(firstValue: number): number {
+function factorialOfNumber(firstValue: number): number {
     let result: number = 1
     for (let i: number = 1; i <= firstValue; i++) {
         result = result * i
@@ -85,36 +85,36 @@ function factorial(firstValue: number): number {
 }
 
 // Return the absolute value of a number
-function absoluteValue(firstValue: number): number {
+function absoluteValueOfNumber(firstValue: number): number {
     return Math.abs(firstValue)
 }
 
 // Return the sine of an angle
-function sine(angle: number): number {
+function sineOfNumber(angle: number): number {
     return Math.sin(angle)
 }
 
 // Return the cosine of an angle
-function cosine(angle: number): number {
+function cosineOfNumber(angle: number): number {
     return Math.cos(angle)
 }
 
 // Return the tangent of an angle
-function tangent(angle: number): number {
+function tangentOfNumber(angle: number): number {
     return Math.tan(angle)
 }
 
 // Return the arcsine of a number
-function arcsine(firstValue: number): number {
+function arcsineOfNumber(firstValue: number): number {
     return Math.asin(firstValue)
 }
 
 // Return the arccosine of a number
-function arccosine(firstValue: number): number {
+function arccosineOfNumber(firstValue: number): number {
     return Math.acos(firstValue)
 }
 
 // Return the arctangent of a number
-function arctangent(firstValue: number): number {
+function arctangentOfNumber(firstValue: number): number {
     return Math.atan(firstValue)
 }
