@@ -29,6 +29,8 @@ function main(): void {
     null_array_example()
     // A simple example of a symbol variable
     symbol_example()
+    // Global scope variables vs local scope variables
+    let_vs_var()
 }
 
 main()
@@ -143,4 +145,16 @@ function symbol_example(): void {
     console.log(name)
     var age: symbol = Symbol("30")
     console.log(age)
+}
+
+// Global scope variables vs local scope variables
+// Global scope variables are accessible from anywhere in the code
+// Local scope variables are only accessible from within the function
+function let_vs_var(): void {
+    // Using the var keyword we can create a global variable
+    var global_var: string = "Global variable"
+    console.log(global_var)
+    // Using the let keyword we can create a local variable
+    let local_var: string = "Local variable"
+    console.log(local_var)
 }
