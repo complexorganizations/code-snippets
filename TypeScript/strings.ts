@@ -25,6 +25,8 @@ function main(): void {
     console.log(currentString)
     // find and replace
     console.log(findAndReplaceInString(currentString, "John", "Adam"))
+    // Add two strings together
+    console.log(addTwoStrings(content, " World!"))
 }
 
 main()
@@ -88,4 +90,20 @@ function randomizeAString(str: string): string {
 // find and replace
 function findAndReplaceInString(oldString: string, searchString: string, newString: string): string {
     return oldString.replace(searchString, newString)
+}
+
+/*
+\' Escapes a single quote
+\" Escapes a double quote
+\\ Escapes a backslash
+\n Escapes a newline
+\r Escapes a carriage return
+\t Escapes a tab
+\b Escapes a backspace
+\f Escapes a form feed
+*/
+
+// Add two strings together
+function addTwoStrings(primaryString: string, secondaryString: string): string {
+    return primaryString + secondaryString
 }
