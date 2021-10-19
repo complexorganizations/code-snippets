@@ -35,7 +35,7 @@ function loopHundredTimes(): void {
 
 // Break out of the loop
 function breakLoop(): void {
-    for (var i: number = 0; i < 10; i++) {
+    for (var i: number = 0; i < 10; i = i + 1) {
         if (i == 5) {
             break
         }
