@@ -16,6 +16,8 @@ func main() {
 	fmt.Println(usersHomeDirectory())
 	// Check if the folder is empty
 	fmt.Println(isDirEmpty("/"))
+	// Create a folder in the system
+	createFolder("src")
 }
 
 // Check if a folder exists
@@ -65,4 +67,12 @@ func getFilesInFolder(folderPath string) []string {
 		log.Fatal(err)
 	}
 	return files
+}
+
+// Create a folder in the system.
+func createFolder(foldername string) {
+	err = os.Mkdir(foldername, 0755)
+	if err != nil {
+		log.Fatalf("Error: Failed to create %s directory.\n", foldername)
+	}
 }
