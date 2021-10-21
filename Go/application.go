@@ -15,7 +15,7 @@ func main() {
 func commandExists(cmd string) bool {
 	cmd, err := exec.LookPath(cmd)
 	if err != nil {
-		log.Printf("Error: The application %s was not found in the system.\n", cmd)
+		return false
 	}
 	return true
 }
