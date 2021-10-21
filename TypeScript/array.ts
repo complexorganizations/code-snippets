@@ -1,5 +1,5 @@
 function main(): void {
-    // Create a array of int
+    // Create a array of strings
     var user_generated_array: string[] = [
         "t",
         "b",
