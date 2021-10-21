@@ -35,7 +35,7 @@ function main(): void {
         "h",
         "g"
     ]
-    // Join the array
+    // Join the array of strings
     console.log(joinArray(user_generated_array, "-"))
     // Remove all the empty elements
     console.log(removeEmptyElements(user_generated_array))
