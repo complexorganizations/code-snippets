@@ -7,6 +7,8 @@ import (
 	"path/filepath"
 )
 
+var err error
+
 func main() {
 	// Check if the folder exists
 	fmt.Println(folderExists("/"))
@@ -18,6 +20,8 @@ func main() {
 	fmt.Println(isDirEmpty("/"))
 	// Create a folder in the system
 	createFolder("src")
+	// Delete a folder in the system
+	deleteFolder("src")
 }
 
 // Check if a folder exists
@@ -74,5 +78,13 @@ func createFolder(foldername string) {
 	err = os.Mkdir(foldername, 0755)
 	if err != nil {
 		log.Fatalf("Error: Failed to create %s directory.\n", foldername)
+	}
+}
+
+// Delete a folder in the system.
+func deleteFolder(foldername string) {
+	err = os.Remove(foldername)
+	if err != nil {
+		log.Fatalf("Error: Failed to delete %s directory.\n", foldername)
 	}
 }
