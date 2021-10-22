@@ -21,7 +21,12 @@ function main(): void {
     console.log(getFolderPermissions("/"))
     // Get the size of a folder
     console.log(getFolderSize("/"))
-
+    // Create a directory
+    createDirectory("test")
+    // Check the permission of a folder
+    console.log(checkFolderPermissions("test"))
+    // Remove a directory
+    removeDirectory("test")
 }
 
 main()
@@ -73,4 +78,19 @@ function getFolderPermissions(directory: string): number {
 // Get the size of a folder
 function getFolderSize(directory: string): number {
     return fs.statSync(directory).size
+}
+
+// Create a directory
+function createDirectory(directory: string): void {
+    fs.mkdirSync(directory)
+}
+
+// Remove a directory
+function removeDirectory(directory: string): void {
+    fs.rmdirSync(directory)
+}
+
+// Check the permission of a folder
+function checkFolderPermissions(directory: string):number {
+    return fs.statSync(directory).mode
 }
