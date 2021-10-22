@@ -1,71 +1,53 @@
 void main() {
-  int age;
-  age = 42;
+  // A simple if statement
+  simpleIfStatement();
+  // A simple if else statement
+  simpleIfElseStatement();
+  // A simple if elseif else statement
+  simpleIfElseIfElseStatement();
+  // A simple if statement inside a range
+  simpleIfStatementInRange();
+  // A simple if statement inside a range with a condition
+  sipleIfStatmentInsideFunction("Apple");
+  // Return a bool on a condition based on the answer provided.
+  isAnswerCorrect("Yes");
+}
 
-  if (age == 42) {
-    print(age);
+// A simple if statement
+void simpleIfStatement() {
+  const int firstValue = 10;
+  const int secondValue = 20;
+  if (firstValue == secondValue) {
+    print("They are both the same value.");
+  }
+}
+
+// A simple if else statement
+void simpleIfElseStatement() {
+  const int firstValue = 10;
+  const int secondValue = 20;
+  if (firstValue == secondValue) {
+    print("They are both the same value.");
   } else {
-    print("age is not ${age}");
+    print("They are not the same value.");
   }
+}
 
-  if (age > 18) {
-    print("You are old enough to vote!");
+// A simple if elseif else statement
+void simpleIfElseIfElseStatement() {
+  const int firstValue = 10;
+  const int secondValue = 20;
+  if (firstValue == secondValue) {
+    print("They are both the same value.");
+  } else if (firstValue > secondValue) {
+    print("The first value is greater than the second value.");
   } else {
-    print("You are not old enough to vote.");
-  }
-
-  // if statment inside a function
-  print(exampleIFStatement(0));
-
-  // another if statement inside a function
-  print(anotherIfStatement(1));
-
-  // function to loop over a range of numbers and than print certain numbers.
-  loop();
-
-  // bool to check if the user is verifed.
-  const bool isVerified = true;
-  if (isVerified) {
-    print("User is verified");
-  }
-
-  // Range of numbers
-  checkRange();
-
-  // another methord
-  testFunction();
-
-  // More
-  const int apple = 1;
-  const int banana = 1;
-  print(apple == banana);
-}
-
-// Return a bool
-bool exampleIFStatement(final int number) {
-  return number == 0;
-}
-
-// if statement for bool
-bool anotherIfStatement(final int number) {
-  if (number == 0) {
-    return true;
-  } else {
-    return false;
+    print("The second value is greater than the first value.");
   }
 }
 
-// Loop
-void loop() {
-  for (int i = 0; i < 10; i++) {
-    if (i == 5) {
-      print(i);
-    }
-  }
-}
-
-// Loop over a range.
-void checkRange() {
+// A simple if statement inside a range
+void simpleIfStatementInRange() {
   final Set<String> randomList = <String>{
     "one",
     "two",
@@ -78,30 +60,27 @@ void checkRange() {
     "nine",
     "ten"
   };
-
   for (final String number in randomList) {
     if (number == "five") {
       print(number);
     }
   }
+}
 
-  List<int> numberList;
-  numberList = <int>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  for (final int number in numberList) {
-    if (number == 5) {
-      print(number);
-    }
+// A simple if statement inside a function
+void sipleIfStatmentInsideFunction(final String value) {
+  if (value == "Apple") {
+    print("The value is Apple.");
+  } else {
+    print("The value is unknown.");
   }
 }
 
-void testFunction() {
-  // if statement inside of a for block.
-  for (int month = 1; month <= 12; month++) {
-    // Print out all the monthes.
-    print(month);
-    // If statemenet inside of a loop.
-    if (month == 5) {
-      print("The month is five.");
-    }
+// Return a bool on a condition based on the answer provided.
+bool isAnswerCorrect(final String answer) {
+  if (answer == "yes") {
+    return true;
+  } else {
+    return false;
   }
 }
