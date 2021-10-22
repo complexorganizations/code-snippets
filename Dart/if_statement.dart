@@ -10,7 +10,7 @@ void main() {
   // A simple if statement inside a range with a condition
   sipleIfStatmentInsideFunction("Apple");
   // Return a bool on a condition based on the answer provided.
-  isAnswerCorrect("Yes");
+  print(isAnswerCorrect("Yes"));
 }
 
 // A simple if statement
