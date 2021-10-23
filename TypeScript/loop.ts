@@ -1,5 +1,5 @@
 function main(): void {
-    // Loop 10 times
+    // Loop ten times
     loopTenTimes()
     // Loop 100 times
     loopHundredTimes()
