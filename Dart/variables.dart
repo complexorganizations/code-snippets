@@ -58,11 +58,11 @@ void simpleBoolExample() {
 // A simple example of a list or array
 void simpleListExample() {
   final List<String> list = <String>[
-    "Apple",
-    "Banana",
-    "Orange",
-    "Strawberry",
-    "Mango"
+    "Apple", // 0
+    "Banana", // 1
+    "Orange", // 2
+    "Strawberry", // 3
+    "Mango" // 4
   ];
   print(list);
   print(list[0]);
