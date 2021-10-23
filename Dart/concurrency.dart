@@ -1,3 +1,4 @@
+import "dart:core";
 import "dart:isolate";
 
 void main() {

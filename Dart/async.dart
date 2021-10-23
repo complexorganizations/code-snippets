@@ -1,4 +1,4 @@
-import "dart:async";
+import "dart:core";
 
 Future<void> main() async {
   final int x = await four();

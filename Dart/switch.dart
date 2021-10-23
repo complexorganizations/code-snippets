@@ -1,3 +1,5 @@
+import "dart:core";
+
 void main() {
   simpleSwitch("+");
   // more example

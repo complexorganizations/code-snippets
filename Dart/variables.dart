@@ -1,3 +1,5 @@
+import "dart:core";
+
 // Ways to declare a variable in dart.
 void main() {
   // Example of a string variable.

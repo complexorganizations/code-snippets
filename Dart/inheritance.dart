@@ -1,3 +1,5 @@
+import "dart:core";
+
 void main() {
   // Creating object of the child class
   final Parrot _ = Parrot()

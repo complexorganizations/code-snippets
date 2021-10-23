@@ -1,3 +1,5 @@
+import "dart:core";
+
 void main() {
   Crocodile().hunt("Zebra");
   Alligator().hunt("Fish");

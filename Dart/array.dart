@@ -1,3 +1,5 @@
+import "dart:core";
+
 void main() {
   // Create a array of strings
   final List<String> names = <String>["John", "Bob", "Alice"];

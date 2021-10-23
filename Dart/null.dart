@@ -1,3 +1,5 @@
+import "dart:core";
+
 void main() {
   // String to null
   nullString();

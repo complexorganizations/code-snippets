@@ -1,3 +1,5 @@
+import "dart:core";
+
 void main() {
   // The string we will use for this example.
   const String apple = "This is a random string";

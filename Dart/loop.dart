@@ -1,3 +1,5 @@
+import "dart:core";
+
 void main() {
   // Go up in value
   zeroToHundred();

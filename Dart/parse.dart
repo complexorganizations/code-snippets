@@ -1,3 +1,5 @@
+import "dart:core";
+
 void main() {
   // Parse a int and return it.
   final int i = int.parse("FF", radix: 16);

@@ -1,3 +1,5 @@
+import "dart:core";
+
 void main() {
   // Check two statements are equal.
   print(twoStatementEqual("Apple", "Apple"));

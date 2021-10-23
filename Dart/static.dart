@@ -1,3 +1,5 @@
+import "dart:core";
+
 class Position {
   int min = 1;
   int max = 100;

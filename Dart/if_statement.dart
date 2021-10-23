@@ -1,3 +1,5 @@
+import "dart:core";
+
 void main() {
   // A simple if statement
   simpleIfStatement();

@@ -1,3 +1,5 @@
+import "dart:core";
+
 void main() {
   foo(1);
   bar("This is a random string that we will print.");

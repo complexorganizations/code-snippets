@@ -1,3 +1,5 @@
+import "dart:core";
+
 void main() {
   // Set the content for the class
   final Employee content = Employee()
