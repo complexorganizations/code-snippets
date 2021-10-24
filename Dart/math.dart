@@ -64,3 +64,21 @@ num getPower(final double number, final double power) {
 double getPi() {
   return pi;
 }
+
+
+/*
+int value = 1;
+value++ // value = value + 1 = 2
+value-- // value = value - 1 = 1
+value += 2 // value = value + 2 = 3
+value -= 2 // value = value - 2 = 1
+value *= 2 // value = value * 2 = 2
+value /= 2 // value = value / 2 = 1
+value %= 2 // value = value % 2 = 1
+value <<= 2 // value = value << 2 = 4
+value >>= 2 // value = value >> 2 = 1
+value &= 2 // value = value & 2 = 0
+value |= 2 // value = value | 2 = 3
+value ^= 2 // value = value ^ 2 = 1
+~value // value = ~value = -2
+*/

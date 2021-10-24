@@ -19,14 +19,14 @@ void main() {
 
 // Loop from 0 to 100
 void zeroToHundred() {
-  for (int loop = 0; loop <= 100; loop++) {
+  for (int loop = 0; loop <= 100; loop = loop + 1) {
     print(loop);
   }
 }
 
 // Loop from 100 to 0
 void hundredToZero() {
-  for (int hole = 100; hole >= 0; hole--) {
+  for (int hole = 100; hole >= 0; hole = hole - 1) {
     print(hole);
   }
 }
