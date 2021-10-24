@@ -2,11 +2,10 @@ import "dart:core";
 
 void main() {
   // Create a basic map
-  final Map<dynamic, dynamic> simpleMap = <dynamic, dynamic>{
-    "first_name": "John",
-    "last_name": "Doe",
-  };
+  final Map<dynamic, dynamic> simpleMap = <dynamic, dynamic>{};
   // Add a new entry to the map
+  addToMap(simpleMap, "first_name", "John");
+  addToMap(simpleMap, "last_name", "Doe");
   addToMap(simpleMap, "age", 30);
   // Remove an entry from the map
   removeFromMap(simpleMap, "last_name");
