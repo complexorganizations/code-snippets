@@ -7,6 +7,9 @@ void main() {
   addToMap(simpleMap, "first_name", "John");
   addToMap(simpleMap, "last_name", "Doe");
   addToMap(simpleMap, "age", 30);
+  addToMap(simpleMap, "is_married", false);
+  addToMap(simpleMap, "gender", "male");
+  addToMap(simpleMap, "some_value", "some_key");
   // Remove an entry from the map
   removeFromMap(simpleMap, "last_name");
   // Get the value of an entry
