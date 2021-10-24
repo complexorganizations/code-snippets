@@ -27,6 +27,8 @@ void main() {
   print(isMapNotEmpty(simpleMap));
   // Get the size of the map
   print(getMapSize(simpleMap));
+  // Loop through all the entries in the map.
+  forEachMapEntry(simpleMap);
   // Remove all entries from the map
   clearMap(simpleMap);
 }
@@ -51,10 +53,7 @@ Map<dynamic, dynamic> removeFromMap(
 }
 
 // Get the value of a key from the map
-dynamic getValueFromMap(
-  final Map<dynamic, dynamic> map,
-  final String key,
-) {
+dynamic getValueFromMap(final Map<dynamic, dynamic> map, final String key) {
   return map[key];
 }
 
@@ -99,6 +98,13 @@ bool isMapNotEmpty(final Map<dynamic, dynamic> map) {
 // Get the size of the map.
 int getMapSize(final Map<dynamic, dynamic> map) {
   return map.length;
+}
+
+// Loop through all the entries in the map.
+void forEachMapEntry(final Map<dynamic, dynamic> map) {
+  map.forEach((final dynamic key, final dynamic value) {
+    print("${key}: ${value}");
+  });
 }
 
 // Remove all the key value pair from the map
