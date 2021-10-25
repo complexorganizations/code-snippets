@@ -2,7 +2,7 @@
 use std::env;
 
 fn main() {
-    // Get the current working directory
+    // Get the current working directory.
     println!("{}", get_cwd());
     // Create a new directory
     create_directory("folder_one/");
