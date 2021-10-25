@@ -9,8 +9,11 @@ jobs:
     steps:
       - name: Check out code into the directory
         uses: actions/checkout@v2
-      - name: Update Rust
+      - name: Install rust nightly
         run: |
+          rustup toolchain install nightly
+          rustup run nightly rustc --version
+          rustup default nightly
           rustup update
       - name: Install dependencies
         run: |
