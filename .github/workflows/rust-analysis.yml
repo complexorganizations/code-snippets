@@ -9,9 +9,11 @@ jobs:
     steps:
       - name: Check out code into the directory
         uses: actions/checkout@v2
+      - name: Update Rust
+        run: |
+          rustup update
       - name: Install dependencies
         run: |
-          rustup --version
           rustup component add clippy miri
       - name: Run the code
         run: |
