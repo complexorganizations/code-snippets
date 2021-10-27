@@ -43,10 +43,29 @@ void stringSwitch() {
     }
 }
 
+// Another example of a switch statement based on a value provided by the function receiver.
+void reciverSwitchExample(int content) {
+    switch (content) {
+        case 1:
+            printf("1");
+            break;
+        case 2:
+            printf("2");
+            break;
+        case 3:
+            printf("3");
+            break;
+        default:
+            printf("The default value.");
+    }
+}
+
 int main() {
     // A simple switch statement with ints
     integerSwitch();
     // A simple switch statement with strings
     stringSwitch();
+    // Simple example of a switch statement based on function receiver.
+    reciverSwitchExample(2);
     return 0;
 }
