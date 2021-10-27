@@ -104,7 +104,7 @@ func indexValueInArray(cointains string, originalArray []string) int {
 			return indexValue
 		}
 	}
-	return 0
+	return -1
 }
 
 // Find and replace inside a string
