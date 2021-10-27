@@ -3,6 +3,8 @@ import "dart:core";
 void main() {
   // A simple if statement
   simpleIfStatement();
+  // If statement with assert
+  simpleIfStatementWithAssert();
   // A simple if else statement
   simpleIfElseStatement();
   // A simple if elseif else statement
@@ -22,6 +24,13 @@ void simpleIfStatement() {
   if (firstValue == secondValue) {
     print("They are both the same value.");
   }
+}
+
+// If statement with assert
+void simpleIfStatementWithAssert() {
+  const int firstValue = 10;
+  const int secondValue = 20;
+  assert(firstValue == secondValue, "Both values are the same.");
 }
 
 // A simple if else statement

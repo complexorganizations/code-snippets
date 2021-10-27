@@ -19,6 +19,8 @@ void main() {
   print(convertStringToInt("123"));
   // Get the length of a string.
   print(getStringLength(apple));
+  // Example of a raw string.
+  print(r"This is a \n raw string.");
 }
 
 // Check if a certain string contains a certain substring.
