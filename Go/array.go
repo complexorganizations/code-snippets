@@ -82,7 +82,7 @@ func indexValueInArray(cointains string, originalArray []string) int {
 			return indexValue
 		}
 	}
-	return 0
+	return -1
 }
 
 // Remove all the empty elements in a array.
