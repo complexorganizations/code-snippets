@@ -165,7 +165,7 @@ func removeAllKeysFromMap(userMap map[string]int) {
 // Get the ammount of keys in the map.
 func getMapKeysSize(userMap map[string]int) int {
 	counter := 0
-	for keyInMap, _ := range userMap {
+	for keyInMap := range userMap {
 		counter = counter + 1
 		_ = keyInMap
 	}
