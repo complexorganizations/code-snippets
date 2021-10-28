@@ -77,6 +77,10 @@ void main() {
   print(elementAfterIndex(newList, 3));
   // Get the element before a certain index of a list
   print(elementBeforeIndex(newList, 3));
+  // Get all the elements after a certain index of a list
+  print(getAllElementsAfterIndex(newList, 3));
+  // Get all the elements before a certain index of a list
+  print(getAllElementsBeforeIndex(newList, 3));
   // Check if a list is empty
   print(isArrayEmpty(newList));
   // Check if a list is not empty
@@ -172,6 +176,22 @@ dynamic elementAfterIndex(final List<dynamic> arrayContent, final int index) {
 // Get the element before a certain index of a list.
 dynamic elementBeforeIndex(final List<dynamic> arrayContent, final int index) {
   return arrayContent[index - 1];
+}
+
+// Get all the elements after a certain index of a list
+List<dynamic> getAllElementsAfterIndex(
+  final List<dynamic> arrayContent,
+  final int index,
+) {
+  return arrayContent.sublist(index + 1);
+}
+
+// Get all the elements before a certain index of a list
+List<dynamic> getAllElementsBeforeIndex(
+  final List<dynamic> arrayContent,
+  final int index,
+) {
+  return arrayContent.sublist(0, index);
 }
 
 // Check if the array is empty.
