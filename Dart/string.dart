@@ -21,6 +21,8 @@ void main() {
   print(getStringLength(apple));
   // Example of a raw string.
   print(r"This is a \n raw string.");
+  // Get the first 3 characters of a value.
+  print(getCertainLength(apple, 3));
 }
 
 // Check if a certain string contains a certain substring.
@@ -49,8 +51,8 @@ int getIndexOfSubstring(final String content, final String search) {
 }
 
 // Convert an int to a string.
-String convertIntToString(final int number) {
-  return number.toString();
+String convertIntToString(final int content) {
+  return content.toString();
 }
 
 // Convert a string to an int.
@@ -61,4 +63,9 @@ int convertStringToInt(final String number) {
 // Get the length of a string.
 int getStringLength(final String content) {
   return content.length;
+}
+
+// Get the first certain length of a given string
+String getCertainLength(final String content, final int lentgh) {
+  return content.substring(0, lentgh);
 }
