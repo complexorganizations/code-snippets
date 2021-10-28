@@ -28,9 +28,10 @@ void simpleIfStatement() {
 
 // If statement with assert
 void simpleIfStatementWithAssert() {
-  const int firstValue = 10;
+  const int firstValue = 20;
   const int secondValue = 20;
-  assert(firstValue == secondValue, "Both values are the same.");
+  // Assert is used to check if the condition is true or false.
+  assert(firstValue != secondValue, "Both values not are the same.");
 }
 
 // A simple if else statement
