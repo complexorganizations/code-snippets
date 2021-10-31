@@ -3,19 +3,22 @@ import "dart:math";
 
 void main() {
   // Random number between two numbers
-  print(getRandInt(1, 100));
-  // Generate a random string
-  print(getRandomString(10));
+  print(randomIntBetweenNumbers(1, 100));
+  // Generate a random string of a given length.
+  print(generateRandomString(10));
+  // Get a random int between 0 and a given number.
+  print(randomIntBetweenZeroAndNumber(10));
+  // Generate a random boolean value.
+  print(generateRandomBoolean());
 }
 
 // Get a random number between a given range.
-int getRandInt(final int min, final int max) {
-  final dynamic random = Random.secure();
-  return random.nextInt(max - min);
+int randomIntBetweenNumbers(final int min, final int max) {
+  return Random.secure().nextInt(max - min) + min;
 }
 
 // Generate a random string of a given length.
-String getRandomString(final int length) {
+String generateRandomString(final int length) {
   const String characterList =
       "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
   final StringBuffer buffer = StringBuffer();
@@ -23,4 +26,14 @@ String getRandomString(final int length) {
     buffer.write(characterList[Random.secure().nextInt(characterList.length)]);
   }
   return buffer.toString();
+}
+
+// Get a random int between 0 and a given number.
+int randomIntBetweenZeroAndNumber(final int max) {
+  return Random.secure().nextInt(max);
+}
+
+// Generate a random boolean value.
+bool generateRandomBoolean() {
+  return Random.secure().nextBool();
 }
