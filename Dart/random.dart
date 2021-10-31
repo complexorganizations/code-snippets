@@ -10,6 +10,8 @@ void main() {
   print(randomIntBetweenZeroAndNumber(10));
   // Generate a random boolean value.
   print(generateRandomBoolean());
+  // Generate a random double.
+  print(generateRandomDouble());
 }
 
 // Get a random number between a given range.
@@ -36,4 +38,9 @@ int randomIntBetweenZeroAndNumber(final int max) {
 // Generate a random boolean value.
 bool generateRandomBoolean() {
   return Random.secure().nextBool();
+}
+
+// Generate a random double
+double generateRandomDouble() {
+  return Random.secure().nextDouble();
 }
