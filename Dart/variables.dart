@@ -15,12 +15,12 @@ void main() {
   // Example of a map variable.
   simpleMapExample();
   // Get the runtime type of the content
-  print(getRuntimeType("Hello, World!"));
-  print(getRuntimeType(1));
-  print(getRuntimeType(1.0));
-  print(getRuntimeType(true));
-  print(getRuntimeType(<String>["Hello", "World"]));
-  print(getRuntimeType(<String, String>{"Hello": "World"}));
+  print(getRuntimeType("Hello, World!")); // String
+  print(getRuntimeType(1)); // int
+  print(getRuntimeType(1.0)); // double
+  print(getRuntimeType(true)); // bool
+  print(getRuntimeType(<String>["Hello", "World"])); // Array
+  print(getRuntimeType(<String, String>{"Hello": "World"})); // Map
 }
 
 // A simple example of a string
