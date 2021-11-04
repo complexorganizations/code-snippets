@@ -22,4 +22,5 @@ jobs:
           done
           for FILE_LIST in "${ALL_FILES_LIST[@]}"; do
             echo ${FILE_LIST}
+            dotnet run
           done
