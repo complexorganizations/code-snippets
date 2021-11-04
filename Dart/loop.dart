@@ -15,6 +15,8 @@ void main() {
   loopForever();
   // Loop while
   whileLoop();
+  // Bool while loop.
+  boolWhileLoop();
 }
 
 // Loop from 0 to 100
@@ -79,5 +81,14 @@ void whileLoop() {
   while (i < 5) {
     print(i);
     i = i + 1;
+  }
+}
+
+// Another example of a while loop.
+void boolWhileLoop() {
+  bool isTrue = true;
+  while (isTrue) {
+    print(isTrue);
+    isTrue = false;
   }
 }
