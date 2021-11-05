@@ -2,10 +2,7 @@
 
 Console.WriteLine("Hello, World!");
 
-/*
-This
-is
-a
-multi-line
-comment
+/* 
+This is a multi-line
+comment.
 */
