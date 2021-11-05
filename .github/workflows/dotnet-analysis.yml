@@ -16,13 +16,13 @@ jobs:
           include-prerelease: true
       - name: Run the code
         run: |
+          mkdir -p C#/Build/
+          mv C#\C#.csproj C#\Build\
           ALL_FILES_IN_DIRECTORY=$(find C#/ -type f -name "*.cs")
           for CURRENT_FILE_IN_DIRECTORY in ${ALL_FILES_IN_DIRECTORY}; do
             ALL_FILES_LIST[${ADD_CONTENT}]=${CURRENT_FILE_IN_DIRECTORY}
             ADD_CONTENT=$(("${ADD_CONTENT}" + 1))
           done
-          mkdir -p C#/Build/
-          mv C#\C#.csproj C#\Build\
           for FILE_LIST in "${ALL_FILES_LIST[@]}"; do
             echo ${FILE_LIST}
             mv ${FILE_LIST} C#/Build/
