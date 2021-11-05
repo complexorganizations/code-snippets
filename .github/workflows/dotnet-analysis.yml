@@ -17,7 +17,7 @@ jobs:
       - name: Run the code
         run: |
           mkdir -p C#/Build/
-          mv C#\C#.csproj C#\Build\
+          mv C#/C#.csproj C#/Build/
           ALL_FILES_IN_DIRECTORY=$(find C#/ -type f -name "*.cs")
           for CURRENT_FILE_IN_DIRECTORY in ${ALL_FILES_IN_DIRECTORY}; do
             ALL_FILES_LIST[${ADD_CONTENT}]=${CURRENT_FILE_IN_DIRECTORY}
@@ -27,5 +27,5 @@ jobs:
             echo ${FILE_LIST}
             mv ${FILE_LIST} C#/Build/
             dotnet run --project C#/Build/
-            mv C#/Build/${FILE_LIST} C#/${FILE_LIST}
+            rm -f **C#/Build/*.cs
           done
