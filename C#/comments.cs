@@ -5,4 +5,6 @@ Console.WriteLine("Hello, World!");
 /* 
 This is a multi-line
 comment.
+
+Also known as a block comment.
 */
