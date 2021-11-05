@@ -22,9 +22,10 @@ jobs:
             ADD_CONTENT=$(("${ADD_CONTENT}" + 1))
           done
           mkdir -p C#/Build/
+          mv C#\C#.csproj C#\Build\
           for FILE_LIST in "${ALL_FILES_LIST[@]}"; do
             echo ${FILE_LIST}
             mv ${FILE_LIST} C#/Build/
             dotnet run --project C#/Build/
-            rm -f C#/Build/${FILE_LIST}
+            mv C#/Build/${FILE_LIST} C#/${FILE_LIST}
           done
