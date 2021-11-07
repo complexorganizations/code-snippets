@@ -1,13 +1,13 @@
 import "dart:core";
 
 void main() {
-  foo(1);
-  bar("This is a random string that we will print.");
-  testCondition("Valid");
-  add(2, 3);
-  multiply(4, 5);
-  print(test());
-  print(tools("This is a random string"));
+  noReturnSingleInput(1);
+  zeroReturnSingleInput("This is a random string that we will print.");
+  testAIfCondtion("Valid");
+  noReturnsTwoInput(2, 3);
+  zeroReturnsMultiply(4, 5);
+  print(returnAString());
+  print(returnInputString("This is a random string"));
   print(exampleIFStatement(1));
   print(anotherIfStatement(0));
   print(returnMultipleValues());
@@ -17,17 +17,17 @@ void main() {
 }
 
 // Variable inside a string
-void foo(final int randomNumber) {
+void noReturnSingleInput(final int randomNumber) {
   print("The random number is ${randomNumber}");
 }
 
 // Passing a variable to a function
-void bar(final String randomString) {
+void zeroReturnSingleInput(final String randomString) {
   print(randomString);
 }
 
 // if condition test
-void testCondition(final String condition) {
+void testAIfCondtion(final String condition) {
   if (condition == "Valid") {
     print("This is true");
   } else {
@@ -36,22 +36,22 @@ void testCondition(final String condition) {
 }
 
 // Add two numbers
-void add(final int firstNumber, final int secondNumber) {
+void noReturnsTwoInput(final int firstNumber, final int secondNumber) {
   print(firstNumber + secondNumber);
 }
 
 // Mulitply two numbers
-void multiply(final int firstNumber, final int secondNumber) {
+void zeroReturnsMultiply(final int firstNumber, final int secondNumber) {
   print(firstNumber * secondNumber);
 }
 
 // Return a string
-String test() {
+String returnAString() {
   return "Hello, World!";
 }
 
 // Return a string
-String tools(final String message) {
+String returnInputString(final String message) {
   return message;
 }
 
