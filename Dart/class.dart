@@ -4,7 +4,6 @@ void main() {
   // Set the content for the class
   final Employee content = Employee()
     ..name = "John Doe"
-    ..age = 30
     ..salary = 45000.50
     ..isMarried = false
     ..functionInsideClass();
@@ -16,9 +15,10 @@ void main() {
   print(content.returnInsideFunction(1, 2));
 }
 
+// Create a class
 class Employee {
   String? name;
-  int? age;
+  int age = 10;
   double? salary;
   bool? isMarried;
 

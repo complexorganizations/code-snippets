@@ -15,6 +15,8 @@ void main() {
   nullMap();
   // variable to null
   nullVariable();
+  // Null aware operator
+  nullAwareOperator();
 }
 
 // A string as nullable.
@@ -71,4 +73,11 @@ void nullVariable() {
   print(person);
   person = "John Doe";
   print(person);
+}
+
+// A null aware operator.
+void nullAwareOperator() {
+  String? name;
+  name ??= "John";
+  print(name);
 }

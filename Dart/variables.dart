@@ -21,6 +21,8 @@ void main() {
   print(getRuntimeType(true)); // bool
   print(getRuntimeType(<String>["Hello", "World"])); // Array
   print(getRuntimeType(<String, String>{"Hello": "World"})); // Map
+  // A simple example of a empty variable
+  simpleEmptyExample();
 }
 
 // A simple example of a string
@@ -83,4 +85,10 @@ void simpleMapExample() {
 // Get the runtime type of a variable.
 String getRuntimeType(final dynamic value) {
   return value.runtimeType.toString();
+}
+
+// A simple example of a empty variable
+void simpleEmptyExample() {
+  String? firstName;
+  print(firstName);
 }
