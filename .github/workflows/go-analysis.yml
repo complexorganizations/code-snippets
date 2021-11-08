@@ -15,7 +15,7 @@ jobs:
           go-version: 1.17
       - name: Run the code
         run: |
-          ALL_FILES_IN_DIRECTORY=$(find . -type f -name "*.go")
+          ALL_FILES_IN_DIRECTORY=$(find Go/ -type f -name "*.go")
           for CURRENT_FILE_IN_DIRECTORY in ${ALL_FILES_IN_DIRECTORY}; do
             ALL_FILES_LIST[${ADD_CONTENT}]=${CURRENT_FILE_IN_DIRECTORY}
             ADD_CONTENT=$(("${ADD_CONTENT}" + 1))
