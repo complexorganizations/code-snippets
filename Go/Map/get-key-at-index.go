@@ -31,5 +31,5 @@ func getKeyAtIndexInMap(providedMap map[string]string, index int) string {
 		counter = counter + 1
 	}
 	// Return an empty string.
-	return ""
+	return "-1"
 }
