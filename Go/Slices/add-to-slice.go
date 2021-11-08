@@ -8,7 +8,7 @@ func main() {
 	// Create a slice of strings
 	var randomSlice []string
 	// Append some values to the slice
-	randomSlice = appendToSlice(randomSlice, "Hello")
+	fmt.Println(appendToSlice(randomSlice, "Hello"))
 }
 
 // Append some string to a slice and than return the slice.
