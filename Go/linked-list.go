@@ -30,8 +30,8 @@ func main() {
 }
 
 // Add a new element to the end of the linked list.
-func addAtEndOfLinkedList(linkedList *list.List, value int) {
-	linkedList.PushBack(value)
+func addAtEndOfLinkedList(linkedList *list.List, value int) *list.Element {
+	return linkedList.PushBack(value)
 }
 
 // Add a new element to the start of the linked list.
