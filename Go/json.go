@@ -32,7 +32,7 @@ func main() {
 	// Check if a json file is valid.
 	validCheck, err := validateJsonFromFile("foo.json")
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalln(err)
 	}
 	fmt.Println(validCheck)
 }

@@ -15,7 +15,7 @@ func main() {
 func isDirectoryEmpty(path string) bool {
 	files, err := os.ReadDir(path)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalln(err)
 	}
 	return len(files) == 0
 }

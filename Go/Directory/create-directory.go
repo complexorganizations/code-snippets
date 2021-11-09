@@ -1,8 +1,8 @@
 package main
 
 import (
-	"os"
 	"log"
+	"os"
 )
 
 func main() {
@@ -14,6 +14,6 @@ func main() {
 func createDirectory(path string) {
 	err := os.Mkdir(path, os.ModePerm)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalln(err)
 	}
 }

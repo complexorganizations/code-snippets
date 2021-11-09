@@ -41,7 +41,7 @@ func main() {
 	// Validate all the SSL Certs
 	valid, err := validateSSLCert("https://www.google.com")
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalln(err)
 	}
 	fmt.Println(valid)
 	// Check if the ip is valid
@@ -83,7 +83,7 @@ func main() {
 	// Get a list of all IP addresses in a given subnet.
 	ips, err := cidrToIP("10.0.0.0/24")
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalln(err)
 	}
 	fmt.Println(ips)
 }
@@ -138,7 +138,7 @@ func pingAnIP(methord string, ip string, port string) bool {
 func validateSSLCert(hostname string) (bool, error) {
 	parsedURL, err := url.Parse(hostname)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalln(err)
 	}
 	parsedHostname := fmt.Sprint(parsedURL.Hostname())
 	callTCP, err := tls.Dial("tcp", parsedHostname+":443", nil)
