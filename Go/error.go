@@ -27,6 +27,7 @@ func handleAllErrors(err error) {
 	}
 }
 
-/* Note: There are alternative ways to handle errors in Go,
+/* Note:
+There are alternative ways to handle errors in Go,
 but they aren't encouraged since they complicate the code and make it less understandable.
 */
