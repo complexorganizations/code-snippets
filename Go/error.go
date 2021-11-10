@@ -5,24 +5,28 @@ import (
 	"os"
 )
 
+var (
+	err error
+)
+
 func main() {
-	// Handle all the errors in a single place
-	err := os.Remove("error.go")
-	handleError(err)
-	// Handle one error at a time
-	err = os.Remove("error.go")
+	// Handle all errors in a single unified way.
+	err = os.Remove("/tmp/file")
+	handleAllErrors(err)
+	// Handle errors case by case.
+	err = os.Remove("/tmp/file")
 	if err != nil {
 		log.Println(err)
-	}
-	// Exit the program if an error occurs
-	err = os.Remove("error.go")
-	if err != nil {
-		os.Exit(0)
 	}
 }
 
-func handleError(err error) {
+// Handle all errors in a single unified way.
+func handleAllErrors(err error) {
 	if err != nil {
 		log.Println(err)
 	}
 }
+
+/* Note: There are alternative ways to handle errors in Go,
+but they aren't encouraged since they complicate the code and make it less understandable.
+*/
