@@ -23,7 +23,7 @@ func sha256OfFile(filePath string) string {
 	io.Copy(hash, file)
 	err = file.Close()
 	if err != nil {
-		log.Println(err)
+		log.Fatalln(err)
 	}
 	return string(hash.Sum(nil))
 }

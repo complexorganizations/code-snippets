@@ -13,6 +13,6 @@ func main() {
 func removeDirectory(dir string) {
 	err := os.RemoveAll(dir)
 	if err != nil {
-		log.Println(err)
+		log.Fatalln(err)
 	}
 }

@@ -20,7 +20,7 @@ func main() {
 	}
 	currentJson, err := json.Marshal(group)
 	if err != nil {
-		log.Println(err)
+		log.Fatalln(err)
 	}
 	fmt.Println(CurrentJson)
 }

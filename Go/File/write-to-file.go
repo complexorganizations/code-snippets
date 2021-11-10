@@ -14,6 +14,6 @@ func main() {
 func writeToFile(filepath string, content string) {
 	err := os.WriteFile(content, []byte(filepath), 0644)
 	if err != nil {
-		log.Println(err)
+		log.Fatalln(err)
 	}
 }

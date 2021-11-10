@@ -15,7 +15,7 @@ func main() {
 	// Split a ip address and port number
 	returnIP, port, err := splitPortFromIP("1.1.1.1:8080")
 	if err != nil {
-		log.Println(err)
+		log.Fatalln(err)
 	}
 	fmt.Println(returnIP)
 	fmt.Println(port)
@@ -67,7 +67,7 @@ func main() {
 	// Check if a certain ip in a cidr range.
 	firstCheck, err := cidrRangeContains("10.0.0.0/24", "10.0.0.1")
 	if err != nil {
-		log.Println(err)
+		log.Fatalln(err)
 	}
 	fmt.Println(firstCheck)
 	// Check if a specific IP address is in a range of cidr.
@@ -77,7 +77,7 @@ func main() {
 	}
 	check, err := isIPinCIDR(cidrRange, "127.0.0.1")
 	if err != nil {
-		log.Println(err)
+		log.Fatalln(err)
 	}
 	fmt.Println(check)
 	// Get a list of all IP addresses in a given subnet.

@@ -16,14 +16,14 @@ func main() {
 	// Handle errors case by case.
 	err = os.Remove("/tmp/file")
 	if err != nil {
-		log.Println(err)
+		log.Fatalln(err)
 	}
 }
 
 // Handle all errors in a single unified way.
 func handleAllErrors(err error) {
 	if err != nil {
-		log.Println(err)
+		log.Fatalln(err)
 	}
 }
 

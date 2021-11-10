@@ -16,15 +16,15 @@ func main() {
 func getDataFromURL(uri string) []byte {
 	response, err := http.Get(uri)
 	if err != nil {
-		log.Println(err)
+		log.Fatalln(err)
 	}
 	body, err := io.ReadAll(response.Body)
 	if err != nil {
-		log.Println(err)
+		log.Fatalln(err)
 	}
 	err = response.Body.Close()
 	if err != nil {
-		log.Println(err)
+		log.Fatalln(err)
 	}
 	return body
 }
