@@ -7,7 +7,7 @@ import (
 
 func main() {
 	// Remove a file
-	removeFile("foo.txt")
+	removeFile("bar.txt")
 }
 
 // Remove a file from the file system
