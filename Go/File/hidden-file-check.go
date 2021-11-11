@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"syscall"
 	"strings"
 )
 
@@ -18,6 +17,7 @@ func hiddenFileUsingExtension(path string) bool {
 	return strings.HasPrefix(path, ".")
 }
 
+/*
 // Check if the file is hidden using windows API
 func hiddenWindowsFile(filename string) bool {
 	pointer, err := syscall.UTF16PtrFromString(filename)
@@ -30,3 +30,4 @@ func hiddenWindowsFile(filename string) bool {
 	}
 	return attributes&syscall.FILE_ATTRIBUTE_HIDDEN != 0
 }
+*/
