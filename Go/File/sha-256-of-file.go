@@ -25,5 +25,5 @@ func sha256OfFile(filePath string) string {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	return string(hash.Sum(nil))
+	return fmt.Sprintf("%x", hash.Sum(nil))
 }
