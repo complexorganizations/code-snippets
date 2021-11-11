@@ -9,7 +9,7 @@ func main() {
 	// Check if the file is hidden using file extension prefix
 	fmt.Println(hiddenFileUsingExtension("foo.txt"))
 	// Check if the file is hidden using windows API
-	fmt.Println(hiddenWindowsFile("foo.txt"))
+	// fmt.Println(hiddenWindowsFile("foo.txt")) // This will not work on non-windows systems
 }
 
 // Check if the file is hidden using file extension prefix
