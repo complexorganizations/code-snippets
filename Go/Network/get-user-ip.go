@@ -6,12 +6,12 @@ import (
 	"log"
 	"net"
 	"net/http"
-	"os"
+	//"os"
 )
 
 func main() {
 	http.HandleFunc("/", helloHandler)
-	os.Exit(0) // Remove this line; it's there to ensure that automated testing doesn't continue on indefinitely.
+	//os.Exit(0) // Remove this line; it's there to ensure that automated testing doesn't continue on indefinitely.
 	// Listen and serve on port 8080.
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
@@ -29,13 +29,14 @@ func helloHandler(writer http.ResponseWriter, request *http.Request) {
 
 // Get the IP address of the user connected to the server.
 func geIPFromHTTP(request *http.Request) net.IP {
-	if len(request.Header.Get("CF-Connecting-IP")) > 1 {
+	switch {
+	case len(request.Header.Get("CF-Connecting-IP")) > 1:
 		return net.ParseIP(request.Header.Get("CF-Connecting-IP"))
-	} else if len(request.Header.Get("X-Forwarded-For")) > 1 {
+	case len(request.Header.Get("X-Forwarded-For")) > 1:
 		return net.ParseIP(request.Header.Get("X-Forwarded-For"))
-	} else if len(request.Header.Get("X-Real-IP")) > 1 {
+	case len(request.Header.Get("X-Real-IP")) > 1:
 		return net.ParseIP(request.Header.Get("X-Real-IP"))
-	} else {
+	default:
 		returnIP, _, err := net.SplitHostPort(request.RemoteAddr)
 		if err != nil {
 			return nil
