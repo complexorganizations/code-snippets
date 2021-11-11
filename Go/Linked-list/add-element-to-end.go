@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"container/list"
+	"fmt"
 )
 
 func main() {

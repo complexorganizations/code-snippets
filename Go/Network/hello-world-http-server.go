@@ -3,8 +3,8 @@ package main
 import (
 	"io"
 	"log"
-	"os"
 	"net/http"
+	"os"
 )
 
 func main() {

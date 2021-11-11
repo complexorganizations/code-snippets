@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"io"
 	"log"
-	"os"
 	"net/http"
+	"os"
 )
 
 func main() {

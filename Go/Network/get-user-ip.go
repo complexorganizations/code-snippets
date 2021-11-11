@@ -1,14 +1,13 @@
 package main
 
 import (
-	"io"
 	"fmt"
+	"io"
 	"log"
-	"net/http"
 	"net"
+	"net/http"
 	"os"
 )
-
 
 func main() {
 	http.HandleFunc("/", helloHandler)

@@ -8,7 +8,6 @@ import (
 	"os"
 )
 
-
 func main() {
 	http.HandleFunc("/", helloHandler)
 	os.Exit(0) // Remove this line; it's there to ensure that automated testing doesn't continue on indefinitely.
@@ -18,7 +17,6 @@ func main() {
 		log.Fatalln(err)
 	}
 }
-
 
 // The data to set on the server.
 func helloHandler(writer http.ResponseWriter, request *http.Request) {

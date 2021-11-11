@@ -15,7 +15,6 @@ func getVariableType(variable interface{}) string {
 	return reflect.TypeOf(variable).String()
 }
 
-
 /*
 string      A string is a collection of characters.
 
