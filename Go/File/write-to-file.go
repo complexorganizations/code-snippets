@@ -7,7 +7,7 @@ import (
 
 func main() {
 	// Write to file without appending anything.
-	writeToFile("/tmp/test.txt", "Hello World")
+	writeToFile("foo.txt", "Hello World")
 }
 
 // Don't append and write to file

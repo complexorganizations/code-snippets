@@ -7,7 +7,7 @@ import (
 
 func main() {
 	// Get the size of a file.
-	fmt.Println(getFileSize("file-size.go"))
+	fmt.Println(getFileSize("foo.txt"))
 }
 
 // Get the size of a given file.

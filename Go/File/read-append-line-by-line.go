@@ -11,7 +11,7 @@ func main() {
 	// Create a slice of strings.
 	var content []string
 	// Read and append the file line by line to the slice.
-	content = readAppendLineByLine("read-append-line-by-line.go", content)
+	content = readAppendLineByLine("foo.txt", content)
 	// Print the slice.
 	fmt.Println(content)
 }

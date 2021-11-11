@@ -7,7 +7,7 @@ import (
 
 func main() {
 	// Get the length of the file
-	fmt.Println(getFileLength("file-length.go"))
+	fmt.Println(getFileLength("foo.txt"))
 }
 
 // Get the length of a file and return it as int

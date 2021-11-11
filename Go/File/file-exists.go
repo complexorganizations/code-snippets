@@ -7,7 +7,7 @@ import (
 
 func main() {
 	// Check if the file exists.
-	fmt.Println(fileExists("file-exists.go"))
+	fmt.Println(fileExists("foo.txt"))
 }
 
 // Check if the file exists and return a bool.

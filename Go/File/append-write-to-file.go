@@ -7,7 +7,7 @@ import (
 
 func main() {
 	// Append and write to file
-	appendAndWriteToFile("/tmp/test.txt", "Hello World")
+	appendAndWriteToFile("foo.txt", "Hello World")
 }
 
 // Append and write to file

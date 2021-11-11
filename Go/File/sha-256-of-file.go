@@ -10,7 +10,7 @@ import (
 
 func main() {
 	// Get the sha256 of a file
-	fmt.Println(sha256OfFile("sha-256-of-file.go"))
+	fmt.Println(sha256OfFile("foo.txt"))
 }
 
 // Get the sha 256 of a file and return it as a string

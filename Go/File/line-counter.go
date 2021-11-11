@@ -9,7 +9,7 @@ import (
 
 func main() {
 	// Get the number of lines in the file
-	fmt.Println(numberOfLines("line-counter.go"))
+	fmt.Println(numberOfLines("foo.txt"))
 }
 
 // Get the number of lines in a file

@@ -8,9 +8,9 @@ import (
 
 func main() {
 	// Check if the file is hidden using file extension prefix
-	fmt.Println(hiddenFileUsingExtension("hidden-file-check.go"))
+	fmt.Println(hiddenFileUsingExtension("foo.txt"))
 	// Check if the file is hidden using windows API
-	fmt.Println(hiddenWindowsFile("hidden-file-check.go"))
+	fmt.Println(hiddenWindowsFile("foo.txt"))
 }
 
 // Check if the file is hidden using file extension prefix
