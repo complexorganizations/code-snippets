@@ -1,12 +1,31 @@
 package main
 
 import (
+	"flag"
 	"fmt"
-	//"os"
+	"os"
 )
 
+var (
+	help bool
+)
+
+func init() {
+	if len(os.Args) >= 1 {
+		tempHelp := flag.Bool("help", false, "print help message")
+		flag.Parse()
+		help = *tempHelp
+	}
+}
+
 func main() {
-	// os.Args provides access to raw command-line arguments.
-	// Note that the first value in this slice is the path to the program, and os.Args[1:] holds the arguments to the program.
-	fmt.Println("Hello, World!")
+	// Print help message
+	if help {
+		fmt.Println("Usage: command-line-arguments [options]")
+		fmt.Println("Options:")
+		flag.PrintDefaults()
+		os.Exit(0)
+	} else {
+		fmt.Println("No help message")
+	}
 }
