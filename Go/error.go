@@ -11,10 +11,10 @@ var (
 
 func main() {
 	// Handle all errors in a single unified way.
-	err = os.RemoveAll("/tmp/")
+	err = os.RemoveAll("Dart/")
 	handleAllErrors(err)
 	// Handle errors case by case.
-	err = os.RemoveAll("/tmp/")
+	err = os.RemoveAll("Rust/")
 	if err != nil {
 		log.Fatalln(err)
 	}
