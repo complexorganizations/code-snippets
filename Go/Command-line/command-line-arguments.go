@@ -11,7 +11,7 @@ var (
 )
 
 func init() {
-	if len(os.Args) >= 1 {
+	if len(os.Args) >= 2 {
 		tempHelp := flag.Bool("help", false, "print help message")
 		flag.Parse()
 		help = *tempHelp
