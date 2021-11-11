@@ -3,8 +3,9 @@ package main
 import "fmt"
 
 type personalINFO struct {
-	name string
-	age  int
+	name   string
+	age    int
+	weight float32
 }
 
 func (content personalINFO) print() {
@@ -13,8 +14,9 @@ func (content personalINFO) print() {
 
 func main() {
 	localInfo := personalINFO{
-		name: "John",
-		age:  18,
+		name:   "John Doe",
+		age:    18,
+		weight: 80.6,
 	}
 	localInfo.print()
 }

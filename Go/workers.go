@@ -5,17 +5,19 @@ import (
 	"sync"
 )
 
-var wg sync.WaitGroup
+var (
+	waitGroup sync.WaitGroup
+)
 
 func main() {
 	for loop := 0; loop <= 1000; loop++ {
-		wg.Add(1)
+		waitGroup.Add(1)
 		go secondFunction()
 	}
-	wg.Wait()
+	waitGroup.Wait()
 }
 
 func secondFunction() {
 	fmt.Println("Done")
-	wg.Done()
+	waitGroup.Done()
 }
