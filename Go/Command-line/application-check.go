@@ -12,6 +12,6 @@ func main() {
 
 // Check if the application is installed and in path
 func commandExists(application string) bool {
-	application, err := exec.LookPath(application)
+	_, err := exec.LookPath(application)
 	return err == nil
 }
