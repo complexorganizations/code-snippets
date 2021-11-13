@@ -7,12 +7,12 @@ import (
 
 func main() {
 	// Create a directory.
-	createDirectory("Directory/")
+	createDirectory("temp-dir/", 0400)
 }
 
 // Create a director.
-func createDirectory(path string) {
-	err := os.Mkdir(path, os.ModePerm)
+func createDirectory(path string, permission os.FileMode) {
+	err := os.Mkdir(path, permission)
 	if err != nil {
 		log.Fatalln(err)
 	}
