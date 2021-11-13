@@ -14,7 +14,7 @@ func main() {
 // Remove all the empty strings from the slice and return it.
 func removeEmptyFromSlice(slice []string) []string {
 	for i, content := range slice {
-		if content == "" {
+		if len(content) == 0 {
 			slice = append(slice[:i], slice[i+1:]...)
 		}
 	}
