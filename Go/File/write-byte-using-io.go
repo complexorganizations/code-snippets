@@ -9,7 +9,7 @@ import (
 
 func main() {
 	// Write to a file.
-	writeContentToFle("bar.txt", []byte("Hello, World!"))
+	writeContentToFle("foo.txt", []byte("Hello, World!"))
 }
 
 // Write to a file.
