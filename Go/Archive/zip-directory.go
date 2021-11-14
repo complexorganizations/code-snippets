@@ -9,7 +9,7 @@ import (
 
 func main() {
 	// Zip a directory and all the files in it.
-	folderPath := []string{"bar/"}
+	folderPath := []string{"Network/"}
 	zipDirectories(folderPath, "foo.zip")
 }
 
@@ -19,15 +19,7 @@ func zipDirectories(directories []string, path string) {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	err = zipFile.Close()
-	if err != nil {
-		log.Fatalln(err)
-	}
 	zipWriter := zip.NewWriter(zipFile)
-	err = zipWriter.Close()
-	if err != nil {
-		log.Fatalln(err)
-	}
 	// Iterate through all the files in the directories.
 	for _, directory := range directories {
 		// Find the files in the directory.
@@ -42,10 +34,6 @@ func zipDirectories(directories []string, path string) {
 			if err != nil {
 				log.Fatalln(err)
 			}
-			err = fileReader.Close()
-			if err != nil {
-				log.Fatalln(err)
-			}
 			// Create the zip file.
 			fileWriter, err := zipWriter.Create(file.Name())
 			if err != nil {
@@ -55,6 +43,18 @@ func zipDirectories(directories []string, path string) {
 			if err != nil {
 				log.Fatalln(err)
 			}
+			err = fileReader.Close()
+			if err != nil {
+				log.Fatalln(err)
+			}
 		}
+	}
+	err = zipWriter.Close()
+	if err != nil {
+		log.Fatalln(err)
+	}
+	err = zipFile.Close()
+	if err != nil {
+		log.Fatalln(err)
 	}
 }

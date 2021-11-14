@@ -27,10 +27,6 @@ func zipAllDocuments(documents []string, path string) {
 		if err != nil {
 			log.Fatalln(err)
 		}
-		err = file.Close()
-		if err != nil {
-			log.Fatalln(err)
-		}
 		// Create a new zip file entry
 		zipEntry, err := zipWriter.Create(document)
 		if err != nil {
@@ -41,8 +37,11 @@ func zipAllDocuments(documents []string, path string) {
 		if err != nil {
 			log.Fatalln(err)
 		}
+		err = file.Close()
+		if err != nil {
+			log.Fatalln(err)
+		}
 	}
-	// Make sure to check the error on Close.
 	err := zipWriter.Close()
 	if err != nil {
 		log.Fatalln(err)
@@ -52,11 +51,11 @@ func zipAllDocuments(documents []string, path string) {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	err = zipFile.Close()
+	_, err = io.Copy(zipFile, bytesBuffer)
 	if err != nil {
 		log.Fatalln(err)
 	}
-	_, err = io.Copy(zipFile, bytesBuffer)
+	err = zipFile.Close()
 	if err != nil {
 		log.Fatalln(err)
 	}

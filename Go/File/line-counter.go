@@ -18,8 +18,6 @@ func numberOfLines(path string) int {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	defer file.Close()
-
 	scanner := bufio.NewScanner(file)
 	scanner.Split(bufio.ScanLines)
 	count := 0
@@ -27,6 +25,10 @@ func numberOfLines(path string) int {
 		count = count + 1
 	}
 	err = scanner.Err()
+	if err != nil {
+		log.Fatalln(err)
+	}
+	err = file.Close()
 	if err != nil {
 		log.Fatalln(err)
 	}
