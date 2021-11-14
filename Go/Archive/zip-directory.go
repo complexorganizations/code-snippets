@@ -9,7 +9,7 @@ import (
 
 func main() {
 	// Zip a directory and all the files in it.
-	folderPath := []string{"Network/"}
+	folderPath := []string{"Rust/"}
 	zipDirectories(folderPath, "foo.zip")
 }
 
