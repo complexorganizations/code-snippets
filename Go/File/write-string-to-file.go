@@ -7,12 +7,12 @@ import (
 
 func main() {
 	// Write to file without appending anything.
-	writeToFile("bar.txt", "Hello World")
+	writeToFile("bar.txt", []byte("Hello World"))
 }
 
 // Don't append and write to file
-func writeToFile(path string, content string) {
-	err := os.WriteFile(path, []byte(content), 0644)
+func writeToFile(path string, content []byte) {
+	err := os.WriteFile(path, content, 0644)
 	if err != nil {
 		log.Fatalln(err)
 	}
