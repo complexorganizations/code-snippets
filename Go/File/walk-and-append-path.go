@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	// Walk a given path
+	// Walk though a given path and find all the files.
 	filesList := walkAndAppendPath("/")
 	for _, files := range filesList {
 		fmt.Println(files)
@@ -20,12 +20,12 @@ func walkAndAppendPath(walkPath string) []string {
 	var filePath []string
 	err := filepath.Walk(walkPath, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
-			log.Fatalln(err)
+			return nil
 		}
 		if fileExists(path) {
 			filePath = append(filePath, path)
 		}
-		log.Fatalln(err)
+		return nil
 	})
 	if err != nil {
 		log.Fatalln(err)
