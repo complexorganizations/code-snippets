@@ -16,7 +16,7 @@ func removeDuplicatesFromSlice(slice []string) []string {
 	check := make(map[string]bool)
 	var newReturnSlice []string
 	for _, content := range slice {
-		if check[content] == false {
+		if !check[content] { {
 			check[content] = true
 			newReturnSlice = append(newReturnSlice, content)
 		}
