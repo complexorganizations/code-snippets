@@ -17,19 +17,19 @@ func main() {
 }
 
 // Read and append the file line by line to a slice.
-func readAppendLineByLine(fileLocation string, arrayName []string) []string {
-	file, err := os.Open(fileLocation)
+func readAppendLineByLine(path string, slice []string) []string {
+	file, err := os.Open(path)
 	if err != nil {
 		log.Fatalln(err)
 	}
 	scanner := bufio.NewScanner(file)
 	scanner.Split(bufio.ScanLines)
 	for scanner.Scan() {
-		arrayName = append(arrayName, scanner.Text())
+		slice = append(slice, scanner.Text())
 	}
 	err = file.Close()
 	if err != nil {
 		log.Fatalln(err)
 	}
-	return arrayName
+	return slice
 }
