@@ -1,3 +1,4 @@
+/*
 package main
 
 import (
@@ -19,3 +20,4 @@ func validatePhoneNumber(phoneNumber string) bool {
 	}
 	return phonenumbers.IsValidNumber(number)
 }
+*/
