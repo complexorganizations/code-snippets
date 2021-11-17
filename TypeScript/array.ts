@@ -80,56 +80,11 @@ function joinArray(array: string[], separator: string): string {
     return array.join(separator)
 }
 
-// Remove all the empty elements from the array
-function removeEmptyElements(array: string[]): string[] {
-    for (var i: number = 0; i < array.length; i++) {
-        if (array[i].length == 0) {
-            array.splice(i, 1)
-        }
-    }
-    return array
-}
-
-// Sort all the data in the array, and return the sorted array
-function sortArray(array: string[]): string[] {
-    return array.sort()
-}
-
-// Get the first value in the array and return it
-function getFirstValue(array: string[]): string {
-    return array[0]
-}
-
-// Get the last value in the array and return it.
-function getLastValue(array: string[]): string {
-    return array[array.length - 1]
-}
-
-// Get the length of the array and return it.
-function getLength(array: string[]): number {
-    return array.length
-}
-
-// Randomly pick a value from the array and return it.
-function getRandomValue(array: string[]): string {
-    return array[Math.floor(Math.random() * array.length)]
-}
-
 // Randomize the order of the values in the array and return the array.
 function randomizeArray(array: string[]): string[] {
     return array.sort(function (): number {
         return 0.5 - Math.random()
     })
-}
-
-// Remove the first element in the array and return the array.
-function removeFirstElement(array: string[]): string | undefined {
-    return array.shift()
-}
-
-// Remove the last element in the array and return the array.
-function removeLastElement(array: string[]): string | undefined {
-    return array.pop()
 }
 
 // Remove a value from the array and return the array.
@@ -141,10 +96,6 @@ function removeValue(array: string[], value: string): string[] {
     return array
 }
 
-// Reverse the order of the values in the array and return the array.
-function reverseArray(array: string[]): string[] {
-    return array.reverse()
-}
 
 // Get the index of a value in the array and return it.
 function getIndex(array: string[], value: string): number {

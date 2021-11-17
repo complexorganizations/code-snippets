@@ -1,6 +1,6 @@
 import * as crypto from "crypto"
 
-function main() {
+function main(): void {
     // Generate a random number between 1 and 100
     console.log(randomIntBetween(1, 100))
 }
