@@ -2,9 +2,9 @@ import * as crypto from "crypto"
 
 function main(): void {
     // Create a new slice
-    let slice: string[] = ["a", "b", "c", "d", "e"]
+    let randomSlice: string[] = ["a", "b", "c", "d", "e"]
     // Get a random element from the slice
-    console.log(getRandomElementFromSlice(slice))
+    console.log(getRandomElementFromSlice(randomSlice))
 }
 
 main()
