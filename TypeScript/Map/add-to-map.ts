@@ -1,6 +1,6 @@
 function main(): void {
     // Create a new map.
-    let randomMap = new Map<string, string>()
+    var randomMap: Map<string, string> = new Map<string, string>()
     // Add a key-value pair to the map, Print the map.
     console.log(addKeyValueToMap(randomMap, "key", "value"))
 }
