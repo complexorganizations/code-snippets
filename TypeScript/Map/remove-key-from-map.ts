@@ -17,8 +17,8 @@ function removeKeyFromMap(originalMap: Map<string, string>, key: string, value: 
             originalMap.set("", value)
         }
     }
-    for (let value of originalMap.values()) {
-        if (value == value) {
+    for (let values of originalMap.values()) {
+        if (values == value) {
             originalMap.delete(key)
         }
     }
