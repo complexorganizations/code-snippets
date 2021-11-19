@@ -9,7 +9,7 @@ import (
 
 func main() {
 	// Walk though a given path and find all the files.
-	filesList := walkAndAppendPath("/")
+	filesList := walkAndAppendPath(".")
 	for _, files := range filesList {
 		fmt.Println(files)
 	}
