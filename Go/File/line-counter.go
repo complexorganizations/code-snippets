@@ -9,7 +9,7 @@ import (
 
 func main() {
 	// Get the number of lines in the file
-	fmt.Println(numberOfLines("assets/ignore/README.md"))
+	fmt.Println(numberOfLines("assets/valid/valid-txt.txt"))
 }
 
 // Get the number of lines in a file

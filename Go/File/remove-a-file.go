@@ -7,7 +7,7 @@ import (
 
 func main() {
 	// Remove a file
-	removeFile("assets/ignore/README.md")
+	removeFile("assets/remove/README.md")
 }
 
 // Remove a file from the file system

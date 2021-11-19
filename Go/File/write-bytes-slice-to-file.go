@@ -8,9 +8,9 @@ import (
 
 func main() {
 	// Create a byte array.
-	data := []byte("Hello World!")
+	data := []byte("Hello, World!")
 	// Write byte slice to file.
-	writeByteSliceToFile("bar.txt", data)
+	writeByteSliceToFile("assets/remove/42N3AYpKHqiKvq5hMx3Y969k3XZA28V3", data)
 }
 
 // Write byte slice to file.

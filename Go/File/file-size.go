@@ -7,7 +7,7 @@ import (
 
 func main() {
 	// Get the size of a file.
-	fmt.Println(getFileSize("assets/ignore/README.md"))
+	fmt.Println(getFileSize("assets/valid/valid-txt.txt"))
 }
 
 // Get the size of a given file.

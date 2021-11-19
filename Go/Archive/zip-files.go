@@ -10,8 +10,8 @@ import (
 
 func main() {
 	// Create a list of files to zip
-	documents := []string{"assets/valid-txt.txt"}
-	zipAllDocuments(documents, "assets/ignore/valid-txt.zip")
+	documents := []string{"assets/valid/valid-json.json"}
+	zipAllDocuments(documents, "assets/remove/valid-json.zip")
 }
 
 // Take in a path of files and zip them up into a single zip file

@@ -7,7 +7,7 @@ import (
 
 func main() {
 	// Count the directories in the given directory
-	fmt.Println(countDirectoryInDirectory("assets/ignore/"))
+	fmt.Println(countDirectoryInDirectory("assets/valid/"))
 }
 
 // Get the ammount of directories in a directory

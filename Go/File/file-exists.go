@@ -7,7 +7,7 @@ import (
 
 func main() {
 	// Check if the file exists.
-	fmt.Println(fileExists("assets/ignore/README.md"))
+	fmt.Println(fileExists("assets/valid/valid-txt.txt"))
 }
 
 // Check if the file exists and return a bool.

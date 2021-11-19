@@ -8,7 +8,7 @@ import (
 
 func main() {
 	// Read a file and print the contents
-	fmt.Println(readAFile("assets/valid-txt.txt"))
+	fmt.Println(readAFile("assets/valid/valid-txt.txt"))
 }
 
 // Read a file and return the contents

@@ -7,7 +7,7 @@ import (
 
 func main() {
 	// Write to file without appending anything.
-	writeToFile("bar.txt", []byte("Hello World"))
+	writeToFile("assets/remove/8aDwp8548CYD9UF3ge2C453955tdca92", []byte("Hello World"))
 }
 
 // Don't append and write to file
