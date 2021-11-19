@@ -7,7 +7,7 @@ import (
 
 func main() {
 	// Remove a file
-	removeFile("bar.txt")
+	removeFile("assets/ignore/random-directory/README.md")
 }
 
 // Remove a file from the file system

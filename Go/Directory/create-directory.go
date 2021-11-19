@@ -7,7 +7,7 @@ import (
 
 func main() {
 	// Create a directory.
-	createDirectory("temp-dir/", 0400)
+	createDirectory("assets/ignore/random-ignore-folder", 0400)
 }
 
 // Create a director.

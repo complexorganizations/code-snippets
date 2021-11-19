@@ -11,7 +11,7 @@ import (
 
 func main() {
 	// Unzip a zip file and write it to the given destination
-	unzipAndWrite("foo.zip", ".")
+	unzipAndWrite("assets/valid-zip.zip", "assets/ignore/")
 }
 
 // Unzip a zip file and write it to the given destination

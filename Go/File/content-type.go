@@ -9,7 +9,7 @@ import (
 
 func main() {
 	// Get the content type of a file
-	fmt.Println(getContentType("foo.txt"))
+	fmt.Println(getContentType("assets/ignore/README.md"))
 }
 
 // Get the content type of a file and return it as a string

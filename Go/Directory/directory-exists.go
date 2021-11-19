@@ -7,7 +7,7 @@ import (
 
 func main() {
 	// Check if a directory exists
-	fmt.Println(directoryExists("Directory/"))
+	fmt.Println(directoryExists("assets/ignore/"))
 }
 
 // Check if a directory exists

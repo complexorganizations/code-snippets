@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	removeDirectory("Directory/")
+	removeDirectory("assets/ignore/random-directory")
 }
 
 // Remove a directory and all its contents.

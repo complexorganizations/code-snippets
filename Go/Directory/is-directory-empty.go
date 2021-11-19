@@ -8,7 +8,7 @@ import (
 
 func main() {
 	// Check if the directory is empty
-	fmt.Println(isDirectoryEmpty("/"))
+	fmt.Println(isDirectoryEmpty("assets/ignore/"))
 }
 
 // Check if the given directory is empty

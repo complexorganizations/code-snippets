@@ -7,7 +7,7 @@ import (
 
 func main() {
 	// Append and write to file
-	appendAndWriteToFile("foo.txt", "Hello World")
+	appendAndWriteToFile("assets/ignore/foo.txt", "Hello World")
 }
 
 // Append and write to file

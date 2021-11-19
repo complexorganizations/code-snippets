@@ -7,7 +7,7 @@ import (
 
 func main() {
 	// Get the file extension of a file
-	fmt.Println(getFileExtension("/home/user/file.txt"))
+	fmt.Println(getFileExtension("assets/ignore/README.md"))
 }
 
 // Get the file extension of a file

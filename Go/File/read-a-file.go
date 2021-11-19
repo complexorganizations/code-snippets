@@ -8,7 +8,7 @@ import (
 
 func main() {
 	// Read a file and print the contents
-	fmt.Println(readAFile("foo.txt"))
+	fmt.Println(readAFile("assets/ignore/README.md"))
 }
 
 // Read a file and return the contents

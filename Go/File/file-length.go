@@ -7,7 +7,7 @@ import (
 
 func main() {
 	// Get the length of the file
-	fmt.Println(getFileLength("foo.txt"))
+	fmt.Println(getFileLength("assets/ignore/README.md"))
 }
 
 // Get the length of a file and return it as int
