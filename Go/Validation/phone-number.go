@@ -1,17 +1,18 @@
-/*
 package main
 
 import (
 	"fmt"
 
-	"github.com/nyaruka/phonenumbers"
+	//"github.com/nyaruka/phonenumbers"
 )
 
 func main() {
 	// Check if the phone number provided is valid
-	fmt.Println(validatePhoneNumber("+1-508–253–5000"))
+	// fmt.Println(validatePhoneNumber("+1-508–253–5000"))
+	fmt.Println("Hello, World!")
 }
 
+/*
 // Check if the phone number provided is valid
 func validatePhoneNumber(phoneNumber string) bool {
 	number, err := phonenumbers.Parse(phoneNumber, "US")
