@@ -9,8 +9,8 @@ import (
 
 func main() {
 	// Zip a directory and all the files in it.
-	folderPath := []string{"assets/ignore/random-directory/"}
-	zipDirectories(folderPath, "assets/ignore/assets-folder.zip")
+	folderPath := []string{"assets/ignore/second-random-dir/"}
+	zipDirectories(folderPath, "assets/ignore/second-random-dir/assets-folder.zip")
 }
 
 // Zip a slice of directories and all the files in them.
