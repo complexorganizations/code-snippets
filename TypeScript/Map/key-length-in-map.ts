@@ -1,10 +1,9 @@
 function main(): void {
     // Create a new map
-    var randomMap: Map<string, string> = new Map<string, string>()
-    // Add some values to the map
-    randomMap.set("key1", "value1")
-    randomMap.set("key2", "value2")
-    randomMap.set("key3", "value3")
+    var randomMap: Map<string, string> = new Map([
+        ["key1", "value1"],
+        ["key2", "value2"]
+    ])
     // Get the length of all the keys in the map
     console.log(getKeyLength(randomMap))
 }

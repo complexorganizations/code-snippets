@@ -1,10 +1,11 @@
 function main(): void {
     // Create a new map with the given key and value.
-    var randomMap: Map<string, string> = new Map<string, string>()
-    // Add the given key and value to the map.
-    randomMap.set("key", "value")
+    var randomMap: Map<string, string> = new Map([
+        ["key1", "value1"],
+        ["key2", "value2"]
+    ])
     // Get the value of the given key in the map.
-    console.log(getKeyFromMap(randomMap, "key"))
+    console.log(getKeyFromMap(randomMap, "key1"))
 }
 
 main()

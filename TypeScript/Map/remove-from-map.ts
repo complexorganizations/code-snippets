@@ -1,8 +1,9 @@
 function main(): void {
     // Create a new map.
-    var randomMap: Map<string, string> = new Map<string, string>()
-    // Add a key-value pair to the map.
-    randomMap.set("key1", "value1")
+    var randomMap: Map<string, string> = new Map([
+        ["key1", "value1"],
+        ["key2", "value2"]
+    ])
     // Remove a key-value pair from the map.
     console.log(removeKeyValuePairFromMap(randomMap, "key1"))
 }
