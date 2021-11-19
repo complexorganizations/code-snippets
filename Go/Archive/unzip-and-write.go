@@ -32,7 +32,10 @@ func unzipAndWrite(source string, destination string) {
 			}
 			path := destination + "/" + file.Name
 			if file.FileInfo().IsDir() {
-				os.MkdirAll(path, file.Mode())
+				err := os.MkdirAll(path, file.Mode())
+				if err != nil {
+					log.Fatalln(err)
+				}
 			} else {
 				filePath, err := os.OpenFile(path, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, file.Mode())
 				if err != nil {
