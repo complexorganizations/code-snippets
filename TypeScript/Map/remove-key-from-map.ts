@@ -12,12 +12,12 @@ main()
 
 // Remove a specific key from the map and return the map.
 function removeKeyFromMap(originalMap: Map<string, string>, key: string, value: string): Map<string, string> {
-    for (let keys of originalMap.keys()) {
+    for (let keys of Array.from(originalMap.keys())) {
         if (keys == key) {
             originalMap.set("", value)
         }
     }
-    for (let values of originalMap.values()) {
+    for (let values of Array.from(originalMap.values())) {
         if (values == value) {
             originalMap.delete(key)
         }
