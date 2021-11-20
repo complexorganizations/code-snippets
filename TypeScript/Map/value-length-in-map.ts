@@ -13,7 +13,7 @@ main()
 // Get the length of all the values in the map.
 function getValueLength(originalMap: Map<string, string>): number {
     let counter: number = 0
-    for (let value of originalMap.values()) {
+    for (let value of Array.from(originalMap.values())) {
         counter = counter + 1
     }
     return counter
