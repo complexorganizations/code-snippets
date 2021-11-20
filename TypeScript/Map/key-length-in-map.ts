@@ -13,7 +13,7 @@ main()
 // Get the length of all the keys in the map
 function getKeyLength(originalMap: Map<string, string>): number {
     let counter: number = 0
-    for (let key of originalMap.keys()) {
+    for (let key of Array.from(originalMap.keys())) {
         counter = counter + 1
     }
     return counter
