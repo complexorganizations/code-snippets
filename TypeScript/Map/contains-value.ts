@@ -12,7 +12,7 @@ main()
 
 // Check if the map contains a specific value and return a boolean.
 function doesMapContainValue(originalMap: Map<string, string>, value: string): boolean {
-    for (let value of originalMap.values()) {
+    for (let value of Array.from(originalMap.values())) {
         if (value == value) {
             return true
         }
