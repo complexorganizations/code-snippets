@@ -5,8 +5,7 @@ function main(): void {
 
 main()
 
-
 // Match a string against a regular expression
-function regexMatch(str: string, regex: RegExp): RegExpExecArray | null {
-    return regex.exec(str)
+function regexMatch(content: string, regex: RegExp): RegExpExecArray | null {
+    return regex.exec(content)
 }
