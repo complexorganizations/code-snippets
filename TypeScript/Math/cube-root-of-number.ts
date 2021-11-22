@@ -1,6 +1,6 @@
 function main(): void {
     // Get the square root of a given number and return the result
-    console.log(squareRootOfNumber(100))
+    console.log(cubeRootOfNumber(100))
 }
 
 main()

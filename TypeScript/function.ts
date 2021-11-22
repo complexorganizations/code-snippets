@@ -37,3 +37,11 @@ function functionReturnBoolean(): boolean {
 function functionReturnArray(): Array<string> {
     return ["Hello", "World"]
 }
+
+// Create a function that takes no arguments and returns a map.
+function functionReturnMap(): Map<string, string> {
+    return new Map<string, string>([
+        ["key1", "value1"],
+        ["key2", "value2"]
+    ])
+}

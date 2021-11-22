@@ -1,11 +1,11 @@
 function main(): void {
     // Clear the terminal window.
-    clearTerminal();
+    clearTerminal()
 }
 
 main()
 
 // Clear all text from the terminal window.
 function clearTerminal(): void {
-    process.stdout.write("\x1Bc");
+    process.stdout.write("\x1Bc")
 }

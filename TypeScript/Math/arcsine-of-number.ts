@@ -1,4 +1,4 @@
-function main() : void {
+function main(): void {
     // arcsine of number
     console.log(arcsineOfNumber(1))
 }

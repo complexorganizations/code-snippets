@@ -3,7 +3,7 @@ function main(): void {
     var randomMap: Map<string, string> = new Map([
         ["key1", "value1"],
         ["key2", "value2"]
-    ]);
+    ])
     // Add a key-value pair to the map, Print the map.
     console.log(addKeyValueToMap(randomMap, "key3", "value3"))
 }

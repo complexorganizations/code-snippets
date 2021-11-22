@@ -1,4 +1,4 @@
-function main() : void{
+function main(): void {
     // sine of number
     console.log(sineOfNumber(1))
 }

@@ -1,4 +1,4 @@
-function main() : void {
+function main(): void {
     // cosine of number
     console.log(cosineOfNumber(1))
 }

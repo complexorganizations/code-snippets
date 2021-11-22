@@ -3,7 +3,7 @@ function main(): void {
     var randomMap: Map<string, string> = new Map([
         ["key1", "value1"],
         ["key2", "value2"]
-    ]);
+    ])
     // Turn all the values inside the map into a slice
     console.log(mapValuesToSlice(randomMap))
 }
