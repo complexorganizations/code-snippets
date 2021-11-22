@@ -9,11 +9,11 @@ import (
 
 func main() {
 	// Generate a random string of a given length.
-	fmt.Println(randomStringOfGivenLength(10))
+	fmt.Println(randomStringSpecifiedOfGivenLength(10))
 }
 
 // Generate a random string of a given length and return it.
-func randomStringOfGivenLength(length int) string {
+func randomStringSpecifiedOfGivenLength(length int) string {
 	// ABCDEFGHIJKLMNOPQRSTUVWXYZ, abcdefghijklmnopqrstuvwxyz, 0123456789 ~!@#$%^&*()-_+={}][|\`,./?;:'"<>
 	letters := []rune("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~!@#$%^&*()-_+={}][|\\`,./?;:'\"<>")
 	randomString := make([]rune, length)
