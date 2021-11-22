@@ -1,6 +1,6 @@
 function main(): void {
     // Match a string against a regular expression
-    console.log(regexMatch("Hello World", /\w+/))
+    console.log(checkStringMatchesRegex("Hello World", /\w+/))
 }
 
 main()
