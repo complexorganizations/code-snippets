@@ -13,7 +13,7 @@ main()
 // Turn all the values in an map into a slice
 function mapValuesToSlice(originalMap: Map<string, string>): string[] {
     var mapValues: string[] = []
-    for (var value of originalMap.values()) {
+    for (var value of Array.from(originalMap.values())) {
         mapValues.push(value)
     }
     return mapValues
