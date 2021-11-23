@@ -1,7 +1,7 @@
 import "dart:core";
 import "dart:io";
 
-void main(){
+void main() {
   // Check if the directory exists.
   print(checkDirectoryExists("assets/valid/j3U5uJY779L49q98MX86iFsxs2kY9ew3/"));
 }
