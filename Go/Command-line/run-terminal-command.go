@@ -7,7 +7,7 @@ import (
 
 func main() {
 	// Run a command in the system terminal.
-	runSystemTerminalCommand("clear")
+	runSystemTerminalCommand("echo")
 }
 
 // Run a command in the system terminal.
