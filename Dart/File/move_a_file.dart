@@ -10,7 +10,7 @@ void main() {
 void moveAFile(final String oldPath, final String newPath) {
   try {
     File(oldPath).rename(newPath);
-  } on Exception catch (e) {
-    print(e);
+  } on Exception catch (error) {
+    print(error);
   }
 }

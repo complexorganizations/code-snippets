@@ -10,7 +10,7 @@ void main() {
 void writeStringToFile(final String path, final String content) {
   try {
     File(path).writeAsString(content);
-  } on Exception catch (e) {
-    print(e);
+  } on Exception catch (error) {
+    print(error);
   }
 }
