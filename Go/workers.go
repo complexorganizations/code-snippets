@@ -11,7 +11,7 @@ var (
 
 func main() {
 	// Create a certain numbers of go routine, with waitgroup
-	for loop := 0; loop <= 1000; loop++ {
+	for loop := 0; loop <= 10; loop++ {
 		waitGroup.Add(1)
 		go secondFunction()
 	}
