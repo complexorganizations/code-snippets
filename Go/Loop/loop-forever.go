@@ -12,7 +12,7 @@ func main() {
 		fmt.Println(counter)
 		// Increment the counter
 		counter = counter + 1
-		if counter == 100 {
+		if counter == 10 {
 			break
 			// Since we dont want to loop forever, we break out of the loop
 			// If the counter statement and the break statement is removed it will go forever.
