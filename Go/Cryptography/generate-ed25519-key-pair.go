@@ -2,6 +2,7 @@ package main
 
 import (
 	"crypto/ed25519"
+	"crypto/rand"
 	"fmt"
 	"log"
 )
@@ -15,7 +16,7 @@ func main() {
 
 // Generate a key pair using the Ed25519 curve.
 func generateKeyPairUsingED25519() (string, string) {
-	publicKey, privateKey, err := ed25519.GenerateKey(nil)
+	publicKey, privateKey, err := ed25519.GenerateKey(rand.Reader)
 	if err != nil {
 		log.Fatalln(err)
 	}
