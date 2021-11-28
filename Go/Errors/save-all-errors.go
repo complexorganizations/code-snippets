@@ -8,7 +8,7 @@ import (
 func main() {
 	err := os.Remove("assets/remove/kqe3qZLdHLRnDZUSVBdm")
 	if err != nil {
-		saveAllErrors(err, "logs.log")
+		saveAllErrors(err, "assets/remove/logs.log")
 	}
 }
 
