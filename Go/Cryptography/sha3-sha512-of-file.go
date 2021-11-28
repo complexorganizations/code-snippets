@@ -2,18 +2,19 @@ package main
 
 import (
 	"fmt"
-	"io"
-	"log"
-	"os"
-
-	"golang.org/x/crypto/sha3"
+	//"io"
+	//"log"
+	//"os"
+	//"golang.org/x/crypto/sha3"
 )
 
 func main() {
 	// Using sha3-512 get the hash of a given file
-	fmt.Println(sha3Using512OfGivenFile("assets/valid/valid-json.json"))
+	//fmt.Println(sha3Using512OfGivenFile("assets/valid/valid-json.json"))
+	fmt.Println("Hello, World!")
 }
 
+/*
 // Using sha3-512 get the hash of a given file
 func sha3Using512OfGivenFile(path string) string {
 	file, err := os.Open(path)
@@ -31,3 +32,4 @@ func sha3Using512OfGivenFile(path string) string {
 	}
 	return fmt.Sprintf("%x", hash.Sum(nil))
 }
+*/
