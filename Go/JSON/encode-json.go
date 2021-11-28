@@ -18,9 +18,15 @@ func main() {
 		Name:   "Reds",
 		Colors: []string{"Crimson", "Red", "Ruby", "Maroon"},
 	}
-	currentJson, err := json.Marshal(group)
+	// Encode the struct into JSON.
+	fmt.Printf("%s", encodeStructToJSON(group))
+}
+
+// Encode struct data to JSON.
+func encodeStructToJSON(content interface{}) []byte {
+	contentJSON, err := json.Marshal(content)
 	if err != nil {
 		log.Fatalln(err)
 	}
-	fmt.Println(currentJson)
+	return contentJSON
 }
