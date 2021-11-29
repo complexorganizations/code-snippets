@@ -9,7 +9,7 @@ import (
 
 func main() {
 	// Set custom user agent to a HTTP request
-	fmt.Println(setUserAgentOnRequest("http://httpbin.org/user-agent", "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"))
+	fmt.Println(setUserAgentOnRequest("https://www.example.com", "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"))
 }
 
 // Set custom user agent to a HTTP request
