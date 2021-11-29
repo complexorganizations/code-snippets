@@ -14,6 +14,7 @@ func init() {
 	go func() {
 		value := <-channel
 		fmt.Println("The user pressed Ctrl+C, exiting...", value)
+		close(channel)
 		os.Exit(0)
 	}()
 }
