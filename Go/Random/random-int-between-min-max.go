@@ -1,15 +1,49 @@
 package main
 
 import (
-	"crypto/rand"
+	// "crypto/rand"
+	// "encoding/hex"
 	"fmt"
-	"log"
-	"math/big"
+	// "log"
+	// "math/big"
+
+	// "golang.org/x/crypto/argon2"
 )
 
+/*
+// The config for Argon2
+type argonConfig struct {
+	keyLength uint32
+	memory    uint32
+	salt      []byte
+	threads   uint8
+	time      uint32
+}
+
+var argonConfiguration = &argonConfig{
+	keyLength: uint32(randomIntBetween(512, 1024)),
+	memory:    uint32(randomIntBetween(262144, 524288)),
+	salt:      make([]byte, randomIntBetween(512, 1024)),
+	threads:   uint8(randomIntBetween(16, 32)),
+	time:      uint32(randomIntBetween(150, 300)),
+}
+*/
+
 func main() {
-	// Generate a random int between two numbers.
-	fmt.Println(randomIntBetween(200, 220))
+	fmt.Println("Hello, World!")
+	// Generate a hash of the given password
+	// fmt.Println(encodeStringUsingArgonTwo(argonConfiguration, "WHV02Qkhv7JhD8g4YFt8"))
+}
+
+/*
+func encodeStringUsingArgonTwo(argonSettings *argonConfig, password string) string {
+	// Generate a random salt
+	_, err := rand.Read(argonSettings.salt)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	// Generate a hash
+	return fmt.Sprintf("%d,%d,%d,%s,%s", argonSettings.memory, argonSettings.time, argonSettings.threads, hex.EncodeToString(argonSettings.salt), hex.EncodeToString(argon2.IDKey([]byte(password), argonSettings.salt, argonSettings.time, argonSettings.memory, argonSettings.threads, argonSettings.keyLength)))
 }
 
 // Generate a random int between two numbers
@@ -25,3 +59,4 @@ func generateRandomInt(max int64) int {
 	}
 	return int(randomInt.Int64())
 }
+*/
