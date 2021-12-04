@@ -15,7 +15,7 @@ func main() {
 func getMXDataFromHostname(hostname string) []*net.MX {
 	mxData, err := net.LookupMX(hostname)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalln(err)
 	}
 	return mxData
 }
