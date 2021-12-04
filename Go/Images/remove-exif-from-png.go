@@ -36,6 +36,6 @@ func removeEXIFDataFromPNGFromFile(path string) {
 	}
 	err = outfile.Close()
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalln(err)
 	}
 }
