@@ -26,7 +26,7 @@ func removeEXIFDataFromPNGFromFile(path string) {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	png.Encode(outfile, img)
+	err = png.Encode(outfile, img)
 	if err != nil {
 		log.Fatalln(err)
 	}
