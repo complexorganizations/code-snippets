@@ -16,26 +16,26 @@ func main() {
 func removeEXIFFromGIFFile(path string) {
 	file, err := os.Open(path)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalln(err)
 	}
 	img, _, err := image.Decode(file)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalln(err)
 	}
 	outfile, err := os.Create(path)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalln(err)
 	}
 	gif.Encode(outfile, img, nil)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalln(err)
 	}
 	err = file.Close()
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalln(err)
 	}
 	err = outfile.Close()
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalln(err)
 	}
 }
