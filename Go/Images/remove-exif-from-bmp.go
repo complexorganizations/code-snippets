@@ -30,7 +30,7 @@ func removeEXIFFromBMP(path string) {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	bmp.Encode(outfile, img)
+	err = bmp.Encode(outfile, img)
 	if err != nil {
 		log.Fatalln(err)
 	}
