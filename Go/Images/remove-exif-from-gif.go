@@ -9,11 +9,11 @@ import (
 
 func main() {
 	// Remove all the exif data from a gif.
-	removeEXIFFromGIFFile("assets/valid/valid-gif.gif")
+	removeEXIFDataFromGIFImage("assets/valid/valid-gif.gif")
 }
 
 // Remove all the EXIF data from an GIF.
-func removeEXIFFromGIFFile(path string) {
+func removeEXIFDataFromGIFImage(path string) {
 	file, err := os.Open(path)
 	if err != nil {
 		log.Fatalln(err)
