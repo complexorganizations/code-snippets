@@ -11,13 +11,13 @@ import (
 
 func main() {
 	// Remove all the exif data from a bmp file.
-	// removeEXIFFromBMP("../assets/valid/valid-bmp.bmp")
+	// removeEXIFDataFromBMPImage("../assets/valid/valid-bmp.bmp")
 	fmt.Println("Hello World")
 }
 
 /*
 // Remove all the exif data from a bmp file.
-func removeEXIFFromBMP(path string) {
+func removeEXIFDataFromBMPImage(path string) {
 	file, err := os.Open(path)
 	if err != nil {
 		log.Fatalln(err)
