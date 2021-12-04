@@ -9,11 +9,11 @@ import (
 
 func main() {
 	// Remove all the exif data from an png file.
-	removeEXIFDataFromPNGFromFile("assets/valid/valid-png.png")
+	removeEXIFDataFromPNGImage("assets/valid/valid-png.png")
 }
 
 // Remove all the EXIF data from an PNG file
-func removeEXIFDataFromPNGFromFile(path string) {
+func removeEXIFDataFromPNGImage(path string) {
 	file, err := os.Open(path)
 	if err != nil {
 		log.Fatalln(err)
