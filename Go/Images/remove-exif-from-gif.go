@@ -26,7 +26,7 @@ func removeEXIFFromGIFFile(path string) {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	gif.Encode(outfile, img, nil)
+	err = gif.Encode(outfile, img, nil)
 	if err != nil {
 		log.Fatalln(err)
 	}
