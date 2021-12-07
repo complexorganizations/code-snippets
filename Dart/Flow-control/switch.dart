@@ -1,7 +1,7 @@
 import "dart:core";
 
 void main() {
-  final String operator = "+";
+  const String operator = "+";
   switch (operator) {
     case "+":
       print("+");
