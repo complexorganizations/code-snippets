@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"log"
 	"os"
 )
@@ -13,16 +14,12 @@ func main() {
 
 // Read a file and then return the file's content as well as the number of bytes read.
 func readFileAndReturnContentWithBytesRead(path string) ([]byte, int) {
+	var counter int
 	file, err := os.Open(path)
 	if err != nil {
 		log.Fatalln(err)
 	}
-	fileinfo, err := file.Stat()
-	if err != nil {
-		log.Fatalln(err)
-	}
-	fileContent := make([]byte, fileinfo.Size())
-	bytesRead, err := file.Read(fileContent)
+	content, err := io.ReadAll(file)
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -30,5 +27,9 @@ func readFileAndReturnContentWithBytesRead(path string) ([]byte, int) {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	return fileContent, bytesRead
+	for bytesCounter, _ := range content {
+		_ = bytesCounter
+		counter = counter + 1
+	}
+	return content, counter
 }
