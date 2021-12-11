@@ -27,8 +27,7 @@ func readFileAndReturnContentWithBytesRead(path string) ([]byte, int) {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	for bytesCounter, _ := range content {
-		_ = bytesCounter
+	for _ = range content {
 		counter = counter + 1
 	}
 	return content, counter
