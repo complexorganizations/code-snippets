@@ -8,11 +8,11 @@ import (
 
 func main() {
 	// Read a file and return the content and the ammount of bytes read.
-	fmt.Println(readFileAndReturnContentWithBytes("assets/valid/valid-json.json"))
+	fmt.Println(readFileAndReturnContentWithBytesRead("assets/valid/valid-json.json"))
 }
 
-// Read a file and than return the content of the file and the ammount of bytes read from file.
-func readFileAndReturnContentWithBytes(path string) ([]byte, int) {
+// Read a file and then return the file's content as well as the number of bytes read.
+func readFileAndReturnContentWithBytesRead(path string) ([]byte, int) {
 	file, err := os.Open(path)
 	if err != nil {
 		log.Fatalln(err)
