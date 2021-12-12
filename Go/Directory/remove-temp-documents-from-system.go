@@ -1,15 +1,18 @@
 package main
 
 import (
-	"log"
-	"os"
+	//"log"
+	"fmt"
+	// "os"
 )
 
 func main() {
 	// Remove all the temp files from the system.
-	removeTempFilesFromSystem()
+	// removeTempFilesFromSystem()
+	fmt.Println("Hello, World!")
 }
 
+/*
 // Remove all temporary files from a system.
 func removeTempFilesFromSystem() {
 	err := os.RemoveAll(os.TempDir())
@@ -17,3 +20,4 @@ func removeTempFilesFromSystem() {
 		log.Fatalln(err)
 	}
 }
+*/
