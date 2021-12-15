@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strings"
 )
 
 func main() {
@@ -22,6 +23,9 @@ func main() {
 func helloHandler(writer http.ResponseWriter, request *http.Request) {
 	// Write the response
 	io.WriteString(writer, "Hello, world!\n")
+	// https://owasp.org/www-community/attacks/Log_Injection
+	escapedUrlPath := strings.Replace(request.URL.Path, "\n", "", -1)
+	escapedUrlPath = strings.Replace(request.URL.Path, "\r", "", -1)
 	// Get the path from the request.
-	fmt.Println(request.URL.Path)
+	fmt.Println(escapedUrlPath)
 }
