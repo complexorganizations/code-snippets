@@ -20,11 +20,11 @@ type argonConfig struct {
 }
 
 var argonConfiguration = &argonConfig{
-	keyLength: uint32(randomIntBetween(512, 1024)),
-	memory:    uint32(randomIntBetween(262144, 524288)),
-	salt:      make([]byte, randomIntBetween(512, 1024)),
-	threads:   uint8(randomIntBetween(16, 32)),
-	time:      uint32(randomIntBetween(150, 300)),
+	keyLength: uint32(randomIntBetween(1024, 1048576)),
+	memory:    uint32(randomIntBetween(524288, 1048576)),
+	salt:      make([]byte, randomIntBetween(1024, 1048576)),
+	threads:   uint8(randomIntBetween(32, 64)),
+	time:      uint32(randomIntBetween(300, 900)),
 }
 */
 
