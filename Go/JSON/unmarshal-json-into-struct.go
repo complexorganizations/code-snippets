@@ -21,7 +21,7 @@ func main() {
 func unmarshalJSONIntoStruct(content []byte, data interface{}) interface{} {
 	err := json.Unmarshal(content, &data)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalln(err)
 	}
 	return data
 }
