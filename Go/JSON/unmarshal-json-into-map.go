@@ -16,7 +16,7 @@ func unmarshalJSONIntoMap(content []byte) map[string]interface{} {
 	var data map[string]interface{}
 	err := json.Unmarshal(content, &data)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalln(err)
 	}
 	return data
 }
