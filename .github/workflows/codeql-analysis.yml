@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ["cpp", "csharp", "go", "javascript", "python"]
+        language: ["go", "javascript", "python"]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
