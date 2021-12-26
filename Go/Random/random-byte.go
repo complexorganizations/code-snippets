@@ -13,6 +13,9 @@ func main() {
 // Generate a random byte array and return it.
 func randomBytesArray(length int) []byte {
 	randomBytes := make([]byte, length)
-	rand.Read(randomBytes)
+	_, err := rand.Read(randomBytes)
+	if err != nil {
+		log.Fatalln(err)
+	}
 	return randomBytes
 }
