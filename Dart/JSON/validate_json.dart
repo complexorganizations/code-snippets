@@ -3,7 +3,11 @@ import "dart:core";
 
 void main() {
   // Check if the provided json is valid json.
-  print(jsonValidationCheck("""{"name":"John Doe","email":"john.doe@example.com"}"""));
+  print(
+    jsonValidationCheck(
+      """{"name":"John Doe","email":"john.doe@example.com"}""",
+    ),
+  );
   print(jsonValidationCheck("""Hello, World!"""));
 }
 

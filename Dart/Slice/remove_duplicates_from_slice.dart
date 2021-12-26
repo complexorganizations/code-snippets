@@ -2,7 +2,7 @@ import "dart:core";
 
 void main() {
   // Create a new list of strings.
-  final List<String> randomSlice = <String>["Bob","Bob", "Alice", "Joe"];
+  final List<String> randomSlice = <String>["Bob", "Bob", "Alice", "Joe"];
   // Remove all duplicate elements from the list.
   print(removeDuplicatesFromSlice(randomSlice));
 }

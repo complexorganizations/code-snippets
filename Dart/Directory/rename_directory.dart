@@ -3,7 +3,10 @@ import "dart:io";
 
 void main() {
   // Rename a directory.
-  renameDirectory("assets/valid/aDT5V7223266kFX4uv9P9o7ovi6tdWhv/", "assets/valid/aDT5V7223266kFX4uv9P9o7ovi6tdWhv/");
+  renameDirectory(
+    "assets/valid/aDT5V7223266kFX4uv9P9o7ovi6tdWhv/",
+    "assets/valid/aDT5V7223266kFX4uv9P9o7ovi6tdWhv/",
+  );
 }
 
 // Rename a directory.

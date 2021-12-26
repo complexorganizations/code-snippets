@@ -8,8 +8,5 @@ void main() {
 
 // Get all the directories only in a directory
 List<Directory>? getAllDirectoryInDirectory(final String path) {
-  return Directory(path)
-      .listSync()
-      .whereType<Directory>()
-      .toList();
+  return Directory(path).listSync().whereType<Directory>().toList();
 }

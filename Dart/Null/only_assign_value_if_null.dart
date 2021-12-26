@@ -6,6 +6,6 @@ void main() {
 }
 
 // Only assign a value to a variable if its null.
-dynamic onlyAssignValueIfNull(dynamic variable, dynamic content) {
+dynamic onlyAssignValueIfNull(dynamic variable, final dynamic content) {
   return variable ??= content;
 }

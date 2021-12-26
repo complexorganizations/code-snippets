@@ -1,7 +1,7 @@
 import "dart:core";
 import "dart:math";
 
-void main(){
+void main() {
   // Generate a random double.
   print(generateRandomDouble());
 }

@@ -6,6 +6,6 @@ void main() {
 }
 
 // Check if a value is null
-bool isValueNull(dynamic content) {
+bool isValueNull(final dynamic content) {
   return content == null;
 }
