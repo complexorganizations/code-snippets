@@ -1,14 +1,14 @@
 package main
 
 import (
-	"crypto/rand"
+	//"crypto/rand"
 	"fmt"
-	"log"
-
-	"golang.org/x/crypto/curve25519"
+	//"log"
+	//"golang.org/x/crypto/curve25519"
 )
 
 func main() {
+	/*
 	// Generate a key pair for Alice
 	alicePrivateKey, alicePublicKey := generateCurve25519KeyPair()
 	fmt.Printf("Private key for alice %x\n", alicePrivateKey)
@@ -23,8 +23,11 @@ func main() {
 	// Generate a shared secret for Bob
 	sharedKeyForBob := generateSharedSecretUsingCurve25519(bobPrivateKey, alicePublicKey)
 	fmt.Printf("Shared key for bob %x\n", sharedKeyForBob)
+	*/
+	fmt.Println("Hello, World!")
 }
 
+/*
 // Generate a random private key and public key pair.
 func generateCurve25519KeyPair() ([]byte, []byte) {
 	var privateKey [32]byte
@@ -53,3 +56,4 @@ func randomBytesArray(length int) []byte {
 	}
 	return randomBytes
 }
+*/
