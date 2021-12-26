@@ -4,7 +4,6 @@ import (
 	//"crypto/rand"
 	"fmt"
 	// "log"
-
 	// "golang.org/x/crypto/chacha20poly1305"
 )
 

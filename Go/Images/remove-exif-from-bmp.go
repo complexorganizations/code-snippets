@@ -5,7 +5,6 @@ import (
 	//"log"
 	//"os"
 	"fmt"
-	
 	//"golang.org/x/image/bmp"
 )
 

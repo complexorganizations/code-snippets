@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	//"log"
-
 	//"golang.org/x/crypto/chacha20poly1305"
 )
 

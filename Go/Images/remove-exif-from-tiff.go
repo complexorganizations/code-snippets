@@ -5,7 +5,6 @@ import (
 	//"image"
 	//"log"
 	//"os"
-
 	//"golang.org/x/image/tiff"
 )
 
