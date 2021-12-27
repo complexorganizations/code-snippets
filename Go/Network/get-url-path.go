@@ -25,8 +25,8 @@ func helloHandler(writer http.ResponseWriter, request *http.Request) {
 	io.WriteString(writer, "Hello, world!\n")
 	// https://owasp.org/www-community/attacks/Log_Injection
 	urlPath := request.URL.Path
-	urlPath = strings.Replace(urlPath, "\n", "", -1)
-	urlPath = strings.Replace(urlPath, "\r", "", -1)
+	escapedUrlPath := strings.Replace(urlPath, "\n", "", -1)
+	escapedUrlPath = strings.Replace(escapedUrlPath, "\r", "", -1)
 	// Get the path from the request.
-	fmt.Println(urlPath)
+	fmt.Println(escapedUrlPath)
 }
