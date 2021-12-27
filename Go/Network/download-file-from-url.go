@@ -12,7 +12,7 @@ func main() {
 	downloadFileFromURL("https://api.ipengine.dev/", "ip.json")
 }
 
-// Download a file from the given URL.
+// Download a file from the given URL to a specified location
 func downloadFileFromURL(url string, localPath string) {
 	response, err := http.Get(url)
 	if err != nil {
