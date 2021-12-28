@@ -8,7 +8,7 @@ import (
 
 func main() {
 	// Check if a given proxy is working.
-	fmt.Println(validateProxy("http://127.0.0.1:8080"))
+	fmt.Println(validateProxy("http://username:password@127.0.0.1:8080"))
 }
 
 // Check if a given proxy is working and return a bool.
