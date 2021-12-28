@@ -9,7 +9,7 @@ import (
 
 func main() {
 	// Send a http request with a given proxy and return the bytes of the response.
-	fmt.Printf("%s", httpRequestWithProxy("http://127.0.0.1:8080", "https://www.example.com", "GET"))
+	fmt.Printf("%s", httpRequestWithProxy("http://username:password@127.0.0.1:8080", "https://www.example.com", "GET"))
 }
 
 // Send a http request with a given proxy and return the bytes of the response.
