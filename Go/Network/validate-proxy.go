@@ -31,5 +31,9 @@ func validateProxy(proxy string) bool {
 	if err != nil {
 		return false
 	}
+	err = response.Body.Close()
+	if err != nil {
+		return false
+	}
 	return response.StatusCode == 200
 }
