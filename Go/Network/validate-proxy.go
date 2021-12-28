@@ -16,7 +16,7 @@ func main() {
 func validateProxy(proxy string) bool {
 	proxyURL, err := url.Parse(proxy)
 	if err != nil {
-		log.Fatalln(err)
+		return false
 	}
 	transport := &http.Transport{
 		Proxy: http.ProxyURL(proxyURL),
@@ -26,11 +26,11 @@ func validateProxy(proxy string) bool {
 	}
 	request, err := http.NewRequest("GET", "https://www.example.com", nil)
 	if err != nil {
-		log.Fatalln(err)
+		return false
 	}
 	response, err := client.Do(request)
 	if err != nil {
-		log.Fatalln(err)
+		return false
 	}
 	return response.StatusCode == 200
 }
