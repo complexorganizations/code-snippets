@@ -11,7 +11,6 @@ void main() {
   print(isMapEmpty(userMap));
 }
 
-
 // Check if a given map is empty.
 bool isMapEmpty(final Map<dynamic, dynamic> userMap) {
   return userMap.isEmpty;
