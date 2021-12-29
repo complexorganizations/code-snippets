@@ -11,9 +11,10 @@ void main() {
   print(removeEverythingFromMap(userMap));
 }
 
-
 // remove everything from a given map.
-Map<dynamic, dynamic> removeEverythingFromMap(final Map<dynamic, dynamic> providedMap) {
+Map<dynamic, dynamic> removeEverythingFromMap(
+  final Map<dynamic, dynamic> providedMap,
+) {
   providedMap.clear();
   return providedMap;
 }
