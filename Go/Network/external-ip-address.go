@@ -17,7 +17,7 @@ func main() {
 func getExternalIP() string {
 	type ipengine struct {
 		Network struct {
-			IP string `json:"ip"`
+			IP string
 		}
 	}
 	var ipEngineData ipengine
