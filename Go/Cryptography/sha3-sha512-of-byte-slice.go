@@ -7,13 +7,13 @@ import (
 
 func main() {
 	// Get the sha256 of a given string using sha3
-	// fmt.Println(sha3Using512OfGivenString([]("Hello World!")))
+	// fmt.Println(sha3Using512OfGivenByte([]("Hello World!")))
 	fmt.Println("Hello, World!")
 }
 
 /*
 // Get the hash of a string using SHA3-512
-func sha3Using512OfGivenString(content []byte) string {
+func sha3Using512OfGivenByte(content []byte) string {
 	return fmt.Sprintf("%x", sha3.Sum512(content))
 }
 */
