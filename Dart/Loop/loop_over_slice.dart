@@ -2,9 +2,9 @@ import "dart:core";
 
 void main() {
     // Create a slice of strings
-    var fruits = ["Apple", "Orange", "Pear"];
+    final List<String> fruits = <String>["Apple", "Orange", "Pear"];
     // Loop over the slice
-    for (var fruit in fruits) {
+    for (final String fruit in fruits) {
         print(fruit);
     }
 }
