@@ -7,9 +7,9 @@ void main() {
 
 // Parse a bool and return a bool
 bool? parseBool(final dynamic content) {
-  if (content == "true") {
+  if (content.contains("true")) {
     return true;
-  } else if (content == "false") {
+  } else if (content.contains("false")) {
     return false;
   }
   return null;
