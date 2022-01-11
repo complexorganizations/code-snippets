@@ -4,7 +4,7 @@ import "dart:io";
 void main() {
   // Take in user input from the terminal
   print("Whats your name?");
-  var userinput = userInputFromTerminal();
+  final String? userinput = userInputFromTerminal();
   print("Your name is ${userinput}");
 }
 
