@@ -7,6 +7,5 @@ void main() {
 
 // Get the port from a given url.
 int getPortFromURL(final String url) {
-  final Uri parsedURL = Uri.parse(url);
-  return parsedURL.port;
+  return Uri.parse(url).port;
 }
