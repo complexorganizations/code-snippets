@@ -8,7 +8,7 @@ def get_system_hostname():
 
 def main():
     # Get the current system hostname
-    print get_system_hostname()
+    print(get_system_hostname())
 
 
 main()
