@@ -7,6 +7,5 @@ void main() {
 
 // Get the path from a given url.
 String getUrlPath(final String url) {
-  final Uri parsedURL = Uri.parse(url);
-  return parsedURL.path;
+  return Uri.parse(url).path;
 }
