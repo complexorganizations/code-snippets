@@ -7,6 +7,5 @@ void main() {
 
 // Get the query from a given url.
 String getQueryFromURL(final String url) {
-    final Uri parsedURL = Uri.parse(url);
-  return parsedURL.query;
+  return Uri.parse(url).query;
 }
