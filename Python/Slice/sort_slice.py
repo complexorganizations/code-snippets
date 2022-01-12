@@ -1,11 +1,11 @@
-# Sort a given slice and return the slice.
+# Sort the elements in an array.
 def sort_slice(provided_slice):
     return sorted(provided_slice)
 
 def main():
-    # Create a slice with random elements.
+    # Make a slice using a random set of data.
     randomSlice = ["c", "a", "b"]
-    # Sort the given slice.
+    # Sort the elements in an array.
     print(sort_slice(randomSlice))
     
 main()
