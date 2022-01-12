@@ -7,6 +7,5 @@ void main() {
 
 // Get the fragment from a given url.
 String getURLFragment(final String url) {
-    final Uri parsedURL = Uri.parse(url);
-  return parsedURL.fragment;
+  return Uri.parse(url).fragment;
 }
