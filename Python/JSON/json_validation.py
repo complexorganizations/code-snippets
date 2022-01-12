@@ -4,7 +4,7 @@ import json
 # Check if a JSON is valid
 def json_validation(provided_json):
     try:
-        json.decoder.JSONDecoder().decode(provided_json)
+        json.loads(provided_json)
         return True
     except ValueError:
         return False
