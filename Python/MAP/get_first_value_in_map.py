@@ -1,6 +1,6 @@
 # Get the first value in a map.
 def get_first_value_in_map(provided_map):
-    for _, value in map.items():
+    for _, value in provided_map.items():
         return value
 
 
