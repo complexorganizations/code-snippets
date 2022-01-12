@@ -1,6 +1,6 @@
 import "dart:core";
 
-void main() async {
+void main() {
   // Check if a given url is valid.
   print(isURLValid("https://www.example.com"));
 }
