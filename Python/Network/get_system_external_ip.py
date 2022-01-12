@@ -9,7 +9,7 @@ def get_system_external_ip():
     data = res.read()
     websiteData = data.decode("utf-8")
     jsonContent = json.loads(websiteData)
-    print(jsonContent["network"])
+    return jsonContent["network"]["ip"]
 
 
 def main():
