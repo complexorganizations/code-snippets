@@ -1,6 +1,5 @@
 def main():
-    """Apple ."""
-    print("Hello, World")
+    print("Hello, World!")
 
 
 main()
