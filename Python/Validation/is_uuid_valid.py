@@ -10,4 +10,5 @@ def main():
     # Check if a given uuid is valid.
     print(is_uuid_valid("00000000-0000-0000-0000-000000000000"))
 
+
 main()

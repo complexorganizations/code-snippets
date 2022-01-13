@@ -1,7 +1,6 @@
 import random
 
 
-
 # Shuffle the order of the key value pairs in a map.
 def shuffle_the_order_of_map(provided_map):
     shuffled_map = provided_map.copy()
