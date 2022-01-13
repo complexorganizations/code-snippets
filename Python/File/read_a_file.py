@@ -1,7 +1,6 @@
 import os
 
 
-
 # Read a file from the system.
 def read_a_file(system_path):
     with open(system_path, "r") as file:

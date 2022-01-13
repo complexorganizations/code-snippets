@@ -1,7 +1,6 @@
 import os
 
 
-
 # Get the size of a given file.
 def get_file_size(system_path):
     return os.path.getsize(system_path)

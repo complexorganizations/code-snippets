@@ -1,7 +1,6 @@
 import os
 
 
-
 # Count how many lines are in a file.
 def count_lines_in_file(system_path):
     return len(open(system_path).readlines())
