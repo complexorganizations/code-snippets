@@ -1,8 +1,8 @@
-import os
+import shutil
 
 # Remove a directory.
 def remove_directory(system_path):
-    os.rmdir(system_path)
+    shutil.rmtree(system_path)
 
 
 def main():
