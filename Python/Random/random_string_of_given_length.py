@@ -2,7 +2,6 @@ import random
 import string
 
 
-
 # Generate a random string of a given length
 def random_string_of_given_length(length):
     return "".join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.ascii_letters + string.digits + string.punctuation) for i in range(length))

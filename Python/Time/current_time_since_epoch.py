@@ -7,8 +7,8 @@ def current_time_since_epoch():
 
 
 def main():
-  # Get the current time in seconds since epoch
-  print(current_time_since_epoch())
+    # Get the current time in seconds since epoch
+    print(current_time_since_epoch())
 
 
 main()

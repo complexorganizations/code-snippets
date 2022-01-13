@@ -7,8 +7,8 @@ def get_current_year():
 
 
 def main():
-  # Get the current year.
-  print(get_current_year())
+    # Get the current year.
+    print(get_current_year())
 
 
 main()

@@ -19,7 +19,8 @@ def main():
     payload = ""
     encoding = "utf-8"
     headers = {}
-    print(send_request_and_return_response(hostname, path, payload, headers, method, encoding))
+    print(send_request_and_return_response(
+        hostname, path, payload, headers, method, encoding))
 
 
 main()

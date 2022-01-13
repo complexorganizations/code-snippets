@@ -7,8 +7,8 @@ def get_local_system_time_from_system():
 
 
 def main():
-  # Get the current time in local system timezone.
-  print(get_local_system_time_from_system())
+    # Get the current time in local system timezone.
+    print(get_local_system_time_from_system())
 
 
 main()

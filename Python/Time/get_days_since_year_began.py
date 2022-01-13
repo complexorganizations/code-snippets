@@ -7,8 +7,8 @@ def get_days_since_year_began():
 
 
 def main():
-  # Get days since year began.
-  print(get_days_since_year_began())
+    # Get days since year began.
+    print(get_days_since_year_began())
 
 
 main()

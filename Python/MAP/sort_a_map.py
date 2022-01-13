@@ -9,4 +9,5 @@ def main():
     # Sort a map.
     print(sort_a_map(randomMap))
 
+
 main()

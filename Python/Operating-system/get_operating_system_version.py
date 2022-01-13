@@ -7,9 +7,8 @@ def get_operating_system_version():
 
 
 def main():
-  # Get the current operating system version
-  print(get_operating_system_version())
-
+    # Get the current operating system version
+    print(get_operating_system_version())
 
 
 main()

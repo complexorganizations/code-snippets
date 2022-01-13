@@ -1,7 +1,6 @@
 import random
 
 
-
 # Generate a random int between a given range.
 def random_int_between_min_max(min, max):
     return random.randint(min, max)

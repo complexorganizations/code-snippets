@@ -7,8 +7,8 @@ def get_system_platform():
 
 
 def main():
-  # Get the current system platform.
-  print(get_system_platform())
+    # Get the current system platform.
+    print(get_system_platform())
 
 
 main()

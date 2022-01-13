@@ -7,8 +7,8 @@ def get_current_month():
 
 
 def main():
-  # Get the current month in the year.
-  print(get_current_month())
+    # Get the current month in the year.
+    print(get_current_month())
 
 
 main()
