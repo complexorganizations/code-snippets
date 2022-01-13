@@ -1,5 +1,3 @@
-from pydoc import resolve
-from tkinter import E
 import dns.resolver
 
 
