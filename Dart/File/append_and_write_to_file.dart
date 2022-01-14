@@ -11,6 +11,5 @@ void main() {
 
 // Append and write some content to a file.
 void appendAndWriteToFile(final String fileName, final String content) {
-  final File file = File(fileName);
-  file.writeAsStringSync(content, mode: FileMode.append);
+  File(fileName).writeAsStringSync(content, mode: FileMode.append);
 }
