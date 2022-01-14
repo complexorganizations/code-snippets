@@ -9,15 +9,15 @@ Future<void> main() async {
 
 // Check if there is network on the current system.
 Future<bool> connectivityCheck() async {
-  bool isRegistered = false;
+  bool connectivity = false;
     try {
       final List<InternetAddress> response =
           await InternetAddress.lookup("https://www.example.com");
       if (response.isNotEmpty) {
-        isRegistered = true;
+        connectivity = true;
       }
     } on SocketException {
-      isRegistered = false;
+      connectivity = false;
     }
-  return isRegistered;
+  return connectivity;
 }
