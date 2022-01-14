@@ -1,4 +1,4 @@
-name: code-snippets
+name: code_snippets
 description: Code snippets from the open source community.
 version: 0.0.0
 
@@ -6,3 +6,4 @@ environment:
   sdk: ">=2.15.1 <3.0.0"
 
 dependencies:
+  crypto: ^3.0.1
