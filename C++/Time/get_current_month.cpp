@@ -10,6 +10,7 @@ int getCurrentMonth() {
 }
 
 int main() {
+    // Get the current month in the year.
     std::cout << getCurrentMonth() << std::endl;
     return 0;
 }
