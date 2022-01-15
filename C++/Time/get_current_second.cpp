@@ -9,7 +9,6 @@ int getCurrentSecond() {
     return tm->tm_sec;
 }
 
-
 int main() {
     // Get the current second in the minute.
     std::cout << getCurrentSecond() << std::endl;
