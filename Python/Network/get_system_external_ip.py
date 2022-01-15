@@ -4,10 +4,10 @@ import json
 
 # Get the external IP of the current system
 def get_system_external_ip():
-    conn = http.client.HTTPSConnection("api.ipengine.dev")
-    conn.request("GET", "/", "", {})
-    res = conn.getresponse()
-    data = res.read()
+    connection = http.client.HTTPSConnection("api.ipengine.dev")
+    connection.request("GET", "/", "", {})
+    response = connection.getresponse()
+    data = response.read()
     websiteData = data.decode("utf-8")
     return json.loads(websiteData)["network"]["ip"]
 

@@ -3,10 +3,10 @@ import http.client
 
 # Send a request and return the response.
 def send_request_and_return_response(hostname, path, payload, headers, method, encoding):
-    conn = http.client.HTTPSConnection(hostname)
-    conn.request(method, path, payload, headers)
-    res = conn.getresponse()
-    data = res.read()
+    connection = http.client.HTTPSConnection(hostname)
+    connection.request(method, path, payload, headers)
+    response = connection.getresponse()
+    data = response.read()
     returnData = data.decode(encoding)
     return returnData
 
