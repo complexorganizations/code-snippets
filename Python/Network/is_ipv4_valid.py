@@ -8,7 +8,7 @@ def is_ipv4_valid(provided_ipv4):
 
 def main():
     # Check if a given ipv4 is valid.
-    print(is_ipv4_valid("0.0.0.0."))
+    print(is_ipv4_valid("0.0.0.0"))
 
 
 main()
