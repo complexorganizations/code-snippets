@@ -8,7 +8,7 @@ def check_domain_a_records(provided_domain):
 
 def main():
     # Check a domain's A records.
-    websiteARecords = check_domain_a_records("www.amazon.com")
+    websiteARecords = check_domain_a_records("example.com")
     for aRecords in websiteARecords:
         print(aRecords)
 
