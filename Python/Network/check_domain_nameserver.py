@@ -8,7 +8,7 @@ def check_domain_nameserver(provided_domain):
 
 def main():
     # Check a domain's name servers.
-    websiteNameServers = checkDomainNameServer("example.com")
+    websiteNameServers = check_domain_nameserver("example.com")
     for nameservers in websiteNameServers:
         print(nameservers)
 
