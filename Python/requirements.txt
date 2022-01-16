@@ -1,4 +1,4 @@
 dnspython==2.1.0
 psutil==5.9.0
-tensorflow==2.7.0
+tensorflow
 validators==0.18.2
