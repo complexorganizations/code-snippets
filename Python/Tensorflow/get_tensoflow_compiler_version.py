@@ -9,6 +9,7 @@ def get_tensoflow_compiler_version():
 
 
 def main():
+    # Get the current tensorflow complier version.
     print(get_tensoflow_compiler_version())
 
 
