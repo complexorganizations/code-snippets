@@ -3,7 +3,7 @@ import random
 
 # Pick an element at random from the slice.
 def get_random_element_from_slice(provided_slice):
-    return provided_slice[random.randint(0, len(provided_slice) - 1)]
+    return random.choice(provided_slice)
 
 
 def main():
