@@ -9,13 +9,19 @@ jobs:
     steps:
       - name: Check out code into the directory
         uses: actions/checkout@v2
-      - name: Update Rust
+      - name: Update all components of rust
+        run: rustup update
+      - name: Switch over to rust nightly
         run: |
+          rustup toolchain install nightly
+          rustup run nightly rustc --version
+          rustup default nightly
           rustup update
-      - name: Install dependencies
+      - name: Install required components
         run: |
           rustup component add clippy
           rustup +nightly component add miri
+          rustup update
       - name: Run the code
         run: |
           ALL_FILES_IN_DIRECTORY=$(find Rust/ -type f -name "*.rs")
