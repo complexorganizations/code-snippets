@@ -5,11 +5,9 @@ def loop_over_map():
         print(key, value)
 
 
-
 def main():
     # Loop over a map.
     loop_over_map()
-
 
 
 main()

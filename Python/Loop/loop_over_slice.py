@@ -5,11 +5,9 @@ def loop_over_slice():
         print(value)
 
 
-
 def main():
     # Loop over a slice.
     loop_over_slice()
-
 
 
 main()

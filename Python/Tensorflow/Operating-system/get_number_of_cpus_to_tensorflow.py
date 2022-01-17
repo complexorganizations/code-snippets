@@ -1,12 +1,9 @@
 import tensorflow
 
 
-
-
 # Get a number of all available cpus to tensorflow.
 def get_number_of_cpus_to_tensorflow():
     return len(tensorflow.config.list_physical_devices("CPU"))
-
 
 
 def main():
