@@ -33,6 +33,7 @@ jobs:
           for FILE_LIST in "${ALL_FILES_LIST[@]}"; do
             echo ${FILE_LIST}
             mv ../${FILE_LIST} src/main.rs
+            cargo run --quiet --all-features
             cargo clean
             mv src/main.rs ../${FILE_LIST}
           done
