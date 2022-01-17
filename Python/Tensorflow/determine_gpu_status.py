@@ -6,7 +6,7 @@ import os
 def determine_gpu_status(enable_or_disable_gpu):
     if enable_or_disable_gpu == True:
         os.environ["CUDA_VISIBLE_DEVICES"] = "0"
-    elif enable_or_disable_gpu False:
+    elif enable_or_disable_gpu == False:
         os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 
