@@ -1,7 +1,6 @@
 # Capitalize a given string.
 def capitalize_string(provided_string):
-  return provided_string.capitalize()
-
+    return provided_string.capitalize()
 
 
 def main():
