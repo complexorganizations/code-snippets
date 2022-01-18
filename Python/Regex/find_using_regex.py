@@ -10,7 +10,7 @@ def find_using_regex(regex, content):
 
 def main():
     # Find some content using regex.
-    print(find_using_regex("Hello", "Hello, World!")
+    print(find_using_regex("Hello", "Hello, World!"))
 
 
 
