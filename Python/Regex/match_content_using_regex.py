@@ -4,10 +4,7 @@ import re
 
 # Check if a given string cointains a given data.
 def match_content_using_regex(provided_regex, provided_content):
-    match = re.match(provided_regex, provided_content)
-    if (match):
-        return True
-    return False
+    return bool(re.match(provided_regex, provided_content))
 
 
 def main():
