@@ -8,7 +8,11 @@ void main() {
 }
 
 // At a particular index, change the value of an element.
-List<dynamic> changeElementAtGivenIndex(final List<dynamic> providedSlice, final int providedIndex, final String providedElement) {
-  providedSlice[providedIndex] = providedElement;
-  return providedSlice;
+List<dynamic> changeElementAtGivenIndex(
+  final List<dynamic> slice,
+  final int index,
+  final String element,
+) {
+  slice[index] = element;
+  return slice;
 }
