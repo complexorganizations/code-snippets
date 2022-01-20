@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	err := os.Remove("assets/remove/7Wscar4nPM5cT7o57j773v8UJ")
+	err := os.Remove("assets/remove/89mmtNQY7hM7389f48Sw46ZhbRDNQ2h9/README.md")
 	if err != nil {
 		writeErrorsToSystemLogs(err)
 	}
