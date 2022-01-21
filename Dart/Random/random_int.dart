@@ -8,5 +8,5 @@ void main() {
 
 // Generate a random int between 0 and a given max value
 int generateRandomInt(final int max) {
-  return Random().nextInt(max);
+  return Random.secure().nextInt(max);
 }
