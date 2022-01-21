@@ -8,5 +8,5 @@ void main() {
 
 // Generate a random double
 double generateRandomDouble() {
-  return Random().nextDouble();
+  return Random.secure().nextDouble();
 }
