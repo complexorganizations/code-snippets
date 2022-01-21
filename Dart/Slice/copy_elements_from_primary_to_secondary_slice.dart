@@ -11,8 +11,10 @@ void main() {
 // All of the items from a primary slice should be copied to a secondary slice.
 List<dynamic> copyElementsFromPrimaryToSecondarySlice(
   final List<dynamic> primarySlice,
-  List<dynamic> secondarySlice,
+  final List<dynamic> secondarySlice,
 ) {
-  secondarySlice = [...primarySlice];
+  for (final dynamic element in primarySlice) {
+    secondarySlice.add(element);
+  }
   return secondarySlice;
 }
