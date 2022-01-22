@@ -98,7 +98,7 @@ linter:
     package_api_docs: true
     package_names: true
     package_prefixed_library_names: true
-    parameter_assignments: true
+    parameter_assignments: false
     prefer_adjacent_string_concatenation: true
     prefer_asserts_in_initializer_lists: true
     prefer_asserts_with_message: true
