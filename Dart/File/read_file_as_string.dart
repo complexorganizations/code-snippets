@@ -13,8 +13,5 @@ void main() {
 // Read a file as a string and return it.
 String? readAFileAsString(final String path) {
   final File file = File(path);
-  if (!file.existsSync()) {
-    return null;
-  }
   return file.readAsStringSync();
 }
