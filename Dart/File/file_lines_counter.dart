@@ -8,7 +8,5 @@ void main() {
 
 // Count how many lines are in a file.
 int countLinesInFile(final String filePath) {
-  final File file = File(filePath);
-  final List<String> lines = file.readAsLinesSync();
-  return lines.length;
+  return File(filePath).readAsLinesSync().length;
 }
