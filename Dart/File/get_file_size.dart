@@ -10,6 +10,5 @@ void main() {
 
 // Get the size of a given file.
 int getFileSize(final String systemFile) {
-  final File file = File(systemFile);
-  return file.lengthSync();
+  return File(systemFile).lengthSync();
 }
