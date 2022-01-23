@@ -12,6 +12,5 @@ void main() {
 
 // Read a file line by line
 List<String> readFileLineByLine(final String fileName) {
-  final File file = File(fileName);
-  return file.readAsLinesSync();
+  return File(fileName).readAsLinesSync();
 }
