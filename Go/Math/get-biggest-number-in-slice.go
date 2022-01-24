@@ -11,7 +11,7 @@ func main() {
 
 // Get the biggest number in a given slice.
 func getBiggestNumberInSlice(slice []int) int {
-	var biggestNumber int
+	biggestNumber := slice[0]
 	for _, value := range slice {
 		if value > biggestNumber {
 			biggestNumber = value
