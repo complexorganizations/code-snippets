@@ -3,7 +3,7 @@ import "dart:math";
 
 void main() {
   // Create of list of numbers.
-  final List<int> randomSlice = [0, 1, 2, 3];
+  final List<int> randomSlice = <int>[0, 1, 2, 3];
   // Find the smallest number in the given slice.
   print(getSmallestNumberInSlice(randomSlice));
 }
