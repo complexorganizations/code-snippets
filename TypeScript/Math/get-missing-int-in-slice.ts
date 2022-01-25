@@ -23,7 +23,7 @@ function getMissingIntInSlice(slice: number[]): number {
 // Check if a given slice contains a given element
 function doesSliceContainElement(slice: number[], element: number): boolean {
     for (let i: number = 0; i < slice.length; i++) {
-        if (slice[i] === element) {
+        if (slice[i] == element) {
             return true
         }
     }
