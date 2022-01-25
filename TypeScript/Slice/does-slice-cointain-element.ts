@@ -10,7 +10,7 @@ main()
 // Check if a given slice contains a given element
 function doesSliceContainElement(slice: string[], element: string): boolean {
     for (let i: number = 0; i < slice.length; i++) {
-        if (slice[i] === element) {
+        if (slice[i] == element) {
             return true
         }
     }
