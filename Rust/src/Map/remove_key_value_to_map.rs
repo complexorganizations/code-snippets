@@ -8,13 +8,13 @@ fn main() {
     generated_map.insert("a", "1");
     generated_map.insert("b", "2");
     generated_map.insert("c", "3");
-    // Remove everything from a map.
-    remove_everything_from_map(&mut generated_map);
+    // Remove a key value pair from a given map.
+    remove_key_value_pair(&mut generated_map, "a");
     // Print the map.
     println!("{:?}", generated_map);
 }
 
-// Remove everything from a map.
-fn remove_everything_from_map(map: &mut HashMap<&str, &str>) {
-    return map.clear();
+// Remove a key value pair from a given map.
+fn remove_key_value_pair<'a>(map: &mut HashMap<&'a str, &'a str>, key: &'a str) -> Option<&'a str> {
+    return map.remove(key);
 }

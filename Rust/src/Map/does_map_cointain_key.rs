@@ -8,13 +8,12 @@ fn main() {
     generated_map.insert("a", "1");
     generated_map.insert("b", "2");
     generated_map.insert("c", "3");
-    // Remove everything from a map.
-    remove_everything_from_map(&mut generated_map);
-    // Print the map.
-    println!("{:?}", generated_map);
+    // Check if the map contains a key.
+    println!("{:?}", does_map_cointain_key(&mut generated_map, "a"));
 }
 
-// Remove everything from a map.
-fn remove_everything_from_map(map: &mut HashMap<&str, &str>) {
-    return map.clear();
+
+// Check if the given map contains a given key.
+fn does_map_cointain_key<'a>(map: &mut HashMap<&'a str, &'a str>, key: &'a str) -> bool {
+    return map.contains_key(key);
 }
