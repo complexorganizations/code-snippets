@@ -1,4 +1,4 @@
-#[allow(clippy::needless_return)]
+#![allow(clippy::needless_return)]
 use rand::Rng;
 use rand::thread_rng;
 use rand::distributions::Alphanumeric;
