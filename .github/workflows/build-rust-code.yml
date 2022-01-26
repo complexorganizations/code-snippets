@@ -11,8 +11,6 @@ jobs:
         uses: actions/checkout@v2
       - name: Update Rust
         run: rustup update
-      - name: Install required components
-        run: rustup component add clippy
       - name: Run the code
         run: |
           ALL_FILES_IN_DIRECTORY=$(find Rust/ -type f -name "*.rs")
@@ -24,8 +22,7 @@ jobs:
           for FILE_LIST in "${ALL_FILES_LIST[@]}"; do
             echo ${FILE_LIST}
             mv ../${FILE_LIST} src/main.rs
-            cargo run --quiet --all-features
-            cargo clippy
+            cargo run
             cargo clean
             mv src/main.rs ../${FILE_LIST}
           done
