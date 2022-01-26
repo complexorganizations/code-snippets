@@ -8,7 +8,7 @@ import (
 
 func main() {
 	// Get the user info from a url.
-	fmt.Println(getUserInfoFromURL("https://user:pass@127.0.0.1:8080"))
+	fmt.Println(getUserInfoFromURL("https://user:pass@example.com:8080"))
 }
 
 // Get the user info from a given url.

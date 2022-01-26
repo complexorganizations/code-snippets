@@ -8,7 +8,7 @@ import (
 
 func main() {
 	// Parse the URL and return the port.
-	fmt.Println(parsePortFromURL("https://127.0.0.1:8080"))
+	fmt.Println(parsePortFromURL("https://example.com:8080"))
 }
 
 // Parse the URL and return the port.
