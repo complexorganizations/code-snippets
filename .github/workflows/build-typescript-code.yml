@@ -15,8 +15,9 @@ jobs:
           node-version: 17.x
       - name: Install dependencies
         run: |
-          npm install --global typescript
-          npm i @types/node
+          cd TypeScript/
+          npm install
+          cd ../
       - name: Run the code
         run: |
           ALL_FILES_IN_DIRECTORY=$(find TypeScript/ -type f -name "*.ts")
