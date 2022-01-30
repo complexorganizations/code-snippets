@@ -1,7 +1,7 @@
 import * as url from "url"
 
 
-function main() {
+function main(): void {
     // Get the host from a given url.
     console.log(getHostFromURL("https://www.example.com"));
 }
