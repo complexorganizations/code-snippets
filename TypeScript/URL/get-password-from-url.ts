@@ -9,5 +9,5 @@ main()
 
 // Get the password from a given url.
 function getPasswordFromURL(givenURL: string): string | null {
-    return new URL(givenURL).password;
+    return new URL(givenURL).password
 }
