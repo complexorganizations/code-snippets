@@ -2,7 +2,7 @@ import * as crypto from "crypto"
 
 function main(): void {
     // Get the hmac of a given content
-    console.log(getHMACOfContent("Hello, World!", "password"))
+    console.log(getHMACOfContent("Hello, World!", "random-password"))
 }
 
 main()
