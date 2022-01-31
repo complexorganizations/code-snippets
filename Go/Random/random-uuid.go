@@ -13,15 +13,10 @@ func main() {
 
 // Generate a random uuid and return it as a string.
 func uniqueUUIDGenerator() string {
-	return fmt.Sprintf("%x-%x-%x-%x-%x", randomBytesArray(4), randomBytesArray(2), randomBytesArray(2), randomBytesArray(2), randomBytesArray(6))
-}
-
-// Generate a random byte array and return it.
-func randomBytesArray(length int) []byte {
-	randomBytes := make([]byte, length)
+	randomBytes := make([]byte, 16)
 	_, err := rand.Read(randomBytes)
 	if err != nil {
 		log.Fatalln(err)
 	}
-	return randomBytes
+	return fmt.Sprintf("%x-%x-%x-%x-%x", randomBytes[0:4], randomBytes[4:6], randomBytes[6:8], randomBytes[8:10], randomBytes[10:])
 }
