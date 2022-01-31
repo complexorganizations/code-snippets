@@ -8,11 +8,11 @@ import (
 
 func main() {
 	// Generate a random uuid.
-	fmt.Println(uniqueUUIDGenerator())
+	fmt.Println(randomUUIDGenerator())
 }
 
 // Generate a random uuid and return it as a string.
-func uniqueUUIDGenerator() string {
+func randomUUIDGenerator() string {
 	randomBytes := make([]byte, 16)
 	_, err := rand.Read(randomBytes)
 	if err != nil {
