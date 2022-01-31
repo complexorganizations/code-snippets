@@ -18,16 +18,11 @@ func randomStringSpecifiedOfGivenLength(length int) string {
 	letters := []rune("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~!@#$%^&*()-_+={}][|\\`,./?;:'\"<>")
 	randomString := make([]rune, length)
 	for i := range randomString {
-		randomString[i] = letters[generateRandomInt(int64(len(letters)))]
+		randomInt, err := rand.Int(rand.Reader, big.NewInt(int64(len(letters))))
+		if err != nil {
+			log.Fatalln(err)
+		}
+		randomString[i] = letters[randomInt.Int64()]
 	}
 	return string(randomString)
-}
-
-// Generate a random int between 0 and a given max
-func generateRandomInt(max int64) int {
-	randomInt, err := rand.Int(rand.Reader, big.NewInt(max))
-	if err != nil {
-		log.Fatalln(err)
-	}
-	return int(randomInt.Int64())
 }
