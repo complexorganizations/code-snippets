@@ -14,14 +14,9 @@ func main() {
 
 // Generate a random bool and than return it.
 func generateRandomBool() bool {
-	return generateRandomInt(2) == 1
-}
-
-// Generate a random int between 0 and a given max
-func generateRandomInt(max int64) int {
-	randomInt, err := rand.Int(rand.Reader, big.NewInt(max))
+	randomInt, err := rand.Int(rand.Reader, big.NewInt(int64(2)))
 	if err != nil {
 		log.Fatalln(err)
 	}
-	return int(randomInt.Int64())
+	return int(randomInt.Int64()) == int(1)
 }
