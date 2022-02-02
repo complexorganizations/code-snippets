@@ -8,5 +8,6 @@ environment:
 dependencies:
   crypto: ^3.0.1
   http: ^0.13.4
-  path: ^1.8.1
+  logging: ^1.0.2
   mime: ^1.0.1
+  path: ^1.8.1
