@@ -13,8 +13,5 @@ func main() {
 // Ensure that the CIDR block is valid.
 func validateCIDR(ipWithCidr string) bool {
 	_, _, err := net.ParseCIDR(ipWithCidr)
-	if err != nil {
-		return false
-	}
-	return true
+	return err == nil
 }
