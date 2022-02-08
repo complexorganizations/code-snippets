@@ -5,7 +5,7 @@ void main() {
   // Read a file as string.
   print(
     readAFileAsString(
-      "assets/remove/89mmtNQY7hM7389f48Sw46ZhbRDNQ2h9/README.md",
+      "assets/valid/valid-json.json",
     ),
   );
 }
