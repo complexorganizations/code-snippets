@@ -17,10 +17,9 @@ jobs:
         run: |
           cd TypeScript/
           npm install
-          cd ../
       - name: Run the code
         run: |
-          ALL_FILES_IN_DIRECTORY=$(find TypeScript/ -type f -name "*.ts")
+          ALL_FILES_IN_DIRECTORY=$(find ./ -type f -name "*.ts")
           for CURRENT_FILE_IN_DIRECTORY in ${ALL_FILES_IN_DIRECTORY}; do
             ALL_FILES_LIST[${ADD_CONTENT}]=${CURRENT_FILE_IN_DIRECTORY}
             ADD_CONTENT=$(("${ADD_CONTENT}" + 1))
