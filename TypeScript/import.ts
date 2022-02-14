@@ -1,6 +1,6 @@
 // A simple import statement that imports a function from another file
 import * as os from "os"
-// Import a function from a package
+// Import a function from a package.
 import { CpuInfo } from "os"
 
 function main(): void {
