@@ -15,9 +15,7 @@ jobs:
           node-version: 17.x
       - name: Install dependencies
         run: |
-          cd TypeScript/
-          npm install
-          cd ../
+          npm install --global typescript
           npm install @types/node
       - name: Run the code
         run: |
