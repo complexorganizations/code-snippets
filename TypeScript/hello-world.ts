@@ -3,5 +3,5 @@ function main(): void {
     console.log("Hello, World!")
 }
 
-// Run the function
+// Run the main function
 main()
