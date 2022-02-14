@@ -7,7 +7,7 @@ function main(): void {
 
 main()
 
-// Get the current working directory.
+// Get the current working directory
 function getCurrentWorkingDirectory(): string {
     return process.cwd()
 }
