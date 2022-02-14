@@ -6,7 +6,7 @@ function main(): void {
 		"last": "Doe"
 	}
 }`
-    // Check if the provided string is a valid JSON
+    // Check if the provided string is a valid JSON.
     console.log(isJsonValid(sampleJson))
 }
 
