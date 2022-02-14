@@ -3,7 +3,7 @@ function main(): void {
     functionImput("Hello, World!")
     // Call the function functionReturn with the argument "Hello World"
     console.log(functionReturn("Hello, World!"))
-    // Call the function that does some math and than returns the value.
+    // Call the function that does some math.
     console.log(doSomeMath(2, 3))
     // Call the function functionReturnBoolean
     console.log(functionReturnBoolean())
