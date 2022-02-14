@@ -9,7 +9,7 @@ void main() {
 // Generate a random string of a given length
 String generateRandomStringSpecified(final int length) {
   const String characterList =
-      "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~!@#\$%^&*()-_+={}][|\\`,./?;:'\"<>";
   final StringBuffer buffer = StringBuffer();
   for (int i = 0; i < length; i++) {
     buffer.write(characterList[Random.secure().nextInt(characterList.length)]);
