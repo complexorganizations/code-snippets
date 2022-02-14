@@ -1,4 +1,4 @@
-// This is an in-line comment.
+// This is an in-line comment
 
 function main(): void {
     console.log("Hello, World")
