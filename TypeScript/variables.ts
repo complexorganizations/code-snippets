@@ -1,5 +1,5 @@
 function main(): void {
-    // A simple example of a string.
+    // A simple example of a string
     string_example()
     // A simple example of a string array
     string_array_example()
