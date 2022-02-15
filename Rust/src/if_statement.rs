@@ -1,5 +1,5 @@
 fn main() {
-    // An example of an if statement
+    // An example of an if statement.
     if_statement();
     // An example of a if statement
     if_else_statement();
