@@ -22,7 +22,7 @@ jobs:
           for FILE_LIST in "${ALL_FILES_LIST[@]}"; do
             echo ${FILE_LIST}
             mv ../${FILE_LIST} src/main.rs
-            cargo run
-            cargo clean
+            cargo run --quiet --all-features
+            cargo clean --quiet
             mv src/main.rs ../${FILE_LIST}
           done
