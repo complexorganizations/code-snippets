@@ -14,9 +14,9 @@ func main() {
 
 // Remove some value from a slice and return the slice.
 func removeFromSlice(slice []string, content string) []string {
-	for i, v := range slice {
-		if v == content {
-			slice = append(slice[:i], slice[i+1:]...)
+	for elementIndex, element := range slice {
+		if element == content {
+			slice = append(slice[:elementIndex], slice[elementIndex+1:]...)
 		}
 	}
 	return slice
