@@ -1,3 +1,4 @@
+#![allow(clippy::needless_return)]
 fn main() {
     // Check if a given string is whitespaces only.
     println!("{}", is_string_whitespaces_only("     "));
