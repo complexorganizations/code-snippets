@@ -10,7 +10,7 @@ function getIPType(content: string): string {
     if (content.includes(".")) {
         return "ipv4"
     } else if (content.includes(":")) {
-        return "ipv4"
+        return "ipv6"
     }
     return "unknown"
 }
