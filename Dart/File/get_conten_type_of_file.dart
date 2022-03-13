@@ -4,7 +4,6 @@ import "package:mime/mime.dart";
 void main() {
   // Get the content type of a file
   print(getContenTypeOfFile("assets/valid/valid-json.json"));
-
 }
 
 // Get the content type of a given file.

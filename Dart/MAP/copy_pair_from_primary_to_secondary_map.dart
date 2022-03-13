@@ -5,7 +5,7 @@ void main() {
   final Map<dynamic, dynamic> firstMap = <dynamic, dynamic>{
     "name": "John",
   };
-  final Map<dynamic,dynamic> secondMap = <dynamic, dynamic>{
+  final Map<dynamic, dynamic> secondMap = <dynamic, dynamic>{
     "age": 30,
     "isMarried": false
   };

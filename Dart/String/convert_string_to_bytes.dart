@@ -4,7 +4,6 @@ import "dart:core";
 void main() {
   // Convert string into a bytes.
   print(convertStringToBytes("Hello, World!"));
- 
 }
 
 // Convert string into bytes and return the bytes.

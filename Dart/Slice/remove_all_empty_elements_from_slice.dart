@@ -16,4 +16,4 @@ List<dynamic> removeAllEmptyElementsFromSlice(final List<dynamic> slice) {
     }
   }
   return result;
-} 
+}
