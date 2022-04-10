@@ -10,7 +10,7 @@ func main() {
 	fmt.Println(getCurrentOperatingSystem())
 }
 
-// Get the current operating system name.
+// Get the current operating system name
 func getCurrentOperatingSystem() string {
 	return runtime.GOOS
 }
