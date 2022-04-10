@@ -9,11 +9,15 @@ jobs:
     steps:
       - name: Check out code into the directory
         uses: actions/checkout@v3
-      - name: Set up Go
+      - name: Get the system requirements.
+        run: sudo apt-get install coreutils -y
+      - name: Get the current version of Go from project.
+        run: cat Go/go.mod | head -3 | tail -1 | echo "GO_VERSION_FROM_PROJECT=$(cut -d' ' -f2)" >>${GITHUB_ENV}
+      - name: Set up Go version "${{ env.GO_VERSION_FROM_PROJECT }}"
         uses: actions/setup-go@v2
         with:
-          go-version: 1.18
-          stable: false
+          go-version: "${{ env.GO_VERSION_FROM_PROJECT }}"
+        id: go
       - name: Run the code
         run: |
           ALL_FILES_IN_DIRECTORY=$(find Go/ -type f -name "*.go")
