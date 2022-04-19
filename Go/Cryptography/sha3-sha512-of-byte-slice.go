@@ -7,7 +7,7 @@ import (
 
 func main() {
 	// Get the sha256 of a given string using sha3
-	// fmt.Println(sha3Using512OfGivenByte([]("Hello World!")))
+	// fmt.Println(sha3Using512OfGivenByte([]byte("Hello World!")))
 	fmt.Println("Hello, World!")
 }
 
