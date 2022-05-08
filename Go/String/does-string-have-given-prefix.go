@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	// CHeck if a given string has a given prefix.
+	// Check if a given string has a given prefix.
 	fmt.Println(doesStringHaveGivenPrefix("Hello, World!", "H"))
 }
 
