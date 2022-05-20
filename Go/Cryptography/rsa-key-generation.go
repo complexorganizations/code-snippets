@@ -10,8 +10,8 @@ import (
 func main() {
 	// Generate a private and a public key using rsa.
 	privateKey, publicKey := generatePrivateAndPublicRSAKey()
-	fmt.Printf("Private key: %s\n", privateKey)
-	fmt.Printf("Public key: %s\n", publicKey)
+	fmt.Println(privateKey)
+	fmt.Println(publicKey)
 }
 
 // Generate a private and a public key using rsa.
