@@ -16,14 +16,9 @@ func main() {
 
 // Get a random element from the slice and return the element.
 func randomElementFromSlice(slice []string) string {
-	return slice[randomInt(int64(len(slice)))]
-}
-
-// Generate a random int between 0 and max number and return it.
-func randomInt(max int64) int {
-	someRandomNumber, err := rand.Int(rand.Reader, big.NewInt(max))
+	someRandomNumber, err := rand.Int(rand.Reader, big.NewInt(int64(len(slice))))
 	if err != nil {
 		log.Fatalln(err)
 	}
-	return int(someRandomNumber.Int64())
+	return slice[someRandomNumber.Int64()]
 }
