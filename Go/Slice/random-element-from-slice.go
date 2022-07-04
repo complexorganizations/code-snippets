@@ -19,7 +19,7 @@ func randomElementFromSlice(slice []string) string {
 	return slice[randomInt(int64(len(slice)))]
 }
 
-// Generate a random int between 0 and max number and reutn it.
+// Generate a random int between 0 and max number and return it.
 func randomInt(max int64) int {
 	someRandomNumber, err := rand.Int(rand.Reader, big.NewInt(max))
 	if err != nil {
