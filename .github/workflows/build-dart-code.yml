@@ -1,0 +1,35 @@
+name: Dart
+on:
+  push:
+    paths:
+      - "**.dart"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code into the directory
+        uses: actions/checkout@v3
+      - name: Install flutter in os
+        uses: subosito/flutter-action@v2
+        with:
+          channel: "master"
+      - name: Update flutter
+        run: flutter upgrade --force
+      - name: Setup Dart
+        uses: dart-lang/setup-dart@v1
+      - name: Install dependencies
+        run: |
+          cd Dart/
+          dart pub get
+          cd ../
+      - name: Run the code
+        run: |
+          ALL_FILES_IN_DIRECTORY=$(find Dart/ -type f -name "*.dart")
+          for CURRENT_FILE_IN_DIRECTORY in ${ALL_FILES_IN_DIRECTORY}; do
+            ALL_FILES_LIST[${ADD_CONTENT}]=${CURRENT_FILE_IN_DIRECTORY}
+            ADD_CONTENT=$(("${ADD_CONTENT}" + 1))
+          done
+          for FILE_LIST in "${ALL_FILES_LIST[@]}"; do
+            echo ${FILE_LIST}
+            dart ${FILE_LIST}
+          done
