@@ -3,6 +3,9 @@ on:
   push:
     paths:
       - "**.rs"
+  pull_request:
+    paths:
+      - "**.rs"
 jobs:
   build:
     runs-on: ubuntu-latest
