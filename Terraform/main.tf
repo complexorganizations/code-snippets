@@ -22,19 +22,13 @@ resource "aws_internet_gateway" "main_internet_gateway" {
 resource "aws_route_table" "main_route_table" {
   vpc_id = aws_vpc.main_vpc.id
   route {
-    cidr_block        = "0.0.0.0/0"
-    gateway_id        = aws_internet_gateway.main_internet_gateway.id
-    ipv6_ipam_pool_id = aws_vpc_ipv6_cidr_block.main_ipv6_cidr_block.ipv6_pool
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.main_internet_gateway.id
   }
   route {
     ipv6_cidr_block = "::/0"
     gateway_id      = aws_internet_gateway.main_internet_gateway.id
   }
-}
-
-resource "main_ipv6_cidr_block" "main_ipv6_cidr_block" {
-  vpc_id                          = aws_vpc.main_vpc.id
-  amazon_provided_ipv6_cidr_block = true
 }
 
 # route table association
@@ -46,7 +40,6 @@ resource "aws_route_table_association" "main_route_table_association" {
 # Create a VPC
 resource "aws_vpc" "main_vpc" {
   cidr_block           = "10.0.0.0/16"
-  ipv6_cidr_block      = "2001:db8:1234:1a00::/56"
   enable_dns_support   = true
   enable_dns_hostnames = true
 }
