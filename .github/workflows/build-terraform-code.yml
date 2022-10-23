@@ -13,7 +13,7 @@ jobs:
       - name: Check out code into the directory
         uses: actions/checkout@v3
       - name: Get the system requirements.
-        run: sudo apt-get install graphviz -y
+        run: sudo apt-get install graphviz webp -y
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
       - name: Terraform init
@@ -23,6 +23,6 @@ jobs:
       - name: Terraform Validate
         run: terraform -chdir=Terraform/ validate
       - name: Terraform Generate Graph
-        run: terraform -chdir=Terraform/ graph | dot -Tsvg > assets/remove/terraform-graph.svg
-      - name: View Terraform graph
-        run: cat assets/remove/terraform-graph.svg
+        run: terraform -chdir=Terraform/ graph | dot -Tpng -o assets/remove/terraform-graph.png
+      - name: Convert the image to webp
+        run: cwebp assets/remove/terraform-graph.png -o assets/remove/terraform-graph.webp
