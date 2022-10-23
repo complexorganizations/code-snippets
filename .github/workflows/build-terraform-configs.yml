@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Check out code into the directory
         uses: actions/checkout@v3
+      - name: Get the system requirements.
+        run: sudo apt-get install graphviz -y
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
       - name: Terraform init
@@ -20,3 +22,5 @@ jobs:
         run: terraform -chdir=Terraform/ fmt
       - name: Terraform Validate
         run: terraform -chdir=Terraform/ validate
+      - name: Terraform Generate Graph
+        run: terraform -chdir=Terraform/ graph | dot -Tsvg
