@@ -1,4 +1,4 @@
-# Global Terraform
+# Global Terraform.
 terraform {
   required_providers {
     aws = {
