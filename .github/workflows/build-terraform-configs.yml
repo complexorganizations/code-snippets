@@ -1,0 +1,22 @@
+name: "Build Terraform Configs"
+on:
+  push:
+    paths:
+      - "**.tf"
+  pull_request:
+    paths:
+      - "**.tf"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code into the directory
+        uses: actions/checkout@v3
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+      - name: Check if a .tf has been formatted correctly.
+        run: terraform fmt -check
+      - name: Terraform init
+        run: terraform init
+      - name: Terraform Validate
+        run: terraform validate
