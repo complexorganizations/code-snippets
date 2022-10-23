@@ -26,5 +26,9 @@ jobs:
         run: terraform -chdir=Terraform/ validate
       - name: Terraform Generate Graph
         run: terraform -chdir=Terraform/ graph
-      - name: Run terraform plan on a random account
+      - name: Run terraform plan
         run: terraform -chdir=Terraform/ plan
+      - name: Run terraform apply
+        run: terraform -chdir=Terraform/ apply
+      - name: Run terraform destroy
+        run: terraform -chdir=Terraform/ destroy
