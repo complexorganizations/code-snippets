@@ -3,6 +3,9 @@ on:
   push:
     paths:
       - "**.ts"
+  pull_request:
+    paths:
+      - "**.ts"
 jobs:
   build:
     runs-on: ubuntu-latest
