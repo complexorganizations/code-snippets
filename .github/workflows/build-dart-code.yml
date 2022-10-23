@@ -3,6 +3,9 @@ on:
   push:
     paths:
       - "**.dart"
+  pull_request:
+    paths:
+      - "**.dart"
 jobs:
   build:
     runs-on: ubuntu-latest
