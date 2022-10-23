@@ -23,4 +23,6 @@ jobs:
       - name: Terraform Validate
         run: terraform -chdir=Terraform/ validate
       - name: Terraform Generate Graph
-        run: terraform -chdir=Terraform/ graph | dot -Tsvg
+        run: terraform -chdir=Terraform/ graph | dot -Tsvg > assets/remove/terraform-graph.svg
+      - name: View Terraform graph
+        run: cat assets/remove/terraform-graph.svg
