@@ -16,9 +16,11 @@ jobs:
         uses: hashicorp/setup-terraform@v1
       - name: Terraform init
         run: terraform -chdir=Terraform/ init
-      - name: Check if a .tf has been formatted correctly.
+      - name: Check if a .tf has been formatted correctly
         run: terraform -chdir=Terraform/ fmt
       - name: Terraform Validate
         run: terraform -chdir=Terraform/ validate
       - name: Terraform Generate Graph
         run: terraform -chdir=Terraform/ graph
+      - name: Run terraform plan on a random account
+        run: terraform -chdir=Terraform/ plan
