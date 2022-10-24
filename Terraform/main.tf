@@ -61,14 +61,14 @@ resource "aws_security_group" "main_security_group" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0", "::/0"]
+    cidr_blocks = ["0.0.0.0/0"]
   }
   egress {
     description = "SSH"
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0", "::/0"]
+    cidr_blocks = ["0.0.0.0/0"]
   }
 }
 
@@ -78,7 +78,6 @@ resource "aws_instance" "main_instance" {
   instance_type               = "t1.micro"
   subnet_id                   = aws_subnet.main_subnet.id
   vpc_security_group_ids      = [aws_security_group.main_security_group.id]
-  ipv6_address_count          = 1
   associate_public_ip_address = true
   depends_on                  = [aws_internet_gateway.main_internet_gateway]
   credit_specification {
