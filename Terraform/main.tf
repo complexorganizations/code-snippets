@@ -49,7 +49,6 @@ resource "aws_subnet" "main_subnet" {
   vpc_id            = aws_vpc.main_vpc.id
   cidr_block        = "10.0.0.0/24"
   availability_zone = "us-east-1a"
-  ipv6_cidr_block   = "fd00:00:00::0/64"
 }
 
 # Create a security group
@@ -62,14 +61,14 @@ resource "aws_security_group" "main_security_group" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["0.0.0.0/0", "::/0"]
   }
   egress {
     description = "SSH"
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["0.0.0.0/0", "::/0"]
   }
 }
 
