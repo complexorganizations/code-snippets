@@ -27,7 +27,7 @@ resource "aws_route_table" "main_route_table" {
   }
   route {
     ipv6_cidr_block = "::/0"
-    gateway_id = aws_internet_gateway.main_internet_gateway.id
+    gateway_id      = aws_internet_gateway.main_internet_gateway.id
   }
 }
 
@@ -39,20 +39,20 @@ resource "aws_route_table_association" "main_route_table_association" {
 
 # Create a VPC
 resource "aws_vpc" "main_vpc" {
-  cidr_block           = "10.0.0.0/16"
-  enable_dns_support   = true
-  enable_dns_hostnames = true
+  cidr_block                           = "10.0.0.0/16"
+  enable_dns_support                   = true
+  enable_dns_hostnames                 = true
   enable_network_address_usage_metrics = true
 }
 
 # Create a subnet
 resource "aws_subnet" "main_subnet" {
-  vpc_id            = aws_vpc.main_vpc.id
-  cidr_block        = "10.0.0.0/24"
-  availability_zone = "us-east-1a"
-  ipv6_native       = true
-  enable_dns64      = true
-  enable_resource_name_dns_a_record_on_launch = true
+  vpc_id                                         = aws_vpc.main_vpc.id
+  cidr_block                                     = "10.0.0.0/24"
+  availability_zone                              = "us-east-1a"
+  ipv6_native                                    = true
+  enable_dns64                                   = true
+  enable_resource_name_dns_a_record_on_launch    = true
   enable_resource_name_dns_aaaa_record_on_launch = true
 }
 
@@ -62,22 +62,22 @@ resource "aws_security_group" "main_security_group" {
   description = "Allow SSH and HTTP traffic"
   vpc_id      = aws_vpc.main_vpc.id
   ingress {
-    description = "SSH"
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    description      = "SSH"
+    from_port        = 22
+    to_port          = 22
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
-    security_groups = [""]
+    security_groups  = [""]
   }
   egress {
-    description = "SSH"
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    description      = "SSH"
+    from_port        = 22
+    to_port          = 22
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
-    security_groups = [""]
+    security_groups  = [""]
   }
   revoke_rules_on_delete = true
 }
