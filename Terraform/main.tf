@@ -55,7 +55,6 @@ resource "aws_subnet" "main_subnet" {
   enable_resource_name_dns_a_record_on_launch    = true
   enable_resource_name_dns_aaaa_record_on_launch = true
   assign_ipv6_address_on_creation = true
-  ipv6_native = true
 }
 
 # Create a security group
