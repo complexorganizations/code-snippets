@@ -1,4 +1,3 @@
-# Run the code again.
 terraform {
   required_providers {
     aws = {
