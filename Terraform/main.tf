@@ -42,6 +42,9 @@ resource "aws_vpc" "main_vpc" {
   cidr_block           = "10.0.0.0/16"
   enable_dns_support   = true
   enable_dns_hostnames = true
+  enable_classiclink   = true
+  enable_classiclink_dns_support = true
+  enable_network_address_usage_metrics = true
 }
 
 # Create a subnet
@@ -50,6 +53,9 @@ resource "aws_subnet" "main_subnet" {
   cidr_block        = "10.0.0.0/24"
   availability_zone = "us-east-1a"
   ipv6_native       = true
+  enable_dns64      = true
+  enable_resource_name_dns_a_record_on_launch = true
+  enable_resource_name_dns_aaaa_record_on_launch = true
 }
 
 # Create a security group
@@ -63,6 +69,8 @@ resource "aws_security_group" "main_security_group" {
     to_port     = 22
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
+    security_groups = [""]
   }
   egress {
     description = "SSH"
@@ -70,7 +78,10 @@ resource "aws_security_group" "main_security_group" {
     to_port     = 22
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
+    security_groups = [""]
   }
+  revoke_rules_on_delete = true
 }
 
 # Deploy an EC2 instance
@@ -81,9 +92,6 @@ resource "aws_instance" "main_instance" {
   vpc_security_group_ids      = [aws_security_group.main_security_group.id]
   associate_public_ip_address = true
   monitoring                  = true
-  enable_classiclink          = true
-  enable_classiclink_dns_support = true
-  enable_network_address_usage_metrics = true
   depends_on                  = [aws_internet_gateway.main_internet_gateway]
   credit_specification {
     cpu_credits = "unlimited"
