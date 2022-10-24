@@ -29,6 +29,8 @@ jobs:
       - name: Run terraform plan
         run: terraform -chdir=Terraform/ plan
       - name: Run terraform apply
+        continue-on-error: true
         run: terraform -chdir=Terraform/ apply -auto-approve
       - name: Run terraform destroy
+        continue-on-error: true
         run: terraform -chdir=Terraform/ destroy -auto-approve
