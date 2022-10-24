@@ -49,6 +49,7 @@ resource "aws_subnet" "main_subnet" {
   vpc_id            = aws_vpc.main_vpc.id
   cidr_block        = "10.0.0.0/24"
   availability_zone = "us-east-1a"
+  ipv6_native       = true
 }
 
 # Create a security group
@@ -79,6 +80,10 @@ resource "aws_instance" "main_instance" {
   subnet_id                   = aws_subnet.main_subnet.id
   vpc_security_group_ids      = [aws_security_group.main_security_group.id]
   associate_public_ip_address = true
+  monitoring                  = true
+  enable_classiclink          = true
+  enable_classiclink_dns_support = true
+  enable_network_address_usage_metrics = true
   depends_on                  = [aws_internet_gateway.main_internet_gateway]
   credit_specification {
     cpu_credits = "unlimited"
