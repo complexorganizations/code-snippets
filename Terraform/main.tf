@@ -51,7 +51,6 @@ resource "aws_subnet" "main_subnet" {
   cidr_block                                     = "10.0.0.0/24"
   ipv6_cidr_block                                = "fd00:00:00::0/56"
   availability_zone                              = "us-east-1a"
-  ipv6_native                                    = true
   enable_dns64                                   = true
   enable_resource_name_dns_a_record_on_launch    = true
   enable_resource_name_dns_aaaa_record_on_launch = true
@@ -69,7 +68,7 @@ resource "aws_security_group" "main_security_group" {
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
-    security_groups  = [""]
+    security_groups  = []
   }
   egress {
     description      = "SSH"
@@ -78,7 +77,7 @@ resource "aws_security_group" "main_security_group" {
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
-    security_groups  = [""]
+    security_groups  = []
   }
   revoke_rules_on_delete = true
 }
