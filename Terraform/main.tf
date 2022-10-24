@@ -23,11 +23,8 @@ resource "aws_route_table" "main_route_table" {
   vpc_id = aws_vpc.main_vpc.id
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.main_internet_gateway.id
-  }
-  route {
     ipv6_cidr_block = "::/0"
-    gateway_id      = aws_internet_gateway.main_internet_gateway.id
+    gateway_id = aws_internet_gateway.main_internet_gateway.id
   }
 }
 
