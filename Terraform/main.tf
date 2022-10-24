@@ -42,6 +42,7 @@ resource "aws_vpc" "main_vpc" {
   cidr_block                           = "10.0.0.0/16"
   enable_dns_support                   = true
   enable_dns_hostnames                 = true
+  assign_generated_ipv6_cidr_block     = true
   enable_network_address_usage_metrics = true
 }
 
@@ -50,11 +51,6 @@ resource "aws_subnet" "main_subnet" {
   vpc_id                                         = aws_vpc.main_vpc.id
   cidr_block                                     = "10.0.0.0/24"
   availability_zone                              = "us-east-1a"
-  enable_dns64                                   = true
-  enable_resource_name_dns_a_record_on_launch    = true
-  enable_resource_name_dns_aaaa_record_on_launch = true
-  assign_ipv6_address_on_creation                = true
-  map_public_ip_on_launch                        = true
 }
 
 # Create a security group
