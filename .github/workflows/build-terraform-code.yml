@@ -29,6 +29,6 @@ jobs:
       - name: Run terraform plan
         run: terraform -chdir=Terraform/ plan
       - name: Run terraform apply
-        run: terraform -chdir=Terraform/ apply
+        run: terraform -chdir=Terraform/ apply -auto-approve
       - name: Run terraform destroy
-        run: terraform -chdir=Terraform/ destroy
+        run: terraform -chdir=Terraform/ destroy -auto-approve
