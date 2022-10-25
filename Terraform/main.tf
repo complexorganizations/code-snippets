@@ -91,4 +91,8 @@ resource "aws_instance" "main_instance" {
   credit_specification {
     cpu_credits = "unlimited"
   }
+  root_block_device {
+    delete_on_termination = true
+    encrypted = true
+  }
 }
