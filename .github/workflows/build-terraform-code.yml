@@ -18,19 +18,23 @@ jobs:
         run: aws configure set aws_access_key_id "${{ secrets.AWS_ACESS_KEY }}"
       - name: Configure the AWS CLI credentials secret key
         run: aws configure set aws_secret_access_key "${{ secrets.AWS_SECRET_ACESS_KEY }}"
-      - name: Terraform init
+      - name: Initialize terraform
         run: terraform -chdir=Terraform/ init
-      - name: Check if a .tf has been formatted correctly
+      - name: Format terraform
         run: terraform -chdir=Terraform/ fmt
-      - name: Terraform Validate
+      - name: Validate terraform
         run: terraform -chdir=Terraform/ validate
-      - name: Terraform Generate Graph
+      - name: Graph terraform
         run: terraform -chdir=Terraform/ graph
-      - name: Run terraform plan
+      - name: Plan terraform
         run: terraform -chdir=Terraform/ plan
-      - name: Run terraform apply
+      - name: Apply terraform
         continue-on-error: true
         run: terraform -chdir=Terraform/ apply -auto-approve
-      - name: Run terraform destroy
+      - name: Validate that the resources have been deployed
+        run: terraform -chdir=Terraform/ plan
+      - name: Destroy terraform
         continue-on-error: true
         run: terraform -chdir=Terraform/ destroy -auto-approve
+      - name: Validate that the resources have been destroyed
+        run: terraform -chdir=Terraform/ plan
