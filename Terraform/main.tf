@@ -16,6 +16,9 @@ provider "aws" {
 # Create the internet gateway
 resource "aws_internet_gateway" "main_internet_gateway" {
   vpc_id = aws_vpc.main_vpc.id
+  tags = {
+    Name = "Main Internet Gateway"
+  }
 }
 
 # Create a route table
@@ -29,12 +32,18 @@ resource "aws_route_table" "main_route_table" {
     ipv6_cidr_block = "::/0"
     gateway_id      = aws_internet_gateway.main_internet_gateway.id
   }
+  tags = {
+    Name = "Route Table"
+  }
 }
 
 # route table association
 resource "aws_route_table_association" "main_route_table_association" {
   subnet_id      = aws_subnet.main_subnet.id
   route_table_id = aws_route_table.main_route_table.id
+  tags = {
+    Name = "Route Table Association"
+  }
 }
 
 # Create a VPC
@@ -44,6 +53,9 @@ resource "aws_vpc" "main_vpc" {
   enable_dns_hostnames                 = true
   assign_generated_ipv6_cidr_block     = true
   enable_network_address_usage_metrics = true
+  tags = {
+    Name = "Main VPC"
+  }
 }
 
 # Create a subnet
@@ -52,6 +64,9 @@ resource "aws_subnet" "main_subnet" {
   cidr_block        = "10.0.0.0/24"
   availability_zone = "us-east-1a"
   depends_on = [aws_internet_gateway.main_internet_gateway]
+  tags = {
+    Name = " Main Subnet"
+  }
 }
 
 # Create a security group
@@ -78,6 +93,9 @@ resource "aws_security_group" "main_security_group" {
     security_groups  = []
   }
   revoke_rules_on_delete = true
+  tags = {
+    Name = "Security Group"
+  }
 }
 
 # Reserve an static public ip.
@@ -85,6 +103,9 @@ resource "aws_eip" "main_elastic_ip" {
   vpc      = true
   instance = aws_instance.main_instance.id
   depends_on = [aws_internet_gateway.main_internet_gateway]
+  tags = {
+    Name = "Elastic IP"
+  }
 }
 
 # Deploy an EC2 instance
@@ -114,6 +135,9 @@ resource "aws_spot_instance_request" "main_ec2_spot_instance" {
   instance_type          = "t2.micro"
   spot_type              = "one-time"
   wait_for_fulfillment   = true
+  tags = {
+    Name = "Spot Instance"
+  }
 }
 
 # Import a SSH key into AWS
