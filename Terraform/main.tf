@@ -85,9 +85,9 @@ resource "aws_instance" "main_instance" {
   instance_type               = "t1.micro"
   subnet_id                   = aws_subnet.main_subnet.id
   vpc_security_group_ids      = [aws_security_group.main_security_group.id]
+  depends_on                  = [aws_internet_gateway.main_internet_gateway]
   associate_public_ip_address = true
   monitoring                  = true
-  depends_on                  = [aws_internet_gateway.main_internet_gateway]
   credit_specification {
     cpu_credits = "unlimited"
   }
@@ -98,4 +98,13 @@ resource "aws_instance" "main_instance" {
   tags = {
     Name = "Main Instance"
   }
+}
+
+# Deploy a EC2 spot instance.
+resource "aws_spot_instance_request" "main_ec2_spot_instance" {
+  ami                    = "ami-08c40ec9ead489470"
+  instance_type          = "t3.small"
+  spot_price             = "0.016"
+  spot_type              = "one-time"
+  wait_for_fulfillment   = true
 }
