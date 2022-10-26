@@ -19,29 +19,21 @@ jobs:
         run: aws configure set aws_access_key_id "${{ secrets.AWS_ACESS_KEY }}"
       - name: Configure the AWS CLI credentials secret key
         run: aws configure set aws_secret_access_key "${{ secrets.AWS_SECRET_ACESS_KEY }}"
-      - name: Initialize terraform
-        run: terraform -chdir=Terraform/ init
-      - name: Format terraform
-        run: terraform -chdir=Terraform/ fmt
-      - name: Validate terraform
-        run: terraform -chdir=Terraform/ validate
-      - name: Graph terraform
-        run: terraform -chdir=Terraform/ graph
-      - name: Plan terraform
-        run: terraform -chdir=Terraform/ plan
-      - name: Run each file
+      - name: Run the terraform code
         run: |
-          ALL_FILES_IN_DIRECTORY=$(find Terraform/ -type f -name "*.tf")
-          for CURRENT_FILE_IN_DIRECTORY in ${ALL_FILES_IN_DIRECTORY}; do
-            ALL_FILES_LIST[${ADD_CONTENT}]=${CURRENT_FILE_IN_DIRECTORY}
+          FIND_ALL_DIRECTORY=$(find Terraform/ -type d)
+          for CURRENT_FIND_ALL_DIRECTORY in ${FIND_ALL_DIRECTORY}; do
+            ALL_DIRECTORY_LIST[${ADD_CONTENT}]=${CURRENT_FIND_ALL_DIRECTORY}
             ADD_CONTENT=$(("${ADD_CONTENT}" + 1))
           done
-          for FILE_LIST in "${ALL_FILES_LIST[@]}"; do
-            echo ${FILE_LIST}
-            terraform -chdir=${FILE_LIST} graph
-            terraform -chdir=${FILE_LIST} plan
-            terraform -chdir=${FILE_LIST} apply -auto-approve
-            terraform -chdir=${FILE_LIST} state pull
-            terraform -chdir=${FILE_LIST} show
-            terraform -chdir=${FILE_LIST} destroy -auto-approve
+          for EACH_DIRECTORY in "${ALL_DIRECTORY_LIST[@]}"; do
+            echo ${EACH_DIRECTORY}
+            terraform -chdir=${EACH_DIRECTORY} init
+            terraform -chdir=${EACH_DIRECTORY} validate
+            terraform -chdir=${EACH_DIRECTORY} graph
+            terraform -chdir=${EACH_DIRECTORY} plan
+            terraform -chdir=${EACH_DIRECTORY} apply -auto-approve
+            terraform -chdir=${EACH_DIRECTORY} state pull
+            terraform -chdir=${EACH_DIRECTORY} show
+            terraform -chdir=${EACH_DIRECTORY} destroy -auto-approve
           done
