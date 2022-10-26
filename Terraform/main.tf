@@ -57,12 +57,13 @@ resource "aws_vpc" "main_vpc" {
 
 # Create a subnet
 resource "aws_subnet" "main_subnet" {
-  vpc_id            = aws_vpc.main_vpc.id
-  cidr_block        = "10.0.0.0/24"
-  availability_zone = "us-east-1a"
-  map_public_ip_on_launch = true
+  availability_zone               = "us-east-1a"
+  vpc_id                          = aws_vpc.main_vpc.id
+  cidr_block                      = cidrsubnet(aws_vpc.main_vpc.cidr_block, 4, 1)
+  ipv6_cidr_block                 = cidrsubnet(aws_vpc.main_vpc.ipv6_cidr_block, 8, 1)
+  depends_on                      = [aws_internet_gateway.main_internet_gateway]
+  map_public_ip_on_launch         = true
   assign_ipv6_address_on_creation = true
-  depends_on = [aws_internet_gateway.main_internet_gateway]
   tags = {
     Name = " Main Subnet"
   }
@@ -99,8 +100,8 @@ resource "aws_security_group" "main_security_group" {
 
 # Reserve an static public ip.
 resource "aws_eip" "main_elastic_ip" {
-  vpc      = true
-  instance = aws_instance.main_instance.id
+  vpc        = true
+  instance   = aws_instance.main_instance.id
   depends_on = [aws_internet_gateway.main_internet_gateway]
   tags = {
     Name = "Elastic IP"
@@ -116,13 +117,13 @@ resource "aws_instance" "main_instance" {
   depends_on                  = [aws_internet_gateway.main_internet_gateway]
   associate_public_ip_address = true
   monitoring                  = true
-  ipv6_address_count = 1
+  ipv6_address_count          = 1
   credit_specification {
     cpu_credits = "standard"
   }
   root_block_device {
     delete_on_termination = true
-    encrypted = true
+    encrypted             = true
   }
   tags = {
     Name = "Main Instance"
@@ -131,20 +132,20 @@ resource "aws_instance" "main_instance" {
 
 # Deploy a EC2 spot instance.
 resource "aws_spot_instance_request" "main_ec2_spot_instance" {
-  ami                    = "ami-08c40ec9ead489470"
-  instance_type          = "t2.micro"
+  ami                         = "ami-08c40ec9ead489470"
+  instance_type               = "t2.micro"
   subnet_id                   = aws_subnet.main_subnet.id
   vpc_security_group_ids      = [aws_security_group.main_security_group.id]
   depends_on                  = [aws_internet_gateway.main_internet_gateway]
   associate_public_ip_address = true
   monitoring                  = true
-  ipv6_address_count = 1
+  ipv6_address_count          = 1
   root_block_device {
     delete_on_termination = true
-    encrypted = true
+    encrypted             = true
   }
-  spot_type              = "one-time"
-  wait_for_fulfillment   = true
+  spot_type            = "one-time"
+  wait_for_fulfillment = true
   tags = {
     Name = "Spot Instance"
   }
