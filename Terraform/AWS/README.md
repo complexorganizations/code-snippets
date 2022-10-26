@@ -1,1 +1,0 @@
-# AWS Stuff for Terraform
