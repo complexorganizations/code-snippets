@@ -59,8 +59,8 @@ resource "aws_vpc" "main_vpc" {
 resource "aws_subnet" "main_subnet" {
   availability_zone               = "us-east-1a"
   vpc_id                          = aws_vpc.main_vpc.id
-  cidr_block                      = cidrsubnet(aws_vpc.main_vpc.cidr_block, 4, 1)
-  ipv6_cidr_block                 = cidrsubnet(aws_vpc.main_vpc.ipv6_cidr_block, 8, 1)
+  cidr_block                      = cidrsubnet(aws_vpc.main_vpc.cidr_block, 0, 0)
+  ipv6_cidr_block                 = cidrsubnet(aws_vpc.main_vpc.ipv6_cidr_block, 0, 0)
   depends_on                      = [aws_internet_gateway.main_internet_gateway]
   map_public_ip_on_launch         = true
   assign_ipv6_address_on_creation = true
