@@ -164,3 +164,5 @@ resource "aws_key_pair" "main_key_pair" {
     Name = "Main Key Pair"
   }
 }
+
+# Note: Add more content here!
