@@ -95,4 +95,7 @@ resource "aws_instance" "main_instance" {
     delete_on_termination = true
     encrypted = true
   }
+  tags = {
+    Name = "Main Instance"
+  }
 }
