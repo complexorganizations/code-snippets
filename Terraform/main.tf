@@ -60,6 +60,8 @@ resource "aws_subnet" "main_subnet" {
   vpc_id            = aws_vpc.main_vpc.id
   cidr_block        = "10.0.0.0/24"
   availability_zone = "us-east-1a"
+  map_public_ip_on_launch = true
+  assign_ipv6_address_on_creation = true
   depends_on = [aws_internet_gateway.main_internet_gateway]
   tags = {
     Name = " Main Subnet"
@@ -114,6 +116,7 @@ resource "aws_instance" "main_instance" {
   depends_on                  = [aws_internet_gateway.main_internet_gateway]
   associate_public_ip_address = true
   monitoring                  = true
+  ipv6_address_count = 1
   credit_specification {
     cpu_credits = "standard"
   }
@@ -135,6 +138,7 @@ resource "aws_spot_instance_request" "main_ec2_spot_instance" {
   depends_on                  = [aws_internet_gateway.main_internet_gateway]
   associate_public_ip_address = true
   monitoring                  = true
+  ipv6_address_count = 1
   root_block_device {
     delete_on_termination = true
     encrypted = true
