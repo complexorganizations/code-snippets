@@ -37,8 +37,9 @@ jobs:
             ADD_CONTENT=$(("${ADD_CONTENT}" + 1))
           done
           for FILE_LIST in "${ALL_FILES_LIST[@]}"; do
-            terraform -chdir=${FILE_LIST} plan
+            echo ${FILE_LIST}
             terraform -chdir=${FILE_LIST} graph
+            terraform -chdir=${FILE_LIST} plan
             terraform -chdir=${FILE_LIST} apply -auto-approve
             terraform -chdir=${FILE_LIST} state pull
             terraform -chdir=${FILE_LIST} show
