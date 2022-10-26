@@ -115,6 +115,7 @@ resource "aws_eip" "main_elastic_ip" {
 resource "aws_instance" "main_instance" {
   ami                         = "ami-08c40ec9ead489470"
   instance_type               = "t2.micro"
+  key_name                    = "main_key_pair"
   subnet_id                   = aws_subnet.main_subnet.id
   vpc_security_group_ids      = [aws_security_group.main_security_group.id]
   depends_on                  = [aws_internet_gateway.main_internet_gateway]
@@ -137,6 +138,7 @@ resource "aws_instance" "main_instance" {
 resource "aws_spot_instance_request" "main_ec2_spot_instance" {
   ami                         = "ami-08c40ec9ead489470"
   instance_type               = "t2.micro"
+  key_name                    = "main_key_pair"
   subnet_id                   = aws_subnet.main_subnet.id
   vpc_security_group_ids      = [aws_security_group.main_security_group.id]
   depends_on                  = [aws_internet_gateway.main_internet_gateway]
@@ -158,4 +160,7 @@ resource "aws_spot_instance_request" "main_ec2_spot_instance" {
 resource "aws_key_pair" "main_key_pair" {
   key_name   = "main_key_pair"
   public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF8Mhm+2iTvrBWc7Jmrydyg/UG3tUg5ylxdvGuQamWmD"
+  tags = {
+    Name = "Main Key Pair"
+  }
 }
