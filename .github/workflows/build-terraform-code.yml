@@ -29,21 +29,7 @@ jobs:
         run: terraform -chdir=Terraform/ graph
       - name: Plan terraform
         run: terraform -chdir=Terraform/ plan
-      - name: Apply terraform
-        continue-on-error: true
-        run: terraform -chdir=Terraform/ apply -auto-approve
-      - name: Validate that the resources have been deployed
-        run: terraform -chdir=Terraform/ plan
-      - name: Get the latest status of terraform
-        run: terraform -chdir=Terraform/ state pull
-      - name: Check the state of terraform
-        run: terraform -chdir=Terraform/ show
-      - name: Destroy terraform
-        continue-on-error: true
-        run: terraform -chdir=Terraform/ destroy -auto-approve
-      - name: Validate that the resources have been destroyed
-        run: terraform -chdir=Terraform/ plan
-      - name: Run
+      - name: Run each file
         run: |
           ALL_FILES_IN_DIRECTORY=$(find Terraform/ -type f -name "*.tf")
           for CURRENT_FILE_IN_DIRECTORY in ${ALL_FILES_IN_DIRECTORY}; do
@@ -51,6 +37,10 @@ jobs:
             ADD_CONTENT=$(("${ADD_CONTENT}" + 1))
           done
           for FILE_LIST in "${ALL_FILES_LIST[@]}"; do
-            echo ${FILE_LIST}
-            dart ${FILE_LIST}
+            terraform -chdir=${FILE_LIST} plan
+            terraform -chdir=${FILE_LIST} graph
+            terraform -chdir=${FILE_LIST} apply -auto-approve
+            terraform -chdir=${FILE_LIST} state pull
+            terraform -chdir=${FILE_LIST} show
+            terraform -chdir=${FILE_LIST} destroy -auto-approve
           done
