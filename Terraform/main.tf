@@ -103,8 +103,7 @@ resource "aws_instance" "main_instance" {
 # Deploy a EC2 spot instance.
 resource "aws_spot_instance_request" "main_ec2_spot_instance" {
   ami                    = "ami-08c40ec9ead489470"
-  instance_type          = "t3.small"
-  spot_price             = "0.016"
+  instance_type          = "t1.small"
   spot_type              = "one-time"
   wait_for_fulfillment   = true
 }
