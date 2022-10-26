@@ -46,9 +46,6 @@ resource "aws_route_table_association" "main_route_table_association" {
 # Create a VPC
 resource "aws_vpc" "main_vpc" {
   cidr_block                           = "10.0.0.0/16"
-  enable_dns64                         = true
-  enable_resource_name_dns_a_record_on_launch = true
-  enable_resource_name_dns_aaaa_record_on_launch = true
   enable_dns_support                   = true
   enable_dns_hostnames                 = true
   assign_generated_ipv6_cidr_block     = true
@@ -65,8 +62,11 @@ resource "aws_subnet" "main_subnet" {
   cidr_block                      = cidrsubnet(aws_vpc.main_vpc.cidr_block, 4, 1)
   ipv6_cidr_block                 = cidrsubnet(aws_vpc.main_vpc.ipv6_cidr_block, 8, 1)
   depends_on                      = [aws_internet_gateway.main_internet_gateway]
+  enable_dns64                    = true
   map_public_ip_on_launch         = true
   assign_ipv6_address_on_creation = true
+  enable_resource_name_dns_a_record_on_launch = true
+  enable_resource_name_dns_aaaa_record_on_launch = true
   tags = {
     Name = " Main Subnet"
   }
