@@ -51,6 +51,7 @@ resource "aws_subnet" "main_subnet" {
   vpc_id            = aws_vpc.main_vpc.id
   cidr_block        = "10.0.0.0/24"
   availability_zone = "us-east-1a"
+  depends_on = [aws_internet_gateway.main_internet_gateway]
 }
 
 # Create a security group
@@ -77,6 +78,13 @@ resource "aws_security_group" "main_security_group" {
     security_groups  = []
   }
   revoke_rules_on_delete = true
+}
+
+# Reserve an static public ip.
+resource "aws_eip" "main_elastic_ip" {
+  vpc      = true
+  instance = aws_instance.main_instance.id
+  depends_on = [aws_internet_gateway.main_internet_gateway]
 }
 
 # Deploy an EC2 instance
