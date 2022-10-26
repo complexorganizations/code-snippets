@@ -1,8 +1,6 @@
 # Generate ed25519 key pair
 resource "tls_private_key" "generate_ed25519_key_pair" {
-  algorithm   = "ED25519"
-  ecdsa_curve = "P521"
-  rsa_bits    = 2048
+  algorithm = "ED25519"
 }
 
 # Save the ed22519 private key in file
