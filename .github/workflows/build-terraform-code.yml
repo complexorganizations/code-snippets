@@ -33,6 +33,8 @@ jobs:
         run: terraform -chdir=Terraform/ apply -auto-approve
       - name: Validate that the resources have been deployed
         run: terraform -chdir=Terraform/ plan
+      - name: Check the state of terraform
+        run: terraform show
       - name: Destroy terraform
         continue-on-error: true
         run: terraform -chdir=Terraform/ destroy -auto-approve
