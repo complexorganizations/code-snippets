@@ -35,7 +35,7 @@ jobs:
       - name: Validate that the resources have been deployed
         run: terraform -chdir=Terraform/ plan
       - name: Get the latest status of terraform
-        run: terraform -chdir=Terraform/ pull
+        run: terraform -chdir=Terraform/ state pull
       - name: Check the state of terraform
         run: terraform -chdir=Terraform/ show
       - name: Destroy terraform
