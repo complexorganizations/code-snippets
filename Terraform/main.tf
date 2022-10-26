@@ -41,9 +41,6 @@ resource "aws_route_table" "main_route_table" {
 resource "aws_route_table_association" "main_route_table_association" {
   subnet_id      = aws_subnet.main_subnet.id
   route_table_id = aws_route_table.main_route_table.id
-  tags = {
-    Name = "Route Table Association"
-  }
 }
 
 # Create a VPC
