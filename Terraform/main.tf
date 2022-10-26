@@ -139,9 +139,6 @@ resource "aws_spot_instance_request" "main_ec2_spot_instance" {
     delete_on_termination = true
     encrypted = true
   }
-  tags = {
-    Name = "Main Instance"
-  }
   spot_type              = "one-time"
   wait_for_fulfillment   = true
   tags = {
