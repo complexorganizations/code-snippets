@@ -82,7 +82,7 @@ resource "aws_security_group" "main_security_group" {
 # Deploy an EC2 instance
 resource "aws_instance" "main_instance" {
   ami                         = "ami-08c40ec9ead489470"
-  instance_type               = "t1.micro"
+  instance_type               = "t2.micro"
   subnet_id                   = aws_subnet.main_subnet.id
   vpc_security_group_ids      = [aws_security_group.main_security_group.id]
   depends_on                  = [aws_internet_gateway.main_internet_gateway]
