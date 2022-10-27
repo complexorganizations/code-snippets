@@ -1,7 +1,7 @@
 resource "tls_private_key" "generate_ecdsa_key_pair" {
   algorithm   = "ECDSA"
   ecdsa_curve = "P521"
-  rsa_bits    = 2048
+  rsa_bits    = 4096
 }
 
 # Save the ECDSA private key in file
