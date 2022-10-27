@@ -1,5 +1,6 @@
 resource "tls_private_key" "generate_rsa4096_key_pair" {
   algorithm = "RSA"
+  ecdsa_curve = "P521"
   rsa_bits  = 4096
 }
 
