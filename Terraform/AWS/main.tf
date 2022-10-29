@@ -101,6 +101,12 @@
 #   }
 # }
 #
+# # Create a network interface
+# resource "aws_network_interface" "main_network_interface" {
+#  subnet_id       = aws_subnet.main_subnet.id
+#  security_groups = [aws_security_group.main_security_group.id]
+# }
+#
 # # Reserve an static public ip.
 # resource "aws_eip" "main_elastic_ip" {
 #   vpc        = true
@@ -119,6 +125,7 @@
 #   subnet_id                   = aws_subnet.main_subnet.id
 #   vpc_security_group_ids      = [aws_security_group.main_security_group.id]
 #   depends_on                  = [aws_internet_gateway.main_internet_gateway]
+#   security_groups             = [aws_security_group.main_security_group.id]
 #   associate_public_ip_address = true
 #   monitoring                  = true
 #   ipv6_address_count          = 1
@@ -142,6 +149,7 @@
 #   subnet_id                   = aws_subnet.main_subnet.id
 #   vpc_security_group_ids      = [aws_security_group.main_security_group.id]
 #   depends_on                  = [aws_internet_gateway.main_internet_gateway]
+#   security_groups             = [aws_security_group.main_security_group.id]
 #   associate_public_ip_address = true
 #   monitoring                  = true
 #   ipv6_address_count          = 1
