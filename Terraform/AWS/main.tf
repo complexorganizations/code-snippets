@@ -131,7 +131,7 @@
 # # Get the data on the latest ubuntu AMI.
 # data "aws_ami" "get_current_ubuntu_release" {
 #  most_recent = true
-#  owners      = ["679593333241"]
+#  owners      = ["099720109477"]
 #  filter {
 #    name   = "name"
 #    values = ["ubuntu-minimal/images/hvm-ssd/ubuntu-jammy-22.04-*"]
