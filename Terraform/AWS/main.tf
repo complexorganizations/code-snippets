@@ -107,6 +107,10 @@
 #  security_groups = [aws_security_group.main_security_group.id]
 # }
 #
+# # Create a main route table
+# resource "aws_route" "main_route_table" {
+# }
+#
 # # Reserve an static public ip.
 # resource "aws_eip" "main_elastic_ip" {
 #   vpc        = true
