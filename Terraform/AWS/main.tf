@@ -128,9 +128,23 @@
 #  depends_on = [aws_internet_gateway.main_internet_gateway]
 # }
 #
+# # Get the data on the latest ubuntu AMI.
+# data "aws_ami" "get_current_ubuntu_release" {
+#  most_recent = true
+#  owners      = ["679593333241"]
+#  filter {
+#    name   = "name"
+#    values = ["ubuntu-minimal/images/hvm-ssd/ubuntu-jammy-22.04-*"]
+#  }
+#  filter {
+#    name   = "virtualization-type"
+#    values = ["hvm"]
+#  }
+# }
+#
 # # Deploy an EC2 instance
 # resource "aws_instance" "main_instance" {
-#   ami                         = "ami-08c40ec9ead489470"
+#   ami                         = data.aws_ami.get_current_ubuntu_release.id
 #   instance_type               = "t2.micro"
 #   key_name                    = aws_key_pair.ssh.main_key_pair
 #   subnet_id                   = aws_subnet.main_subnet.id
@@ -139,6 +153,8 @@
 #   security_groups             = [aws_security_group.main_security_group.id]
 #   associate_public_ip_address = true
 #   monitoring                  = true
+#   hibernation                 = true
+#   ebs_optimized               = false
 #   ipv6_address_count          = 1
 #   credit_specification {
 #     cpu_credits = "standard"
@@ -163,6 +179,8 @@
 #   security_groups             = [aws_security_group.main_security_group.id]
 #   associate_public_ip_address = true
 #   monitoring                  = true
+#   hibernation                 = true
+#   ebs_optimized               = false
 #   ipv6_address_count          = 1
 #   root_block_device {
 #     delete_on_termination = true
