@@ -121,11 +121,18 @@
 #   }
 # }
 #
+# # Create a nat getaway
+# resource "aws_nat_gateway" "example" {
+#  allocation_id = aws_eip.main_elastic_ip.id
+#  subnet_id     = aws_subnet.main_subnet.id
+#  depends_on = [aws_internet_gateway.main_internet_gateway]
+# }
+#
 # # Deploy an EC2 instance
 # resource "aws_instance" "main_instance" {
 #   ami                         = "ami-08c40ec9ead489470"
 #   instance_type               = "t2.micro"
-#   key_name                    = "main_key_pair"
+#   key_name                    = aws_key_pair.ssh.main_key_pair
 #   subnet_id                   = aws_subnet.main_subnet.id
 #   vpc_security_group_ids      = [aws_security_group.main_security_group.id]
 #   depends_on                  = [aws_internet_gateway.main_internet_gateway]
