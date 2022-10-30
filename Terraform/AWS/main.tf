@@ -133,9 +133,11 @@ resource "aws_eip" "main_elastic_ip" {
 
 # Create a nat getaway
 resource "aws_nat_gateway" "main_nat_gateway" {
-  #allocation_id = aws_eip.main_elastic_ip.id
+  connectivity_type = "private"
   subnet_id     = aws_subnet.main_subnet.id
-  depends_on    = [aws_internet_gateway.main_internet_gateway]
+  tags = {
+    Name = "Main Nat Gateway"
+  }
 }
 
 # Get the data on the latest ubuntu AMI.
