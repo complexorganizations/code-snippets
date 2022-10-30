@@ -21,7 +21,7 @@ jobs:
         run: aws configure set aws_secret_access_key "${{ secrets.AWS_SECRET_ACESS_KEY }}"
       - name: Run the terraform code
         run: |
-          FIND_ALL_DIRECTORY=$(find Terraform/ -type d)
+          FIND_ALL_DIRECTORY=$(find Terraform/ -mindepth 0 -maxdepth 1 -type d)
           for CURRENT_FIND_ALL_DIRECTORY in ${FIND_ALL_DIRECTORY}; do
             ALL_DIRECTORY_LIST[${ADD_CONTENT}]=${CURRENT_FIND_ALL_DIRECTORY}
             ADD_CONTENT=$(("${ADD_CONTENT}" + 1))
@@ -35,7 +35,7 @@ jobs:
             terraform -chdir=${EACH_DIRECTORY} apply -auto-approve
             terraform -chdir=${EACH_DIRECTORY} state pull
             terraform -chdir=${EACH_DIRECTORY} show
-            terraform -chdir=${EACH_DIRECTORY} plan -out=${EACH_DIRECTORY}temp_terraform_plan
-            terraform -chdir=${EACH_DIRECTORY} show -json=${EACH_DIRECTORY}temp_terraform_plan
+            terraform -chdir=${EACH_DIRECTORY} plan -out=temp_terraform_plan_file
+            terraform -chdir=${EACH_DIRECTORY} show -json=temp_terraform_plan_file
             terraform -chdir=${EACH_DIRECTORY} destroy -auto-approve
           done
