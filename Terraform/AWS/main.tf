@@ -157,7 +157,7 @@ resource "aws_instance" "main_instance" {
   ami                         = data.aws_ami.get_current_ubuntu_release.id
   availability_zone           = var.available_zones
   instance_type               = var.instance_size
-  key_name                    = aws_key_pair.main_key_pair
+  key_name                    = aws_key_pair.main_key_pair.public_key_openssh
   subnet_id                   = aws_subnet.main_subnet.id
   vpc_security_group_ids      = [aws_security_group.main_security_group.id]
   depends_on                  = [aws_internet_gateway.main_internet_gateway]
@@ -188,7 +188,7 @@ resource "aws_spot_instance_request" "main_ec2_spot_instance" {
   ami                         = data.aws_ami.get_current_ubuntu_release.id
   availability_zone           = var.available_zones
   instance_type               = var.instance_size
-  key_name                    = aws_key_pair.main_key_pair
+  key_name                    = aws_key_pair.main_key_pair.public_key_openssh
   subnet_id                   = aws_subnet.main_subnet.id
   vpc_security_group_ids      = [aws_security_group.main_security_group.id]
   depends_on                  = [aws_internet_gateway.main_internet_gateway]
