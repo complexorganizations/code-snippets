@@ -146,6 +146,7 @@ data "aws_ami" "get_current_ubuntu_release" {
 # Deploy an EC2 instance
 resource "aws_instance" "main_instance" {
   ami                         = data.aws_ami.get_current_ubuntu_release.id
+  availability_zone           = "us-east-1a"
   instance_type               = "t2.micro"
   key_name                    = aws_key_pair.ssh.main_key_pair
   subnet_id                   = aws_subnet.main_subnet.id
@@ -167,13 +168,18 @@ resource "aws_instance" "main_instance" {
   tags = {
     Name = "Main Instance"
   }
+  network_interface {
+    device_index = 0
+    network_interface_id = aws_network_interface.main_network_interface.id
+  }
 }
 
 # Deploy a EC2 spot instance.
 resource "aws_spot_instance_request" "main_ec2_spot_instance" {
-  ami                         = "ami-08c40ec9ead489470"
+  ami                         = data.aws_ami.get_current_ubuntu_release.id
+  availability_zone           = "us-east-1a"
   instance_type               = "t2.micro"
-  key_name                    = "main_key_pair"
+  key_name                    = aws_key_pair.ssh.main_key_pair
   subnet_id                   = aws_subnet.main_subnet.id
   vpc_security_group_ids      = [aws_security_group.main_security_group.id]
   depends_on                  = [aws_internet_gateway.main_internet_gateway]
@@ -191,6 +197,10 @@ resource "aws_spot_instance_request" "main_ec2_spot_instance" {
   wait_for_fulfillment = true
   tags = {
     Name = "Spot Instance"
+  }
+  network_interface {
+    device_index = 0
+    network_interface_id = aws_network_interface.main_network_interface.id
   }
 }
 
