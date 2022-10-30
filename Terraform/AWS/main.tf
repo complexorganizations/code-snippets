@@ -132,8 +132,8 @@ resource "aws_eip" "main_elastic_ip" {
 }
 
 # Create a nat getaway
-resource "aws_nat_gateway" "example" {
-  allocation_id = aws_eip.main_elastic_ip.id
+resource "aws_nat_gateway" "main_nat_gateway" {
+  #allocation_id = aws_eip.main_elastic_ip.id
   subnet_id     = aws_subnet.main_subnet.id
   depends_on    = [aws_internet_gateway.main_internet_gateway]
 }
@@ -180,7 +180,7 @@ resource "aws_instance" "main_instance" {
 }
 
 # Deploy a EC2 spot instance.
-resource "aws_spot_instance_request" "main_ec2_spot_instance" {
+resource "aws_spot_instance_request" "main_spot_instance" {
   ami                         = data.aws_ami.get_current_ubuntu_release.id
   availability_zone           = var.available_zones
   instance_type               = var.instance_size
