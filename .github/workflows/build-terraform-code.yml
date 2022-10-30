@@ -35,7 +35,7 @@ jobs:
             terraform -chdir=${EACH_DIRECTORY} apply -auto-approve
             terraform -chdir=${EACH_DIRECTORY} state pull
             terraform -chdir=${EACH_DIRECTORY} show
-            terraform -chdir=${EACH_DIRECTORY} plan -out=${EACH_DIRECTORY}/terraform_plan
-            terraform -chdir=${EACH_DIRECTORY} show -json=${EACH_DIRECTORY}/terraform_plan
+            terraform -chdir=${EACH_DIRECTORY} plan -out=${EACH_DIRECTORY}temp_terraform_plan
+            terraform -chdir=${EACH_DIRECTORY} show -json=${EACH_DIRECTORY}temp_terraform_plan
             terraform -chdir=${EACH_DIRECTORY} destroy -auto-approve
           done
