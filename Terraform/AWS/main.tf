@@ -177,10 +177,6 @@ resource "aws_instance" "main_instance" {
   tags = {
     Name = "Main Instance"
   }
-  network_interface {
-    device_index         = 0
-    network_interface_id = aws_network_interface.main_network_interface.id
-  }
 }
 
 # Deploy a EC2 spot instance.
@@ -206,10 +202,6 @@ resource "aws_spot_instance_request" "main_ec2_spot_instance" {
   wait_for_fulfillment = true
   tags = {
     Name = "Spot Instance"
-  }
-  network_interface {
-    device_index         = 0
-    network_interface_id = aws_network_interface.main_network_interface.id
   }
 }
 
