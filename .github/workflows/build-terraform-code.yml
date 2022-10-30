@@ -15,10 +15,14 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
-      - name: Configure the AWS CLI credentials acess key
-        run: aws configure set aws_access_key_id "${{ secrets.AWS_ACESS_KEY }}"
-      - name: Configure the AWS CLI credentials secret key
-        run: aws configure set aws_secret_access_key "${{ secrets.AWS_SECRET_ACESS_KEY }}"
+      - name: Configure the credentials for AWS
+        run: aws configure set aws_access_key_id "${{ secrets.AWS_ACESS_KEY }}" && aws configure set aws_secret_access_key "${{ secrets.AWS_SECRET_ACESS_KEY }}"
+      - name: Configure the credentials for GCP
+        run: echo "setup gcp stuff here"
+      - name: Configure the credentials for Azure
+        run: echo "setup azure stuff here"
+      - name: Configure the credentials for Cloudflare
+        run: echo "setup cloudflare stuff here"
       - name: Run the terraform code
         run: |
           FIND_ALL_DIRECTORY=$(find Terraform/ -mindepth 0 -maxdepth 1 -type d)
