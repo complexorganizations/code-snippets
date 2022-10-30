@@ -13,6 +13,19 @@ provider "aws" {
   shared_credentials_files = ["~/.aws/credentials"]
 }
 
+# Global Variables
+variable "available_zones" {
+  description = "The list of zones to use."
+  default = "us-east-1a"
+  type   = String
+}
+
+variable "instance_size" {
+  description = "The size of the instance to use."
+  default = "t2.micro"
+  type   = String
+}
+
 # Create the internet gateway
 resource "aws_internet_gateway" "main_internet_gateway" {
   vpc_id = aws_vpc.main_vpc.id
@@ -58,7 +71,7 @@ resource "aws_vpc" "main_vpc" {
 
 # Create a subnet
 resource "aws_subnet" "main_subnet" {
-  availability_zone                              = "us-east-1a"
+  availability_zone                              = var.available_zones
   vpc_id                                         = aws_vpc.main_vpc.id
   cidr_block                                     = cidrsubnet(aws_vpc.main_vpc.cidr_block, 4, 1)
   ipv6_cidr_block                                = cidrsubnet(aws_vpc.main_vpc.ipv6_cidr_block, 8, 1)
@@ -146,8 +159,8 @@ data "aws_ami" "get_current_ubuntu_release" {
 # Deploy an EC2 instance
 resource "aws_instance" "main_instance" {
   ami                         = data.aws_ami.get_current_ubuntu_release.id
-  availability_zone           = "us-east-1a"
-  instance_type               = "t2.micro"
+  availability_zone           = var.available_zones
+  instance_type               = var.instance_size
   key_name                    = aws_key_pair.ssh.main_key_pair
   subnet_id                   = aws_subnet.main_subnet.id
   vpc_security_group_ids      = [aws_security_group.main_security_group.id]
@@ -177,8 +190,8 @@ resource "aws_instance" "main_instance" {
 # Deploy a EC2 spot instance.
 resource "aws_spot_instance_request" "main_ec2_spot_instance" {
   ami                         = data.aws_ami.get_current_ubuntu_release.id
-  availability_zone           = "us-east-1a"
-  instance_type               = "t2.micro"
+  availability_zone           = var.available_zones
+  instance_type               = var.instance_size
   key_name                    = aws_key_pair.ssh.main_key_pair
   subnet_id                   = aws_subnet.main_subnet.id
   vpc_security_group_ids      = [aws_security_group.main_security_group.id]
