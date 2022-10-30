@@ -16,14 +16,14 @@ provider "aws" {
 # Global Variables
 variable "available_zones" {
   description = "The list of zones to use."
-  default = "us-east-1a"
-  type   = String
+  default     = "us-east-1a"
+  type        = string
 }
 
 variable "instance_size" {
   description = "The size of the instance to use."
-  default = "t2.micro"
-  type   = String
+  default     = "t2.micro"
+  type        = string
 }
 
 # Create the internet gateway
@@ -117,8 +117,8 @@ resource "aws_security_group" "main_security_group" {
 
 # Create a network interface
 resource "aws_network_interface" "main_network_interface" {
- subnet_id       = aws_subnet.main_subnet.id
- security_groups = [aws_security_group.main_security_group.id]
+  subnet_id       = aws_subnet.main_subnet.id
+  security_groups = [aws_security_group.main_security_group.id]
 }
 
 # Create a main route table
@@ -137,23 +137,23 @@ resource "aws_eip" "main_elastic_ip" {
 
 # Create a nat getaway
 resource "aws_nat_gateway" "example" {
- allocation_id = aws_eip.main_elastic_ip.id
- subnet_id     = aws_subnet.main_subnet.id
- depends_on = [aws_internet_gateway.main_internet_gateway]
+  allocation_id = aws_eip.main_elastic_ip.id
+  subnet_id     = aws_subnet.main_subnet.id
+  depends_on    = [aws_internet_gateway.main_internet_gateway]
 }
 
 # Get the data on the latest ubuntu AMI.
 data "aws_ami" "get_current_ubuntu_release" {
- most_recent = true
- owners      = ["099720109477"]
- filter {
-   name   = "name"
-   values = ["ubuntu-minimal/images/hvm-ssd/ubuntu-jammy-22.04-*"]
- }
- filter {
-   name   = "virtualization-type"
-   values = ["hvm"]
- }
+  most_recent = true
+  owners      = ["099720109477"]
+  filter {
+    name   = "name"
+    values = ["ubuntu-minimal/images/hvm-ssd/ubuntu-jammy-22.04-*"]
+  }
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
 }
 
 # Deploy an EC2 instance
@@ -182,7 +182,7 @@ resource "aws_instance" "main_instance" {
     Name = "Main Instance"
   }
   network_interface {
-    device_index = 0
+    device_index         = 0
     network_interface_id = aws_network_interface.main_network_interface.id
   }
 }
@@ -212,7 +212,7 @@ resource "aws_spot_instance_request" "main_ec2_spot_instance" {
     Name = "Spot Instance"
   }
   network_interface {
-    device_index = 0
+    device_index         = 0
     network_interface_id = aws_network_interface.main_network_interface.id
   }
 }
