@@ -121,11 +121,6 @@ resource "aws_network_interface" "main_network_interface" {
   security_groups = [aws_security_group.main_security_group.id]
 }
 
-# Create a main route table
-resource "aws_route" "main_route_table" {
-  route_table_id = aws_route_table.main_route_table.id
-}
-
 # Reserve an static public ip.
 resource "aws_eip" "main_elastic_ip" {
   vpc        = true
