@@ -32,10 +32,10 @@ jobs:
             terraform -chdir=${EACH_DIRECTORY} validate
             terraform -chdir=${EACH_DIRECTORY} graph
             terraform -chdir=${EACH_DIRECTORY} plan
+            terraform -chdir=${EACH_DIRECTORY} plan -out=temp_terraform_plan_file
+            terraform -chdir=${EACH_DIRECTORY} show -json=temp_terraform_plan_file
             terraform -chdir=${EACH_DIRECTORY} apply -auto-approve
             terraform -chdir=${EACH_DIRECTORY} state pull
             terraform -chdir=${EACH_DIRECTORY} show
-            terraform -chdir=${EACH_DIRECTORY} plan -out=temp_terraform_plan_file
-            terraform -chdir=${EACH_DIRECTORY} show -json=temp_terraform_plan_file
             terraform -chdir=${EACH_DIRECTORY} destroy -auto-approve
           done
