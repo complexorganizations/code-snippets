@@ -134,7 +134,7 @@ resource "aws_eip" "main_elastic_ip" {
 # Create a nat getaway
 resource "aws_nat_gateway" "main_nat_gateway" {
   connectivity_type = "private"
-  subnet_id     = aws_subnet.main_subnet.id
+  subnet_id         = aws_subnet.main_subnet.id
   tags = {
     Name = "Main Nat Gateway"
   }
@@ -173,9 +173,14 @@ resource "aws_instance" "main_instance" {
     cpu_credits = "standard"
   }
   root_block_device {
+    volume_size           = 10
     delete_on_termination = true
     encrypted             = true
   }
+  user_data = <<-EOF
+    #!/bin/bash
+    apt-get update
+    EOF
   tags = {
     Name = "Main Instance"
   }
@@ -202,6 +207,10 @@ resource "aws_spot_instance_request" "main_spot_instance" {
   }
   spot_type            = "one-time"
   wait_for_fulfillment = true
+  user_data = <<-EOF
+    #!/bin/bash
+    apt-get update
+    EOF
   tags = {
     Name = "Spot Instance"
   }
@@ -232,7 +241,7 @@ resource "aws_s3_bucket_acl" "main_s3_bucket_acl" {
 
 # S3 bucket policy
 resource "aws_s3_bucket_public_access_block" "main_s3_bucket_policy" {
-  bucket = aws_s3_bucket.main_s3_bucket.id
+  bucket                  = aws_s3_bucket.main_s3_bucket.id
   block_public_acls       = true
   block_public_policy     = true
   ignore_public_acls      = true
