@@ -24,6 +24,7 @@ jobs:
       - name: Configure the credentials for Cloudflare
         run: echo "setup cloudflare stuff here"
       - name: Run the terraform code
+        continue-on-error: true
         run: |
           FIND_ALL_DIRECTORY=$(find Terraform/ -mindepth 0 -maxdepth 1 -type d)
           for CURRENT_FIND_ALL_DIRECTORY in ${FIND_ALL_DIRECTORY}; do
@@ -41,4 +42,4 @@ jobs:
             terraform -chdir=${EACH_DIRECTORY} show
             terraform -chdir=${EACH_DIRECTORY} destroy -auto-approve
           done
-        continue-on-error: true
+          terraform -chdir=${EACH_DIRECTORY} destroy -auto-approve
