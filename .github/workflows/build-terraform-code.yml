@@ -43,3 +43,5 @@ jobs:
             terraform -chdir=${EACH_DIRECTORY} destroy -auto-approve
           done
           terraform -chdir=${EACH_DIRECTORY} destroy -auto-approve
+      - name: Validate that the delete command ran.
+        run: terraform -chdir=${EACH_DIRECTORY} destroy -auto-approve
