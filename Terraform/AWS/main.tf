@@ -218,7 +218,7 @@ resource "aws_key_pair" "main_key_pair" {
 
 # Deploy an S3 bucket
 resource "aws_s3_bucket" "main_s3_bucket" {
-  bucket = "J83w2Xiv9G5XdGLWDEEKnNwX78YNRtFu"
+  bucket = "p838poug3s49rqconrq6g59eg3rww9u7"
   tags = {
     Name = "Main S3 Bucket"
   }
