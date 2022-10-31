@@ -209,7 +209,7 @@ resource "aws_spot_instance_request" "main_spot_instance" {
 
 # Import a SSH key into AWS
 resource "aws_key_pair" "main_key_pair" {
-  key_name   = "primary_key_pair"
+  key_name   = "main_key_pair"
   public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF8Mhm+2iTvrBWc7Jmrydyg/UG3tUg5ylxdvGuQamWmD"
   tags = {
     Name = "Main Key Pair"
