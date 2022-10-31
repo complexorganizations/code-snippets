@@ -218,11 +218,16 @@ resource "aws_key_pair" "main_key_pair" {
 
 # Deploy an S3 bucket
 resource "aws_s3_bucket" "main_s3_bucket" {
-  bucket = "main_s3_bucket"
-  acl    = "private"
+  bucket = "J83w2Xiv9G5XdGLWDEEKnNwX78YNRtFu"
   tags = {
     Name = "Main S3 Bucket"
   }
+}
+
+# Deploy an S3 bucket policy
+resource "aws_s3_bucket_acl" "main_s3_bucket_acl" {
+  bucket = aws_s3_bucket.main_s3_bucket.id
+  acl    = "private"
 }
 
 # S3 bucket policy
