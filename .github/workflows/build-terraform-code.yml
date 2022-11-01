@@ -17,16 +17,19 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
-      - name: Wait for previous actions to complete.
-        uses: ahmadnassri/action-workflow-run-wait@v1
+      - name: Set up Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v0
       - name: Configure the credentials for AWS
         run: aws configure set aws_access_key_id "${{ secrets.AWS_ACESS_KEY }}" && aws configure set aws_secret_access_key "${{ secrets.AWS_SECRET_ACESS_KEY }}"
-      - name: Configure the credentials for GCP
-        run: echo "setup gcp stuff here"
-      - name: Configure the credentials for Azure
-        run: echo "setup azure stuff here"
+      - id: Setup auth for Google Cloud SDK
+        uses: google-github-actions/auth@v0
+        with:
+          credentials_json: "${{ secrets.GCP_CREDENTIALS_PATH }}"
       - name: Configure the credentials for Cloudflare
-        run: echo "setup cloudflare stuff here"
+        run: |
+          export CLOUDFLARE_EMAIL="${{ secrets.CF_EMAIL_ADDRESS }}"
+          export CLOUDFLARE_API_KEY="${{ secrets.CF_API_KEY }}"
+          export CLOUDFLARE_ZONE_ID="${{ secrets.CF_ZONE_ID }}"
       - name: Run the terraform code
         continue-on-error: true
         run: |
