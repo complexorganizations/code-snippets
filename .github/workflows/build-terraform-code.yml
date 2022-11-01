@@ -16,7 +16,7 @@ jobs:
       - name: Check out code into the directory
         uses: actions/checkout@v3
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
+        uses: hashicorp/setup-terraform@v2
       - name: Set up Google Cloud SDK
         uses: google-github-actions/setup-gcloud@v0
       - name: Configure the credentials for AWS
