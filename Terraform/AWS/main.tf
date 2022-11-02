@@ -176,6 +176,8 @@ resource "aws_instance" "main_instance" {
     volume_size           = 10
     delete_on_termination = true
     encrypted             = true
+    iops                  = 100
+    volume_type           = "gp2"
   }
   user_data = <<-EOF
     #!/bin/bash
@@ -202,8 +204,11 @@ resource "aws_spot_instance_request" "main_spot_instance" {
   ebs_optimized               = false
   ipv6_address_count          = 1
   root_block_device {
+    volume_size           = 10
     delete_on_termination = true
     encrypted             = true
+    iops                  = 100
+    volume_type           = "gp2"
   }
   spot_type            = "one-time"
   wait_for_fulfillment = true
