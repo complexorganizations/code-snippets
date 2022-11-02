@@ -177,7 +177,7 @@ resource "aws_instance" "main_instance" {
     delete_on_termination = true
     encrypted             = true
     iops                  = 100
-    volume_type           = "gp2"
+    volume_type           = standard
   }
   user_data = <<-EOF
     #!/bin/bash
@@ -208,7 +208,7 @@ resource "aws_spot_instance_request" "main_spot_instance" {
     delete_on_termination = true
     encrypted             = true
     iops                  = 100
-    volume_type           = "gp2"
+    volume_type           = standard
   }
   spot_type            = "one-time"
   wait_for_fulfillment = true
@@ -267,6 +267,7 @@ resource "aws_ebs_volume" "main_ebs_volume" {
 # Create a elastic cache cluster. (redis)
 resource "aws_elasticache_cluster" "main_elasti_cache_cluster" {
   cluster_id           = "suiqa5d83igszdff72xg2ub94sia24o"
+  availability_zone    = var.available_zones
   engine               = "redis"
   node_type            = "cache.t2.micro"
   num_cache_nodes      = 1
