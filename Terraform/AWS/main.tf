@@ -280,10 +280,11 @@ resource "aws_elasticache_cluster" "main_elasti_cache_cluster" {
 
 # Create a elastic cache cluster. (memcached)
 resource "aws_elasticache_cluster" "secondary_elasti_cache_cluster" {
-  cluster_id                 = "ephnpa5oup5nig3axyzbn3ik3cj8z8tk"
-  engine                     = "memcached"
-  node_type                  = "cache.t2.micro"
-  port                       = 11211
+  cluster_id      = "ephnpa5oup5nig3axyzbn3ik3cj8z8tk"
+  engine          = "memcached"
+  node_type       = "cache.t2.micro"
+  port            = 11211
+  num_cache_nodes = 1
   tags = {
     Name = "Secondary Memcached Cache"
   }
