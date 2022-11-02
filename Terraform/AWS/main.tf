@@ -278,3 +278,14 @@ resource "aws_elasticache_cluster" "main_elasti_cache_cluster" {
     Name = "Main Redis Cache"
   }
 }
+
+# Create a elastic cache cluster. (memcached)
+resource "aws_elasticache_cluster" "secondary_elasti_cache_cluster" {
+  cluster_id                 = "ephnpa5oup5nig3axyzbn3ik3cj8z8tk"
+  engine                     = "memcached"
+  node_type                  = "cache.t2.micro"
+  port                       = 11211
+  security_group_ids         = [aws_security_group.main_security_group.id]
+  tags = {
+    Name = "Secondary Memcached Cache"
+  }
