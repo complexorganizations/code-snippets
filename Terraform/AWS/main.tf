@@ -20,9 +20,17 @@ variable "available_zones" {
   type        = string
 }
 
+# EC2 Instance Size
 variable "instance_size" {
   description = "The size of the instance to use."
   default     = "t2.micro"
+  type        = string
+}
+
+# Elasti Cache Instance Size
+variable "elasticache_instance_size" {
+  description = "The elastic cache instance size."
+  default     = "cache.t2.micro"
   type        = string
 }
 
@@ -270,7 +278,7 @@ resource "aws_elasticache_cluster" "main_elasti_cache_cluster" {
   engine                     = "redis"
   auto_minor_version_upgrade = true
   az_mode                    = "single-az"
-  node_type                  = "cache.t2.micro"
+  node_type                  = var.elasticache_instance_size
   num_cache_nodes            = 1
   parameter_group_name       = "default.redis6.x"
   engine_version             = "6.2"
@@ -284,7 +292,7 @@ resource "aws_elasticache_cluster" "main_elasti_cache_cluster" {
 resource "aws_elasticache_cluster" "secondary_elasti_cache_cluster" {
   cluster_id      = "ephnpa5oup5nig3axyzbn3ik3cj8z8tk"
   engine          = "memcached"
-  node_type       = "cache.t2.micro"
+  node_type       = var.elasticache_instance_size
   port            = 11211
   num_cache_nodes = 1
   tags = {
