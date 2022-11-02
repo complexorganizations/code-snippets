@@ -252,3 +252,28 @@ resource "aws_s3_bucket_public_access_block" "main_s3_bucket_policy" {
   ignore_public_acls      = true
   restrict_public_buckets = true
 }
+
+# Create a elastic block storage volume
+resource "aws_ebs_volume" "main_ebs_volume" {
+  availability_zone = var.available_zones
+  encrypted         = true
+  size              = 50
+  type              = "standard"
+  tags = {
+    Name = "Main EBS Volume"
+  }
+}
+
+# Create a elastic cache cluster. (redis)
+resource "aws_elasticache_cluster" "main_elasti_cache_cluster" {
+  cluster_id           = "main_elasti_cache_cluster"
+  engine               = "redis"
+  node_type            = "cache.t2.micro"
+  num_cache_nodes      = 1
+  parameter_group_name = "default.redis3.2"
+  engine_version       = "6.2"
+  port                 = 6379
+  tags = {
+    Name = "Main Redis Cache"
+  }
+}
