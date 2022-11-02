@@ -231,6 +231,7 @@ resource "aws_key_pair" "main_key_pair" {
 # Deploy an S3 bucket
 resource "aws_s3_bucket" "main_s3_bucket" {
   bucket = "p838poug3s49rqconrq6g59eg3rww9u7"
+  force_destroy = true
   tags = {
     Name = "Main S3 Bucket"
   }
