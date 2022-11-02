@@ -265,7 +265,6 @@ resource "aws_ebs_volume" "main_ebs_volume" {
 # Create a elastic cache cluster. (redis)
 resource "aws_elasticache_cluster" "main_elasti_cache_cluster" {
   cluster_id           = "suiqa5d83igszdff72xg2ub94sia24o"
-  availability_zone    = var.available_zones
   engine               = "redis"
   node_type            = "cache.t2.micro"
   num_cache_nodes      = 1
