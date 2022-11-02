@@ -289,3 +289,4 @@ resource "aws_elasticache_cluster" "secondary_elasti_cache_cluster" {
   tags = {
     Name = "Secondary Memcached Cache"
   }
+}
