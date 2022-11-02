@@ -264,13 +264,16 @@ resource "aws_ebs_volume" "main_ebs_volume" {
 
 # Create a elastic cache cluster. (redis)
 resource "aws_elasticache_cluster" "main_elasti_cache_cluster" {
-  cluster_id           = "suiqa5d83igszdff72xg2ub94sia24o"
-  engine               = "redis"
-  node_type            = "cache.t2.micro"
-  num_cache_nodes      = 1
-  parameter_group_name = "default.redis6.x"
-  engine_version       = "6.2"
-  port                 = 6379
+  cluster_id                 = "suiqa5d83igszdff72xg2ub94sia24o"
+  engine                     = "redis"
+  auto_minor_version_upgrade = true
+  az_mode                    = "cross-az"
+  node_type                  = "cache.t2.micro"
+  num_cache_nodes            = 1
+  parameter_group_name       = "default.redis6.x"
+  engine_version             = "6.2"
+  port                       = 6379
+  security_group_ids         = [aws_security_group.main_security_group.id]
   tags = {
     Name = "Main Redis Cache"
   }
