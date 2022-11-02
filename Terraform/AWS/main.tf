@@ -267,9 +267,9 @@ resource "aws_elasticache_cluster" "main_elasti_cache_cluster" {
   cluster_id                 = "suiqa5d83igszdff72xg2ub94sia24o"
   engine                     = "redis"
   auto_minor_version_upgrade = true
-  az_mode                    = "cross-az"
+  az_mode                    = "single-az"
   node_type                  = "cache.t2.micro"
-  num_cache_nodes            = 3
+  num_cache_nodes            = 1
   parameter_group_name       = "default.redis6.x"
   engine_version             = "6.2"
   port                       = 6379
