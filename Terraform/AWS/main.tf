@@ -273,7 +273,6 @@ resource "aws_elasticache_cluster" "main_elasti_cache_cluster" {
   parameter_group_name       = "default.redis6.x"
   engine_version             = "6.2"
   port                       = 6379
-  security_group_ids         = [aws_security_group.main_security_group.id]
   tags = {
     Name = "Main Redis Cache"
   }
@@ -285,7 +284,6 @@ resource "aws_elasticache_cluster" "secondary_elasti_cache_cluster" {
   engine                     = "memcached"
   node_type                  = "cache.t2.micro"
   port                       = 11211
-  security_group_ids         = [aws_security_group.main_security_group.id]
   tags = {
     Name = "Secondary Memcached Cache"
   }
