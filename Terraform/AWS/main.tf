@@ -176,7 +176,6 @@ resource "aws_instance" "main_instance" {
     volume_size           = 10
     delete_on_termination = true
     encrypted             = true
-    iops                  = 100
     volume_type           = "standard"
   }
   user_data = <<-EOF
@@ -207,7 +206,6 @@ resource "aws_spot_instance_request" "main_spot_instance" {
     volume_size           = 10
     delete_on_termination = true
     encrypted             = true
-    iops                  = 100
     volume_type           = "standard"
   }
   spot_type            = "one-time"
@@ -271,7 +269,7 @@ resource "aws_elasticache_cluster" "main_elasti_cache_cluster" {
   engine               = "redis"
   node_type            = "cache.t2.micro"
   num_cache_nodes      = 1
-  parameter_group_name = "default.redis3.2"
+  parameter_group_name = "default.redis6.x"
   engine_version       = "6.2"
   port                 = 6379
   tags = {
