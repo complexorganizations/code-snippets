@@ -177,7 +177,7 @@ resource "aws_instance" "main_instance" {
     delete_on_termination = true
     encrypted             = true
     iops                  = 100
-    volume_type           = standard
+    volume_type           = "standard"
   }
   user_data = <<-EOF
     #!/bin/bash
@@ -208,7 +208,7 @@ resource "aws_spot_instance_request" "main_spot_instance" {
     delete_on_termination = true
     encrypted             = true
     iops                  = 100
-    volume_type           = standard
+    volume_type           = "standard"
   }
   spot_type            = "one-time"
   wait_for_fulfillment = true
