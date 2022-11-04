@@ -307,3 +307,17 @@ resource "aws_timestreamwrite_database" "main_time_stream_database" {
     Name = "Main Timestream database"
   }
 }
+
+# Create a RDS database (mysql)
+resource "aws_db_instance" "main_rds_mysql_database" {
+  allocated_storage    = 20
+  max_allocated_storage = 25
+  db_name              = "database_name"
+  engine               = "mysql"
+  engine_version       = "8.0.30"
+  instance_class       = "db.t2.micro"
+  username             = "database_username"
+  password             = "database_user_password"
+  parameter_group_name = "default.mysql8.0"
+  skip_final_snapshot  = true
+}
