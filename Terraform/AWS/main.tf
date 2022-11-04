@@ -299,3 +299,11 @@ resource "aws_elasticache_cluster" "secondary_elasti_cache_cluster" {
     Name = "Secondary Memcached Cache"
   }
 }
+
+# Create a timestream database
+resource "aws_timestreamwrite_database" "main_time_stream_database" {
+  database_name = "main_time_stream_database"
+  tags = {
+    Name = "Main Timestream database"
+  }
+}
