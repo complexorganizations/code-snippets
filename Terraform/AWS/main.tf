@@ -331,7 +331,7 @@ resource "aws_timestreamwrite_database" "main_time_stream_database" {
 }
 
 # Create a RDS database (mysql)
-# resource "aws_db_instance" "main_rds_mysql_database" {
+#resource "aws_db_instance" "main_rds_mysql_database" {
 #  allocated_storage    = 20
 #  max_allocated_storage = 25
 #  db_name              = "database_name"
@@ -342,7 +342,7 @@ resource "aws_timestreamwrite_database" "main_time_stream_database" {
 #  password             = "database_user_password"
 #  parameter_group_name = "default.mysql8.0"
 #  skip_final_snapshot  = true
-# }
+#}
 
 # Create a RDS database (postgres)
 resource "aws_db_instance" "main_rds_postgres_database" {
