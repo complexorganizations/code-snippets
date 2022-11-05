@@ -256,6 +256,24 @@ resource "aws_s3_bucket_acl" "main_s3_bucket_acl" {
   acl    = "private"
 }
 
+# Deploy an S3 bucket versioning
+resource "aws_s3_bucket_versioning" "main_s3_bucket_versioning" {
+  bucket = aws_s3_bucket.main_s3_bucket.id
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+
+# Deploy an S3 bucket server side encryption.
+resource "aws_s3_bucket_server_side_encryption_configuration" "main_s3_server_side_encryption" {
+  bucket = aws_s3_bucket.main_s3_bucket.bucket 
+  rule {
+    apply_server_side_encryption_by_default {
+      sse_algorithm = "AES256"
+    }
+  }
+}
+
 # S3 bucket policy
 resource "aws_s3_bucket_public_access_block" "main_s3_bucket_policy" {
   bucket                  = aws_s3_bucket.main_s3_bucket.id
