@@ -1,6 +1,6 @@
 name: "Build Terraform Configs"
 on:
-  check_run:
+  workflow_run:
     types: [completed]
   push:
     paths:
