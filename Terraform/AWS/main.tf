@@ -16,8 +16,8 @@ provider "aws" {
 # Global Variables
 variable "available_zones" {
   description = "The list of zones to use."
-  default     = "us-east-1a"
-  type        = string
+  default = ["us-east-1a", "us-east-1b", "us-east-1c", "us-east-1d", "us-east-1e", "us-east-1f"]
+  type    = list(string)
 }
 
 # EC2 Instance Size
