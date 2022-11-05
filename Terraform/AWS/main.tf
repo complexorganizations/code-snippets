@@ -343,3 +343,18 @@ resource "aws_timestreamwrite_database" "main_time_stream_database" {
 #  parameter_group_name = "default.mysql8.0"
 #  skip_final_snapshot  = true
 # }
+
+# Create a RDS database (postgres)
+resource "aws_db_instance" "main_rds_postgres_database" {
+  allocated_storage          = 20
+  max_allocated_storage      = 25
+  storage_type               = "standard"
+  engine                     = "postgres"
+  engine_version             = "12"
+  instance_class             = "db.t2.micro"
+  name                       = "database_name"
+  username                   = "database_username"
+  password                   = "database_user_password"
+  skip_final_snapshot        = true
+  auto_minor_version_upgrade = true
+}
