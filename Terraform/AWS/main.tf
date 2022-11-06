@@ -371,3 +371,18 @@ resource "aws_sqs_queue" "main_sqs_queue" {
     Name = "Main SQS Queue"
   }
 }
+
+# Create a lightsail instance
+resource "aws_lightsail_instance" "main_light_sail_instance" {
+  name              = "main_light_sail_instance"
+  availability_zone = var.available_zones
+  blueprint_id      = "ubuntu_20_04"
+  bundle_id         = "nano_2_0"
+  user_data         = <<-EOF
+    #!/bin/bash
+    apt-get update
+    EOF
+  tags = {
+    Name = "Main Lightsail Instance"
+  }
+}
