@@ -442,12 +442,13 @@ output "output_all_aws_availability_zones" {
 
 # Create a redshift cluster
 resource "aws_redshift_cluster" "main_redshift_cluster" {
-  cluster_identifier = "main-redshift-cluster"
-  database_name      = "db_name"
-  master_username    = "database_username"
-  master_password    = "QKHVUgzpW5t6qWPa2hDDvoBU6SKhBgEU"
-  node_type          = "ra3.xlplus"
-  cluster_type       = "single-node"
+  cluster_identifier  = "main-redshift-cluster"
+  database_name       = "db_name"
+  master_username     = "database_username"
+  master_password     = "QKHVUgzpW5t6qWPa2hDDvoBU6SKhBgEU"
+  node_type           = "ra3.xlplus"
+  skip_final_snapshot = true
+  cluster_type        = "single-node"
 }
 
 # Create a aws keyspaces
