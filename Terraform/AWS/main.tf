@@ -16,8 +16,8 @@ provider "aws" {
 # Global Variables
 variable "available_zones" {
   description = "The list of zones to use."
-  default     = ["us-east-1a", "us-east-1b", "us-east-1c"]
-  type        = list(string)
+  default     = "us-east-1a"
+  type        = string
 }
 
 # EC2 Instance Size
@@ -59,8 +59,8 @@ resource "aws_route_table" "main_route_table" {
 }
 
 # route table association
-resource "aws_route_table_association" "route_table_association" {
-  subnet_id      = aws_subnet.main_subnet[count.index]
+resource "aws_route_table_association" "main_route_table_association" {
+  subnet_id      = aws_subnet.main_subnet.id
   route_table_id = aws_route_table.main_route_table.id
 }
 
@@ -79,8 +79,7 @@ resource "aws_vpc" "main_vpc" {
 
 # Create a subnet
 resource "aws_subnet" "main_subnet" {
-  count                                          = length(var.available_zones)
-  availability_zone                              = var.available_zones[count.index]
+  availability_zone                              = var.available_zones
   vpc_id                                         = aws_vpc.main_vpc.id
   cidr_block                                     = cidrsubnet(aws_vpc.main_vpc.cidr_block, 4, 1)
   ipv6_cidr_block                                = cidrsubnet(aws_vpc.main_vpc.ipv6_cidr_block, 8, 1)
@@ -91,7 +90,7 @@ resource "aws_subnet" "main_subnet" {
   enable_resource_name_dns_a_record_on_launch    = true
   enable_resource_name_dns_aaaa_record_on_launch = true
   tags = {
-    Name = "Subnet ${var.available_zones[count.index]}"
+    Name = " Main Subnet"
   }
 }
 
@@ -170,7 +169,7 @@ data "aws_ami" "get_current_ubuntu_release" {
 # Deploy an EC2 instance
 resource "aws_instance" "main_instance" {
   ami                         = data.aws_ami.get_current_ubuntu_release.id
-  availability_zone           = var.available_zones[0]
+  availability_zone           = var.available_zones
   instance_type               = var.instance_size
   key_name                    = aws_key_pair.main_key_pair.key_name
   subnet_id                   = aws_subnet.main_subnet.id
@@ -203,7 +202,7 @@ resource "aws_instance" "main_instance" {
 # Deploy a EC2 spot instance.
 resource "aws_spot_instance_request" "main_spot_instance" {
   ami                         = data.aws_ami.get_current_ubuntu_release.id
-  availability_zone           = var.available_zones[0]
+  availability_zone           = var.available_zones
   instance_type               = var.instance_size
   key_name                    = aws_key_pair.main_key_pair.key_name
   subnet_id                   = aws_subnet.main_subnet.id
@@ -286,7 +285,7 @@ resource "aws_s3_bucket_public_access_block" "main_s3_bucket_policy" {
 
 # Create a elastic block storage volume
 resource "aws_ebs_volume" "main_ebs_volume" {
-  availability_zone = var.available_zones[0]
+  availability_zone = var.available_zones
   encrypted         = true
   size              = 50
   type              = "standard"
@@ -332,8 +331,6 @@ resource "aws_timestreamwrite_database" "main_time_stream_database" {
 }
 
 /*
-
-# "doesn't meet Availability Zone (AZ) coverage requirement. Current AZ coverage: us-east-1c. Add subnets to cover at least 2 AZs."
 
 # Create a RDS database (mysql)
 resource "aws_db_instance" "main_rds_mysql_database" {
@@ -413,7 +410,7 @@ resource "aws_sqs_queue" "main_sqs_queue" {
 # Create a lightsail instance
 resource "aws_lightsail_instance" "main_light_sail_instance" {
   name              = "main_light_sail_instance"
-  availability_zone = var.available_zones[0]
+  availability_zone = var.available_zones
   blueprint_id      = "ubuntu_20_04"
   bundle_id         = "nano_2_0"
   user_data         = <<-EOF
@@ -449,7 +446,7 @@ resource "aws_redshift_cluster" "main_redshift_cluster" {
   database_name      = "db_name"
   master_username    = "database_username"
   master_password    = "QKHVUgzpW5t6qWPa2hDDvoBU6SKhBgEU"
-  node_type          = "dc1.large"
+  node_type          = "ra3.xlplus"
   cluster_type       = "single-node"
 }
 
