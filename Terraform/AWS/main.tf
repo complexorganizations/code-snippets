@@ -16,8 +16,8 @@ provider "aws" {
 # Global Variables
 variable "available_zones" {
   description = "The list of zones to use."
-  default = "us-east-1a"
-  type    = string
+  default     = "us-east-1a"
+  type        = string
 }
 
 # EC2 Instance Size
@@ -222,7 +222,7 @@ resource "aws_spot_instance_request" "main_spot_instance" {
   }
   spot_type            = "one-time"
   wait_for_fulfillment = true
-  user_data = <<-EOF
+  user_data            = <<-EOF
     #!/bin/bash
     apt-get update
     EOF
@@ -242,8 +242,8 @@ resource "aws_key_pair" "main_key_pair" {
 
 # Deploy an S3 bucket
 resource "aws_s3_bucket" "main_s3_bucket" {
-  bucket = "p838poug3s49rqconrq6g59eg3rww9u7"
-  force_destroy = true
+  bucket              = "p838poug3s49rqconrq6g59eg3rww9u7"
+  force_destroy       = true
   object_lock_enabled = true
   tags = {
     Name = "Main S3 Bucket"
@@ -266,7 +266,7 @@ resource "aws_s3_bucket_versioning" "main_s3_bucket_versioning" {
 
 # Deploy an S3 bucket server side encryption.
 resource "aws_s3_bucket_server_side_encryption_configuration" "main_s3_server_side_encryption" {
-  bucket = aws_s3_bucket.main_s3_bucket.bucket 
+  bucket = aws_s3_bucket.main_s3_bucket.bucket
   rule {
     apply_server_side_encryption_by_default {
       sse_algorithm = "AES256"
@@ -357,4 +357,17 @@ resource "aws_db_instance" "main_rds_postgres_database" {
   password                   = "database_user_password"
   skip_final_snapshot        = true
   auto_minor_version_upgrade = true
+}
+
+# Create a SQS queue
+resource "aws_sqs_queue" "main_sqs_queue" {
+  name                       = "main_sqs_queue"
+  delay_seconds              = 90
+  max_message_size           = 2048
+  message_retention_seconds  = 86400
+  receive_wait_time_seconds  = 20
+  visibility_timeout_seconds = 30
+  tags = {
+    Name = "Main SQS Queue"
+  }
 }
