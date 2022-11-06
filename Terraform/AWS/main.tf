@@ -390,3 +390,21 @@ resource "aws_lightsail_instance" "main_light_sail_instance" {
     Name = "Main Lightsail Instance"
   }
 }
+
+# Get the list of aws regions
+data "aws_regions" "list_all_aws_regions" {
+  all_regions = true
+}
+
+output "output_all_aws_regions" {
+  value = data.aws_regions.current.names
+}
+
+# Get the list of aws availability zones
+data "aws_availability_zones" "list_all_aws_availability_zones" {
+  all_availability_zones = true
+}
+
+output "output_all_aws_availability_zones" {
+  value = data.aws_availability_zones.list_all_aws_availability_zones.names
+}
