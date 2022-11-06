@@ -397,7 +397,7 @@ data "aws_regions" "list_all_aws_regions" {
 }
 
 output "output_all_aws_regions" {
-  value = data.aws_regions.current.names
+  value = data.aws_regions.list_all_aws_regions.names
 }
 
 # Get the list of aws availability zones
