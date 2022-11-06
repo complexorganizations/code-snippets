@@ -344,6 +344,9 @@ resource "aws_db_instance" "main_rds_mysql_database" {
   password              = "database_user_password"
   parameter_group_name  = "default.mysql8.0"
   skip_final_snapshot   = true
+  tags = {
+    Name = "Main RDS MySQL Database"
+  }
 }
 
 # Create a RDS database (postgres)
@@ -359,6 +362,9 @@ resource "aws_db_instance" "main_rds_postgres_database" {
   password                   = "database_user_password"
   skip_final_snapshot        = true
   auto_minor_version_upgrade = true
+  tags = {
+    Name = "Main RDS Postgres Database"
+  }
 }
 
 # Create a neptune cluster
@@ -370,6 +376,9 @@ resource "aws_neptune_cluster" "main_neptune_cluster" {
   skip_final_snapshot                 = true
   iam_database_authentication_enabled = true
   apply_immediately                   = true
+  tags = {
+    Name = "Main Neptune Cluster"
+  }
 }
 
 */
@@ -418,4 +427,31 @@ data "aws_availability_zones" "list_all_aws_availability_zones" {
 
 output "output_all_aws_availability_zones" {
   value = data.aws_availability_zones.list_all_aws_availability_zones.names
+}
+
+# Create a redshift cluster
+resource "aws_redshift_cluster" "main_redshift_cluster" {
+  cluster_identifier = "main-redshift-cluster"
+  database_name      = "db_name"
+  master_username    = "database_username"
+  master_password    = "database_user_password"
+  node_type          = "dc1.large"
+  cluster_type       = "single-node"
+  tags {
+    Name = "Main Redshift Cluster"
+  }
+}
+
+# Create a DocumentDB cluster
+resource "aws_docdb_cluster" "main_docdb_cluster" {
+  cluster_identifier      = "main-docdb-cluster"
+  engine                  = "docdb"
+  master_username         = "database_username"
+  master_password         = "database_user_password"
+  backup_retention_period = 5
+  preferred_backup_window = "07:00-09:00"
+  skip_final_snapshot     = true
+  tags {
+    Name = "Main DocumentDB Cluster"
+  }
 }
