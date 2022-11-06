@@ -59,8 +59,8 @@ resource "aws_route_table" "main_route_table" {
 }
 
 # route table association
-resource "aws_route_table_association" "main_route_table_association" {
-  subnet_id      = aws_subnet.main_subnet.id
+resource "aws_route_table_association" "route_table_association" {
+  subnet_id      = aws_subnet.main_subnet[count.index]
   route_table_id = aws_route_table.main_route_table.id
 }
 
