@@ -449,3 +449,11 @@ resource "aws_docdb_cluster" "main_docdb_cluster" {
   preferred_backup_window = "07:00-09:00"
   skip_final_snapshot     = true
 }
+
+# Create a aws keyspaces
+resource "aws_keyspaces_keyspace" "main_keyspaces" {
+  name = "main_keyspaces"
+  tags = {
+    Name = "Main Keyspace"
+  }
+}
