@@ -411,7 +411,7 @@ output "output_all_aws_availability_zones" {
 
 # Create a neptune cluster
 resource "aws_neptune_cluster" "main_neptune_cluster" {
-  cluster_identifier                  = "main_neptune_cluster"
+  cluster_identifier                  = "main-neptune-cluster"
   engine                              = "neptune"
   backup_retention_period             = 7
   preferred_backup_window             = "07:00-09:00"
