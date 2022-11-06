@@ -437,9 +437,6 @@ resource "aws_redshift_cluster" "main_redshift_cluster" {
   master_password    = "database_user_password"
   node_type          = "dc1.large"
   cluster_type       = "single-node"
-  tags {
-    Name = "Main Redshift Cluster"
-  }
 }
 
 # Create a DocumentDB cluster
@@ -451,7 +448,4 @@ resource "aws_docdb_cluster" "main_docdb_cluster" {
   backup_retention_period = 5
   preferred_backup_window = "07:00-09:00"
   skip_final_snapshot     = true
-  tags {
-    Name = "Main DocumentDB Cluster"
-  }
 }
