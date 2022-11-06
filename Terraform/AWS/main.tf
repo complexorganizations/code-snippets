@@ -447,8 +447,17 @@ resource "aws_redshift_cluster" "main_redshift_cluster" {
   master_username     = "database_username"
   master_password     = "QKHVUgzpW5t6qWPa2hDDvoBU6SKhBgEU"
   node_type           = "ra3.xlplus"
+  publicly_accessible = true
   skip_final_snapshot = true
+  allow_version_upgrade = true
+  apply_immediately = true
+  automated_snapshot_retention_period = 1
   cluster_type        = "single-node"
+  cluster_version = "1.0"
+  encrypted = true
+  number_of_nodes = 1
+  port = 5439
+  maintenance_track_name = "current"
 }
 
 # Create a aws keyspaces
