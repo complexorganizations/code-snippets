@@ -31,7 +31,7 @@ jobs:
       - name: Run the terraform code
         continue-on-error: true
         run: |
-          FIND_ALL_DIRECTORY=$(find Terraform/ -mindepth 0 -maxdepth 1 -type d)
+          FIND_ALL_DIRECTORY=$(find Terraform/ -type d ! -path "*.*")
           for CURRENT_FIND_ALL_DIRECTORY in ${FIND_ALL_DIRECTORY}; do
             ALL_DIRECTORY_LIST[${ADD_CONTENT}]=${CURRENT_FIND_ALL_DIRECTORY}
             ADD_CONTENT=$(("${ADD_CONTENT}" + 1))
@@ -54,7 +54,7 @@ jobs:
       - name: Validate that the delete command ran.
         continue-on-error: true
         run: |
-          FIND_ALL_DIRECTORY=$(find Terraform/ -mindepth 0 -maxdepth 1 -type d)
+          FIND_ALL_DIRECTORY=$(find Terraform/ -type d ! -path "*.*")
           for CURRENT_FIND_ALL_DIRECTORY in ${FIND_ALL_DIRECTORY}; do
             ALL_DIRECTORY_LIST[${ADD_CONTENT}]=${CURRENT_FIND_ALL_DIRECTORY}
             ADD_CONTENT=$(("${ADD_CONTENT}" + 1))
