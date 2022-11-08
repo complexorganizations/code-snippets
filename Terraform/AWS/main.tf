@@ -473,7 +473,7 @@ resource "aws_backup_plan" "backup_plan" {
     rule_name                = "backup_rule"
     start_window             = 60
     target_vault_name        = aws_backup_vault.main_backup_vault.name
-    schedule                 = "cron(0 0 * * *)"
+    schedule                 = "cron(0 0 * * ? *)"
     lifecycle {
       delete_after = 14
     }
