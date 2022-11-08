@@ -394,19 +394,6 @@ resource "aws_docdb_cluster" "main_docdb_cluster" {
 
 */
 
-# Create a SQS queue
-resource "aws_sqs_queue" "main_sqs_queue" {
-  name                       = "main_sqs_queue"
-  delay_seconds              = 90
-  max_message_size           = 2048
-  message_retention_seconds  = 86400
-  receive_wait_time_seconds  = 20
-  visibility_timeout_seconds = 30
-  tags = {
-    Name = "Main SQS Queue"
-  }
-}
-
 # Create a lightsail instance
 resource "aws_lightsail_instance" "main_light_sail_instance" {
   name              = "main_light_sail_instance"
@@ -442,22 +429,22 @@ output "output_all_aws_availability_zones" {
 
 # Create a redshift cluster
 resource "aws_redshift_cluster" "main_redshift_cluster" {
-  cluster_identifier  = "main-redshift-cluster"
-  database_name       = "db_name"
-  master_username     = "database_username"
-  master_password     = "QKHVUgzpW5t6qWPa2hDDvoBU6SKhBgEU"
-  node_type           = "ra3.xlplus"
-  publicly_accessible = true
-  skip_final_snapshot = true
-  allow_version_upgrade = true
-  apply_immediately = true
+  cluster_identifier                  = "main-redshift-cluster"
+  database_name                       = "db_name"
+  master_username                     = "database_username"
+  master_password                     = "QKHVUgzpW5t6qWPa2hDDvoBU6SKhBgEU"
+  node_type                           = "ra3.xlplus"
+  publicly_accessible                 = true
+  skip_final_snapshot                 = true
+  allow_version_upgrade               = true
+  apply_immediately                   = true
   automated_snapshot_retention_period = 1
-  cluster_type        = "single-node"
-  cluster_version = "1.0"
-  encrypted = true
-  number_of_nodes = 1
-  port = 5439
-  maintenance_track_name = "current"
+  cluster_type                        = "single-node"
+  cluster_version                     = "1.0"
+  encrypted                           = true
+  number_of_nodes                     = 1
+  port                                = 5439
+  maintenance_track_name              = "current"
 }
 
 # Create a aws keyspaces
@@ -465,5 +452,32 @@ resource "aws_keyspaces_keyspace" "main_keyspaces" {
   name = "main_keyspaces"
   tags = {
     Name = "Main Keyspace"
+  }
+}
+
+# Create a aws backup vault
+resource "aws_backup_vault" "main_backup_vault" {
+  name = "main_backup_vault"
+  tags = {
+    Name = "Main Backup Vault"
+  }
+}
+
+# Create a aws backup plan
+resource "aws_backup_plan" "backup_plan" {
+  name = "backup_plan"
+  rule {
+    rule_name         = "backup_rule"
+    target_vault_name = aws_backup_vault.main_backup_vault.name
+    schedule          = "cron(0 12 * * ? *)"
+    lifecycle {
+      delete_after = 14
+    }
+  }
+  advanced_backup_setting {
+    backup_options = {
+      WindowsVSS = "enabled"
+    }
+    resource_type = "EC2"
   }
 }
