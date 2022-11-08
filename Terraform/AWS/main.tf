@@ -457,7 +457,8 @@ resource "aws_keyspaces_keyspace" "main_keyspaces" {
 
 # Create a aws backup vault
 resource "aws_backup_vault" "main_backup_vault" {
-  name = "main_backup_vault"
+  name          = "main_backup_vault"
+  force_destroy = false
   tags = {
     Name = "Main Backup Vault"
   }
@@ -467,9 +468,12 @@ resource "aws_backup_vault" "main_backup_vault" {
 resource "aws_backup_plan" "backup_plan" {
   name = "backup_plan"
   rule {
-    rule_name         = "backup_rule"
-    target_vault_name = aws_backup_vault.main_backup_vault.name
-    schedule          = "cron(0 12 * * ? *)"
+    completion_window        = 180
+    enable_continuous_backup = false
+    rule_name                = "backup_rule"
+    start_window             = 60
+    target_vault_name        = aws_backup_vault.main_backup_vault.name
+    schedule                 = "cron(0 12 * * ? *)"
     lifecycle {
       delete_after = 14
     }
@@ -479,5 +483,8 @@ resource "aws_backup_plan" "backup_plan" {
       WindowsVSS = "enabled"
     }
     resource_type = "EC2"
+  }
+  tags = {
+    Name = "Backup Plan"
   }
 }
