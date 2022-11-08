@@ -3,9 +3,9 @@ on:
   push:
     paths:
       - "**.tf"
-#  pull_request:
-#    paths:
-#      - "**.tf"
+  pull_request:
+    paths:
+      - "**.tf"
   workflow_dispatch:
 jobs:
   build:
@@ -38,7 +38,6 @@ jobs:
           done
           for EACH_DIRECTORY in "${ALL_DIRECTORY_LIST[@]}"; do
             echo ${EACH_DIRECTORY}
-            find Terraform/ -type d
             terraform -chdir=${EACH_DIRECTORY} init
             terraform -chdir=${EACH_DIRECTORY} validate
             terraform -chdir=${EACH_DIRECTORY} graph
@@ -49,8 +48,6 @@ jobs:
             terraform -chdir=${EACH_DIRECTORY} show
             terraform -chdir=${EACH_DIRECTORY} destroy -auto-approve
           done
-      - name: Find all the terraform dir
-        run: find Terraform/ -type d
       - name: Validate that the delete command ran.
         continue-on-error: true
         run: |
@@ -63,5 +60,3 @@ jobs:
             echo ${EACH_DIRECTORY}
             terraform -chdir=${EACH_DIRECTORY} destroy -auto-approve
           done
-      - name: Find all the terraform dir
-        run: find Terraform/ -type d
