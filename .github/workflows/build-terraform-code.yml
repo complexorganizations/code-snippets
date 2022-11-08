@@ -20,7 +20,7 @@ jobs:
       - name: Configure the credentials for AWS
         run: aws configure set aws_access_key_id "${{ secrets.AWS_ACESS_KEY }}" && aws configure set aws_secret_access_key "${{ secrets.AWS_SECRET_ACESS_KEY }}"
       - name: Setup auth for Google Cloud SDK
-        uses: google-github-actions/auth@v0
+        uses: google-github-actions/auth@v1
         with:
           credentials_json: "${{ secrets.GCP_CREDENTIALS }}"
       - name: Configure the credentials for Cloudflare
