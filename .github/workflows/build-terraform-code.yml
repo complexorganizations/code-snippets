@@ -16,7 +16,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
       - name: Set up Google Cloud SDK
-        uses: google-github-actions/setup-gcloud@v0
+        uses: google-github-actions/setup-gcloud@v1
       - name: Configure the credentials for AWS
         run: aws configure set aws_access_key_id "${{ secrets.AWS_ACESS_KEY }}" && aws configure set aws_secret_access_key "${{ secrets.AWS_SECRET_ACESS_KEY }}"
       - name: Setup auth for Google Cloud SDK
