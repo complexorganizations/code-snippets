@@ -32,11 +32,7 @@ jobs:
           aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Prepare terraform code to run
         run: |
-          git init
-          git checkout main
-          git pull
-          git clean -xdf
-          git reset --hard
+          git reset HEAD
           for EACH_DIRECTORY in "$(git show --stat --oneline HEAD^^..HEAD | grep 'Terraform/' | echo $(dirname $(cut --delimiter='|' --fields=1)) | awk '!seen[$0]++')"; do
             echo "${EACH_DIRECTORY}"
             terraform -chdir="${EACH_DIRECTORY}" init
