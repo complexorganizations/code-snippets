@@ -37,10 +37,12 @@ jobs:
           aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Whole thing
         if: github.event.schedule == "0 0 * * *"
+        run: echo "Hello World!"
         env:
           RUN_THIS_STRING: $(find Terraform/ -type d ! -path "*.*")
       - name: Half the thing
         if: github.event.schedule != "0 0 * * *"
+        run: echo "Hello World!"
         env:
           RUN_THIS_STRING: $(git show --stat --oneline HEAD^..HEAD | grep 'Terraform/' | echo "$(dirname $(cut --delimiter='|' --fields=1))" | awk '!seen[$0]++')
       - name: Prepare terraform code to run
