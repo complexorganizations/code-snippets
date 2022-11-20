@@ -31,9 +31,12 @@ jobs:
           aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY }}
           aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Fix for the git missing head issue.
-        run: git config user.name github-actions && git config user.email github-actions@github.com && git commit --allow-empty -n -m "Initial commit".
-      - name: Debug the issue
-        run: git show --stat --oneline HEAD^^^..HEAD
+        run: |
+          GITHUB_URL=$(git remote show origin | head -2 | tail -1 | cut -d' ' -f5)
+          FOLDER_PATH=$()
+          cd ../
+          rm -rf
+          git clone $(git remote show origin | head -2 | tail -1 | cut -d' ' -f5)
       - name: Prepare terraform code to run
         run: |
           for EACH_DIRECTORY in "$(git show --stat --oneline HEAD^..HEAD | grep 'Terraform/' | echo "$(dirname $(cut --delimiter='|' --fields=1))" | awk '!seen[$0]++')"; do
