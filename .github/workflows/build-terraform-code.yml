@@ -32,6 +32,7 @@ jobs:
           aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Prepare terraform code to run
         run: |
+          git init
           git checkout main
           git pull
           git clean -xdf
