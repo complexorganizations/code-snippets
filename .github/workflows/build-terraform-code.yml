@@ -31,7 +31,7 @@ jobs:
           aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY }}
           aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Test
-        run: git show --stat --oneline HEAD^..HEAD
+        run: git diff HEAD^..HEAD
       - name: Prepare terraform code to run
         run: |
           for EACH_DIRECTORY in "$(git show --stat --oneline HEAD^..HEAD | grep 'Terraform/' | echo "$(dirname $(cut --delimiter='|' --fields=1))" | awk '!seen[$0]++')"; do
