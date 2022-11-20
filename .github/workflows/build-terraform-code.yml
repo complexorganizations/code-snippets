@@ -30,9 +30,10 @@ jobs:
         run: | # && aws configure set aws_session_token ${{ secrets.AWS_SESSION_TOKEN }}
           aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY }}
           aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      - name: Test
+        run: git show --stat --oneline HEAD^^..HEAD
       - name: Prepare terraform code to run
         run: |
-          git reset HEAD
           for EACH_DIRECTORY in "$(git show --stat --oneline HEAD^^..HEAD | grep 'Terraform/' | echo $(dirname $(cut --delimiter='|' --fields=1)) | awk '!seen[$0]++')"; do
             echo "${EACH_DIRECTORY}"
             terraform -chdir="${EACH_DIRECTORY}" init
