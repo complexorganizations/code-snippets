@@ -1,5 +1,7 @@
 name: "Build Terraform Configs"
 on:
+  schedule:
+    - cron: "0 0 * * *"
   push:
     paths:
       - "**.tf"
@@ -33,9 +35,17 @@ jobs:
         run: | # && aws configure set aws_session_token ${{ secrets.AWS_SESSION_TOKEN }}
           aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY }}
           aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      - name: Whole thing
+        if: github.event.schedule == "0 0 * * *"
+        env:
+          RUN_THIS_STRING: $(find Terraform/ -type d ! -path "*.*")
+      - name: Half the thing
+        if: github.event.schedule != "0 0 * * *"
+        env:
+          RUN_THIS_STRING: $(git show --stat --oneline HEAD^..HEAD | grep 'Terraform/' | echo "$(dirname $(cut --delimiter='|' --fields=1))" | awk '!seen[$0]++')
       - name: Prepare terraform code to run
         run: |
-          for EACH_DIRECTORY in "$(git show --stat --oneline HEAD^..HEAD | grep 'Terraform/' | echo "$(dirname $(cut --delimiter='|' --fields=1))" | awk '!seen[$0]++')"; do
+          for EACH_DIRECTORY in "${{ env.RUN_THIS_STRING }}"; do
             echo "${EACH_DIRECTORY}"
             terraform -chdir="${EACH_DIRECTORY}" init
             terraform -chdir="${EACH_DIRECTORY}" validate
@@ -44,8 +54,8 @@ jobs:
           done
       - name: Run the terraform code
         continue-on-error: true
-        run: | # $(find Terraform/ -type d ! -path "*.*")
-          for EACH_DIRECTORY in "$(git show --stat --oneline HEAD^..HEAD | grep 'Terraform/' | echo "$(dirname $(cut --delimiter='|' --fields=1))" | awk '!seen[$0]++')"; do
+        run: |
+          for EACH_DIRECTORY in "${{ env.RUN_THIS_STRING }}"; do
             echo "${EACH_DIRECTORY}"
             terraform -chdir="${EACH_DIRECTORY}" apply -auto-approve
             terraform -chdir="${EACH_DIRECTORY}" state pull
@@ -55,8 +65,8 @@ jobs:
           done
       - name: Clean up the terraform code
         continue-on-error: true
-        run: | # $(find Terraform/ -type d ! -path "*.*")
-          for EACH_DIRECTORY in "$(git show --stat --oneline HEAD^..HEAD | grep 'Terraform/' | echo "$(dirname $(cut --delimiter='|' --fields=1))" | awk '!seen[$0]++')"; do
+        run: |
+          for EACH_DIRECTORY in "${{ env.RUN_THIS_STRING }}"; do
             echo "${EACH_DIRECTORY}"
             terraform -chdir="${EACH_DIRECTORY}" destroy -auto-approve
           done
