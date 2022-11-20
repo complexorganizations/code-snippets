@@ -37,9 +37,9 @@ jobs:
           aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: RUN THIS DURING THE MIDNIGHT
         if: github.event.schedule != '0 0 * * *'
-        run: echo "RUN_THIS_STRING=$(git show --stat --oneline HEAD^..HEAD | grep 'Terraform/' | echo \"$(dirname $(cut --delimiter='|' --fields=1))\"" >> $GITHUB_ENV
+        run: echo "RUN_THIS_STRING=$(git show --stat --oneline HEAD^..HEAD | grep 'Terraform/' | echo $(dirname $(cut --delimiter='|' --fields=1)))" >> $GITHUB_ENV
       - name: RUN THIS NORMALLY
-        run: echo "RUN_THIS_STRING=$(find Terraform/ -type d ! -path \"*.*\")" >> $GITHUB_ENV
+        run: echo "RUN_THIS_STRING=$(find Terraform/ -type d ! -path *.*)" >> $GITHUB_ENV
       - name: Prepare terraform code to run
         run: |
           for EACH_DIRECTORY in "${{ env.RUN_THIS_STRING }}"; do
