@@ -90,7 +90,6 @@ resource "google_sql_database_instance" "main" {
     disk_size             = 10
     disk_type             = "PD_SSD"
     pricing_plan          = "PER_USE"
-    version               = 1
     backup_configuration {
       binary_log_enabled             = false
       enabled                        = true
