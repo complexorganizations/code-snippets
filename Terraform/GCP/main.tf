@@ -178,3 +178,20 @@ resource "google_redis_instance" "cache" {
     }
   }
 }
+
+# Create a firestore instance
+resource "google_firestore_instance" "firestore" {
+  name     = "firestore-instance"
+  location = "us-central1"
+}
+
+# Create the google cloud bigtable instance
+resource "google_bigtable_instance" "bigtable" {
+  name = "bigtable-instance"
+  cluster {
+    cluster_id   = "bigtable-cluster"
+    zone         = "us-central1-c"
+    num_nodes    = 1
+    storage_type = "HDD"
+  }
+}
