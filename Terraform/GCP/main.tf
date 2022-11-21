@@ -43,7 +43,6 @@ resource "google_compute_instance" "vm_instance" {
   kms_key_id    = google_kms_crypto_key.example.id
   network_interface {
     queue_count = 0
-    network     = google_compute_network.vpc_network.name
     access_config {
       network_tier = "PREMIUM"
     }
@@ -62,20 +61,6 @@ resource "google_compute_instance" "vm_instance" {
   }
   metadata = {
     block-project-ssh-keys = true
-  }
-}
-
-resource "google_kms_key_ring" "example" {
-  name     = "example"
-  location = "global"
-}
-
-resource "google_kms_crypto_key" "example" {
-  name            = "example"
-  key_ring        = google_kms_key_ring.example.id
-  rotation_period = "100000s"
-  lifecycle {
-    prevent_destroy = true
   }
 }
 
