@@ -220,3 +220,23 @@ resource "google_dataproc_cluster" "cluster" {
     }
   }
 }
+
+# Create a google cointainer cluster
+resource "google_container_cluster" "cluster" {
+  name                     = "cluster"
+  location                 = "us-central1"
+  initial_node_count       = 1
+  remove_default_node_pool = true
+}
+
+# Create a google container node pool
+resource "google_container_node_pool" "node_pool" {
+  name       = "node-pool"
+  location   = "us-central1"
+  cluster    = google_container_cluster.cluster.name
+  node_count = 1
+  node_config {
+    preemptible  = false
+    machine_type = "n1-standard-1"
+  }
+}
