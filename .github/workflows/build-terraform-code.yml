@@ -1,7 +1,5 @@
 name: "Build Terraform Configs"
 on:
-  schedule:
-    - cron: "0 0 * * *"
   push:
     paths:
       - "**.tf"
