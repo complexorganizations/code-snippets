@@ -136,10 +136,11 @@ resource "google_sql_database_instance" "main" {
 
 # Create a google cloud storage bucket.
 resource "google_storage_bucket" "bucket" {
-  name          = "code-snippets-bucket-gcp"
-  location      = "US"
-  storage_class = "STANDARD"
-  force_destroy = true
+  name                        = "code-snippets-bucket-gcp"
+  location                    = "US"
+  storage_class               = "STANDARD"
+  force_destroy               = true
+  uniform_bucket_level_access = true
 }
 
 # Create a filestore instance
@@ -227,6 +228,10 @@ resource "google_container_cluster" "cluster" {
   location                 = "us-central1"
   initial_node_count       = 1
   remove_default_node_pool = true
+  enable_shielded_nodes    = true
+  resource_labels = {
+    environment = "dev"
+  }
 }
 
 # Create a google container node pool
