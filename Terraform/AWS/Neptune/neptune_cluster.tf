@@ -1,4 +1,4 @@
-# Create a neptune cluster
+# Create a neptune cluster.
 resource "aws_neptune_cluster" "neptune_cluster" {
   cluster_identifier                  = "code-snippets-neptune-0-us-east-1"
   engine                              = "neptune"
