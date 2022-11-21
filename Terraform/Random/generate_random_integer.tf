@@ -4,6 +4,6 @@ resource "random_integer" "generate_random_integer" {
   max = 10000
 }
 
-output "random" {
+output "random_integer_output" {
   value = random_integer.generate_random_integer.result
 }

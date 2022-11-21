@@ -11,7 +11,7 @@ resource "random_password" "generate_random_password" {
   upper       = true
 }
 
-output "random_password" {
+output "random_password_output" {
   value     = random_password.generate_random_password.result
   sensitive = true
 }
