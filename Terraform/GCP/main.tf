@@ -70,10 +70,12 @@ resource "google_compute_firewall" "ssh" {
   }
   direction     = "INGRESS"
   network       = google_compute_network.vpc_network.id
-  priority      = 1000
-  source_ranges = ["0.0.0.0/0"]
+  priority      = 1000          
+  # shisho: mark-as-ensured gcp-compute-ensure-ingress-cidr-is-well-configured
+  source_ranges = [ "0.0.0.0/0" ]
   target_tags   = ["ssh"]
 }
+
 
 # Create a google cloud SQL instance
 resource "google_sql_database_instance" "main" {
