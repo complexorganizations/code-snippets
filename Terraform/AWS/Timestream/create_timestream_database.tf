@@ -1,4 +1,4 @@
-# Create a timestream database
+# Create a timestream database.
 resource "aws_timestreamwrite_database" "timestream_database" {
   database_name = "timestream-database"
   tags = {
