@@ -34,8 +34,8 @@ jobs:
           aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY }}
           aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Prepare terraform code to run
-        run: | # "$(find Terraform/ -type d ! -path "*.*")"
-          for EACH_DIRECTORY in "$(git show --stat --oneline HEAD^..HEAD | grep 'Terraform/' | echo "$(dirname $(cut --delimiter='|' --fields=1))" | awk '!seen[$0]++')"; do
+        run: | # $(find Terraform/ -type d ! -path "*.*")
+          for EACH_DIRECTORY in $(git show --stat --oneline HEAD^..HEAD | grep 'Terraform/' | echo "$(dirname $(cut --delimiter='|' --fields=1))" | awk '!seen[$0]++'); do
             echo "${EACH_DIRECTORY}"
             terraform -chdir="${EACH_DIRECTORY}" init
             terraform -chdir="${EACH_DIRECTORY}" validate
@@ -44,8 +44,8 @@ jobs:
           done
       - name: Run the terraform code
         continue-on-error: true
-        run: | # "$(git show --stat --oneline HEAD^..HEAD | grep 'Terraform/' | echo "$(dirname $(cut --delimiter='|' --fields=1))" | awk '!seen[$0]++')"
-          for EACH_DIRECTORY in "$(git show --stat --oneline HEAD^..HEAD | grep 'Terraform/' | echo "$(dirname $(cut --delimiter='|' --fields=1))" | awk '!seen[$0]++')"; do
+        run: | # $(git show --stat --oneline HEAD^..HEAD | grep 'Terraform/' | echo "$(dirname $(cut --delimiter='|' --fields=1))" | awk '!seen[$0]++')
+          for EACH_DIRECTORY in $(git show --stat --oneline HEAD^..HEAD | grep 'Terraform/' | echo "$(dirname $(cut --delimiter='|' --fields=1))" | awk '!seen[$0]++'); do
             echo "${EACH_DIRECTORY}"
             terraform -chdir="${EACH_DIRECTORY}" apply -auto-approve
             terraform -chdir="${EACH_DIRECTORY}" state pull
@@ -56,7 +56,7 @@ jobs:
       - name: Clean up the terraform code
         continue-on-error: true
         run: |
-          for EACH_DIRECTORY in "$(git show --stat --oneline HEAD^..HEAD | grep 'Terraform/' | echo "$(dirname $(cut --delimiter='|' --fields=1))" | awk '!seen[$0]++')"; do
+          for EACH_DIRECTORY in $(git show --stat --oneline HEAD^..HEAD | grep 'Terraform/' | echo "$(dirname $(cut --delimiter='|' --fields=1))" | awk '!seen[$0]++'); do
             echo "${EACH_DIRECTORY}"
             terraform -chdir="${EACH_DIRECTORY}" destroy -auto-approve
           done
