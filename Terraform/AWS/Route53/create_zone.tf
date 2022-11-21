@@ -1,3 +1,3 @@
 resource "aws_route53_zone" "primary" {
-    name = "checkerlia.com"
+  name = "checkerlia.com"
 }
