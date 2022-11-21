@@ -41,6 +41,7 @@ resource "google_compute_instance" "vm_instance" {
     }
   }
   network_interface {
+    network     = "default"
     queue_count = 0
     access_config {
       network_tier = "PREMIUM"
