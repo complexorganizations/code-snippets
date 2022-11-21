@@ -9,6 +9,7 @@ resource "aws_elasticache_cluster" "redis-elasticache-cluster" {
   parameter_group_name       = "default.redis6.x"
   engine_version             = "6.2"
   port                       = 6379
+  snapshot_retention_limit   = 2
   tags = {
     # {project-name}-elasticache-redis-{0}-{us-east-1a}
     Name = "code-snippets-elasticache-redis-0-us-east-1a"

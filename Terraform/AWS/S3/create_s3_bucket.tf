@@ -7,4 +7,7 @@ resource "aws_s3_bucket" "s3_bucket" {
     # {project-name}-s3-{0}-{us-east-1}
     Name = "code-snippets-s3-0-us-east-1"
   }
+  versioning {
+    enabled = true
+  }
 }

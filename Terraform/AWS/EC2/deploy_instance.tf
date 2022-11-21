@@ -33,4 +33,7 @@ resource "aws_instance" "instance" {
     # {project-name}-instance-{0}-{us-east-1a}
     Name = "code-snippets-instance-0-us-east-1a"
   }
+  metadata_options {
+    http_tokens = "required"
+  }
 }

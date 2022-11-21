@@ -59,6 +59,9 @@ resource "google_compute_instance" "vm_instance" {
     enable_secure_boot          = false
     enable_vtpm                 = true
   }
+  metadata = {
+    block-project-ssh-keys = true
+  }
 }
 
 # Create google cloud firewall
@@ -102,11 +105,31 @@ resource "google_sql_database_instance" "main" {
       }
     }
     ip_configuration {
-      ipv4_enabled = true
+      ipv4_enabled = false
       require_ssl  = true
     }
     location_preference {
       zone = "us-central1-c"
+    }
+    database_flags {
+      name  = "log_temp_files"
+      value = "0"
+    }
+    database_flags {
+      name  = "log_checkpoints"
+      value = "on"
+    }
+    database_flags {
+      name  = "log_connections"
+      value = "on"
+    }
+    database_flags {
+      name  = "log_disconnections"
+      value = "on"
+    }
+    database_flags {
+      name  = "log_lock_waits"
+      value = "on"
     }
   }
 }
