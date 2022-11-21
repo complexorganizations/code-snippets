@@ -6,7 +6,7 @@ resource "aws_redshift_cluster" "redshift_cluster" {
   master_username                     = "database_username"
   master_password                     = "QKHVUgzpW5t6qWPa2hDDvoBU6SKhBgEU"
   node_type                           = "ra3.xlplus"
-  publicly_accessible                 = true
+  publicly_accessible                 = false
   skip_final_snapshot                 = true
   allow_version_upgrade               = true
   apply_immediately                   = true
