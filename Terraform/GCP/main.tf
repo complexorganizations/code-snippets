@@ -17,8 +17,7 @@ resource "google_compute_network" "vpc_network" {
   name                            = "terraform-network"
   auto_create_subnetworks         = true
   delete_default_routes_on_create = false
-  enable_ula_internal_ipv6        = true
-  mtu                             = 0
+  mtu                             = 1420
   routing_mode                    = "REGIONAL"
 }
 
@@ -30,14 +29,34 @@ resource "google_compute_instance" "vm_instance" {
   deletion_protection = false
   enable_display      = false
   boot_disk {
+    auto_delete = true
+    device_name = "persistent-disk-0"
+    mode        = "READ_WRITE"
     initialize_params {
-      image = "centos-cloud/centos-7"
+      image = "debian-cloud/debian-11"
+      size  = 10
+      type  = "pd-standard"
     }
   }
   network_interface {
-    network = google_compute_network.vpc_network.name
+    name        = "nic0"
+    queue_count = 0
+    network     = google_compute_network.vpc_network.name
     access_config {
+      network_tier = "PREMIUM"
     }
+  }
+  scheduling {
+    automatic_restart   = true
+    min_node_cpus       = 0
+    on_host_maintenance = "MIGRATE"
+    preemptible         = false
+    provisioning_model  = "STANDARD"
+  }
+  shielded_instance_config {
+    enable_integrity_monitoring = true
+    enable_secure_boot          = false
+    enable_vtpm                 = true
   }
 }
 
