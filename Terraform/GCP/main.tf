@@ -40,7 +40,6 @@ resource "google_compute_instance" "vm_instance" {
       type  = "pd-standard"
     }
   }
-  kms_key_id    = google_kms_crypto_key.example.id
   network_interface {
     queue_count = 0
     access_config {
