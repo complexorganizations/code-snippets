@@ -39,14 +39,14 @@ jobs:
         if: ${{ github.event_name == 'schedule' }}
         run: echo ""
         env:
-          RUN_THIS_STRING: "$(find Terraform/ -type d ! -path *.*)"
+          RUN_THIS_STRING: find Terraform/ -type d ! -path "*.*")
       - name: RUN THIS NORMALLY
         run: echo ""
         env:
-          RUN_THIS_STRING: "$(git show --stat --oneline HEAD^..HEAD | grep 'Terraform/' | echo $(dirname $(cut --delimiter='|' --fields=1)))"
+          RUN_THIS_STRING: git show --stat --oneline HEAD^..HEAD | grep 'Terraform/' | echo "$(dirname $(cut --delimiter='|' --fields=1))"
       - name: Prepare terraform code to run
         run: |
-          for EACH_DIRECTORY in "${{ env.RUN_THIS_STRING }}"; do
+          for EACH_DIRECTORY in "$(${{ env.RUN_THIS_STRING }})"; do
             echo "${EACH_DIRECTORY}"
             terraform -chdir="${EACH_DIRECTORY}" init
             terraform -chdir="${EACH_DIRECTORY}" validate
@@ -56,7 +56,7 @@ jobs:
       - name: Run the terraform code
         continue-on-error: true
         run: |
-          for EACH_DIRECTORY in "${{ env.RUN_THIS_STRING }}"; do
+          for EACH_DIRECTORY in "$(${{ env.RUN_THIS_STRING }})"; do
             echo "${EACH_DIRECTORY}"
             terraform -chdir="${EACH_DIRECTORY}" apply -auto-approve
             terraform -chdir="${EACH_DIRECTORY}" state pull
@@ -67,7 +67,7 @@ jobs:
       - name: Clean up the terraform code
         continue-on-error: true
         run: |
-          for EACH_DIRECTORY in "${{ env.RUN_THIS_STRING }}"; do
+          for EACH_DIRECTORY in "$(${{ env.RUN_THIS_STRING }})"; do
             echo "${EACH_DIRECTORY}"
             terraform -chdir="${EACH_DIRECTORY}" destroy -auto-approve
           done
