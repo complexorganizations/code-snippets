@@ -14,5 +14,6 @@ provider "aws" {
 }
 
 module "consul" {
-  source = "git@github.com:hashicorp/terraform-aws-consul.git"
+  source  = "hashicorp/consul/aws"
+  version = "0.11.0"
 }
