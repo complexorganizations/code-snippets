@@ -13,6 +13,7 @@ provider "google" {
   zone    = "us-central1-c"
 }
 
+# Create google cloud network
 resource "google_compute_network" "vpc_network" {
   name                            = "terraform-network"
   auto_create_subnetworks         = true
@@ -21,6 +22,7 @@ resource "google_compute_network" "vpc_network" {
   routing_mode                    = "REGIONAL"
 }
 
+# Create a Google cloud compute instance
 resource "google_compute_instance" "vm_instance" {
   name                = "terraform-instance"
   machine_type        = "f1-micro"
@@ -59,6 +61,7 @@ resource "google_compute_instance" "vm_instance" {
   }
 }
 
+# Create google cloud firewall
 resource "google_compute_firewall" "ssh" {
   name = "allow-ssh"
   allow {
@@ -70,4 +73,14 @@ resource "google_compute_firewall" "ssh" {
   priority      = 1000
   source_ranges = ["0.0.0.0/0"]
   target_tags   = ["ssh"]
+}
+
+# Create a google cloud SQL instance
+resource "google_sql_database_instance" "main" {
+  name             = "main-instance"
+  database_version = "POSTGRES_14"
+  region           = "us-central1"
+  settings {
+    tier = "db-f1-micro"
+  }
 }
