@@ -40,7 +40,7 @@ resource "google_compute_instance" "vm_instance" {
       type  = "pd-standard"
     }
   }
-  kms_key_self_link = google_kms_crypto_key.example.id
+  kms_key_id    = google_kms_crypto_key.example.id
   network_interface {
     queue_count = 0
     network     = google_compute_network.vpc_network.name
