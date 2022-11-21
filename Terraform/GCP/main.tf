@@ -55,7 +55,7 @@ resource "google_compute_instance" "vm_instance" {
   }
   shielded_instance_config {
     enable_integrity_monitoring = true
-    enable_secure_boot          = false
+    enable_secure_boot          = true
     enable_vtpm                 = true
   }
   metadata = {
@@ -104,7 +104,7 @@ resource "google_sql_database_instance" "main" {
       }
     }
     ip_configuration {
-      ipv4_enabled = false
+      ipv4_enabled = true
       require_ssl  = true
     }
     location_preference {
@@ -135,7 +135,7 @@ resource "google_sql_database_instance" "main" {
 
 # Create a google cloud storage bucket.
 resource "google_storage_bucket" "bucket" {
-  name          = "terraform-bucket"
+  name          = "code-snippets-bucket-gcp"
   location      = "US"
   storage_class = "STANDARD"
   force_destroy = true
