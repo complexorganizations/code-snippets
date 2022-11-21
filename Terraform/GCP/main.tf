@@ -39,7 +39,6 @@ resource "google_compute_instance" "vm_instance" {
     }
   }
   network_interface {
-    name        = "nic0"
     queue_count = 0
     network     = google_compute_network.vpc_network.name
     access_config {
