@@ -1,4 +1,4 @@
-# Create a DocumentDB cluster
+# Create a DocumentDB cluster.
 resource "aws_docdb_cluster" "documentdb_cluster" {
   # {project-name}-documentdb-{0}-{us-east-1}
   cluster_identifier      = "code-snippets-documentdb-0-us-east-1"
