@@ -91,23 +91,23 @@ resource "google_sql_database_instance" "main" {
     disk_type             = "PD_SSD"
     pricing_plan          = "PER_USE"
     version               = 1
-  }
-  backup_configuration {
-    binary_log_enabled             = false
-    enabled                        = true
-    point_in_time_recovery_enabled = true
-    start_time                     = "00:00"
-    transaction_log_retention_days = 7
-  }
-  backup_retention_settings {
-    retained_backups = 7
-    retention_unit   = "COUNT"
-  }
-  ip_configuration {
-    ipv4_enabled = true
-    require_ssl  = true
-  }
-  location_preference {
-    zone = "us-central1-c"
+    backup_configuration {
+      binary_log_enabled             = false
+      enabled                        = true
+      point_in_time_recovery_enabled = true
+      start_time                     = "00:00"
+      transaction_log_retention_days = 7
+      backup_retention_settings {
+        retained_backups = 7
+        retention_unit   = "COUNT"
+      }
+    }
+    ip_configuration {
+      ipv4_enabled = true
+      require_ssl  = true
+    }
+    location_preference {
+      zone = "us-central1-c"
+    }
   }
 }
