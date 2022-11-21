@@ -134,7 +134,7 @@ resource "google_sql_database_instance" "main" {
   }
 }
 
-# Create a google cloud storage bucket
+# Create a google cloud storage bucket.
 resource "google_storage_bucket" "bucket" {
   name          = "terraform-bucket"
   location      = "US"
