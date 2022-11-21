@@ -195,3 +195,9 @@ resource "google_bigtable_instance" "bigtable" {
     storage_type = "HDD"
   }
 }
+
+# Create a pub/sub topic
+resource "google_pubsub_topic" "topic" {
+  name                       = "topic"
+  message_retention_duration = "86600s"
+}
