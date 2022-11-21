@@ -71,9 +71,11 @@ resource "google_compute_firewall" "ssh" {
   direction     = "INGRESS"
   network       = google_compute_network.vpc_network.id
   priority      = 1000
-  source_ranges = ["0.0.0.0/0"]
+  # [Shisho]: remove `0.0.0.0/0` from the following line and add appropriate IP ranges
+  source_ranges = [ "0.0.0.0/0" ]
   target_tags   = ["ssh"]
 }
+
 
 # Create a google cloud SQL instance
 resource "google_sql_database_instance" "main" {
