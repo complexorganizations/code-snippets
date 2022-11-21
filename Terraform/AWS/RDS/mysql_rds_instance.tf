@@ -1,4 +1,3 @@
-/*
 # Create a RDS database (mysql)
 resource "aws_db_instance" "mysql_rds_instance" {
   allocated_storage     = 20
@@ -16,4 +15,3 @@ resource "aws_db_instance" "mysql_rds_instance" {
     Name = "code-snippets-mysql-rds-0-us-east-1"
   }
 }
-*/

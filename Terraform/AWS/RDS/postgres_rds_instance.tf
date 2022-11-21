@@ -1,4 +1,3 @@
-/*
 # Create a RDS database (postgres)
 resource "aws_db_instance" "postgres_rds_instance" {
   allocated_storage          = 20
@@ -16,4 +15,3 @@ resource "aws_db_instance" "postgres_rds_instance" {
     Name = "code-snippets-rds-postgres-0-us-east-1"
   }
 }
-*/

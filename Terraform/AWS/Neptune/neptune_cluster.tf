@@ -1,9 +1,3 @@
-# Note: a Neptune cluster needs multiple az
-
-# Error: only lowercase alphanumeric characters and hyphens allowed in "cluster_identifier"
-# cluster_identifier = "***project-name***-neptune-***0***-***us-east-1***"
-
-/*
 # Create a neptune cluster
 resource "aws_neptune_cluster" "neptune_cluster" {
   cluster_identifier                  = "code-snippets-neptune-0-us-east-1"
@@ -18,4 +12,3 @@ resource "aws_neptune_cluster" "neptune_cluster" {
     Name = "code-snippets-neptune-0-us-east-1"
   }
 }
-*/
