@@ -15,8 +15,4 @@ resource "google_storage_bucket" "bucket" {
     is_locked        = false
     retention_period = 1
   }
-  logging {
-    log_bucket        = google_storage_bucket.bucket.name
-    log_object_prefix = google_storage_bucket.bucket.name
-  }
 }
