@@ -9,4 +9,7 @@ resource "google_firestore_index" "index" {
     order      = "DESCENDING"
   }
   collection = google_firestore_document.firestore.collection
+  depends_on = [
+    google_firestore_document.firestore
+  ]
 }
