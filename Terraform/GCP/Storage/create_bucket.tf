@@ -19,7 +19,4 @@ resource "google_storage_bucket" "bucket" {
     log_bucket        = google_storage_bucket.bucket.name
     log_object_prefix = google_storage_bucket.bucket.name
   }
-  lifecycle_rule {
-    storage_class = "STANDARD"
-  }
 }
