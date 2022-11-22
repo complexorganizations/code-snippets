@@ -8,4 +8,18 @@ resource "google_storage_bucket" "bucket" {
   default_event_based_hold    = false
   requester_pays              = false
   public_access_prevention    = "enforced"
+  versioning {
+    enabled = true
+  }
+  retention_policy {
+    is_locked        = false
+    retention_period = 0
+  }
+  logging {
+    log_bucket        = google_storage_bucket.bucket.name
+    log_object_prefix = google_storage_bucket.bucket.name
+  }
+  lifecycle_rule {
+    storage_class = "STANDARD"
+  }
 }
