@@ -12,7 +12,7 @@ resource "google_storage_bucket" "bucket" {
     enabled = true
   }
   retention_policy {
-    is_locked        = false
+    is_locked        = true
     retention_period = 1
   }
 }
