@@ -1,6 +1,5 @@
 #
 resource "google_firestore_index" "index" {
-  name    = "firestore-index"
   fields {
     field_path = "name"
     order      = "ASCENDING"
