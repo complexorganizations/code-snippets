@@ -9,5 +9,5 @@ resource "google_firestore_index" "index" {
     field_path = "age"
     order      = "DESCENDING"
   }
-
+  collection_id = "users"
 }
