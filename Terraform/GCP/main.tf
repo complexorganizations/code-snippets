@@ -232,6 +232,9 @@ resource "google_container_cluster" "cluster" {
   resource_labels = {
     environment = "dev"
   }
+  node_config {
+    service_account = "service-account@google.com"
+  }
 }
 
 # Create a google container node pool
