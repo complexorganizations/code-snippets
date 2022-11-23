@@ -11,8 +11,8 @@ resource "google_storage_bucket" "bucket" {
   versioning {
     enabled = true
   }
-  retention_policy {
-    is_locked        = true
-    retention_period = 1
-  }
+  #  retention_policy {
+  #    is_locked        = false
+  #    retention_period = 0
+  #  }
 }
