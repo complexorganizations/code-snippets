@@ -5,5 +5,8 @@ resource "google_composer_environment" "test" {
     software_config {
       image_version = "composer-2-airflow-2"
     }
+    node_config {
+      service_account = "example-account@example-project.iam.gserviceaccount.com"
+    }
   }
 }

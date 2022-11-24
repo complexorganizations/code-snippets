@@ -4,6 +4,9 @@ resource "google_sql_database_instance" "main" {
   deletion_protection = false
   database_version    = "POSTGRES_14"
   region              = "us-central1"
+  lifecycle {
+    prevent_destroy = false
+  }
   settings {
     activation_policy     = "ALWAYS"
     availability_type     = "ZONAL"
