@@ -1,11 +1,5 @@
 name: Checkov
 on:
-  push:
-    paths:
-      - "**.tf"
-  pull_request:
-    paths:
-      - "**.tf"
   workflow_dispatch:
 jobs:
   build:
