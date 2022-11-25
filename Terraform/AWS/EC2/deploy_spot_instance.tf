@@ -5,7 +5,7 @@ resource "aws_spot_instance_request" "spot_instance" {
   associate_public_ip_address = true
   monitoring                  = true
   hibernation                 = true
-  ebs_optimized               = false
+  ebs_optimized               = true
   /*
   availability_zone           = "us-east-1a"
   placement_group             = aws_placement_group.placement_group.name

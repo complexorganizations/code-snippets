@@ -8,5 +8,5 @@ resource "aws_docdb_cluster" "documentdb_cluster" {
   backup_retention_period         = 5
   preferred_backup_window         = "07:00-09:00"
   skip_final_snapshot             = true
-  enabled_cloudwatch_logs_exports = ["profiler", "audit"]
+  enabled_cloudwatch_logs_exports = ["audit"]
 }
