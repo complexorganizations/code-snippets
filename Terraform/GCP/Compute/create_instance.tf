@@ -39,7 +39,16 @@ resource "google_compute_instance" "vm_instance" {
   metadata = {
     block-project-ssh-keys = true
   }
+  service_account {
+    email = google_service_account.example.email
+  }
 }
+
+resource "google_service_account" "example" {
+  account_id   = "<set as you like>"
+  display_name = "<set as you like>"
+}
+
 
 resource "google_kms_key_ring" "example" {
   name     = "example"
