@@ -36,4 +36,13 @@ resource "aws_cloudwatch_log_group" "vpc_flow_log_group" {
   tags = {
     Name = "code-snippets-vpc-flow-log-group-0-us-east-1"
   }
+  kms_key_id = aws_kms_key.example.arn
 }
+
+# [Shisho]: See the following document:
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kms_key
+resource "aws_kms_key" "example" {
+  description             = "example"
+  deletion_window_in_days = 10
+}
+
