@@ -36,7 +36,7 @@ resource "aws_cloudwatch_log_group" "vpc_flow_log_group" {
   tags = {
     Name = "code-snippets-vpc-flow-log-group-0-us-east-1"
   }
-  kms_key_id = aws_kms_key.kms_key.arn
+  kms_key_id = aws_kms_key.key_1.arn
 }
 
 # Create a key using AWS KMS
