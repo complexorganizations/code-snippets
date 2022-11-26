@@ -1,0 +1,62 @@
+name: "Build Terraform Configs"
+on:
+  push:
+    paths:
+      - "**.tf"
+  pull_request:
+    paths:
+      - "**.tf"
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code into the directory
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+      - name: Set up Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
+      - name: Setup auth for Google Cloud SDK
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: "${{ secrets.GCP_CREDENTIALS }}"
+      - name: Configure the credentials for Cloudflare
+        run: |
+          export CLOUDFLARE_EMAIL="${{ secrets.CF_EMAIL_ADDRESS }}"
+          export CLOUDFLARE_API_KEY="${{ secrets.CF_API_KEY }}"
+          export CLOUDFLARE_ZONE_ID="${{ secrets.CF_ZONE_ID }}"
+      - name: Configure the credentials for AWS
+        run: | # && aws configure set aws_session_token ${{ secrets.AWS_SESSION_TOKEN }}
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY }}
+          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      - name: Prepare terraform code to run
+        run: | # $(find Terraform/ -type d ! -path "*.*")
+          for EACH_DIRECTORY in $(git show --stat --oneline HEAD^..HEAD | grep 'Terraform/' | echo "$(dirname $(cut --delimiter='|' --fields=1))" | awk '!seen[$0]++'); do
+            echo "${EACH_DIRECTORY}"
+            terraform -chdir="${EACH_DIRECTORY}" init
+            terraform -chdir="${EACH_DIRECTORY}" validate
+            terraform -chdir="${EACH_DIRECTORY}" graph
+            terraform -chdir="${EACH_DIRECTORY}" plan
+          done
+      - name: Run the terraform code
+        continue-on-error: true
+        run: | # $(git show --stat --oneline HEAD^..HEAD | grep 'Terraform/' | echo "$(dirname $(cut --delimiter='|' --fields=1))" | awk '!seen[$0]++')
+          for EACH_DIRECTORY in $(git show --stat --oneline HEAD^..HEAD | grep 'Terraform/' | echo "$(dirname $(cut --delimiter='|' --fields=1))" | awk '!seen[$0]++'); do
+            echo "${EACH_DIRECTORY}"
+            terraform -chdir="${EACH_DIRECTORY}" apply -auto-approve
+            terraform -chdir="${EACH_DIRECTORY}" state pull
+            terraform -chdir="${EACH_DIRECTORY}" state list
+            terraform -chdir="${EACH_DIRECTORY}" show
+            terraform -chdir="${EACH_DIRECTORY}" destroy -auto-approve
+          done
+      - name: Clean up the terraform code
+        continue-on-error: true
+        run: |
+          for EACH_DIRECTORY in $(git show --stat --oneline HEAD^..HEAD | grep 'Terraform/' | echo "$(dirname $(cut --delimiter='|' --fields=1))" | awk '!seen[$0]++'); do
+            echo "${EACH_DIRECTORY}"
+            terraform -chdir="${EACH_DIRECTORY}" destroy -auto-approve
+          done
