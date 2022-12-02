@@ -5,7 +5,7 @@ resource "aws_ecr_repository" "ecr_repo" {
     encryption_type = "AES256"
   }
   force_delete         = false
-  image_tag_mutability = "MUTABLE"
+  image_tag_mutability = "IMMUTABLE"
   image_scanning_configuration {
     scan_on_push = true
   }
@@ -13,3 +13,4 @@ resource "aws_ecr_repository" "ecr_repo" {
     Name = "ecr-repo"
   }
 }
+
