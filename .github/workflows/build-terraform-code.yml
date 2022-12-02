@@ -60,6 +60,7 @@ jobs:
             terraform -chdir="${EACH_DIRECTORY}" state pull
             terraform -chdir="${EACH_DIRECTORY}" state list
             terraform -chdir="${EACH_DIRECTORY}" show
+            terraform -chdir="${EACH_DIRECTORY}" plan -destroy
             terraform -chdir="${EACH_DIRECTORY}" destroy -auto-approve
           done
       - name: Clean up the terraform code
