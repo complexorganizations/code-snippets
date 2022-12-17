@@ -26,8 +26,9 @@ EOT
 
 # Get the secret from Vault
 data "vault_generic_secret" "generic_secret" {
-  depends_on = [vault_generic_secret.write_secret]
-  path       = "secret/aws"
+  depends_on            = [vault_generic_secret.write_secret]
+  path                  = "secret/aws"
+  with_lease_start_time = true
 }
 
 output "vault_stuff" {
