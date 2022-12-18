@@ -1,4 +1,4 @@
-// Create a data type for string.
+// Create a data type for string
 variable "string_data_type" {
   default = "The value of the var"
   type    = string
