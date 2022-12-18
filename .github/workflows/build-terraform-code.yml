@@ -54,6 +54,8 @@ jobs:
           export ARM_CLIENT_SECRET="${{ secrets.AZURE_SECRET_ID }}"
           export ARM_SUBSCRIPTION_ID="${{ secrets.AZURE_SUBSCRIPTION_ID }}"
           export ARM_TENANT_ID="${{ secrets.AZURE_TENANT_ID }}"
+      - name: Configure the log levels for events.
+        run: export TF_LOG="TRACE"
       - name: Prepare terraform code to run
         run: | # $(find Terraform/ -type d ! -path "*.*")
           for EACH_DIRECTORY in $(git show --stat --oneline HEAD^..HEAD | grep 'Terraform/' | echo "$(dirname $(cut --delimiter='|' --fields=1))" | awk '!seen[$0]++'); do
