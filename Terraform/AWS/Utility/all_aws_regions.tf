@@ -1,4 +1,4 @@
-// Get the list of aws regions
+# This data source is used to get the list of all the AWS regions.
 data "aws_regions" "all_aws_regions" {
   all_regions = true
 }
