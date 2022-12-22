@@ -1,6 +1,7 @@
-// Get the list of aws availability zones
+// This data block retrieves all availability zones from AWS
+// that are currently in the 'available' state.
 data "aws_availability_zones" "all_aws_availability_zones" {
-  all_availability_zones = true
+  state = "available"
 }
 
 output "output_all_aws_availability_zones" {
