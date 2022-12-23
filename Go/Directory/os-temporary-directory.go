@@ -10,7 +10,9 @@ func main() {
 	fmt.Println(operatingSystemTemporaryDirectory())
 }
 
-// Get the temporary directory for the operating system.
+/* It imports the os package
+It defines a function operatingSystemTemporaryDirectory that returns a string
+It returns the result of os.TempDir() */
 func operatingSystemTemporaryDirectory() string {
 	return os.TempDir()
 }

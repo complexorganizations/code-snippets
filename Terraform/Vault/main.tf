@@ -24,7 +24,7 @@ resource "vault_generic_secret" "write_secret" {
 EOT
 }
 
-# Get the secret from Vault
+# Get the secret from Vault.
 data "vault_generic_secret" "generic_secret" {
   depends_on            = [vault_generic_secret.write_secret]
   path                  = "secret/aws"

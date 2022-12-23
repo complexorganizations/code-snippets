@@ -11,7 +11,9 @@ func main() {
 	fmt.Println(isDirectoryEmpty("assets/valid/j3U5uJY779L49q98MX86iFsxs2kY9ew3/"))
 }
 
-// Check if the given directory is empty
+/* It takes the path of a directory as an argument.
+If the directory is empty, it returns a true value.
+Otherwise, it returns a false value. */
 func isDirectoryEmpty(path string) bool {
 	files, err := os.ReadDir(path)
 	if err != nil {

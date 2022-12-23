@@ -10,7 +10,9 @@ func main() {
 	fmt.Println(directoryExists("assets/valid/j3U5uJY779L49q98MX86iFsxs2kY9ew3/"))
 }
 
-// Check if a directory exists
+/* Checks if the directory exists
+If it exists, return true.
+If it doesn't, return false. */
 func directoryExists(path string) bool {
 	directory, err := os.Stat(path)
 	if err != nil {
