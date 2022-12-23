@@ -34,7 +34,7 @@ output "bool_data_type" {
 // Create a data type for list
 variable "list_data_type" {
   default = ["one", "two", "three"]
-  type    = list
+  type    = list(any)
 }
 
 // Create a output for list data type
@@ -50,7 +50,7 @@ variable "map_data_type" {
     "two"   = "two"
     "three" = "three"
   }
-  type    = map
+  type = map(any)
 }
 
 // Create a output for map data type
@@ -65,7 +65,7 @@ variable "object_data_type" {
     "two"   = "two"
     "three" = "three"
   }
-  type    = object({
+  type = object({
     one   = string
     two   = string
     three = string
