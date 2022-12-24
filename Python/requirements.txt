@@ -3,3 +3,4 @@ psutil==5.9.0
 requests==2.22.0
 tensorflow
 validators==0.18.2
+wheel>=0.38.0 # not directly required, pinned by Snyk to avoid a vulnerability
