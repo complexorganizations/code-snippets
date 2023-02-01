@@ -1,0 +1,32 @@
+name: Go
+on:
+  push:
+    paths:
+      - "**.go"
+  pull_request:
+    paths:
+      - "**.go"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code into the directory
+        uses: actions/checkout@v3
+      - name: Get the current version of Go from project.
+        uses: actions/setup-go@v3
+        with:
+          go-version-file: "Go/go.mod"
+          cache: true
+          check-latest: true
+        id: go
+      - name: Run the code
+        run: |
+          ALL_FILES_IN_DIRECTORY=$(find Go/ -type f -name "*.go")
+          for CURRENT_FILE_IN_DIRECTORY in ${ALL_FILES_IN_DIRECTORY}; do
+            ALL_FILES_LIST[${ADD_CONTENT}]=${CURRENT_FILE_IN_DIRECTORY}
+            ADD_CONTENT=$(("${ADD_CONTENT}" + 1))
+          done
+          for FILE_LIST in "${ALL_FILES_LIST[@]}"; do
+            echo ${FILE_LIST}
+            go run ${FILE_LIST}
+          done
