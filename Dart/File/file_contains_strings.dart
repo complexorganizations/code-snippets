@@ -14,9 +14,8 @@ Future<bool> fileContainsString(final String filePath, final String searchString
       // Return false if the search string is not found
       return false;
     }
-  } catch (e) {
-    // Catch and print any errors that occur while reading the file
-    print("An error occurred while reading the file: $e");
+  } on FileSystemException {
+    // Return false if the file does not exist
     return false;
   }
 }
