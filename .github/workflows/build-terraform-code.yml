@@ -1,0 +1,86 @@
+name: "Build Terraform Configs"
+on:
+  push:
+    paths:
+      - "**.tf"
+  pull_request:
+    paths:
+      - "**.tf"
+  workflow_dispatch:
+permissions:
+  id-token: write
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code into the directory
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+      - name: Setup hashicorp vault
+        run: |
+          wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
+          echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+          sudo apt update && sudo apt install vault -y
+          vault server -dev --dev-root-token-id="00000-00000-00000-00000-00000" &
+      - name: Set up Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
+      - name: Setup auth for Google Cloud SDK
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: "${{ secrets.GCP_CREDENTIALS }}"
+      - name: Configure the credentials for Cloudflare
+        run: |
+          export CLOUDFLARE_EMAIL="${{ secrets.CF_EMAIL_ADDRESS }}"
+          export CLOUDFLARE_API_KEY="${{ secrets.CF_API_KEY }}"
+          export CLOUDFLARE_ZONE_ID="${{ secrets.CF_ZONE_ID }}"
+      - name: Configure the credentials for AWS
+        run: | # && aws configure set aws_session_token ${{ secrets.AWS_SESSION_TOKEN }}
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY }}
+          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      - name: Configure the credentials for Azure CLI
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      - name: Configure the credentials for Azure Terraform
+        run: |
+          export ARM_CLIENT_ID="${{ secrets.AZURE_CLIENT_ID }}"
+          export ARM_CLIENT_SECRET="${{ secrets.AZURE_SECRET_ID }}"
+          export ARM_SUBSCRIPTION_ID="${{ secrets.AZURE_SUBSCRIPTION_ID }}"
+          export ARM_TENANT_ID="${{ secrets.AZURE_TENANT_ID }}"
+      - name: Configure the log levels for events.
+        run: export TF_LOG="TRACE"
+      - name: Prepare terraform code to run
+        run: | # $(find Terraform/ -type d ! -path "*.*")
+          for EACH_DIRECTORY in $(git show --stat --oneline HEAD^..HEAD | grep 'Terraform/' | echo "$(dirname $(cut --delimiter='|' --fields=1))" | awk '!seen[$0]++'); do
+            echo "${EACH_DIRECTORY}"
+            terraform -chdir="${EACH_DIRECTORY}" init
+            terraform -chdir="${EACH_DIRECTORY}" validate
+            terraform -chdir="${EACH_DIRECTORY}" graph
+            terraform -chdir="${EACH_DIRECTORY}" plan
+            terraform -chdir="${EACH_DIRECTORY}" providers
+          done
+      - name: Run the terraform code
+        continue-on-error: true
+        run: | # $(git show --stat --oneline HEAD^..HEAD | grep 'Terraform/' | echo "$(dirname $(cut --delimiter='|' --fields=1))" | awk '!seen[$0]++')
+          for EACH_DIRECTORY in $(git show --stat --oneline HEAD^..HEAD | grep 'Terraform/' | echo "$(dirname $(cut --delimiter='|' --fields=1))" | awk '!seen[$0]++'); do
+            echo "${EACH_DIRECTORY}"
+            terraform -chdir="${EACH_DIRECTORY}" apply -auto-approve
+            terraform -chdir="${EACH_DIRECTORY}" show
+            terraform -chdir="${EACH_DIRECTORY}" state pull
+            terraform -chdir="${EACH_DIRECTORY}" plan -destroy
+            terraform -chdir="${EACH_DIRECTORY}" destroy -auto-approve
+          done
+      - name: Clean up the terraform code
+        continue-on-error: true
+        run: |
+          for EACH_DIRECTORY in $(git show --stat --oneline HEAD^..HEAD | grep 'Terraform/' | echo "$(dirname $(cut --delimiter='|' --fields=1))" | awk '!seen[$0]++'); do
+            echo "${EACH_DIRECTORY}"
+            terraform -chdir="${EACH_DIRECTORY}" destroy -auto-approve
+          done
