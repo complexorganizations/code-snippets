@@ -1,0 +1,26 @@
+name: C++
+on:
+  push:
+    paths:
+      - "**.cpp"
+  pull_request:
+    paths:
+      - "**.cpp"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code into the directory
+        uses: actions/checkout@v4
+      - name: Run the code
+        run: |
+          ALL_FILES_IN_DIRECTORY=$(find C++/ -type f -name "*.cpp")
+          for CURRENT_FILE_IN_DIRECTORY in ${ALL_FILES_IN_DIRECTORY}; do
+            ALL_FILES_LIST[${ADD_CONTENT}]=${CURRENT_FILE_IN_DIRECTORY}
+            ADD_CONTENT=$(("${ADD_CONTENT}" + 1))
+          done
+          for FILE_LIST in "${ALL_FILES_LIST[@]}"; do
+            echo ${FILE_LIST}
+            clang++ -std=c++2a ${FILE_LIST} -o ${FILE_LIST%.*}
+            ${FILE_LIST%.*}
+          done
