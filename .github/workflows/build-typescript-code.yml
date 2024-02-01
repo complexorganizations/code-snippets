@@ -1,0 +1,34 @@
+name: TypeScript
+on:
+  push:
+    paths:
+      - "**.ts"
+  pull_request:
+    paths:
+      - "**.ts"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code into the directory
+        uses: actions/checkout@v4
+      - name: Use Node.js v17.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 17.x
+      - name: Install dependencies
+        run: |
+          npm install --global typescript
+          npm install @types/node
+      - name: Run the code
+        run: |
+          ALL_FILES_IN_DIRECTORY=$(find TypeScript/ -type f -name "*.ts")
+          for CURRENT_FILE_IN_DIRECTORY in ${ALL_FILES_IN_DIRECTORY}; do
+            ALL_FILES_LIST[${ADD_CONTENT}]=${CURRENT_FILE_IN_DIRECTORY}
+            ADD_CONTENT=$(("${ADD_CONTENT}" + 1))
+          done
+          for FILE_LIST in "${ALL_FILES_LIST[@]}"; do
+            echo ${FILE_LIST}
+            tsc ${FILE_LIST}
+            node ${FILE_LIST%.*}.js
+          done
